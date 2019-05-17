@@ -1,13 +1,12 @@
 
 /* Class = "UITabBarItem"; title = "Item"; ObjectID = "ErV-mU-63f"; */
-"ErV-mU-63f.title" = "Cerca";
+"ErV-mU-63f.title" = "Search";
 
 /* Class = "UITabBarItem"; title = "Item"; ObjectID = "RAc-Za-YkG"; */
-"RAc-Za-YkG.title" = "Profilo";
+"RAc-Za-YkG.title" = "Profile";
 
 /* Class = "UITabBarItem"; title = "Item 1"; ObjectID = "bpd-Ku-txO"; */
-"bpd-Ku-txO.title" = "Prossimamente";
+"bpd-Ku-txO.title" = "Up Next";
 
 /* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "jrD-Yz-tmD"; */
-"jrD-Yz-tmD.title" = "Lista";
-
+"jrD-Yz-tmD.title" = "List";
