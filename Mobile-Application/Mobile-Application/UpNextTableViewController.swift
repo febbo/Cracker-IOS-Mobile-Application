@@ -17,7 +17,8 @@ class UpNextTableViewController : UITableViewController {
 		
 		super.viewDidLoad()
 		
-		weeks = ["Week 12", "Week 13", "Weeks 14"]
+		weeks = ["Week 12", "Week 13", "Week 14"]
+		
 		tableView.register(UINib.init(nibName: "UpNextTableViewController", bundle: nil), forCellReuseIdentifier: "UpNextTableViewController")
 		
 		tableView.estimatedRowHeight = 50
