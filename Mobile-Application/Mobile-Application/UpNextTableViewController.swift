@@ -12,39 +12,68 @@ import UIKit
 class UpNextTableViewController : UITableViewController {
 	
 	var weeks = [String]()
+    
+    var tableViewData = [cellData]()
 	
 	override func viewDidLoad() {
 		
 		super.viewDidLoad()
+        tableViewData = [cellData(opened: false, title: "Title1", sectionData: ["Cell1", "Cell2", "Cell3"]),
+                         cellData(opened: false, title: "Title2", sectionData: ["Cell1", "Cell2", "Cell3"]),
+                         cellData(opened: false, title: "Title3", sectionData: ["Cell1", "Cell2", "Cell3"]),
+                         cellData(opened: false, title: "Title4", sectionData: ["Cell1", "Cell2", "Cell3"])]
 		
-		weeks = ["Week 12", "Week 13", "Week 14"]
+        // weeks = ["Week 12", "Week 13", "Week 14"]
 		
-		tableView.register(UINib.init(nibName: "UpNextTableViewController", bundle: nil), forCellReuseIdentifier: "UpNextTableViewController")
+		//tableView.register(UINib.init(nibName: "UpNextTableViewController", bundle: nil), forCellReuseIdentifier: "UpNextTableViewController")
 		
-		tableView.estimatedRowHeight = 50
+		//tableView.estimatedRowHeight = 50
 	}
 	
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		return 1
+		return tableViewData.count
 	}
 	
-	override func tableView(_ tableView: UITableView,
-							numberOfRowsInSection section: Int) -> Int {
-		return weeks.count
+	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		//return weeks.count
+        if tableViewData[section].opened == true {
+            return tableViewData[section].sectionData.count + 1
+        } else {
+            return 1
+        }
 	}
 	
 	override func tableView(_ tableView: UITableView,
 							cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		
-		let cell =
-			self.tableView.dequeueReusableCell(withIdentifier:
-				"UpNextTableViewCell", for: indexPath)
-				as! UpNextTableViewCell
-		
-		let row = indexPath.row
-		cell.weekLabel.font =
-			UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
-		cell.weekLabel.text = weeks[row]
-		return cell
+        
+        let dataIndex = indexPath.row-1
+        if indexPath.row == 0{
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "UpNextTableViewCell") else { return UITableViewCell()}
+            cell.textLabel?.text = tableViewData[indexPath.section].title
+            cell.textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
+            return cell
+        } else {
+            //            Use different cell identifier if needed
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "UpNextTableViewCell") else { return UITableViewCell()}
+            cell.textLabel?.text = tableViewData[indexPath.section].sectionData[dataIndex]
+            cell.textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
+            return cell
+        }
 	}
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            if tableViewData[indexPath.section].opened == true{
+                tableViewData[indexPath.section].opened = false
+                let sections = IndexSet.init(integer: indexPath.section)
+                tableView.reloadSections(sections, with: .none) //play around with this
+            } else {
+                tableViewData[indexPath.section].opened = true
+                let sections = IndexSet.init(integer: indexPath.section)
+                tableView.reloadSections(sections, with: .none) //play around with this
+            }
+        } else {
+            //cosa deve accadere quando si clicca sulla singola cella
+        }
+    }
 }
