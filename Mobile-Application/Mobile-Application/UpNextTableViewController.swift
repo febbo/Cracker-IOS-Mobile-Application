@@ -76,4 +76,6 @@ class UpNextTableViewController : UITableViewController {
             //cosa deve accadere quando si clicca sulla singola cella
         }
     }
+    
+    
 }
