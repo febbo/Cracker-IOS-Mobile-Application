@@ -9,80 +9,57 @@
 import Foundation
 import UIKit
 
-struct cellData {
-	var opened = Bool()
-	var title = String()
-	var sectionData = [String]()
-}
-
 class UpNextTableViewController : UITableViewController {
 	
-	var weeks = [String]()
-	let cellSpacingHeight: CGFloat = 15
-    
-    var tableViewData = [cellData]()
+	let cellID = "WeekCell"
+	
+	// array bidimensionale: ogni riga è una settimana
+	// quando si usa indexPath, section per noi è la settimana, row il singolo issue
+	let issues = [
+		["Captain Marvel 9", "Fantastic Four 13", "Powers of X 2"],
+		["Fearless 2", "Powers of X 3"],
+		["House of X 3", "Runaways 24", "Venom 17"]
+	]
+	
+	// come identifichiamo la settimana nell'header della sezione
+	// IMPORTANTE: ovviamente la dimensione di questo array deve essere uguale al numero di righe di issues
+	let weeks = ["Week 45", "Week 46", "Week 47"]
 	
 	override func viewDidLoad() {
-		
 		super.viewDidLoad()
 		
-        tableViewData = [cellData(opened: false, title: "Title1", sectionData: ["Cell1", "Cell2", "Cell3"]),
-                         cellData(opened: false, title: "Title2", sectionData: ["Cell1", "Cell2", "Cell3"]),
-                         cellData(opened: false, title: "Title3", sectionData: ["Cell1", "Cell2", "Cell3"]),
-                         cellData(opened: false, title: "Title4", sectionData: ["Cell1", "Cell2", "Cell3"])]
+		tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
 	}
 	
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		return tableViewData.count
+		return issues.count
+	}
+	
+	override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		let label = UILabel()
+		label.text = weeks[section]
+		label.backgroundColor = .orange
+		return label
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableViewData[section].opened == true {
-            return tableViewData[section].sectionData.count + 1
-        } else {
-            return 1
-        }
+		return issues[section].count
 	}
 	
-	override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-		return cellSpacingHeight
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "WeekCell", for: indexPath)
+		let issue = issues[indexPath.section][indexPath.row]
+		cell.textLabel?.text = issue
+		
+		return cell
 	}
 	
-	override func tableView(_ tableView: UITableView,
-							cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let dataIndex = indexPath.row-1
-        if indexPath.row == 0{
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "UpNextTableViewCell") else { return UITableViewCell()}
-            cell.textLabel?.text = tableViewData[indexPath.section].title
-            cell.textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
-			cell.layer.cornerRadius = 10
-			cell.clipsToBounds = true
-            return cell
-        } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "UpNextTableViewCell") else { return UITableViewCell()}
-            cell.textLabel?.text = tableViewData[indexPath.section].sectionData[dataIndex]
-            cell.textLabel?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
-			cell.layer.cornerRadius = 10
-			cell.clipsToBounds = true
-            return cell
-        }
-	}
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            if tableViewData[indexPath.section].opened == true {
-                tableViewData[indexPath.section].opened = false
-                let sections = IndexSet.init(integer: indexPath.section)
-                tableView.reloadSections(sections, with: .none)
-            } else {
-                tableViewData[indexPath.section].opened = true
-                let sections = IndexSet.init(integer: indexPath.section)
-                tableView.reloadSections(sections, with: .none)
-            }
-        } else {
-            //cosa deve accadere quando si clicca sulla singola cella
-        }
-    }
+//	override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//		let button = UIButton(type: .system)
+//		button.setTitle("Close", for: .normal)
+//		button.setTitleColor(.black, for: .normal)
+//		button.backgroundColor = .orange
+//		return button
+//	}
 	
 }
