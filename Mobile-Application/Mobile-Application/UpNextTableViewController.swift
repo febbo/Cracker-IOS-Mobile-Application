@@ -32,6 +32,7 @@ class UpNextTableViewController : UITableViewController {
 		super.viewDidLoad()
 		navigationController?.navigationBar.prefersLargeTitles = true
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+		tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
 	}
 	
 	override func numberOfSections(in tableView: UITableView) -> Int {
@@ -63,8 +64,8 @@ class UpNextTableViewController : UITableViewController {
 		let button = UIButton()
 		button.setTitle(weeks[section], for: .normal)
 		button.setTitleColor(.black, for: .normal)
-		button.backgroundColor = .lightGray
-		button.layer.cornerRadius = 10
+		button.backgroundColor = UIColor(named: "AccentColor")
+//		button.layer.cornerRadius = 10
 		button.contentHorizontalAlignment = .left
 		button.titleEdgeInsets.left = 15
 		button.tag = section
