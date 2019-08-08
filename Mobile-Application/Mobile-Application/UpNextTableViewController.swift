@@ -30,7 +30,7 @@ class UpNextTableViewController : UITableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+		navigationController?.navigationBar.prefersLargeTitles = true
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
 	}
 	
@@ -75,6 +75,10 @@ class UpNextTableViewController : UITableViewController {
 		
 		return button
 
+	}
+	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		self.performSegue(withIdentifier: "ShowIssue", sender: self)
 	}
 	
 	@objc func handleExpandClose(button: UIButton) {
