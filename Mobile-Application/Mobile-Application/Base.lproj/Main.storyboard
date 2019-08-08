@@ -45,33 +45,33 @@
         <!--To Read-->
         <scene sceneID="Nvh-9l-Vdl">
             <objects>
-                <viewController title="To Read" id="BQc-pH-ffp" sceneMemberID="viewController">
+                <viewController title="To Read" id="BQc-pH-ffp" customClass="ViewController" customModule="Mobile_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qxb-UR-EnJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="no8-kq-Jnz"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="To Read" image="tab_read" id="jrD-Yz-tmD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="37h-E5-Jba" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-82" y="678"/>
+            <point key="canvasLocation" x="-84" y="676"/>
         </scene>
         <!--Up Next-->
         <scene sceneID="KCi-PO-QiI">
             <objects>
                 <tableViewController title="Up Next" id="tFj-fI-6k4" customClass="UpNextTableViewController" customModule="Mobile_Application" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aKj-fQ-VPV">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aKj-fQ-VPV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UpNextTableViewCell" id="9qh-de-W2T" customClass="UpNextTableViewCell" customModule="Mobile_Application" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9qh-de-W2T" id="Kit-5D-Znt">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -84,6 +84,12 @@
                     <navigationItem key="navigationItem" title="Up Next" id="noZ-Bp-70I"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67C-0r-TEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="kan-0u-PXD">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <viewLayoutGuide key="safeArea" id="M8t-Lh-xxp"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="826.08695652173924" y="-50.223214285714285"/>
         </scene>
