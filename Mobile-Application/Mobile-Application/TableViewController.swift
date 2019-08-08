@@ -8,13 +8,6 @@
 
 import UIKit
 
-struct cellData {
-    var opened = Bool()
-    var title = String()
-    var sectionData = [String]()
-}
-
-
 class TableViewController: UITableViewController {
     
     var tableViewData = [cellData]()
