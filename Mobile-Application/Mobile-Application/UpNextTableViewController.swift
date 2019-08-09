@@ -25,8 +25,8 @@ class UpNextTableViewController : UITableViewController {
 	// IMPORTANTE: ovviamente la dimensione di questo array deve essere uguale al numero di righe di issues
 	let weeks = ["Week 45", "Week 46", "Week 47"]
 	
-	var openImage = UIImage(named: "down.png")
-	var closeImage = UIImage(named: "up.png")
+	var openImage = UIImage(named: "down")
+	var closeImage = UIImage(named: "up")
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
