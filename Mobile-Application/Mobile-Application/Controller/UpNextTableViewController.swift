@@ -13,8 +13,10 @@ import SwiftyJSON
 
 class UpNextTableViewController : UITableViewController {
 	
-    let URL = "http(s)://gateway.marvel.com:443/v1/public/comics"
-    let APP_ID = "e72ca729af228beabd5d20e3b7749713"
+    let URL = "https://gateway.marvel.com/v1/public/comics"
+    let APP_ID = "7f0eb8f2cdf6f33136bc854d89281085"
+    let HASH = "1bdc741bcbdaf3d87a0f0d6e6180f877"
+    let TS = "1"
     
 	let cellID = "WeekCell"
 	
@@ -39,8 +41,8 @@ class UpNextTableViewController : UITableViewController {
 		super.viewDidLoad()
         
 //        for i in weeks {
-//            let params : [String : String] = ["dateDescriptor" : i, "apikey" : APP_ID]
-//            getUpNextData(url: URL, parameters: params)
+        let params : [String : String] = [ "apikey" : APP_ID, "dateDescriptor" : weeks[0], "ts": TS, "hash" : HASH]
+        getUpNextData(url: URL, parameters: params)
 //        }
         
         
@@ -74,7 +76,7 @@ class UpNextTableViewController : UITableViewController {
                 
                 print(upNextJSON)
                 
-//                self.updateWeatherData(json: weatherJSON)
+//                self.updateComicData(json: upNextJSON)
                 
             }
             else {
@@ -82,6 +84,38 @@ class UpNextTableViewController : UITableViewController {
 //                self.cityLabel.text = "Connection Issues"
             }
         }
+        
+    }
+    
+    
+    
+    
+    //MARK: - JSON Parsing
+    /***************************************************************/
+    
+    
+    
+    
+    //Write the updateWeatherData method here:
+    
+    
+    func updateComicData(json : JSON) {
+        
+        
+        updateUIWithComicData()
+    }
+    
+    
+    
+    
+    //MARK: - UI Updates
+    /***************************************************************/
+    
+    
+    //Write the updateUIWithWeatherData method here:
+    
+    func updateUIWithComicData() {
+        
         
     }
     
