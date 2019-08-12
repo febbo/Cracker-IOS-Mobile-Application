@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -104,6 +104,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4609B39823017C0E00D08382 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				46D1BB47227C4B1B00219006 /* AppDelegate.swift */,
+				C40915B522FC4D5C00FE0A1A /* IssueView.swift */,
+				C4FAA849228EBD810024B5E7 /* UpNextTableViewController.swift */,
+				C4E48ED622FC90EB00E8359D /* IssueViewController.swift */,
+				C40915BB22FC74D000FE0A1A /* HeaderView.swift */,
+				C40915B722FC6B1900FE0A1A /* ExpandableCellItem.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4609B39923017C1900D08382 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				46D1BB4E227C4B1C00219006 /* Assets.xcassets */,
+				46D1BB50227C4B1C00219006 /* LaunchScreen.storyboard */,
+				46D1BB4B227C4B1B00219006 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4609B39A23017C6300D08382 /* Modell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modell;
+			sourceTree = "<group>";
+		};
 		46D1BB3B227C4B1B00219006 = {
 			isa = PBXGroup;
 			children = (
@@ -129,18 +159,12 @@
 		46D1BB46227C4B1B00219006 /* Mobile-Application */ = {
 			isa = PBXGroup;
 			children = (
-				46D1BB47227C4B1B00219006 /* AppDelegate.swift */,
-				46D1BB4E227C4B1C00219006 /* Assets.xcassets */,
+				4609B39A23017C6300D08382 /* Modell */,
+				4609B39923017C1900D08382 /* View */,
+				4609B39823017C0E00D08382 /* Controller */,
 				46D1BB53227C4B1C00219006 /* Info.plist */,
-				C40915B522FC4D5C00FE0A1A /* IssueView.swift */,
-				46D1BB50227C4B1C00219006 /* LaunchScreen.storyboard */,
 				C4BA6942228EAB5100AB01AC /* Localizable.strings */,
-				46D1BB4B227C4B1B00219006 /* Main.storyboard */,
-				C4FAA849228EBD810024B5E7 /* UpNextTableViewController.swift */,
-				C4E48ED622FC90EB00E8359D /* IssueViewController.swift */,
-				C40915BB22FC74D000FE0A1A /* HeaderView.swift */,
 				C40915BC22FC74D000FE0A1A /* HeaderView.xib */,
-				C40915B722FC6B1900FE0A1A /* ExpandableCellItem.swift */,
 			);
 			path = "Mobile-Application";
 			sourceTree = "<group>";
@@ -173,7 +197,6 @@
 				B32F614BACCDB841940F2269 /* Pods-Mobile-ApplicationUITests.debug.xcconfig */,
 				78A00105BB3D2A256BD64D34 /* Pods-Mobile-ApplicationUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
