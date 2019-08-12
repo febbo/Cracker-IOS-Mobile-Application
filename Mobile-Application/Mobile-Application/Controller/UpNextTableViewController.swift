@@ -8,9 +8,14 @@
 
 import Foundation
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class UpNextTableViewController : UITableViewController {
 	
+    let URL = "http(s)://gateway.marvel.com:443/v1/public/comics"
+    let APP_ID = "e72ca729af228beabd5d20e3b7749713"
+    
 	let cellID = "WeekCell"
 	
 	// array bidimensionale: ogni riga è una settimana
@@ -23,17 +28,66 @@ class UpNextTableViewController : UITableViewController {
 	
 	// come identifichiamo la settimana nell'header della sezione
 	// IMPORTANTE: ovviamente la dimensione di questo array deve essere uguale al numero di righe di issues
-	let weeks = ["Week 45", "Week 46", "Week 47"]
+	let weeks = ["thisWeek", "nextWeek", "thisMonth"]
+    
+    
 	
 	var openImage = UIImage(named: "down")
 	var closeImage = UIImage(named: "up")
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        
+//        for i in weeks {
+//            let params : [String : String] = ["dateDescriptor" : i, "apikey" : APP_ID]
+//            getUpNextData(url: URL, parameters: params)
+//        }
+        
+        
 		navigationController?.navigationBar.prefersLargeTitles = true
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
 		tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
 	}
+    
+    
+    
+    
+    
+    //MARK: - Networking
+    /***************************************************************/
+    
+    //Write the getWeatherData method here:
+    
+    
+    
+    
+    
+    func getUpNextData(url: String, parameters: [String: String]) {
+        
+        Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
+            response in
+            if response.result.isSuccess {
+                
+                print("Success! Got the weather data")
+                let upNextJSON : JSON = JSON(response.result.value!)
+                
+                
+                print(upNextJSON)
+                
+//                self.updateWeatherData(json: weatherJSON)
+                
+            }
+            else {
+                print("Error \(String(describing: response.result.error))")
+//                self.cityLabel.text = "Connection Issues"
+            }
+        }
+        
+    }
+    
+    
+    
+    
 	
 	override func numberOfSections(in tableView: UITableView) -> Int {
 		return issues.count
