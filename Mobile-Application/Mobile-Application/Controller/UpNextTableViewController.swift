@@ -23,9 +23,9 @@ class UpNextTableViewController : UITableViewController {
 	// array bidimensionale: ogni riga è una settimana
 	// quando si usa indexPath, section per noi è la settimana, row il singolo issue
 	var issues = [
-		ExpandableSection(isExpanded: false, issues: ["Captain Marvel 9", "Fantastic Four 13", "Powers of X 2"]),
-		ExpandableSection(isExpanded: false, issues: ["Fearless 2", "Powers of X 3"]),
-		ExpandableSection(isExpanded: false, issues: ["House of X 3", "Runaways 24", "Venom 17"])
+		ExpandableSection(isExpanded: false, issues: []),
+		ExpandableSection(isExpanded: false, issues: []),
+		ExpandableSection(isExpanded: false, issues: [])
 	]
 	
 	// come identifichiamo la settimana nell'header della sezione
@@ -40,10 +40,11 @@ class UpNextTableViewController : UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
         
-//        for i in weeks {
-        let params : [String : String] = [ "apikey" : APP_ID, "dateDescriptor" : weeks[0], "ts": TS, "hash" : HASH]
-        getUpNextData(url: URL, parameters: params)
-//        }
+        
+        for i in 0...weeks.count-1 {
+            let params : [String : String] = [ "apikey" : APP_ID, "dateDescriptor" : weeks[i], "ts": TS, "hash" : HASH]
+            getUpNextData(url: URL, parameters: params, index: i)
+        }
         
         
 		navigationController?.navigationBar.prefersLargeTitles = true
@@ -64,7 +65,7 @@ class UpNextTableViewController : UITableViewController {
     
     
     
-    func getUpNextData(url: String, parameters: [String: String]) {
+    func getUpNextData(url: String, parameters: [String: String], index: Int) {
         
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
             response in
@@ -74,9 +75,9 @@ class UpNextTableViewController : UITableViewController {
                 let upNextJSON : JSON = JSON(response.result.value!)
                 
                 
-                print(upNextJSON)
+//                print(upNextJSON)
                 
-//                self.updateComicData(json: upNextJSON)
+                self.updateComicData(json : upNextJSON, index : index)
                 
             }
             else {
@@ -99,10 +100,31 @@ class UpNextTableViewController : UITableViewController {
     //Write the updateWeatherData method here:
     
     
-    func updateComicData(json : JSON) {
+    func updateComicData(json : JSON, index: Int) {
+        
+//        ciclo per i 3 tipi: thisWeek, nextWeek, nextMonth  AH NO GIA LO FACCIO SOPRA
+//              prendere tutti i titoli dei comic e metterli in un array con u ciclo
+//              creare l'item ExpandableSection
+//              aggiungere l'item all'array issues
+        
+        var titles : [String] = []
+        let limit = json["data"]["limit"].intValue - 1
+        
+        for i in 0...limit {
+            title = json["data"]["results"][i]["title"].stringValue
+//            print(title!)
+            
+            titles.append(title!)
+        }
+        
+        let item = ExpandableSection(isExpanded: false, issues: titles)
+        
+        issues[index] = item
+        
+//        print(titles)
         
         
-        updateUIWithComicData()
+//        updateUIWithComicData()
     }
     
     
@@ -138,7 +160,7 @@ class UpNextTableViewController : UITableViewController {
 		
 		let cell = tableView.dequeueReusableCell(withIdentifier: "WeekCell", for: indexPath)
 		let issue = issues[indexPath.section].issues[indexPath.row]
-		cell.textLabel?.text = issue
+        cell.textLabel?.text = issue
 		
 		return cell
 	}
@@ -166,6 +188,7 @@ class UpNextTableViewController : UITableViewController {
 
 	}
 	
+    //per andare nella pagina del singolo issue
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		self.performSegue(withIdentifier: "ShowIssue", sender: self)
 	}
