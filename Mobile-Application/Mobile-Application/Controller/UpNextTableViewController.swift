@@ -114,8 +114,9 @@ class UpNextTableViewController : UITableViewController {
         for i in 0...limit {
             let issueTitle = json["data"]["results"][i]["title"].stringValue
 //            print(title!)
-            
-            titles.append(issueTitle)
+            if issueTitle != ""{
+                titles.append(issueTitle)
+            }
         }
         
         let item = ExpandableSection(isExpanded: false, issues: titles)
