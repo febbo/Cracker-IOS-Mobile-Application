@@ -51,9 +51,8 @@ class UpNextTableViewController : UITableViewController {
 		navigationController?.navigationBar.prefersLargeTitles = true
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
 		tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+//		tableView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
 	}
-    
-    
     
     
     
