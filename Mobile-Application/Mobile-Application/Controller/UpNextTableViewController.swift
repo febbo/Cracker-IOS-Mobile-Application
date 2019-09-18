@@ -48,7 +48,6 @@ class UpNextTableViewController : UITableViewController {
         }
         
 		
-		navigationController?.navigationBar.topItem?.title = "Up Next"
 		navigationController?.navigationBar.prefersLargeTitles = true
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
 		tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
@@ -113,10 +112,10 @@ class UpNextTableViewController : UITableViewController {
         let limit = json["data"]["limit"].intValue - 1
         
         for i in 0...limit {
-            title = json["data"]["results"][i]["title"].stringValue
+            let issueTitle = json["data"]["results"][i]["title"].stringValue
 //            print(title!)
             
-            titles.append(title!)
+            titles.append(issueTitle)
         }
         
         let item = ExpandableSection(isExpanded: false, issues: titles)

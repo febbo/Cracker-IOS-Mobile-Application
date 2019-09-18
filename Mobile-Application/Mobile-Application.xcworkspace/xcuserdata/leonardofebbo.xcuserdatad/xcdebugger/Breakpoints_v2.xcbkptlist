@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mobile-Application/Controller/UpNextTableViewController.swift"
+            timestampString = "590512676.579468"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "issues"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mobile_Application.UpNextTableViewController.issues.getter : Swift.Array&lt;Mobile_Application.ExpandableSection&gt;"
+                  moduleName = "Mobile-Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leonardofebbo/Mobile-Application/Mobile-Application/Mobile-Application/Controller/UpNextTableViewController.swift"
+                  timestampString = "590512714.520408"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "114">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mobile_Application.UpNextTableViewController.issues.setter : Swift.Array&lt;Mobile_Application.ExpandableSection&gt;"
+                  moduleName = "Mobile-Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leonardofebbo/Mobile-Application/Mobile-Application/Mobile-Application/Controller/UpNextTableViewController.swift"
+                  timestampString = "590512714.523357"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mobile_Application.UpNextTableViewController.issues.modify : Swift.Array&lt;Mobile_Application.ExpandableSection&gt;"
+                  moduleName = "Mobile-Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leonardofebbo/Mobile-Application/Mobile-Application/Mobile-Application/Controller/UpNextTableViewController.swift"
+                  timestampString = "590512714.52554"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mobile_Application.UpNextTableViewController.issues.modify : Swift.Array&lt;Mobile_Application.ExpandableSection&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Mobile-Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leonardofebbo/Mobile-Application/Mobile-Application/Mobile-Application/Controller/UpNextTableViewController.swift"
+                  timestampString = "590512714.527365"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mobile_Application.UpNextTableViewController.init(style: __C.UITableViewStyle) -&gt; Mobile_Application.UpNextTableViewController"
+                  moduleName = "Mobile-Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leonardofebbo/Mobile-Application/Mobile-Application/Mobile-Application/Controller/UpNextTableViewController.swift"
+                  timestampString = "590512714.529055"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mobile_Application.UpNextTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Mobile_Application.UpNextTableViewController"
+                  moduleName = "Mobile-Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leonardofebbo/Mobile-Application/Mobile-Application/Mobile-Application/Controller/UpNextTableViewController.swift"
+                  timestampString = "590512714.530757"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "465">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mobile_Application.UpNextTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Mobile_Application.UpNextTableViewController&gt;"
+                  moduleName = "Mobile-Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leonardofebbo/Mobile-Application/Mobile-Application/Mobile-Application/Controller/UpNextTableViewController.swift"
+                  timestampString = "590512714.532239"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "362">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mobile-Application/Controller/UpNextTableViewController.swift"
+            timestampString = "590512737.424353"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
