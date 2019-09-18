@@ -31,6 +31,7 @@ class UpNextTableViewController : UITableViewController {
 	// come identifichiamo la settimana nell'header della sezione
 	// IMPORTANTE: ovviamente la dimensione di questo array deve essere uguale al numero di righe di issues
 	let weeks = ["thisWeek", "nextWeek", "thisMonth"]
+	let weeksTitle = ["This week", "Next week", "This month"]
     
     
 	
@@ -39,14 +40,15 @@ class UpNextTableViewController : UITableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-        
+		
         
         for i in 0...weeks.count-1 {
             let params : [String : String] = [ "apikey" : APP_ID, "dateDescriptor" : weeks[i], "ts": TS, "hash" : HASH]
             getUpNextData(url: URL, parameters: params, index: i)
         }
         
-        
+		
+		navigationController?.navigationBar.topItem?.title = "Up Next"
 		navigationController?.navigationBar.prefersLargeTitles = true
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
 		tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
@@ -172,10 +174,10 @@ class UpNextTableViewController : UITableViewController {
 	override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		
 		let button = UIButton()
-		button.setTitle(weeks[section], for: .normal)
+		button.setTitle(weeksTitle[section], for: .normal)
 		button.setTitleColor(.black, for: .normal)
 		button.backgroundColor = UIColor(named: "AccentColor")
-//		button.layer.cornerRadius = 10
+		button.layer.cornerRadius = 15
 		button.contentHorizontalAlignment = .left
 		button.titleEdgeInsets.left = 15
 		button.tag = section

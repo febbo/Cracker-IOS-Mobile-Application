@@ -50,7 +50,7 @@
                     <view key="view" contentMode="scaleToFill" id="Qxb-UR-EnJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="no8-kq-Jnz"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="To Read" image="tab_read" id="jrD-Yz-tmD"/>
@@ -156,7 +156,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RU9-eR-e29" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-84.057971014492765" y="-50.223214285714285"/>
+            <point key="canvasLocation" x="-84" y="-50"/>
         </scene>
     </scenes>
     <resources>
@@ -166,7 +166,7 @@
         <image name="tab_read" width="30" height="30"/>
         <image name="tab_search" width="30" height="30"/>
         <namedColor name="NavBar">
-            <color red="0.88200002908706665" green="0.23100000619888306" blue="0.18400000035762787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.36078431372549019" green="0.64313725490196083" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
