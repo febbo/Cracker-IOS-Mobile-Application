@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "D7193746-76DB-4D9C-9E32-215D9A425C5E"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "8068AF2D-2B2A-408B-AAE5-B6D5064564AF"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mobile-Application/Controller/UpNextTableViewController.swift"
-            timestampString = "590513212.687597"
+            timestampString = "590618401.557355"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "issues"
             landmarkType = "24">
             <Locations>
                <Location
+                  uuid = "8068AF2D-2B2A-408B-AAE5-B6D5064564AF - 8da3c7300fc07da"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -34,6 +37,7 @@
                   offsetFromSymbolStart = "114">
                </Location>
                <Location
+                  uuid = "8068AF2D-2B2A-408B-AAE5-B6D5064564AF - bed1133cb76dafe6"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -49,6 +53,7 @@
                   offsetFromSymbolStart = "128">
                </Location>
                <Location
+                  uuid = "8068AF2D-2B2A-408B-AAE5-B6D5064564AF - 2ee48cbe8c4acdd9"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -64,6 +69,7 @@
                   offsetFromSymbolStart = "18">
                </Location>
                <Location
+                  uuid = "8068AF2D-2B2A-408B-AAE5-B6D5064564AF - 5df6572e0c707f3f"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -79,6 +85,7 @@
                   offsetFromSymbolStart = "4">
                </Location>
                <Location
+                  uuid = "8068AF2D-2B2A-408B-AAE5-B6D5064564AF - 7aa643e90f97b512"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -94,6 +101,7 @@
                   offsetFromSymbolStart = "300">
                </Location>
                <Location
+                  uuid = "8068AF2D-2B2A-408B-AAE5-B6D5064564AF - 71cac316ad2b0adc"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -109,6 +117,7 @@
                   offsetFromSymbolStart = "465">
                </Location>
                <Location
+                  uuid = "8068AF2D-2B2A-408B-AAE5-B6D5064564AF - 9eb5c2ce812ea2c0"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -129,15 +138,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "5875A679-BCCE-42C2-919A-0772CA8C21AD"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mobile-Application/Controller/UpNextTableViewController.swift"
-            timestampString = "590513212.687916"
+            timestampString = "590618401.5576611"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>

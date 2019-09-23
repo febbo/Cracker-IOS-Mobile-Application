@@ -13,6 +13,10 @@ import SwiftyJSON
 
 class UpNextTableViewController : UITableViewController {
 	
+    @IBOutlet weak var upNextTableView : UITableView!
+    
+    
+    
     let URL = "https://gateway.marvel.com/v1/public/comics"
     let APP_ID = "7f0eb8f2cdf6f33136bc854d89281085"
     let HASH = "1bdc741bcbdaf3d87a0f0d6e6180f877"
@@ -52,6 +56,9 @@ class UpNextTableViewController : UITableViewController {
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
 		tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
 //		tableView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
+        
+        upNextTableView.dataSource = self
+        upNextTableView.delegate = self
 	}
     
     
@@ -127,22 +134,9 @@ class UpNextTableViewController : UITableViewController {
         
 //        updateUIWithComicData()
     }
+
     
-    
-    
-    
-    //MARK: - UI Updates
-    /***************************************************************/
-    
-    
-    //Write the updateUIWithWeatherData method here:
-    
-    func updateUIWithComicData() {
-        
-        
-    }
-    
-    
+//    MARK: - Table Controls
     
     
 	
@@ -193,6 +187,15 @@ class UpNextTableViewController : UITableViewController {
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		self.performSegue(withIdentifier: "ShowIssue", sender: self)
 	}
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let destination = segue.destination as? IssueViewController{
+//            
+//            
+//            destination.issueName = issues[0].issues[(upNextTableView.indexPathForSelectedRow?.row)!]
+//
+//        }
+//    }
 	
 	@objc func handleExpandClose(button: UIButton) {
 		

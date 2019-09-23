@@ -10,9 +10,15 @@ import UIKit
 
 class IssueViewController: UIViewController {
 
+//    @IBOutlet weak var lblIssue: UILabel!
+    
+//    var issueName : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 		navigationItem.largeTitleDisplayMode = .never
+        
+//        lblIssue.text = "\((issueName)!)"
     }
 	
 

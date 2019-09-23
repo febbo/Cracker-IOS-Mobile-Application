@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gn2-R4-xVY">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gn2-R4-xVY">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -73,7 +71,7 @@
                                 <rect key="frame" x="0.0" y="55.5" width="414" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9qh-de-W2T" id="Kit-5D-Znt">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -89,7 +87,8 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="NLd-zT-bcK"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="daz-C7-fa1" kind="show" identifier="ShowIssue" id="Xac-PV-uGs"/>
+                        <outlet property="upNextTableView" destination="aKj-fQ-VPV" id="700-MP-VKn"/>
+                        <segue destination="daz-C7-fa1" kind="show" identifier="ShowIssue" id="Ado-8h-iCd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67C-0r-TEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -112,6 +111,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="yaA-KU-nCa"/>
                     </view>
+                    <navigationItem key="navigationItem" id="CfP-JB-Z5a"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXd-HE-g36" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
