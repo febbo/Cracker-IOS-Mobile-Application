@@ -188,11 +188,17 @@ class UpNextTableViewController : UITableViewController {
 		self.performSegue(withIdentifier: "ShowIssue", sender: self)
 	}
     
+//    DINAMICIZZA LA PAGINA SINGOLA IN BASE ALLA CELLA CHE SCEGLI
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if let destination = segue.destination as? IssueViewController{
-//            
-//            
-//            destination.issueName = issues[0].issues[(upNextTableView.indexPathForSelectedRow?.row)!]
+//
+//
+//            destination.issueName = issues[(upNextTableView.indexPathForSelectedRow?.section)!].issues[(upNextTableView.indexPathForSelectedRow?.row)!]
+//
+//            print((upNextTableView.indexPathForSelectedRow?.row)!)
+//            print((upNextTableView.indexPathForSelectedRow?.item)!)
+//            print((upNextTableView.indexPathForSelectedRow?.section)!)
+//            print((upNextTableView.indexPathForSelectedRow?.description)!)
 //
 //        }
 //    }
