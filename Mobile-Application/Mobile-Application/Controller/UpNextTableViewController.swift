@@ -169,7 +169,7 @@ class UpNextTableViewController : UITableViewController {
 		let button = UIButton()
 		button.setTitle(weeksTitle[section], for: .normal)
 		button.setTitleColor(.black, for: .normal)
-		button.backgroundColor = UIColor(named: "AccentColor")
+		button.backgroundColor = UIColor(named: "LightGreen")
 		button.layer.cornerRadius = 15
 		button.contentHorizontalAlignment = .left
 		button.titleEdgeInsets.left = 15
