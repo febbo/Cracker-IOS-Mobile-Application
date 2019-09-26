@@ -119,6 +119,7 @@ class UpNextTableViewController : UITableViewController {
         
         for i in 0...limit {
             let issueTitle = json["data"]["results"][i]["title"].stringValue
+//              QUI VA CAMBIATO CON IL COMIC MODEL DATA
 //            print(title!)
             if issueTitle != ""{
                 titles.append(issueTitle)
