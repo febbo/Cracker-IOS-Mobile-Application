@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SerieDataModel {
+class Serie {
     
     var resourceURI : String = ""
     var name : String = ""
