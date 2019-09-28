@@ -118,26 +118,38 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Title Title Title Title Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkZ-5s-HpR" userLabel="TitleLabel">
-                                        <rect key="frame" x="177" y="30" width="177" height="57.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Title Title Title Title Title Title Title" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="hkZ-5s-HpR" userLabel="TitleLabel">
+                                        <rect key="frame" x="177" y="11.5" width="177" height="86"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of release: xx-xx-xxxx" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4T-bE-stF" userLabel="DateLabel">
-                                        <rect key="frame" x="177" y="107.5" width="177" height="36"/>
+                                        <rect key="frame" x="177" y="102.5" width="177" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creators" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5PW-1z-i9g" userLabel="CreatorsTitleLabel">
-                                        <rect key="frame" x="177" y="173.5" width="177" height="22"/>
+                                        <rect key="frame" x="177" y="148.5" width="177" height="22"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role: name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoD-x7-poF" userLabel="CreatorsLabel">
-                                        <rect key="frame" x="177" y="200.5" width="177" height="19.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role: name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoD-x7-poF" userLabel="CreatorsLabel1">
+                                        <rect key="frame" x="177" y="175.5" width="177" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role: name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8k-a3-oQg" userLabel="CreatorsLabel2">
+                                        <rect key="frame" x="177" y="195" width="177" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role: name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aow-G6-ARw" userLabel="CreatorsLabel3">
+                                        <rect key="frame" x="177" y="214.5" width="177" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -145,10 +157,13 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="Aow-G6-ARw" firstAttribute="leading" secondItem="5JR-bc-aQV" secondAttribute="trailing" constant="15" id="04Z-rX-zXb"/>
+                                    <constraint firstItem="Aow-G6-ARw" firstAttribute="top" secondItem="S8k-a3-oQg" secondAttribute="bottom" id="0wW-kp-jDN"/>
                                     <constraint firstAttribute="width" secondItem="Ejq-9t-Ziy" secondAttribute="height" multiplier="374:251" id="1wV-Cp-xUF"/>
+                                    <constraint firstAttribute="trailing" secondItem="S8k-a3-oQg" secondAttribute="trailing" constant="20" id="B5P-fW-zrW"/>
                                     <constraint firstAttribute="trailing" secondItem="q4T-bE-stF" secondAttribute="trailing" constant="20" id="Bni-HC-HGA"/>
-                                    <constraint firstItem="5PW-1z-i9g" firstAttribute="top" secondItem="q4T-bE-stF" secondAttribute="bottom" constant="30" id="Dn5-wV-jY9"/>
-                                    <constraint firstItem="q4T-bE-stF" firstAttribute="centerY" secondItem="Ejq-9t-Ziy" secondAttribute="centerY" id="GOl-P7-fLs"/>
+                                    <constraint firstItem="5PW-1z-i9g" firstAttribute="top" secondItem="q4T-bE-stF" secondAttribute="bottom" constant="10" id="Dn5-wV-jY9"/>
+                                    <constraint firstItem="q4T-bE-stF" firstAttribute="centerY" secondItem="Ejq-9t-Ziy" secondAttribute="centerY" constant="-5" id="GOl-P7-fLs"/>
                                     <constraint firstItem="5JR-bc-aQV" firstAttribute="top" secondItem="Ejq-9t-Ziy" secondAttribute="top" id="L43-ds-anH"/>
                                     <constraint firstItem="5PW-1z-i9g" firstAttribute="leading" secondItem="5JR-bc-aQV" secondAttribute="trailing" constant="15" id="LEH-v1-oW5"/>
                                     <constraint firstAttribute="trailing" secondItem="xoD-x7-poF" secondAttribute="trailing" constant="20" id="LdM-hN-fMV"/>
@@ -157,10 +172,13 @@
                                     <constraint firstAttribute="bottom" secondItem="5JR-bc-aQV" secondAttribute="bottom" id="PhD-JA-TbZ"/>
                                     <constraint firstItem="hkZ-5s-HpR" firstAttribute="leading" secondItem="5JR-bc-aQV" secondAttribute="trailing" constant="15" id="R3S-wW-UIa"/>
                                     <constraint firstItem="xoD-x7-poF" firstAttribute="top" secondItem="5PW-1z-i9g" secondAttribute="bottom" constant="5" id="Vc8-Dr-YxZ"/>
-                                    <constraint firstItem="q4T-bE-stF" firstAttribute="top" secondItem="hkZ-5s-HpR" secondAttribute="bottom" constant="20" id="X7i-6F-jDV"/>
+                                    <constraint firstItem="q4T-bE-stF" firstAttribute="top" secondItem="hkZ-5s-HpR" secondAttribute="bottom" constant="5" id="X7i-6F-jDV"/>
+                                    <constraint firstItem="S8k-a3-oQg" firstAttribute="top" secondItem="xoD-x7-poF" secondAttribute="bottom" id="Zhw-6H-88b"/>
+                                    <constraint firstAttribute="trailing" secondItem="Aow-G6-ARw" secondAttribute="trailing" constant="20" id="aDg-Pn-dwI"/>
                                     <constraint firstItem="5JR-bc-aQV" firstAttribute="leading" secondItem="Ejq-9t-Ziy" secondAttribute="leading" id="bvx-ai-WoJ"/>
                                     <constraint firstAttribute="trailing" secondItem="5PW-1z-i9g" secondAttribute="trailing" constant="20" id="eiz-Cr-vlU"/>
                                     <constraint firstAttribute="trailing" secondItem="hkZ-5s-HpR" secondAttribute="trailing" constant="20" id="qTW-Co-uAp"/>
+                                    <constraint firstItem="S8k-a3-oQg" firstAttribute="leading" secondItem="5JR-bc-aQV" secondAttribute="trailing" constant="15" id="rco-AE-qFP"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -405,19 +423,19 @@
         <image name="tab_read" width="30" height="30"/>
         <image name="tab_search" width="30" height="30"/>
         <namedColor name="Background">
-            <color red="0.93333333333333335" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.10980392156862745" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BlackAlways">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="DarkGreen">
-            <color red="0.36078431372549019" green="0.64313725490196083" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.29019607843137257" green="0.52156862745098043" blue="0.53725490196078429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="LightGreen">
-            <color red="0.792156862745098" green="0.88627450980392153" blue="0.89411764705882357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.49803921568627452" green="0.67450980392156867" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Red">
-            <color red="0.83921568627450982" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.75686274509803919" green="0.28627450980392155" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
