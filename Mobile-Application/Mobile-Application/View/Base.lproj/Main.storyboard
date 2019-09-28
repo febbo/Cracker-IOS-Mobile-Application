@@ -325,8 +325,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="CfP-JB-Z5a"/>
                     <connections>
+                        <outlet property="creatorsComic" destination="xoD-x7-poF" id="zgs-2V-dDy"/>
+                        <outlet property="dateComic" destination="q4T-bE-stF" id="woO-uk-dZs"/>
+                        <outlet property="descriptionComic" destination="NZJ-zQ-eXB" id="jxJ-9q-V1x"/>
                         <outlet property="readButton" destination="Abe-eJ-bmN" id="uYG-uP-q4E"/>
                         <outlet property="seriesButton" destination="V8C-Dp-Ay4" id="ZtW-Ce-27H"/>
+                        <outlet property="titleComic" destination="hkZ-5s-HpR" id="TJu-VX-vMS"/>
                         <segue destination="gWk-4X-qkZ" kind="show" identifier="goToSeries" id="gGZ-iQ-hFh"/>
                     </connections>
                 </viewController>
@@ -401,19 +405,19 @@
         <image name="tab_read" width="30" height="30"/>
         <image name="tab_search" width="30" height="30"/>
         <namedColor name="Background">
-            <color red="0.10980392156862745" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.93333333333333335" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BlackAlways">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="DarkGreen">
-            <color red="0.29019607843137257" green="0.52156862745098043" blue="0.53725490196078429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.36078431372549019" green="0.64313725490196083" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="LightGreen">
-            <color red="0.49803921568627452" green="0.67450980392156867" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.792156862745098" green="0.88627450980392153" blue="0.89411764705882357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Red">
-            <color red="0.75686274509803919" green="0.28627450980392155" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.83921568627450982" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

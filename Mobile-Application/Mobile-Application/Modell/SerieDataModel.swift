@@ -8,9 +8,14 @@
 
 import Foundation
 
-class Serie {
+class SerieDataModel{
     
     var resourceURI : String = ""
-    var name : String = ""
+    var title : String = ""
+    
+    init (URI: String, name: String){
+        self.resourceURI = URI
+        self.title = name
+    }
     
 }

@@ -10,9 +10,12 @@ import UIKit
 
 class IssueViewController: UIViewController {
 
-//    @IBOutlet weak var lblIssue: UILabel!
-//
-//    var issueName : String?
+    @IBOutlet weak var titleComic: UILabel!
+    @IBOutlet weak var dateComic: UILabel!
+    @IBOutlet weak var creatorsComic: UILabel!
+    @IBOutlet weak var descriptionComic: UITextView!
+    
+    var comic : ComicDataModel?
     
 	//TODO: quando avremo il profilo, utilizzeremo il valore che salviamo noi
 	var isRead = false
@@ -38,7 +41,21 @@ class IssueViewController: UIViewController {
 		readButton.addTarget(self, action: #selector(readIssueButton), for: .touchUpInside)
 		seriesButton.addTarget(self, action: #selector(goToSeriesButton), for: .touchUpInside)
 
-//        lblIssue.text = "\((issueName)!)"
+        titleComic.text = "\((comic?.title)!)"
+        dateComic.text = "\((comic?.onSaleDate)!)"
+        if comic?.creators[0].name == nil || comic?.creators[0].role == nil{
+            creatorsComic.text = "autori non disponibili"
+        } else {
+            creatorsComic.text = "\((comic?.creators[0].name)!)  \((comic?.creators[0].role)!)"
+        }
+        
+
+//        descriptionComic.text = "\((comic?.description)!)"
+        if comic?.description == "" {
+            descriptionComic.text = "descrizione non disponibile"
+        } else {
+            descriptionComic.text = "\((comic?.description)!)"
+        }
     }
 	
 	@objc func readIssueButton(button: UIButton) {

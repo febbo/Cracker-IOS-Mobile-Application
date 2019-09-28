@@ -37,6 +37,8 @@ class UpNextTableViewController : UITableViewController {
 	let weeks = ["thisWeek", "nextWeek", "thisMonth"]
 	let weeksTitle = ["This week", "Next week", "This month"]
     
+    var UpNextComics : [[ComicDataModel]] = [[]]
+    
     
 	
 	var openImage = UIImage(named: "down")
@@ -85,6 +87,7 @@ class UpNextTableViewController : UITableViewController {
 //                print(upNextJSON)
                 
                 self.updateComicData(json : upNextJSON, index : index)
+                print(self.UpNextComics)
                 
             }
             else {
@@ -115,13 +118,59 @@ class UpNextTableViewController : UITableViewController {
 //              aggiungere l'item all'array issues
         
         var titles : [String] = []
+        var comics : [ComicDataModel] = []
         let limit = json["data"]["limit"].intValue - 1
         
         for i in 0...limit {
             let issueTitle = json["data"]["results"][i]["title"].stringValue
-//              QUI VA CAMBIATO CON IL COMIC MODEL DATA
 //            print(title!)
             if issueTitle != ""{
+                let id = json["data"]["results"][i]["id"].intValue
+                let title = json["data"]["results"][i]["title"].stringValue
+                let issueNumber = json["data"]["results"][i]["issueNumber"].intValue
+                
+                let onSaleDate = json["data"]["results"][i]["dates"][0]["date"].stringValue
+                
+//                let dateFormatter = DateFormatter()
+//                dateFormatter.dateFormat = "dd-mm-yyyy" //Your date format
+//                dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
+//
+//                guard let date = dateFormatter.date(from: onSaleDate) else {
+//                    fatalError()
+//                }
+                
+                let serieUri = json["data"]["results"][i]["series"]["resourceURI"].stringValue
+                let serieName = json["data"]["results"][i]["series"]["name"].stringValue
+                let serie = SerieDataModel(URI: serieUri,  name: serieName)
+                
+                let imagePath = json["data"]["results"][i]["images"][0]["path"].stringValue
+                let imageExt = json["data"]["results"][i]["images"][0]["extension"].stringValue
+                let image = ImageIssueDataModel(path: imagePath, ext: imageExt)
+                
+                var creators : [CreatorDataModel] = []
+                let creatorsAvailable = json["data"]["results"][i]["creators"]["available"].intValue
+                for j in 0...creatorsAvailable{
+                    let creatorURI = json["data"]["results"][i]["creators"]["items"][j]["resourceURI"].stringValue
+                    let creatorName = json["data"]["results"][i]["creators"]["items"][j]["name"].stringValue
+                    let creatorRole = json["data"]["results"][i]["creators"]["items"][j]["role"].stringValue
+                    let creator = CreatorDataModel(URI: creatorURI, name: creatorName, role: creatorRole)
+                
+                    creators.append(creator)
+                    
+                }
+                print(creators[0].name)
+                
+                let description = json["data"]["results"][i]["description"].stringValue
+//                if description == "" {
+//                    description = ""
+//                }
+                
+                let comic = ComicDataModel(id: id, title: title, issueNumber: issueNumber, onSaleDate: onSaleDate, serie: serie, image: image, creators: creators, description: description)
+                
+                
+                comics.append(comic)
+                
+                
                 titles.append(issueTitle)
             }
         }
@@ -129,6 +178,12 @@ class UpNextTableViewController : UITableViewController {
         let item = ExpandableSection(isExpanded: false, issues: titles)
         
         issues[index] = item
+        if index == 0{
+            UpNextComics[index] = comics
+        } else {
+            UpNextComics.append(comics)
+        }
+        
         
 //        print(titles)
         
@@ -190,19 +245,19 @@ class UpNextTableViewController : UITableViewController {
 	}
     
 //    DINAMICIZZA LA PAGINA SINGOLA IN BASE ALLA CELLA CHE SCEGLI
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destination = segue.destination as? IssueViewController{
-//
-//
-//            destination.issueName = issues[(upNextTableView.indexPathForSelectedRow?.section)!].issues[(upNextTableView.indexPathForSelectedRow?.row)!]
-//
-//            print((upNextTableView.indexPathForSelectedRow?.row)!)
-//            print((upNextTableView.indexPathForSelectedRow?.item)!)
-//            print((upNextTableView.indexPathForSelectedRow?.section)!)
-//            print((upNextTableView.indexPathForSelectedRow?.description)!)
-//
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? IssueViewController{
+
+
+            destination.comic = UpNextComics[(upNextTableView.indexPathForSelectedRow?.section)!][(upNextTableView.indexPathForSelectedRow?.row)!]
+
+            print((upNextTableView.indexPathForSelectedRow?.row)!)
+            print((upNextTableView.indexPathForSelectedRow?.item)!)
+            print((upNextTableView.indexPathForSelectedRow?.section)!)
+            print((upNextTableView.indexPathForSelectedRow?.description)!)
+
+        }
+    }
 	
 	@objc func handleExpandClose(button: UIButton) {
 		

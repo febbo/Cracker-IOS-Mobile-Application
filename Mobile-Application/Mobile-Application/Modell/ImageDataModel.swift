@@ -8,9 +8,15 @@
 
 import Foundation
 
-class ImageIssue {
+class ImageIssueDataModel {
     
     var imagePath : String = ""
     var imageExtension : String = ""
     
+    
+    init(path: String, ext: String){
+        self.imagePath = path
+        self.imageExtension = ext
+        
+    }
 }

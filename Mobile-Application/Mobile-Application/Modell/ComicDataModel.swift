@@ -16,24 +16,24 @@ class ComicDataModel{
     var issueNumber : Int = 0
     var pageCount : Int = 0
     var resourceURI : String = ""
-    var serie : Serie?
-    var onSaleDate : Date?
+    var serie : SerieDataModel?
+    var onSaleDate : String = ""
     var description : String = ""
     
     //per avere immagine path + https://developer.marvel.com/documentation/images + . + extension
-    var image : ImageIssue?
+    var image : ImageIssueDataModel?
     
-    var creators : [Creator] = []
+    var creators : [CreatorDataModel] = []
     
     var charactersURI : String = ""
     var storiesURI : String = ""
     var eventsURI : String = ""
     
-    init(id: Int, title: String, issueNumber: Int, onsaleDate: Date, serie: Serie, image: ImageIssue, creators: [Creator], description: String){
+    init(id: Int, title: String, issueNumber: Int, onSaleDate: String, serie: SerieDataModel, image: ImageIssueDataModel, creators: [CreatorDataModel], description: String){
         self.id = id
         self.title = title
         self.issueNumber = issueNumber
-        self.onSaleDate = onsaleDate
+        self.onSaleDate = onSaleDate
         self.serie = serie
         self.image = image
         self.creators = creators
