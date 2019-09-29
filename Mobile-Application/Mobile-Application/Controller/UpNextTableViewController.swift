@@ -80,14 +80,11 @@ class UpNextTableViewController : UITableViewController {
             response in
             if response.result.isSuccess {
                 
-                print("Success! Got the weather data")
+                print("Success! Got the comic data")
                 let upNextJSON : JSON = JSON(response.result.value!)
                 
-                
-//                print(upNextJSON)
-                
                 self.updateComicData(json : upNextJSON, index : index)
-                print(self.UpNextComics)
+                
                 
             }
             else {
@@ -158,7 +155,6 @@ class UpNextTableViewController : UITableViewController {
                     creators.append(creator)
                     
                 }
-                print(creators[0].name)
                 
                 let description = json["data"]["results"][i]["description"].stringValue
 //                if description == "" {
@@ -251,10 +247,10 @@ class UpNextTableViewController : UITableViewController {
 
             destination.comic = UpNextComics[(upNextTableView.indexPathForSelectedRow?.section)!][(upNextTableView.indexPathForSelectedRow?.row)!]
 
-            print((upNextTableView.indexPathForSelectedRow?.row)!)
-            print((upNextTableView.indexPathForSelectedRow?.item)!)
-            print((upNextTableView.indexPathForSelectedRow?.section)!)
-            print((upNextTableView.indexPathForSelectedRow?.description)!)
+//            print((upNextTableView.indexPathForSelectedRow?.row)!)
+//            print((upNextTableView.indexPathForSelectedRow?.item)!)
+//            print((upNextTableView.indexPathForSelectedRow?.section)!)
+//            print((upNextTableView.indexPathForSelectedRow?.description)!)
 
         }
     }
