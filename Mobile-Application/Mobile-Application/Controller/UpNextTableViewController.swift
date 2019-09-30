@@ -57,9 +57,9 @@ class UpNextTableViewController : UITableViewController {
 //            loadingIndicator.style = UIActivityIndicatorView.Style.white
 //        }
 //        loadingIndicator.startAnimating();
-
-        alert.view.addSubview(loadingIndicator)
-        present(alert, animated: true, completion: nil)
+//
+//        alert.view.addSubview(loadingIndicator)
+//        present(alert, animated: true, completion: nil)
         
         for i in 0...weeks.count-1 {
             let params : [String : String] = [ "apikey" : APP_ID, "dateDescriptor" : weeks[i], "ts": TS, "hash" : HASH]
