@@ -76,6 +76,20 @@ class UpNextTableViewController : UITableViewController {
     
     func getUpNextData(url: String, parameters: [String: String], index: Int) {
         
+		let alert = UIAlertController(title: nil, message: "Loading data", preferredStyle: .alert)
+
+		let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+		loadingIndicator.hidesWhenStopped = true
+		if traitCollection.userInterfaceStyle == .light {
+			loadingIndicator.style = UIActivityIndicatorView.Style.gray
+		} else {
+			loadingIndicator.style = UIActivityIndicatorView.Style.white
+		}
+		loadingIndicator.startAnimating();
+
+		alert.view.addSubview(loadingIndicator)
+		present(alert, animated: true, completion: nil)
+		
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
             response in
             if response.result.isSuccess {
@@ -180,6 +194,7 @@ class UpNextTableViewController : UITableViewController {
             UpNextComics.append(comics)
         }
         
+		dismiss(animated: false, completion: nil)
         
 //        print(titles)
         
