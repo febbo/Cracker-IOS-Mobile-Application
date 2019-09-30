@@ -14,6 +14,7 @@ class IssueViewController: UIViewController {
     @IBOutlet weak var dateComic: UILabel!
     @IBOutlet weak var creatorsComic: UILabel!
     @IBOutlet weak var descriptionComic: UITextView!
+    @IBOutlet weak var imageComic: UIImageView!
     
     var comic : ComicDataModel?
     
@@ -56,6 +57,10 @@ class IssueViewController: UIViewController {
         } else {
             descriptionComic.text = "\((comic?.description)!)"
         }
+        
+        let imageURL = URL(string: "\((comic?.image?.imagePath)!)" + "." + "\((comic?.image?.imageExtension)!)")
+        imageComic.load(url: imageURL!)
+        print(imageURL!)
     }
 	
 	@objc func readIssueButton(button: UIButton) {
@@ -73,5 +78,19 @@ class IssueViewController: UIViewController {
 	@objc func goToSeriesButton(button: UIButton) {
 		self.performSegue(withIdentifier: "goToSeries", sender: self)
 	}
+    
+}
 
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
 }
