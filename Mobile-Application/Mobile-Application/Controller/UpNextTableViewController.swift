@@ -47,11 +47,26 @@ class UpNextTableViewController : UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+//        let alert = UIAlertController(title: nil, message: "Loading data", preferredStyle: .alert)
+//
+//        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+//        loadingIndicator.hidesWhenStopped = true
+//        if traitCollection.userInterfaceStyle == .light {
+//            loadingIndicator.style = UIActivityIndicatorView.Style.gray
+//        } else {
+//            loadingIndicator.style = UIActivityIndicatorView.Style.white
+//        }
+//        loadingIndicator.startAnimating();
+
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
         
         for i in 0...weeks.count-1 {
             let params : [String : String] = [ "apikey" : APP_ID, "dateDescriptor" : weeks[i], "ts": TS, "hash" : HASH]
             getUpNextData(url: URL, parameters: params, index: i)
         }
+        
+//        dismiss(animated: false, completion: nil)
         
 		
 		navigationController?.navigationBar.prefersLargeTitles = true
@@ -75,7 +90,7 @@ class UpNextTableViewController : UITableViewController {
     
     
     func getUpNextData(url: String, parameters: [String: String], index: Int) {
-        
+		
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
             response in
             if response.result.isSuccess {
@@ -139,6 +154,7 @@ class UpNextTableViewController : UITableViewController {
             UpNextComics.append(comics)
         }
         
+
     }
 
     
@@ -199,7 +215,7 @@ class UpNextTableViewController : UITableViewController {
         if let destination = segue.destination as? IssueViewController{
 
 
-            destination.comic = UpNextComics[(upNextTableView.indexPathForSelectedRow?.section)!][(upNextTableView.indexPathForSelectedRow?.row)!]
+            destination.comicID = UpNextComics[(upNextTableView.indexPathForSelectedRow?.section)!][(upNextTableView.indexPathForSelectedRow?.row)!]
 
 //            print((upNextTableView.indexPathForSelectedRow?.row)!)
 //            print((upNextTableView.indexPathForSelectedRow?.item)!)
