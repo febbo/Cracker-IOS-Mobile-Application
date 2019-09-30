@@ -26,7 +26,7 @@ class IssueViewController: UIViewController {
 	@IBOutlet weak var readButton: UIButton!
 	@IBOutlet weak var seriesButton: UIButton!
     
-    let apiURL = "https://gateway.marvel.com:443/v1/public/comics/"
+    let apiURL = "https://gateway.marvel.com/v1/public/comics/"
     let APP_ID = "7f0eb8f2cdf6f33136bc854d89281085"
     let HASH = "1bdc741bcbdaf3d87a0f0d6e6180f877"
     let TS = "1"
@@ -38,7 +38,7 @@ class IssueViewController: UIViewController {
 		navigationItem.largeTitleDisplayMode = .never
         
 //        RICHIESTA API
-        let singleIssueUrl = apiURL + "\(String(describing: comicID))"
+        let singleIssueUrl = apiURL + "\(comicID ?? 0)"
         let params : [String : String] = [ "apikey" : APP_ID, "ts": TS, "hash" : HASH]
         getUpNextData(url: singleIssueUrl, parameters: params)
         
@@ -95,6 +95,9 @@ class IssueViewController: UIViewController {
     }
     
     func updateComicData(json : JSON) {
+        print(json)
+        let status = json["status"]
+        print(status)
         titleComic.text = json["data"]["results"][0]["title"].stringValue
         dateComic.text = json["data"]["results"][0]["dates"][0]["date"].stringValue
         let nameCreator1 = json["data"]["results"][0]["creators"]["items"][0]["name"].stringValue

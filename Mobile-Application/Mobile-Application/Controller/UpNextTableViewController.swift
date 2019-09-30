@@ -37,7 +37,7 @@ class UpNextTableViewController : UITableViewController {
 	let weeks = ["thisWeek", "nextWeek", "thisMonth"]
 	let weeksTitle = ["This week", "Next week", "This month"]
     
-    var UpNextComics : [[Int]] = [[]]
+    var UpNextComics : [[Int]] = []
     
     
 	
@@ -65,6 +65,7 @@ class UpNextTableViewController : UITableViewController {
             let params : [String : String] = [ "apikey" : APP_ID, "dateDescriptor" : weeks[i], "ts": TS, "hash" : HASH]
             getUpNextData(url: URL, parameters: params, index: i)
         }
+        
         
         dismiss(animated: false, completion: nil)
         
@@ -148,11 +149,12 @@ class UpNextTableViewController : UITableViewController {
         let item = ExpandableSection(isExpanded: false, issues: titles)
         
         issues[index] = item
-        if index == 0{
-            UpNextComics[index] = comics
-        } else {
-            UpNextComics.append(comics)
-        }
+
+        UpNextComics.append(comics)
+        
+        print(UpNextComics)
+        
+        
         
 
     }
@@ -217,10 +219,11 @@ class UpNextTableViewController : UITableViewController {
 
             destination.comicID = UpNextComics[(upNextTableView.indexPathForSelectedRow?.section)!][(upNextTableView.indexPathForSelectedRow?.row)!]
 
-//            print((upNextTableView.indexPathForSelectedRow?.row)!)
-//            print((upNextTableView.indexPathForSelectedRow?.item)!)
-//            print((upNextTableView.indexPathForSelectedRow?.section)!)
-//            print((upNextTableView.indexPathForSelectedRow?.description)!)
+        print(UpNextComics[(upNextTableView.indexPathForSelectedRow?.section)!][(upNextTableView.indexPathForSelectedRow?.row)!])
+            print((upNextTableView.indexPathForSelectedRow?.row)!)
+            print((upNextTableView.indexPathForSelectedRow?.item)!)
+            print((upNextTableView.indexPathForSelectedRow?.section)!)
+            print((upNextTableView.indexPathForSelectedRow?.description)!)
 
         }
     }
