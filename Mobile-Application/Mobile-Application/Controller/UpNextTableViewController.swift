@@ -67,8 +67,6 @@ class UpNextTableViewController : UITableViewController {
         }
         
         
-        dismiss(animated: false, completion: nil)
-        
 		
 		navigationController?.navigationBar.prefersLargeTitles = true
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
@@ -77,6 +75,8 @@ class UpNextTableViewController : UITableViewController {
         
         upNextTableView.dataSource = self
         upNextTableView.delegate = self
+        
+        dismiss(animated: false, completion: nil)
 	}
     
     

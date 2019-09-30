@@ -95,9 +95,9 @@ class IssueViewController: UIViewController {
     }
     
     func updateComicData(json : JSON) {
-        print(json)
-        let status = json["status"]
-        print(status)
+//        print(json)
+//        let status = json["status"]
+//        print(status)
         titleComic.text = json["data"]["results"][0]["title"].stringValue
         dateComic.text = json["data"]["results"][0]["dates"][0]["date"].stringValue
         let nameCreator1 = json["data"]["results"][0]["creators"]["items"][0]["name"].stringValue
@@ -121,7 +121,7 @@ class IssueViewController: UIViewController {
         
         let imageURL = URL(string: imagePath + "." + imageExtension)
         imageComic.load(url: imageURL!)
-        print(imageURL!)
+//        print(imageURL!)
         
         
     }
