@@ -64,6 +64,9 @@ class UpNextTableViewController : UITableViewController {
         for i in 0...weeks.count-1 {
             let params : [String : String] = [ "apikey" : APP_ID, "dateDescriptor" : weeks[i], "ts": TS, "hash" : HASH]
             getUpNextData(url: URL, parameters: params, index: i)
+            if i == 2{
+                dismiss(animated: false, completion: nil)
+            }
         }
         
         
@@ -76,7 +79,7 @@ class UpNextTableViewController : UITableViewController {
         upNextTableView.dataSource = self
         upNextTableView.delegate = self
         
-        dismiss(animated: false, completion: nil)
+        
 	}
     
     

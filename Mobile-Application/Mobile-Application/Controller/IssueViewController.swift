@@ -99,7 +99,22 @@ class IssueViewController: UIViewController {
 //        let status = json["status"]
 //        print(status)
         titleComic.text = json["data"]["results"][0]["title"].stringValue
-        dateComic.text = json["data"]["results"][0]["dates"][0]["date"].stringValue
+        
+        let dateString = json["data"]["results"][0]["dates"][0]["date"].stringValue
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'hh:mm:ssZ"
+
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "MMM-dd-yyyy"
+
+        if let date = dateFormatterGet.date(from: "\(dateString)") {
+            dateComic.text = dateFormatterPrint.string(from: date)
+        } else {
+           print("There was an error decoding the string")
+            dateComic.text = "error"
+        }
+        
+        
         let nameCreator1 = json["data"]["results"][0]["creators"]["items"][0]["name"].stringValue
         let roleCreator1 = json["data"]["results"][0]["creators"]["items"][0]["role"].stringValue
         if nameCreator1 == "" || roleCreator1 == ""{
