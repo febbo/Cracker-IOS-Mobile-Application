@@ -37,7 +37,7 @@ class UpNextTableViewController : UITableViewController {
 	let weeks = ["thisWeek", "nextWeek", "thisMonth"]
 	let weeksTitle = ["This week", "Next week", "This month"]
     
-    var UpNextComics : [[Int]] = []
+    var UpNextComics : [[Int]] = [[0],[1],[2]]
     
     
 	
@@ -47,6 +47,21 @@ class UpNextTableViewController : UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+        showLoadingScreen()
+        
+        getApiData()
+		
+		navigationController?.navigationBar.prefersLargeTitles = true
+		tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+		tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+//		tableView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
+        
+//        upNextTableView.dataSource = self
+//        upNextTableView.delegate = self
+        
+	}
+    
+    func showLoadingScreen() {
         let alert = UIAlertController(title: nil, message: "Loading data", preferredStyle: .alert)
 
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
@@ -61,26 +76,9 @@ class UpNextTableViewController : UITableViewController {
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
         
-        for i in 0...weeks.count-1 {
-            let params : [String : String] = [ "apikey" : APP_ID, "dateDescriptor" : weeks[i], "ts": TS, "hash" : HASH]
-            getUpNextData(url: URL, parameters: params, index: i)
-            if i == 2{
-                dismiss(animated: false, completion: nil)
-            }
-        }
-        
-        
-		
-		navigationController?.navigationBar.prefersLargeTitles = true
-		tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
-		tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
-//		tableView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
-        
-        upNextTableView.dataSource = self
-        upNextTableView.delegate = self
-        
-        
-	}
+        sleep(4)
+        dismiss(animated: false, completion: nil)
+    }
     
     
     
@@ -90,7 +88,12 @@ class UpNextTableViewController : UITableViewController {
     //Write the getWeatherData method here:
     
     
-    
+    func getApiData() {
+        for i in 0...weeks.count-1 {
+            let params : [String : String] = [ "apikey" : APP_ID, "dateDescriptor" : weeks[i], "ts": TS, "hash" : HASH]
+            getUpNextData(url: URL, parameters: params, index: i)
+        }
+    }
     
     
     func getUpNextData(url: String, parameters: [String: String], index: Int) {
@@ -153,7 +156,7 @@ class UpNextTableViewController : UITableViewController {
         
         issues[index] = item
 
-        UpNextComics.append(comics)
+        UpNextComics[index] = comics
         
         print(UpNextComics)
         
