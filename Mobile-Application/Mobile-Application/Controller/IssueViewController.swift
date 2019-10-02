@@ -17,6 +17,9 @@ class IssueViewController: UIViewController {
     @IBOutlet weak var creatorsComic1: UILabel!
     @IBOutlet weak var descriptionComic: UITextView!
     @IBOutlet weak var imageComic: UIImageView!
+    @IBOutlet weak var creatorsComic2: UILabel!
+    @IBOutlet weak var creatorsComic3: UILabel!
+    
     
     var comicID : Int?
     
@@ -114,13 +117,40 @@ class IssueViewController: UIViewController {
             dateComic.text = "error"
         }
         
+        let numberCreators = json["data"]["results"][0]["creators"]["available"].intValue
+        print(numberCreators)
+        print(type(of: numberCreators))
         
-        let nameCreator1 = json["data"]["results"][0]["creators"]["items"][0]["name"].stringValue
-        let roleCreator1 = json["data"]["results"][0]["creators"]["items"][0]["role"].stringValue
-        if nameCreator1 == "" || roleCreator1 == ""{
-            creatorsComic1.text = "autori non disponibili"
-        } else {
+        switch numberCreators{
+        case 0:
+            creatorsComic1.text = "Autori"
+            creatorsComic2.text = "non"
+            creatorsComic3.text = "disponibili"
+        case 1:
+            let nameCreator1 = json["data"]["results"][0]["creators"]["items"][0]["name"].stringValue
+            let roleCreator1 = json["data"]["results"][0]["creators"]["items"][0]["role"].stringValue
             creatorsComic1.text = "\(nameCreator1) : \(roleCreator1)"
+        case 2:
+            let nameCreator1 = json["data"]["results"][0]["creators"]["items"][0]["name"].stringValue
+            let roleCreator1 = json["data"]["results"][0]["creators"]["items"][0]["role"].stringValue
+            creatorsComic1.text = "\(nameCreator1) : \(roleCreator1)"
+            let nameCreator2 = json["data"]["results"][0]["creators"]["items"][1]["name"].stringValue
+            let roleCreator2 = json["data"]["results"][0]["creators"]["items"][1]["role"].stringValue
+            creatorsComic2.text = "\(nameCreator2) : \(roleCreator2)"
+        case 3...100:
+            let nameCreator1 = json["data"]["results"][0]["creators"]["items"][0]["name"].stringValue
+            let roleCreator1 = json["data"]["results"][0]["creators"]["items"][0]["role"].stringValue
+            creatorsComic1.text = "\(nameCreator1) : \(roleCreator1)"
+            let nameCreator2 = json["data"]["results"][0]["creators"]["items"][1]["name"].stringValue
+            let roleCreator2 = json["data"]["results"][0]["creators"]["items"][1]["role"].stringValue
+            creatorsComic2.text = "\(nameCreator2) : \(roleCreator2)"
+            let nameCreator3 = json["data"]["results"][0]["creators"]["items"][2]["name"].stringValue
+            let roleCreator3 = json["data"]["results"][0]["creators"]["items"][2]["role"].stringValue
+            creatorsComic3.text = "\(nameCreator3) : \(roleCreator3)"
+        default:
+            creatorsComic1.text = ""
+            creatorsComic2.text = ""
+            creatorsComic3.text = ""
         }
         
         let description = json["data"]["results"][0]["description"].stringValue

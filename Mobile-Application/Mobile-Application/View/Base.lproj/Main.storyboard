@@ -344,6 +344,8 @@
                     <navigationItem key="navigationItem" id="CfP-JB-Z5a"/>
                     <connections>
                         <outlet property="creatorsComic1" destination="xoD-x7-poF" id="Uws-9Q-8Co"/>
+                        <outlet property="creatorsComic2" destination="S8k-a3-oQg" id="t8L-Xb-MeG"/>
+                        <outlet property="creatorsComic3" destination="Aow-G6-ARw" id="B1f-pD-UDc"/>
                         <outlet property="dateComic" destination="q4T-bE-stF" id="woO-uk-dZs"/>
                         <outlet property="descriptionComic" destination="NZJ-zQ-eXB" id="jxJ-9q-V1x"/>
                         <outlet property="imageComic" destination="5JR-bc-aQV" id="z2F-Gf-C8d"/>
