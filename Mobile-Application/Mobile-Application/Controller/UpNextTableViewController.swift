@@ -76,7 +76,7 @@ class UpNextTableViewController : UITableViewController {
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
         
-        sleep(4)
+        sleep(1)
         dismiss(animated: false, completion: nil)
     }
     
