@@ -59,22 +59,6 @@ class IssueViewController: UIViewController {
 
 
     }
-	
-	@objc func readIssueButton(button: UIButton) {
-		isRead = !isRead
-		if (isRead) {
-			readButton.backgroundColor = UIColor(named: "DarkGreen")
-			readButton.setTitle("MARK AS UNREAD", for: .normal)
-		}
-		else {
-			readButton.backgroundColor = UIColor(named: "Red")
-			readButton.setTitle("MARK AS READ", for: .normal)
-		}
-	}
-
-	@objc func goToSeriesButton(button: UIButton) {
-		self.performSegue(withIdentifier: "goToSeries", sender: self)
-	}
     
     func getUpNextData(url: String, parameters: [String: String]) {
         
@@ -171,6 +155,25 @@ class IssueViewController: UIViewController {
         
     }
     
+	//MARK: - Actions
+	
+	//TODO: completare con dati profilo
+	
+	@objc func readIssueButton(button: UIButton) {
+		isRead = !isRead
+		if (isRead) {
+			readButton.backgroundColor = UIColor(named: "DarkGreen")
+			readButton.setTitle("MARK AS UNREAD", for: .normal)
+		}
+		else {
+			readButton.backgroundColor = UIColor(named: "Red")
+			readButton.setTitle("MARK AS READ", for: .normal)
+		}
+	}
+
+	@objc func goToSeriesButton(button: UIButton) {
+		self.performSegue(withIdentifier: "goToSeries", sender: self)
+	}
 }
 
 extension UIImageView {
