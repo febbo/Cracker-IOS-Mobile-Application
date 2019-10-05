@@ -49,15 +49,13 @@ class UpNextTableViewController : UITableViewController {
 		
         showLoadingScreen()
         
-        getApiData()
-		
+        
 		navigationController?.navigationBar.prefersLargeTitles = true
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
 		tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
 //		tableView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
+
         
-//        upNextTableView.dataSource = self
-//        upNextTableView.delegate = self
         
 	}
     
@@ -76,7 +74,8 @@ class UpNextTableViewController : UITableViewController {
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
         
-        sleep(1)
+        getApiData()
+        
         dismiss(animated: false, completion: nil)
     }
     
@@ -93,6 +92,7 @@ class UpNextTableViewController : UITableViewController {
             let params : [String : String] = [ "apikey" : APP_ID, "dateDescriptor" : weeks[i], "ts": TS, "hash" : HASH]
             getUpNextData(url: URL, parameters: params, index: i)
         }
+        return
     }
     
     
@@ -225,11 +225,11 @@ class UpNextTableViewController : UITableViewController {
 
             destination.comicID = UpNextComics[(upNextTableView.indexPathForSelectedRow?.section)!][(upNextTableView.indexPathForSelectedRow?.row)!]
 
-        print(UpNextComics[(upNextTableView.indexPathForSelectedRow?.section)!][(upNextTableView.indexPathForSelectedRow?.row)!])
-            print((upNextTableView.indexPathForSelectedRow?.row)!)
-            print((upNextTableView.indexPathForSelectedRow?.item)!)
-            print((upNextTableView.indexPathForSelectedRow?.section)!)
-            print((upNextTableView.indexPathForSelectedRow?.description)!)
+//        print(UpNextComics[(upNextTableView.indexPathForSelectedRow?.section)!][(upNextTableView.indexPathForSelectedRow?.row)!])
+//            print((upNextTableView.indexPathForSelectedRow?.row)!)
+//            print((upNextTableView.indexPathForSelectedRow?.item)!)
+//            print((upNextTableView.indexPathForSelectedRow?.section)!)
+//            print((upNextTableView.indexPathForSelectedRow?.description)!)
 
         }
     }

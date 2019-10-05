@@ -33,6 +33,8 @@ class IssueViewController: UIViewController {
     let APP_ID = "7f0eb8f2cdf6f33136bc854d89281085"
     let HASH = "1bdc741bcbdaf3d87a0f0d6e6180f877"
     let TS = "1"
+    
+    var serieURL: String = ""
 	
 	
 	override func viewDidLoad() {
@@ -60,6 +62,8 @@ class IssueViewController: UIViewController {
 
     }
     
+    //MARK: - Networking
+    
     func getUpNextData(url: String, parameters: [String: String]) {
         
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
@@ -80,6 +84,8 @@ class IssueViewController: UIViewController {
         }
         
     }
+    
+    //MARK: - JSON Parsing
     
     func updateComicData(json : JSON) {
 //        print(json)
@@ -152,6 +158,7 @@ class IssueViewController: UIViewController {
         imageComic.load(url: imageURL!)
 //        print(imageURL!)
         
+        serieURL = json["data"]["results"][0]["series"]["resourceURI"].stringValue
         
     }
     
@@ -174,6 +181,14 @@ class IssueViewController: UIViewController {
 	@objc func goToSeriesButton(button: UIButton) {
 		self.performSegue(withIdentifier: "goToSeries", sender: self)
 	}
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? SeriesViewController{
+
+            destination.apiURL = serieURL
+
+        }
+    }
 }
 
 extension UIImageView {
