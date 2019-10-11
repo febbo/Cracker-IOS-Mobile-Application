@@ -34,6 +34,15 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let HASH = "1bdc741bcbdaf3d87a0f0d6e6180f877"
     let TS = "1"
     
+    let cellID = "IssueCell"
+    
+    var issues = [
+        ExpandableSection(isExpanded: false, issues: []),
+        ExpandableSection(isExpanded: false, issues: [])
+    ]
+    
+    let sectionsTitle : Any = []
+    
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -125,6 +134,33 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print(imageURL!)
         
         
+//        SECTIONS OF ISSUES
+        var titles : [String] = []
+        let availables = json["data"]["results"][0]["comics"]["available"].intValue - 1
+        
+        print(availables)
+        if availables == 0 {
+            let comicTitle = json["data"]["results"][0]["comics"]["items"][0]["name"].stringValue
+            titles.append(comicTitle)
+        }else{
+            for i in 0...availables {
+                let comicTitle = json["data"]["results"][0]["comics"]["items"][i]["name"].stringValue
+    //            print(title!)
+                if comicTitle != ""{
+                    titles.append(comicTitle)
+                }
+            }
+        }
+        
+        let item = ExpandableSection(isExpanded: false, issues: titles)
+        
+//        issues[index] = item
+        
+        issues[0] = item
+        
+        
+        
+        
         
         
     }
@@ -134,16 +170,22 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 	//LEO
 	func numberOfSections(in tableView: UITableView) -> Int {
 		// Int(number of issue / 10) + 1
-		return 2
+		return issues.count
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 10
+		if !issues[section].isExpanded {
+            return 0
+        }
+        return issues[section].issues.count
 	}
 	
 	//LEO
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "IssueCell", for: indexPath)
+        
+        let issue = issues[indexPath.section].issues[indexPath.row]
+        cell.textLabel?.text = issue
 		
 		return cell
 	}
@@ -166,7 +208,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		button.setImage(openImage, for: .normal)
 		button.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 		button.imageView?.contentMode = .scaleAspectFit
-		//button.addTarget(self, action: #selector(handleExpandClose), for: .touchUpInside)
+		button.addTarget(self, action: #selector(handleExpandClose), for: .touchUpInside)
 		
 		return button
 	}
@@ -204,7 +246,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 	}
 
 	//LEO
-	/*
+	
 	@objc func handleExpandClose(button: UIButton) {
 		
 		let section = button.tag
@@ -220,11 +262,11 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		button.setImage(isExpanded ? openImage : closeImage, for: .normal)
 		
 		if isExpanded {
-			tableView.deleteRows(at: indexPaths, with: .fade)
+			issuesTable.deleteRows(at: indexPaths, with: .fade)
 		}
 		else {
-			tableView.insertRows(at: indexPaths, with: .fade)
+			issuesTable.insertRows(at: indexPaths, with: .fade)
 		}
 	}
-*/
+
 }

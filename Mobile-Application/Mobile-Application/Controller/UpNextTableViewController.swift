@@ -114,6 +114,7 @@ class UpNextTableViewController : UITableViewController {
 //                self.cityLabel.text = "Connection Issues"
             }
         }
+        return
         
     }
     
@@ -160,7 +161,7 @@ class UpNextTableViewController : UITableViewController {
         
 //        print(UpNextComics)
         
-        
+        return
         
 
     }
