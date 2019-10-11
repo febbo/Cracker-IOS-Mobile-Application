@@ -16,7 +16,7 @@ class SeriesViewController: UIViewController {
     @IBOutlet weak var yearsSerie: UILabel!
 	@IBOutlet weak var rating: UILabel!
 	@IBOutlet weak var imageSerie: UIImageView!
-    
+	@IBOutlet weak var descriptionText: UITextView!
 	
 	@IBOutlet weak var followButton: UIButton!
 	@IBOutlet weak var readButton: UIButton!

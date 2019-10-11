@@ -362,6 +362,8 @@
         <!--Series-->
         <scene sceneID="cm6-8M-gwP">
             <objects>
+                <exit id="vFl-wo-8lr" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zJE-EB-Vnf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController title="Series" id="gWk-4X-qkZ" customClass="SeriesViewController" customModule="Mobile_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xk5-ic-Dcv" customClass="UIScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -477,13 +479,85 @@
                                     <constraint firstAttribute="height" constant="60" id="9mu-Uh-ALQ"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pE8-m5-pYw" userLabel="DescriptionView">
+                                <rect key="frame" x="20" y="378" width="374" height="90"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oxP-jE-7SN" userLabel="GreenViewNoCornerRadius">
+                                        <rect key="frame" x="0.0" y="25" width="374" height="25"/>
+                                        <color key="backgroundColor" name="LightGreen"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="04s-zh-vH8"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4l-Yx-Loa" userLabel="GreenView">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISW-v9-k03" userLabel="DescriptionTitle">
+                                                <rect key="frame" x="15" y="13" width="100" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" name="BlackAlways"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="LightGreen"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ISW-v9-k03" secondAttribute="trailing" constant="20" symbolic="YES" id="1NW-DK-szN"/>
+                                            <constraint firstItem="ISW-v9-k03" firstAttribute="leading" secondItem="G4l-Yx-Loa" secondAttribute="leading" constant="15" id="CdX-Yq-GHw"/>
+                                            <constraint firstAttribute="height" constant="50" id="H2l-wc-3zn"/>
+                                            <constraint firstItem="ISW-v9-k03" firstAttribute="centerY" secondItem="G4l-Yx-Loa" secondAttribute="centerY" id="fOz-Za-YYg"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="G4l-Yx-Loa" firstAttribute="leading" secondItem="pE8-m5-pYw" secondAttribute="leading" id="FDE-bl-7cL"/>
+                                    <constraint firstAttribute="height" constant="90" id="eS3-QS-Wth"/>
+                                    <constraint firstAttribute="trailing" secondItem="G4l-Yx-Loa" secondAttribute="trailing" id="fcE-nS-4gm"/>
+                                    <constraint firstItem="oxP-jE-7SN" firstAttribute="top" secondItem="pE8-m5-pYw" secondAttribute="top" constant="25" id="ibz-Ho-8JB"/>
+                                    <constraint firstAttribute="trailing" secondItem="oxP-jE-7SN" secondAttribute="trailing" id="q0e-Ml-CrO"/>
+                                    <constraint firstItem="oxP-jE-7SN" firstAttribute="leading" secondItem="pE8-m5-pYw" secondAttribute="leading" id="rUs-Vs-YaZ"/>
+                                    <constraint firstItem="G4l-Yx-Loa" firstAttribute="top" secondItem="pE8-m5-pYw" secondAttribute="top" id="y5O-js-4Go"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0E-SK-1uX" userLabel="DescriptionText">
+                                <rect key="frame" x="20" y="428" width="374" height="141.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="rect" keyPath="textContainerInset">
+                                        <rect key="value" x="10" y="10" width="10" height="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
+                            <constraint firstItem="w3a-pj-Yjx" firstAttribute="trailing" secondItem="b0E-SK-1uX" secondAttribute="trailing" constant="20" id="7c3-BI-sTg"/>
                             <constraint firstItem="w3a-pj-Yjx" firstAttribute="trailing" secondItem="Mlh-ER-oIg" secondAttribute="trailing" constant="20" id="7eT-Of-Fgh"/>
                             <constraint firstItem="uw2-Cg-wAY" firstAttribute="leading" secondItem="w3a-pj-Yjx" secondAttribute="leading" constant="20" id="8eV-6W-QGa"/>
                             <constraint firstItem="uw2-Cg-wAY" firstAttribute="top" secondItem="w3a-pj-Yjx" secondAttribute="top" constant="20" id="9KU-dV-JKJ"/>
+                            <constraint firstItem="pE8-m5-pYw" firstAttribute="top" secondItem="Mlh-ER-oIg" secondAttribute="bottom" constant="20" id="Av7-rY-anY"/>
+                            <constraint firstItem="pE8-m5-pYw" firstAttribute="leading" secondItem="w3a-pj-Yjx" secondAttribute="leading" constant="20" id="Qo2-Cv-Plq"/>
+                            <constraint firstItem="b0E-SK-1uX" firstAttribute="leading" secondItem="xk5-ic-Dcv" secondAttribute="leading" constant="20" id="T2Q-hr-ArD"/>
+                            <constraint firstItem="w3a-pj-Yjx" firstAttribute="trailing" secondItem="pE8-m5-pYw" secondAttribute="trailing" constant="20" id="lEK-kI-p5n"/>
                             <constraint firstItem="Mlh-ER-oIg" firstAttribute="top" secondItem="uw2-Cg-wAY" secondAttribute="bottom" constant="20" id="m0r-9L-Rq5"/>
+                            <constraint firstItem="b0E-SK-1uX" firstAttribute="top" secondItem="Mlh-ER-oIg" secondAttribute="bottom" constant="70" id="oYB-Te-mux"/>
                             <constraint firstItem="w3a-pj-Yjx" firstAttribute="trailing" secondItem="uw2-Cg-wAY" secondAttribute="trailing" constant="20" id="qto-3g-K57"/>
                             <constraint firstItem="Mlh-ER-oIg" firstAttribute="leading" secondItem="w3a-pj-Yjx" secondAttribute="leading" constant="20" id="vAZ-kx-Hvb"/>
                         </constraints>
@@ -491,6 +565,7 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="bAt-5T-r8R"/>
                     <connections>
+                        <outlet property="descriptionText" destination="b0E-SK-1uX" id="2Fm-MR-yN5"/>
                         <outlet property="followButton" destination="cIV-WF-rKf" id="fEJ-Qq-n64"/>
                         <outlet property="imageSerie" destination="HMh-8r-ytX" id="FtM-im-dXw"/>
                         <outlet property="rating" destination="Sjv-do-4oU" id="HF7-Ie-KkN"/>
@@ -499,8 +574,6 @@
                         <outlet property="yearsSerie" destination="okZ-8b-x8j" id="vyp-Jh-Otu"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zJE-EB-Vnf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="vFl-wo-8lr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2798.5507246376815" y="-50.223214285714285"/>
         </scene>
