@@ -108,8 +108,8 @@ class IssueViewController: UIViewController {
         }
         
         let numberCreators = json["data"]["results"][0]["creators"]["available"].intValue
-        print(numberCreators)
-        print(type(of: numberCreators))
+//        print(numberCreators)
+//        print(type(of: numberCreators))
         
         switch numberCreators{
         case 0:

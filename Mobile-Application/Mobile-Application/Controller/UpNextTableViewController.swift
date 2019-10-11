@@ -158,7 +158,7 @@ class UpNextTableViewController : UITableViewController {
 
         UpNextComics[index] = comics
         
-        print(UpNextComics)
+//        print(UpNextComics)
         
         
         
