@@ -10,6 +10,7 @@
 		0E529E1015252BD7D472587B /* Pods_Mobile_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBA7D620BBB417A1014168D /* Pods_Mobile_Application.framework */; };
 		1447E8EDCF89A0592342EBF2 /* Pods_Mobile_ApplicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7E1F3B9E3CC4C323BA4346 /* Pods_Mobile_ApplicationUITests.framework */; };
 		463C44CA234204B200F82242 /* leo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463C44C9234204B200F82242 /* leo.swift */; };
+		4649832E2350B87900ED5842 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4649832D2350B87900ED5842 /* LogInViewController.swift */; };
 		4658F4A02301C7620007E223 /* ComicDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658F49F2301C7620007E223 /* ComicDataModel.swift */; };
 		4658F4A22301C8D60007E223 /* SerieDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658F4A12301C8D60007E223 /* SerieDataModel.swift */; };
 		4658F4A42301CAF40007E223 /* CreatorDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658F4A32301CAF40007E223 /* CreatorDataModel.swift */; };
@@ -53,6 +54,11 @@
 
 /* Begin PBXFileReference section */
 		463C44C9234204B200F82242 /* leo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leo.swift; sourceTree = "<group>"; };
+		4649832D2350B87900ED5842 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		464983312350C78200ED5842 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		464983332350C79400ED5842 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		464983352350C7A400ED5842 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		464983372350C7B500ED5842 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4658F49F2301C7620007E223 /* ComicDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDataModel.swift; sourceTree = "<group>"; };
 		4658F4A12301C8D60007E223 /* SerieDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieDataModel.swift; sourceTree = "<group>"; };
 		4658F4A32301CAF40007E223 /* CreatorDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorDataModel.swift; sourceTree = "<group>"; };
@@ -230,6 +236,10 @@
 		CF2DA1939B612995706DD583 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				464983372350C7B500ED5842 /* SystemConfiguration.framework */,
+				464983352350C7A400ED5842 /* AuthenticationServices.framework */,
+				464983332350C79400ED5842 /* SafariServices.framework */,
+				464983312350C78200ED5842 /* LocalAuthentication.framework */,
 				AEBA7D620BBB417A1014168D /* Pods_Mobile_Application.framework */,
 				C0D5BE9E361AF9F8F45C63C4 /* Pods_Mobile_ApplicationTests.framework */,
 				DB7E1F3B9E3CC4C323BA4346 /* Pods_Mobile_ApplicationUITests.framework */,
@@ -487,6 +497,7 @@
 				C41EBAE52345F2B6006D3F46 /* SeriesViewController.swift in Sources */,
 				463C44CA234204B200F82242 /* leo.swift in Sources */,
 				C4E48ED722FC90EB00E8359D /* IssueViewController.swift in Sources */,
+				4649832E2350B87900ED5842 /* LogInViewController.swift in Sources */,
 				4658F4A22301C8D60007E223 /* SerieDataModel.swift in Sources */,
 				C40915BD22FC74D000FE0A1A /* HeaderView.swift in Sources */,
 				46D1BB48227C4B1B00219006 /* AppDelegate.swift in Sources */,
@@ -682,10 +693,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "FebboFerreri.Mobile-Application";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				nin = "";
 			};
 			name = Debug;
 		};
@@ -702,10 +715,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "FebboFerreri.Mobile-Application";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				nin = "";
 			};
 			name = Release;
 		};
