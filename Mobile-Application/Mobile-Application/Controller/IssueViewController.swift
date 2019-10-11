@@ -98,7 +98,7 @@ class IssueViewController: UIViewController {
         dateFormatterGet.dateFormat = "yyyy-MM-dd'T'hh:mm:ssZ"
 
         let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "MMM-dd-yyyy"
+        dateFormatterPrint.dateFormat = "dd-MM-yyyy"
 
         if let date = dateFormatterGet.date(from: "\(dateString)") {
             dateComic.text = dateFormatterPrint.string(from: date)
