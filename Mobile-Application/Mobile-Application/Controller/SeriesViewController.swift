@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class SeriesViewController: UIViewController {
+class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var titleSerie: UILabel!
     @IBOutlet weak var yearsSerie: UILabel!
@@ -20,10 +20,13 @@ class SeriesViewController: UIViewController {
 	
 	@IBOutlet weak var followButton: UIButton!
 	@IBOutlet weak var readButton: UIButton!
+	@IBOutlet weak var issuesTable: UITableView!
 	
 	var follows = false
 	var allRead = false
-    
+	
+	var openImage = UIImage(named: "down")
+	var closeImage = UIImage(named: "up")
     
     var serieID : Int?
     var apiURL : String?
@@ -63,6 +66,9 @@ class SeriesViewController: UIViewController {
 		
 		followButton.addTarget(self, action: #selector(followThisSeries), for: .touchUpInside)
 		readButton.addTarget(self, action: #selector(markAllAsRead), for: .touchUpInside)
+		
+		issuesTable.delegate = self
+		issuesTable.dataSource = self
 	}
 	
     //MARK: - Networking
@@ -123,6 +129,48 @@ class SeriesViewController: UIViewController {
         
     }
 	
+	//MARK: - Table Control
+	
+	//LEO
+	func numberOfSections(in tableView: UITableView) -> Int {
+		// Int(number of issue / 10) + 1
+		return 2
+	}
+	
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 10
+	}
+	
+	//LEO
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "IssueCell", for: indexPath)
+		
+		return cell
+	}
+	
+	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		return CGFloat(55)
+	}
+	
+	//LEO
+	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		
+		let button = UIButton()
+		button.setTitle("Da sistemare", for: .normal)
+		button.setTitleColor(.black, for: .normal)
+		button.backgroundColor = UIColor(named: "LightGreen")
+		button.layer.cornerRadius = 15
+		button.contentHorizontalAlignment = .left
+		button.titleEdgeInsets.left = 15
+		button.tag = section
+		button.setImage(openImage, for: .normal)
+		button.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+		button.imageView?.contentMode = .scaleAspectFit
+		//button.addTarget(self, action: #selector(handleExpandClose), for: .touchUpInside)
+		
+		return button
+	}
+	
 	//MARK: - Actions
 	
 	//TODO: completare con dati profilo
@@ -154,4 +202,29 @@ class SeriesViewController: UIViewController {
 			readButton.setTitle("MARK ALL AS READ", for: .normal)
 		}
 	}
+
+	//LEO
+	/*
+	@objc func handleExpandClose(button: UIButton) {
+		
+		let section = button.tag
+		
+		var indexPaths = [IndexPath]()
+		for row in issues[section].issues.indices {
+			let indexPath = IndexPath(row: row, section: section)
+			indexPaths.append(indexPath)
+		}
+		let isExpanded = issues[section].isExpanded
+		issues[section].isExpanded = !isExpanded
+		
+		button.setImage(isExpanded ? openImage : closeImage, for: .normal)
+		
+		if isExpanded {
+			tableView.deleteRows(at: indexPaths, with: .fade)
+		}
+		else {
+			tableView.insertRows(at: indexPaths, with: .fade)
+		}
+	}
+*/
 }

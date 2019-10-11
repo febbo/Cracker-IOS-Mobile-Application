@@ -543,6 +543,26 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="EIY-mq-mtQ" userLabel="IssuesTable">
+                                <rect key="frame" x="20" y="589.5" width="374" height="135.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IssueCell" id="iiF-nv-ud1">
+                                        <rect key="frame" x="0.0" y="55.5" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iiF-nv-ud1" id="t9E-4W-yYe">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
@@ -551,13 +571,17 @@
                             <constraint firstItem="uw2-Cg-wAY" firstAttribute="leading" secondItem="w3a-pj-Yjx" secondAttribute="leading" constant="20" id="8eV-6W-QGa"/>
                             <constraint firstItem="uw2-Cg-wAY" firstAttribute="top" secondItem="w3a-pj-Yjx" secondAttribute="top" constant="20" id="9KU-dV-JKJ"/>
                             <constraint firstItem="pE8-m5-pYw" firstAttribute="top" secondItem="Mlh-ER-oIg" secondAttribute="bottom" constant="20" id="Av7-rY-anY"/>
+                            <constraint firstItem="w3a-pj-Yjx" firstAttribute="bottom" secondItem="EIY-mq-mtQ" secondAttribute="bottom" constant="88" id="JJV-pO-D9Z"/>
                             <constraint firstItem="pE8-m5-pYw" firstAttribute="leading" secondItem="w3a-pj-Yjx" secondAttribute="leading" constant="20" id="Qo2-Cv-Plq"/>
                             <constraint firstItem="b0E-SK-1uX" firstAttribute="leading" secondItem="xk5-ic-Dcv" secondAttribute="leading" constant="20" id="T2Q-hr-ArD"/>
+                            <constraint firstItem="EIY-mq-mtQ" firstAttribute="top" secondItem="b0E-SK-1uX" secondAttribute="bottom" constant="20" id="VEu-5j-zr9"/>
+                            <constraint firstItem="w3a-pj-Yjx" firstAttribute="trailing" secondItem="EIY-mq-mtQ" secondAttribute="trailing" constant="20" id="WWd-sZ-OSb"/>
                             <constraint firstItem="w3a-pj-Yjx" firstAttribute="trailing" secondItem="pE8-m5-pYw" secondAttribute="trailing" constant="20" id="lEK-kI-p5n"/>
                             <constraint firstItem="Mlh-ER-oIg" firstAttribute="top" secondItem="uw2-Cg-wAY" secondAttribute="bottom" constant="20" id="m0r-9L-Rq5"/>
                             <constraint firstItem="b0E-SK-1uX" firstAttribute="top" secondItem="Mlh-ER-oIg" secondAttribute="bottom" constant="70" id="oYB-Te-mux"/>
                             <constraint firstItem="w3a-pj-Yjx" firstAttribute="trailing" secondItem="uw2-Cg-wAY" secondAttribute="trailing" constant="20" id="qto-3g-K57"/>
                             <constraint firstItem="Mlh-ER-oIg" firstAttribute="leading" secondItem="w3a-pj-Yjx" secondAttribute="leading" constant="20" id="vAZ-kx-Hvb"/>
+                            <constraint firstItem="EIY-mq-mtQ" firstAttribute="leading" secondItem="w3a-pj-Yjx" secondAttribute="leading" constant="20" id="xlE-Hn-9LO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w3a-pj-Yjx"/>
                     </view>
@@ -566,6 +590,7 @@
                         <outlet property="descriptionText" destination="b0E-SK-1uX" id="2Fm-MR-yN5"/>
                         <outlet property="followButton" destination="cIV-WF-rKf" id="fEJ-Qq-n64"/>
                         <outlet property="imageSerie" destination="HMh-8r-ytX" id="FtM-im-dXw"/>
+                        <outlet property="issuesTable" destination="EIY-mq-mtQ" id="1nu-zJ-C0k"/>
                         <outlet property="rating" destination="Sjv-do-4oU" id="HF7-Ie-KkN"/>
                         <outlet property="readButton" destination="842-ym-pnH" id="AE7-mu-HDl"/>
                         <outlet property="titleSerie" destination="IyE-Oi-T7i" id="8JS-lR-wnc"/>
