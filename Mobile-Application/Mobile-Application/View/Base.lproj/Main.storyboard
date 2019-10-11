@@ -29,7 +29,7 @@
         <!--Profile-->
         <scene sceneID="DKS-OI-Iuc">
             <objects>
-                <viewController title="Profile" id="xzN-Ct-MKk" sceneMemberID="viewController">
+                <viewController title="Profile" id="xzN-Ct-MKk" customClass="ProfileViewController" customModule="Mobile_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lE1-Ay-DHg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,7 +95,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1T-1q-6cN">
                                                                 <rect key="frame" x="20" y="13" width="45" height="24"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" name="BlackAlways"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -157,7 +157,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fsi-ma-wug" userLabel="SeriesView">
-                                                <rect key="frame" x="20" y="330" width="374" height="200"/>
+                                                <rect key="frame" x="20" y="330" width="374" height="240"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3m-ju-ELg" userLabel="GreenViewNoCornerRadius">
                                                         <rect key="frame" x="0.0" y="25" width="374" height="25"/>
@@ -172,7 +172,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your series" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzX-yC-qsl" userLabel="YourSeries">
                                                                 <rect key="frame" x="20" y="13" width="95.5" height="24"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" name="BlackAlways"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cF-DX-vR4" userLabel="SeeAllButton">
@@ -209,23 +209,48 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rYr-Jc-8du">
-                                                        <rect key="frame" x="0.0" y="50" width="374" height="150"/>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rYr-Jc-8du" userLabel="SeriesCollection">
+                                                        <rect key="frame" x="0.0" y="50" width="374" height="190"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AdM-qM-I06">
-                                                            <size key="itemSize" width="50" height="50"/>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="AdM-qM-I06">
+                                                            <size key="itemSize" width="180" height="180"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
-                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uWX-cl-wzh">
-                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SeriesCell" id="uWX-cl-wzh" customClass="SeriesCollectionViewCell" customModule="Mobile_Application" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jCX-JJ-P6N">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t6y-2X-p7c">
+                                                                            <rect key="frame" x="15" y="15" width="175" height="160"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="160" id="1Fu-OC-c5d"/>
+                                                                                <constraint firstAttribute="width" constant="160" id="AXz-oT-4d4"/>
+                                                                                <constraint firstAttribute="width" secondItem="t6y-2X-p7c" secondAttribute="height" multiplier="1:1" id="EJH-9Z-4PR"/>
+                                                                            </constraints>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                    <integer key="value" value="15"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </imageView>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="bottom" secondItem="t6y-2X-p7c" secondAttribute="bottom" constant="15" id="2I1-hH-Sct"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="t6y-2X-p7c" secondAttribute="trailing" id="NqP-2x-ScX"/>
+                                                                        <constraint firstItem="t6y-2X-p7c" firstAttribute="top" secondItem="jCX-JJ-P6N" secondAttribute="top" constant="15" id="OeE-fJ-G42"/>
+                                                                        <constraint firstItem="t6y-2X-p7c" firstAttribute="leading" secondItem="jCX-JJ-P6N" secondAttribute="leading" constant="15" id="ory-hH-Ao2"/>
+                                                                    </constraints>
                                                                 </collectionViewCellContentView>
+                                                                <size key="customSize" width="190" height="190"/>
+                                                                <connections>
+                                                                    <outlet property="seriesImage" destination="t6y-2X-p7c" id="s32-VQ-w2J"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
                                                         <userDefinedRuntimeAttributes>
@@ -246,7 +271,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="rYr-Jc-8du" secondAttribute="trailing" id="iKQ-Of-Z1C"/>
                                                     <constraint firstItem="m3m-ju-ELg" firstAttribute="leading" secondItem="Fsi-ma-wug" secondAttribute="leading" id="k0m-kK-jhm"/>
                                                     <constraint firstItem="rYr-Jc-8du" firstAttribute="leading" secondItem="Fsi-ma-wug" secondAttribute="leading" id="kBn-P4-KKF"/>
-                                                    <constraint firstAttribute="height" constant="200" id="sFt-D1-O1C"/>
+                                                    <constraint firstAttribute="height" constant="240" id="sFt-D1-O1C"/>
                                                     <constraint firstItem="A22-Ua-fLo" firstAttribute="leading" secondItem="Fsi-ma-wug" secondAttribute="leading" id="t3t-eV-jWe"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
@@ -256,7 +281,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEV-WV-k8Z">
-                                                <rect key="frame" x="132" y="550" width="150" height="50"/>
+                                                <rect key="frame" x="132" y="590" width="150" height="50"/>
                                                 <color key="backgroundColor" name="Red"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="OTd-iq-4k5"/>
@@ -311,6 +336,9 @@
                         <viewLayoutGuide key="safeArea" id="TPh-Ig-no0"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" largeTitleDisplayMode="always" id="zjK-Gu-bbg"/>
+                    <connections>
+                        <outlet property="seriesCollection" destination="rYr-Jc-8du" id="baa-fH-bTX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWg-4D-xyr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
