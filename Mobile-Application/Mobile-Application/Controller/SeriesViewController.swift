@@ -14,9 +14,8 @@ class SeriesViewController: UIViewController {
     
     @IBOutlet weak var titleSerie: UILabel!
     @IBOutlet weak var yearsSerie: UILabel!
-    @IBOutlet weak var previousSerie: UILabel!
-    @IBOutlet weak var nextSerie: UILabel!
-    @IBOutlet weak var imageSerie: UIImageView!
+	@IBOutlet weak var rating: UILabel!
+	@IBOutlet weak var imageSerie: UIImageView!
     
 	
 	@IBOutlet weak var followButton: UIButton!
@@ -109,24 +108,6 @@ class SeriesViewController: UIViewController {
             yearsSerie.text = start + " - Present"
         } else {
             yearsSerie.text = start + " - " + end
-        }
-        
-        
-        
-        let previous = json["data"]["results"][0]["previous"].stringValue
-        
-        if previous == "" {
-            previousSerie.text = "Non Disponibile"
-        } else {
-            previousSerie.text = previous
-        }
-        
-        let next = json["data"]["results"][0]["next"].stringValue
-        
-        if next == "" {
-            nextSerie.text = "Non Disponibile"
-        } else {
-            nextSerie.text = next
         }
 
         let imagePath = json["data"]["results"][0]["thumbnail"]["path"].stringValue
