@@ -10,6 +10,9 @@ target 'Mobile-Application' do
     pod 'SVProgressHUD'
     pod 'SwiftyJSON'
     pod 'Alamofire'
+    pod 'Firebase/Auth'
+    pod 'GoogleSignIn'
+    pod 'Firebase/Firestore'
 
   target 'Mobile-ApplicationTests' do
     inherit! :search_paths
