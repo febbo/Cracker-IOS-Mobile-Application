@@ -108,14 +108,17 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 	
     func updateComicData(json : JSON) {
         
+//        ID
         let id = json["data"]["results"][0]["id"].stringValue
         print(id)
         
+//        TITLE
         var titleS = json["data"]["results"][0]["title"].stringValue
         titleS = titleS.replacingOccurrences(of: "\\(.*\\)", with: "", options: .regularExpression)
         
         titleSerie.text = titleS
         
+//        YEARS
         let start = json["data"]["results"][0]["startYear"].stringValue
         let end = json["data"]["results"][0]["endYear"].stringValue
         
@@ -124,7 +127,8 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {
             yearsSerie.text = start + " - " + end
         }
-
+        
+//      IMAGE
         let imagePath = json["data"]["results"][0]["thumbnail"]["path"].stringValue
         let imageExtension = json["data"]["results"][0]["thumbnail"]["extension"].stringValue
         
@@ -133,6 +137,23 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         print(imageURL!)
         
+//        DESCRIPTION
+        
+        let description = json["data"]["results"][0]["description"].stringValue
+//        descriptionComic.text = "\((comic?.description)!)"
+        if description == "" {
+            descriptionText.text = "descrizione non disponibile"
+        } else {
+            descriptionText.text = "\(description)"
+        }
+        
+//        RATING
+        let ratingSerie = json["data"]["results"][0]["rating"].stringValue
+        if ratingSerie == "" {
+            rating.text = "non disponibile"
+        } else {
+            rating.text = "\(ratingSerie)"
+        }
         
 //        SECTIONS OF ISSUES
         var titles : [String] = []
