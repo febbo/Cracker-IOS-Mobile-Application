@@ -11,6 +11,7 @@
 		1447E8EDCF89A0592342EBF2 /* Pods_Mobile_ApplicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7E1F3B9E3CC4C323BA4346 /* Pods_Mobile_ApplicationUITests.framework */; };
 		463C44CA234204B200F82242 /* leo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463C44C9234204B200F82242 /* leo.swift */; };
 		4649832E2350B87900ED5842 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4649832D2350B87900ED5842 /* LogInViewController.swift */; };
+		4649833B2350D81C00ED5842 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4649833A2350D81C00ED5842 /* LogInViewController.swift */; };
 		4658F4A02301C7620007E223 /* ComicDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658F49F2301C7620007E223 /* ComicDataModel.swift */; };
 		4658F4A22301C8D60007E223 /* SerieDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658F4A12301C8D60007E223 /* SerieDataModel.swift */; };
 		4658F4A42301CAF40007E223 /* CreatorDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658F4A32301CAF40007E223 /* CreatorDataModel.swift */; };
@@ -59,6 +60,7 @@
 		464983332350C79400ED5842 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		464983352350C7A400ED5842 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		464983372350C7B500ED5842 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4649833A2350D81C00ED5842 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		4658F49F2301C7620007E223 /* ComicDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDataModel.swift; sourceTree = "<group>"; };
 		4658F4A12301C8D60007E223 /* SerieDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieDataModel.swift; sourceTree = "<group>"; };
 		4658F4A32301CAF40007E223 /* CreatorDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorDataModel.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		4609B39823017C0E00D08382 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4649833A2350D81C00ED5842 /* LogInViewController.swift */,
 				46D1BB47227C4B1B00219006 /* AppDelegate.swift */,
 				C40915B522FC4D5C00FE0A1A /* IssueView.swift */,
 				C4FAA849228EBD810024B5E7 /* UpNextTableViewController.swift */,
@@ -166,6 +169,14 @@
 			path = Modell;
 			sourceTree = "<group>";
 		};
+		464983392350D7E500ED5842 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				4649832D2350B87900ED5842 /* LogInViewController.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		46D1BB3B227C4B1B00219006 = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +186,7 @@
 				46D1BB45227C4B1B00219006 /* Products */,
 				ACCD51179FC4172B793178E4 /* Pods */,
 				CF2DA1939B612995706DD583 /* Frameworks */,
+				464983392350D7E500ED5842 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -502,6 +514,7 @@
 				C40915BD22FC74D000FE0A1A /* HeaderView.swift in Sources */,
 				46D1BB48227C4B1B00219006 /* AppDelegate.swift in Sources */,
 				C4FAA84A228EBD810024B5E7 /* UpNextTableViewController.swift in Sources */,
+				4649833B2350D81C00ED5842 /* LogInViewController.swift in Sources */,
 				C48E83CF2350CD550017BAA6 /* ProfileViewController.swift in Sources */,
 				C40915B822FC6B1900FE0A1A /* ExpandableCellItem.swift in Sources */,
 				C40915B622FC4D5C00FE0A1A /* IssueView.swift in Sources */,
