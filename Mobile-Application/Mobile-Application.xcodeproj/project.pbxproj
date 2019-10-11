@@ -10,6 +10,7 @@
 		0E529E1015252BD7D472587B /* Pods_Mobile_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBA7D620BBB417A1014168D /* Pods_Mobile_Application.framework */; };
 		1447E8EDCF89A0592342EBF2 /* Pods_Mobile_ApplicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7E1F3B9E3CC4C323BA4346 /* Pods_Mobile_ApplicationUITests.framework */; };
 		463C44CA234204B200F82242 /* leo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463C44C9234204B200F82242 /* leo.swift */; };
+		4649832E2350B87900ED5842 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4649832D2350B87900ED5842 /* LogInViewController.swift */; };
 		4658F4A02301C7620007E223 /* ComicDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658F49F2301C7620007E223 /* ComicDataModel.swift */; };
 		4658F4A22301C8D60007E223 /* SerieDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658F4A12301C8D60007E223 /* SerieDataModel.swift */; };
 		4658F4A42301CAF40007E223 /* CreatorDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658F4A32301CAF40007E223 /* CreatorDataModel.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		463C44C9234204B200F82242 /* leo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leo.swift; sourceTree = "<group>"; };
+		4649832D2350B87900ED5842 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		4658F49F2301C7620007E223 /* ComicDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDataModel.swift; sourceTree = "<group>"; };
 		4658F4A12301C8D60007E223 /* SerieDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieDataModel.swift; sourceTree = "<group>"; };
 		4658F4A32301CAF40007E223 /* CreatorDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorDataModel.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				C40915B722FC6B1900FE0A1A /* ExpandableCellItem.swift */,
 				463C44C9234204B200F82242 /* leo.swift */,
 				C41EBAE42345F2B6006D3F46 /* SeriesViewController.swift */,
+				4649832D2350B87900ED5842 /* LogInViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				C41EBAE52345F2B6006D3F46 /* SeriesViewController.swift in Sources */,
 				463C44CA234204B200F82242 /* leo.swift in Sources */,
 				C4E48ED722FC90EB00E8359D /* IssueViewController.swift in Sources */,
+				4649832E2350B87900ED5842 /* LogInViewController.swift in Sources */,
 				4658F4A22301C8D60007E223 /* SerieDataModel.swift in Sources */,
 				C40915BD22FC74D000FE0A1A /* HeaderView.swift in Sources */,
 				46D1BB48227C4B1B00219006 /* AppDelegate.swift in Sources */,
