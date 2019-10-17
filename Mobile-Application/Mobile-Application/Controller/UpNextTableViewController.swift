@@ -60,23 +60,26 @@ class UpNextTableViewController : UITableViewController {
 	}
     
     func showLoadingScreen() {
-        let alert = UIAlertController(title: nil, message: "Loading data", preferredStyle: .alert)
-
-        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-        loadingIndicator.hidesWhenStopped = true
-        if traitCollection.userInterfaceStyle == .light {
-            loadingIndicator.style = UIActivityIndicatorView.Style.gray
-        } else {
-            loadingIndicator.style = UIActivityIndicatorView.Style.white
-        }
-        loadingIndicator.startAnimating();
-
-        alert.view.addSubview(loadingIndicator)
-        present(alert, animated: true, completion: nil)
-        
+//        let alert = UIAlertController(title: nil, message: "Loading data", preferredStyle: .alert)
+//
+//        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+//        loadingIndicator.hidesWhenStopped = true
+//        if traitCollection.userInterfaceStyle == .light {
+//            loadingIndicator.style = UIActivityIndicatorView.Style.gray
+//        } else {
+//            loadingIndicator.style = UIActivityIndicatorView.Style.white
+//        }
+//        loadingIndicator.startAnimating();
+//
+//        alert.view.addSubview(loadingIndicator)
+//        present(alert, animated: true, completion: nil)
+//
+//        print("start")
         getApiData()
-        
-        dismiss(animated: false, completion: nil)
+//        print("end")
+//
+//        dismiss(animated: true, completion: nil)
+//        print("end2")
     }
     
     
@@ -92,7 +95,7 @@ class UpNextTableViewController : UITableViewController {
             let params : [String : String] = [ "apikey" : APP_ID, "dateDescriptor" : weeks[i], "ts": TS, "hash" : HASH]
             getUpNextData(url: URL, parameters: params, index: i)
         }
-        return
+        
     }
     
     
@@ -114,7 +117,7 @@ class UpNextTableViewController : UITableViewController {
 //                self.cityLabel.text = "Connection Issues"
             }
         }
-        return
+        
         
     }
     
@@ -141,6 +144,8 @@ class UpNextTableViewController : UITableViewController {
         var comics : [Int] = []
         let limit = json["data"]["limit"].intValue - 1
         
+        print(limit)
+        
         for i in 0...limit {
             let issueTitle = json["data"]["results"][i]["title"].stringValue
 //            print(title!)
@@ -151,6 +156,7 @@ class UpNextTableViewController : UITableViewController {
                 
                 titles.append(issueTitle)
             }
+            print(i)
         }
         
         let item = ExpandableSection(isExpanded: false, issues: titles)
@@ -161,7 +167,7 @@ class UpNextTableViewController : UITableViewController {
         
 //        print(UpNextComics)
         
-        return
+        
         
 
     }
