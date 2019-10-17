@@ -144,7 +144,6 @@ class UpNextTableViewController : UITableViewController {
         var comics : [Int] = []
         let limit = json["data"]["limit"].intValue - 1
         
-        print(limit)
         
         for i in 0...limit {
             let issueTitle = json["data"]["results"][i]["title"].stringValue
@@ -156,7 +155,7 @@ class UpNextTableViewController : UITableViewController {
                 
                 titles.append(issueTitle)
             }
-            print(i)
+            
         }
         
         let item = ExpandableSection(isExpanded: false, issues: titles)

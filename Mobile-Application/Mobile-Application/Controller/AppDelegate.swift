@@ -14,6 +14,8 @@ import GoogleSignIn
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     var window: UIWindow?
+    
+    let userDefault = UserDefaults()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -46,6 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             if error == nil{
                 print(result?.user.email)
                 print(result?.user.displayName)
+                self.userDefault.set(true, forKey: "usersignedin")
+                self.userDefault.synchronize()
+                self.window?.rootViewController?.performSegue(withIdentifier: "Segue_To_Signin", sender: nil)
             }else{
                 print(error?.localizedDescription)
             }
