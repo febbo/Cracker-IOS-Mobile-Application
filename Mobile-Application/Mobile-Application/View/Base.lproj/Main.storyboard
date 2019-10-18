@@ -337,6 +337,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile" largeTitleDisplayMode="always" id="zjK-Gu-bbg"/>
                     <connections>
+                        <outlet property="imageOU" destination="g8s-k3-JWV" id="UwB-Xp-FSP"/>
+                        <outlet property="nicknameOu" destination="eon-3b-XmT" id="HjY-Qw-e47"/>
                         <outlet property="seriesCollection" destination="rYr-Jc-8du" id="baa-fH-bTX"/>
                     </connections>
                 </viewController>

@@ -7,19 +7,14 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
 class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource {
-	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return 5
-	}
-	
-	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SeriesCell", for: indexPath) as! SeriesCollectionViewCell
-		cell.seriesImage.image = UIImage(named: "series")
-		
-		return cell
-	}
-	
+    
+//    Outlets
+    @IBOutlet weak var imageOU: UIImageView!
+    @IBOutlet weak var nicknameOu: UILabel!
 
 	@IBOutlet weak var seriesCollection: UICollectionView!
 	
@@ -28,6 +23,25 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
 		
 		seriesCollection.delegate = self
 		seriesCollection.dataSource = self
+        
+        guard let name = Auth.auth().currentUser?.displayName  else {return}
+        nicknameOu.text = name
+        
+        guard let imageURL = Auth.auth().currentUser?.photoURL else {return}
+        imageOU.load(url: imageURL)
+
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SeriesCell", for: indexPath) as! SeriesCollectionViewCell
+        cell.seriesImage.image = UIImage(named: "series")
+        
+        return cell
     }
     
 
