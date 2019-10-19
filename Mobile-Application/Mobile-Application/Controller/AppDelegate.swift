@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import FBSDKLoginKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -23,11 +24,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         FirebaseApp.configure()
         
+        //Google
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
+        // Facebook
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+
+        
         return true
     }
+    
+//    Facebook
+    func loginButton(_ loginButton: FBLoginButton!, didCompleteWith result: LoginManagerLoginResult!, error: Error!) {
+        if let error = error {
+            print(error.localizedDescription)
+            print("Ciaooooooooooooooo")
+            return
+            
+        }else{
+            let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+            Auth.auth().signIn(with: credential) { (authResult, error) in
+              if error == nil{
+                print("Weeeeeeeeeeeeeeeeee")
+                self.userDefault.set(true, forKey: "usersignedin")
+                self.userDefault.synchronize()
+                self.window?.rootViewController?.performSegue(withIdentifier: "Segue_To_Signin", sender: nil)
+              }else{
+                print(error?.localizedDescription)
+              }
+            }
+            
+        }
+        
+    }
+    
+
     
 //    ACCESS and DISCONNECT GOOGLE ACCOUNT
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
@@ -78,12 +111,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     @available(iOS 9.0, *)
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
-      return GIDSignIn.sharedInstance().handle(url)
+        let googleDidHandle2 = GIDSignIn.sharedInstance().handle(url)
+        let facebookDidHandle2 = ApplicationDelegate.shared.application(app, open: url, options: options)
+        
+        return googleDidHandle2 || facebookDidHandle2
     }
 
     func application(_ application: UIApplication,
                      open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-      return GIDSignIn.sharedInstance().handle(url)
+        let googleDidHandle = GIDSignIn.sharedInstance().handle(url)
+        let facebookDidHandle = ApplicationDelegate.shared.application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+        
+        return googleDidHandle || facebookDidHandle
     }
     
 //    ALTRO

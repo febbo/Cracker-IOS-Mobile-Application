@@ -9,6 +9,9 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import FacebookLogin
+import FBSDKLoginKit
+
 
 class SignedInVC: UIViewController {
 
@@ -40,6 +43,7 @@ class SignedInVC: UIViewController {
             try GIDSignIn.sharedInstance()?.signOut()
             userDefault.removeObject(forKey: "usersignedin")
             userDefault.synchronize()
+            LoginManager().logOut()
             self.dismiss(animated: true, completion: nil)
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)

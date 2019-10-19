@@ -9,8 +9,35 @@
 import Foundation
 import Firebase
 import GoogleSignIn
+import FBSDKLoginKit
 
-class LogInViewController: UIViewController{
+class LogInViewController: UIViewController, LoginButtonDelegate{
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        if let error = error {
+            print(error.localizedDescription)
+            print("Ciaooooooooooooooo")
+            return
+            
+        }else{
+            let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+            Auth.auth().signIn(with: credential) { (authResult, error) in
+              if error == nil{
+                print("Weeeeeeeeeeeeeeeeee")
+                self.userDefault.set(true, forKey: "usersignedin")
+                self.userDefault.synchronize()
+                self.performSegue(withIdentifier: "Segue_To_Signin", sender: self)
+              }else{
+                print(error?.localizedDescription)
+              }
+            }
+            
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+        return
+    }
+    
     
 //    Outlets
     @IBOutlet weak var emailOu: UITextField!
@@ -27,15 +54,21 @@ class LogInViewController: UIViewController{
     
     
     override func viewDidLoad() {
-      super.viewDidLoad()
-
-    GIDSignIn.sharedInstance()?.presentingViewController = self
-    GIDSignIn.sharedInstance()?.signIn()
-    // Automatically sign in the user.
-//    GIDSignIn.sharedInstance()?.restorePreviousSignIn()
-
-      // TODO(developer) Configure the sign-in button look/feel
-      // ...
+        super.viewDidLoad()
+        
+//        Google
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance()?.signIn()
+        
+        
+//        Facebook (TO DO: cambiare posizione)
+        let loginButton = FBLoginButton()
+        loginButton.delegate = self
+        loginButton.center = view.center
+        self.view.addSubview(loginButton)
+        
+        
+    
     }
     
     override func viewDidAppear(_ animated: Bool) {

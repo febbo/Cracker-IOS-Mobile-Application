@@ -10,6 +10,9 @@ pod 'Firebase/Auth'
 pod 'GoogleSignIn', '~> 5.0'
 pod 'Firebase/Firestore'
 pod 'Firebase/Analytics'
+pod 'FacebookCore'
+pod 'FacebookLogin'
+
 
 target 'Mobile-Application' do
   # Comment the next line if you don't want to use dynamic frameworks
