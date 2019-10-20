@@ -18,6 +18,7 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
     @IBOutlet weak var emailOu: UITextField!
     @IBOutlet weak var passwordOu: UITextField!
     @IBOutlet weak var facebookSignInBtn: FBLoginButton!
+    @IBOutlet weak var googleSignInBtn: GIDSignInButton!
     
     
 //    Variables

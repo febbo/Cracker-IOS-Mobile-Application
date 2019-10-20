@@ -392,6 +392,7 @@
                     <connections>
                         <outlet property="emailOu" destination="Pzn-ev-ouV" id="4d9-PW-dHo"/>
                         <outlet property="facebookSignInBtn" destination="HuI-4E-HW8" id="g3t-NM-nl4"/>
+                        <outlet property="googleSignInBtn" destination="5fs-lr-pGC" id="mEM-Xi-p3G"/>
                         <outlet property="passwordOu" destination="UQm-Qv-qqF" id="9El-eF-1Hx"/>
                         <segue destination="egO-KE-CrR" kind="presentation" identifier="Segue_To_Signin" modalPresentationStyle="fullScreen" id="Sp9-Lx-Xxr"/>
                     </connections>
