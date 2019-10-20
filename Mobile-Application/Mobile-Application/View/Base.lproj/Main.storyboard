@@ -379,6 +379,11 @@
                                     <action selector="signInBtnPressed:" destination="VaH-yB-xYv" eventType="touchUpInside" id="ZGN-Ms-ByL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HuI-4E-HW8" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="87" y="708" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Facebook Sign In"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="tcD-pf-hAT"/>
@@ -386,6 +391,7 @@
                     <navigationItem key="navigationItem" id="HJZ-DQ-BAC"/>
                     <connections>
                         <outlet property="emailOu" destination="Pzn-ev-ouV" id="4d9-PW-dHo"/>
+                        <outlet property="facebookSignInBtn" destination="HuI-4E-HW8" id="g3t-NM-nl4"/>
                         <outlet property="passwordOu" destination="UQm-Qv-qqF" id="9El-eF-1Hx"/>
                         <segue destination="egO-KE-CrR" kind="presentation" identifier="Segue_To_Signin" modalPresentationStyle="fullScreen" id="Sp9-Lx-Xxr"/>
                     </connections>

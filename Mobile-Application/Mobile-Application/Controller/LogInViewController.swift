@@ -12,36 +12,12 @@ import GoogleSignIn
 import FBSDKLoginKit
 
 class LogInViewController: UIViewController, LoginButtonDelegate{
-    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
-        if let error = error {
-            print(error.localizedDescription)
-            print("Ciaooooooooooooooo")
-            return
-            
-        }else{
-            let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
-            Auth.auth().signIn(with: credential) { (authResult, error) in
-              if error == nil{
-                print("Weeeeeeeeeeeeeeeeee")
-                self.userDefault.set(true, forKey: "usersignedin")
-                self.userDefault.synchronize()
-                self.performSegue(withIdentifier: "Segue_To_Signin", sender: self)
-              }else{
-                print(error?.localizedDescription)
-              }
-            }
-            
-        }
-    }
-    
-    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
-        return
-    }
     
     
-//    Outlets
+//  MARK:  Outlets
     @IBOutlet weak var emailOu: UITextField!
     @IBOutlet weak var passwordOu: UITextField!
+    @IBOutlet weak var facebookSignInBtn: FBLoginButton!
     
     
 //    Variables
@@ -52,7 +28,7 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
     let userDefault = UserDefaults.standard
     
     
-    
+//    MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,10 +38,11 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
         
         
 //        Facebook (TO DO: cambiare posizione)
-        let loginButton = FBLoginButton()
-        loginButton.delegate = self
-        loginButton.center = view.center
-        self.view.addSubview(loginButton)
+        facebookSignInBtn.delegate = self
+//        let loginButton = FBLoginButton()
+//        loginButton.delegate = self
+//        loginButton.center = view.center
+//        self.view.addSubview(loginButton)
         
         
     
@@ -78,6 +55,7 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
     }
     
     
+//    MARK: Email/Password Delegate
     func createUser(email: String, password: String){
         Auth.auth().createUser(withEmail: email, password: password){ (result, error) in
             if error == nil{
@@ -111,9 +89,36 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
         }
     }
     
+//    MARK: Facebook Delegate
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        if let error = error {
+            print(error.localizedDescription)
+            print("Ciaooooooooooooooo")
+            return
+            
+        }else{
+            let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+            Auth.auth().signIn(with: credential) { (authResult, error) in
+              if error == nil{
+                print("Weeeeeeeeeeeeeeeeee")
+                self.userDefault.set(true, forKey: "usersignedin")
+                self.userDefault.synchronize()
+                self.performSegue(withIdentifier: "Segue_To_Signin", sender: self)
+              }else{
+                print(error?.localizedDescription)
+              }
+            }
+            
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+        return
+    }
+
     
     
-//    Actions
+//    MARK: Actions
     @IBAction func signInBtnPressed(_ sender: Any) {
         
         SignInUser(email: emailOu.text!, password: passwordOu.text!)
