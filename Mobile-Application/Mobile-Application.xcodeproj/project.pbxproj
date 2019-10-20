@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		0E529E1015252BD7D472587B /* Pods_Mobile_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBA7D620BBB417A1014168D /* Pods_Mobile_Application.framework */; };
 		1447E8EDCF89A0592342EBF2 /* Pods_Mobile_ApplicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7E1F3B9E3CC4C323BA4346 /* Pods_Mobile_ApplicationUITests.framework */; };
-		46365BD12358CCCB00A83485 /* SignedInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46365BD02358CCCB00A83485 /* SignedInVC.swift */; };
+		461B743D235C9BBF00BE93F2 /* EmailSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B743C235C9BBF00BE93F2 /* EmailSignInViewController.swift */; };
+		461B743F235C9FDE00BE93F2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B743E235C9FDE00BE93F2 /* SignUpViewController.swift */; };
 		463C44CA234204B200F82242 /* leo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463C44C9234204B200F82242 /* leo.swift */; };
 		4649833F2350D99900ED5842 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4649833E2350D99900ED5842 /* LogInViewController.swift */; };
 		4658F4A02301C7620007E223 /* ComicDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658F49F2301C7620007E223 /* ComicDataModel.swift */; };
@@ -54,7 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		46365BD02358CCCB00A83485 /* SignedInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInVC.swift; sourceTree = "<group>"; };
+		461B743C235C9BBF00BE93F2 /* EmailSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignInViewController.swift; sourceTree = "<group>"; };
+		461B743E235C9FDE00BE93F2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		463C44C9234204B200F82242 /* leo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leo.swift; sourceTree = "<group>"; };
 		4649832D2350B87900ED5842 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		464983312350C78200ED5842 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
@@ -145,7 +147,8 @@
 				C48E83CE2350CD550017BAA6 /* ProfileViewController.swift */,
 				C48E83D02350D17D0017BAA6 /* SeriesCollectionViewCell.swift */,
 				4649833E2350D99900ED5842 /* LogInViewController.swift */,
-				46365BD02358CCCB00A83485 /* SignedInVC.swift */,
+				461B743C235C9BBF00BE93F2 /* EmailSignInViewController.swift */,
+				461B743E235C9FDE00BE93F2 /* SignUpViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -509,11 +512,12 @@
 				4695D36E233D5F6C008EB61D /* ImageDataModel.swift in Sources */,
 				4658F4A42301CAF40007E223 /* CreatorDataModel.swift in Sources */,
 				C41EBAE52345F2B6006D3F46 /* SeriesViewController.swift in Sources */,
-				46365BD12358CCCB00A83485 /* SignedInVC.swift in Sources */,
+				461B743F235C9FDE00BE93F2 /* SignUpViewController.swift in Sources */,
 				463C44CA234204B200F82242 /* leo.swift in Sources */,
 				C4E48ED722FC90EB00E8359D /* IssueViewController.swift in Sources */,
 				4658F4A22301C8D60007E223 /* SerieDataModel.swift in Sources */,
 				C40915BD22FC74D000FE0A1A /* HeaderView.swift in Sources */,
+				461B743D235C9BBF00BE93F2 /* EmailSignInViewController.swift in Sources */,
 				46D1BB48227C4B1B00219006 /* AppDelegate.swift in Sources */,
 				C4FAA84A228EBD810024B5E7 /* UpNextTableViewController.swift in Sources */,
 				4649833F2350D99900ED5842 /* LogInViewController.swift in Sources */,

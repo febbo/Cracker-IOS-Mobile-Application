@@ -15,8 +15,6 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
     
     
 //  MARK:  Outlets
-    @IBOutlet weak var emailOu: UITextField!
-    @IBOutlet weak var passwordOu: UITextField!
     @IBOutlet weak var facebookSignInBtn: FBLoginButton!
     @IBOutlet weak var googleSignInBtn: GIDSignInButton!
     
@@ -51,7 +49,7 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
     
     override func viewDidAppear(_ animated: Bool) {
         if userDefault.bool(forKey: "usersignedin"){
-            self.performSegue(withIdentifier: "Segue_To_Signin", sender: self)
+            self.performSegue(withIdentifier: "Segue_To_SignIn_Social", sender: self)
         }
     }
     
@@ -104,7 +102,7 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
                 print("Weeeeeeeeeeeeeeeeee")
                 self.userDefault.set(true, forKey: "usersignedin")
                 self.userDefault.synchronize()
-                self.performSegue(withIdentifier: "Segue_To_Signin", sender: self)
+                self.performSegue(withIdentifier: "Segue_To_Signin_Social", sender: self)
               }else{
                 print(error?.localizedDescription)
               }
@@ -122,10 +120,16 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
 //    MARK: Actions
     @IBAction func signInBtnPressed(_ sender: Any) {
         
-        SignInUser(email: emailOu.text!, password: passwordOu.text!)
+        self.performSegue(withIdentifier: "SignIn_With_Email", sender: self)
         
     }
     
+    @IBAction func signUpBtnPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "SignUp_With_Email", sender: self)
+    }
+    
+    
+//    Serve per il Sign Out: NON CANCELLARE
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
 
     }

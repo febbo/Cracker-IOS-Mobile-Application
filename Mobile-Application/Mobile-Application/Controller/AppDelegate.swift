@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 print(result?.user.displayName)
                 self.userDefault.set(true, forKey: "usersignedin")
                 self.userDefault.synchronize()
-                self.window?.rootViewController?.performSegue(withIdentifier: "Segue_To_Signin", sender: nil)
+                self.window?.rootViewController?.performSegue(withIdentifier: "Segue_To_Signin_Social", sender: nil)
             }else{
                 print(error?.localizedDescription)
             }
