@@ -126,5 +126,9 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
         
     }
     
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+
+    }
+    
     
 }

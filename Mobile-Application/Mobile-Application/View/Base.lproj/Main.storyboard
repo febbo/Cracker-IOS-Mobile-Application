@@ -296,6 +296,9 @@
                                                         <integer key="value" value="15"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="signOutBtnPressed:" destination="xzN-Ct-MKk" eventType="touchUpInside" id="hCD-IR-Ufv"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" name="Background"/>
@@ -340,9 +343,11 @@
                         <outlet property="imageOU" destination="g8s-k3-JWV" id="UwB-Xp-FSP"/>
                         <outlet property="nicknameOu" destination="eon-3b-XmT" id="HjY-Qw-e47"/>
                         <outlet property="seriesCollection" destination="rYr-Jc-8du" id="baa-fH-bTX"/>
+                        <segue destination="FAs-jk-Al6" kind="unwind" identifier="unwindToLogIn" unwindAction="prepareForUnwindWithSegue:" id="W1W-Eo-UEd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWg-4D-xyr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="FAs-jk-Al6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="826.08695652173924" y="2114.7321428571427"/>
         </scene>

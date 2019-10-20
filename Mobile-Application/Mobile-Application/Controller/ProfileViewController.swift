@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import FacebookLogin
+import FBSDKLoginKit
 
 class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -17,6 +19,9 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
     @IBOutlet weak var nicknameOu: UILabel!
 
 	@IBOutlet weak var seriesCollection: UICollectionView!
+    
+//    Constants
+    let userDefault = UserDefaults.standard
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +48,22 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
         
         return cell
     }
+    
+    
+//    Actions
+    @IBAction func signOutBtnPressed(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            try GIDSignIn.sharedInstance()?.signOut()
+            userDefault.removeObject(forKey: "usersignedin")
+            userDefault.synchronize()
+            LoginManager().logOut()
+            self.performSegue(withIdentifier: "unwindToLogIn", sender: self)
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
+    
     
 
 }
