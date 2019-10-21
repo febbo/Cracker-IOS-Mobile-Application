@@ -44,6 +44,10 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
 //        self.view.addSubview(loginButton)
         
         
+		// button customization
+		googleSignInBtn.style = .wide
+		googleSignInBtn.layer.cornerRadius = 15
+		googleSignInBtn.frame = CGRect(x: 0, y: 0, width: 280, height: 50)
     
     }
     
