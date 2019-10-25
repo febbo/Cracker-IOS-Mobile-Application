@@ -22,7 +22,6 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
 //    Variables
     
     
-    
 //    Constants
     let userDefault = UserDefaults.standard
     
