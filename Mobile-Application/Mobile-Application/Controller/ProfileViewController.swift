@@ -26,6 +26,17 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
 	override func viewDidLoad() {
         super.viewDidLoad()
 		
+		if #available(iOS 13.0, *) {
+			let appearance = UINavigationBarAppearance()
+			appearance.configureWithOpaqueBackground()
+			appearance.backgroundColor = UIColor(named: "DarkGreen")
+
+			navigationController?.navigationBar.standardAppearance = appearance
+			navigationController?.navigationBar.compactAppearance = appearance
+			navigationController?.navigationBar.scrollEdgeAppearance = appearance
+			navigationItem.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+		}
+		
 		seriesCollection.delegate = self
 		seriesCollection.dataSource = self
         

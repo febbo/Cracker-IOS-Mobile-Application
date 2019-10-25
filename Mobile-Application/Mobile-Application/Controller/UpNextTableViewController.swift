@@ -49,7 +49,17 @@ class UpNextTableViewController : UITableViewController {
 		
         showLoadingScreen()
         
-        
+		if #available(iOS 13.0, *) {
+			let appearance = UINavigationBarAppearance()
+			appearance.configureWithOpaqueBackground()
+			appearance.backgroundColor = UIColor(named: "DarkGreen")
+
+			navigationController?.navigationBar.standardAppearance = appearance
+			navigationController?.navigationBar.compactAppearance = appearance
+			navigationController?.navigationBar.scrollEdgeAppearance = appearance
+			navigationItem.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+		}
+		
 		navigationController?.navigationBar.prefersLargeTitles = true
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
 		tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
