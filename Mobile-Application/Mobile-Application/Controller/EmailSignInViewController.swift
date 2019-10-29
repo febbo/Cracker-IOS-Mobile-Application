@@ -34,18 +34,18 @@ class EmailSignInViewController: UIViewController {
     
     
 //    MARK: Email/Password Delegate
-      func createUser(email: String, password: String){
-          Auth.auth().createUser(withEmail: email, password: password){ (result, error) in
-              if error == nil{
-                  //User Created
-                  print("User Created")
-                  // Sing In user
-                  self.SignInUser(email: email, password: password)
-              } else{
-                  print(error?.localizedDescription)
-              }
-          }
-      }
+//      func createUser(email: String, password: String){
+//          Auth.auth().createUser(withEmail: email, password: password){ (result, error) in
+//              if error == nil{
+//                  //User Created
+//                  print("User Created")
+//                  // Sing In user
+//                  self.SignInUser(email: email, password: password)
+//              } else{
+//                  print(error?.localizedDescription)
+//              }
+//          }
+//      }
       
       func SignInUser(email: String, password:String){
           Auth.auth().signIn(withEmail: email, password: password){ (user,error) in
@@ -55,8 +55,8 @@ class EmailSignInViewController: UIViewController {
                   self.userDefault.set(true, forKey: "usersignedin")
                   self.userDefault.synchronize()
                   self.performSegue(withIdentifier: "Segue_To_SignIn", sender: self)
-              } else if error?._code == AuthErrorCode.userNotFound.rawValue {
-                  self.createUser(email: email, password: password)
+//              } else if error?._code == AuthErrorCode.userNotFound.rawValue {
+//                  self.createUser(email: email, password: password)
               } else{
                   print(error)
                   print(error?.localizedDescription)
