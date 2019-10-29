@@ -57,7 +57,14 @@ class EmailSignInViewController: UIViewController {
                   self.performSegue(withIdentifier: "Segue_To_SignIn", sender: self)
               } else if error?._code == AuthErrorCode.userNotFound.rawValue {
 //                  self.createUser(email: email, password: password)
-                    print("Utente non registrato, da fare messaggio in evidenza")
+                print("Utente non registrato")
+                let alert = UIAlertController(title: "Utente Non registrato", message: "Registrati prima di continuare!", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                //style: .cancel
+
+                self.present(alert, animated: true)
+                
               } else{
                   print(error)
                   print(error?.localizedDescription)

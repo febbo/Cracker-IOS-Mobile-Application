@@ -94,14 +94,12 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
     func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
         if let error = error {
             print(error.localizedDescription)
-            print("Ciaooooooooooooooo")
             return
             
         }else{
             let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
             Auth.auth().signIn(with: credential) { (authResult, error) in
               if error == nil{
-                print("Weeeeeeeeeeeeeeeeee")
                 self.userDefault.set(true, forKey: "usersignedin")
                 self.userDefault.synchronize()
                 self.performSegue(withIdentifier: "Segue_To_Signin_Social", sender: self)
