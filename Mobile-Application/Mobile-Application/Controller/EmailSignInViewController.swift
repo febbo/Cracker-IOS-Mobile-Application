@@ -55,8 +55,9 @@ class EmailSignInViewController: UIViewController {
                   self.userDefault.set(true, forKey: "usersignedin")
                   self.userDefault.synchronize()
                   self.performSegue(withIdentifier: "Segue_To_SignIn", sender: self)
-//              } else if error?._code == AuthErrorCode.userNotFound.rawValue {
+              } else if error?._code == AuthErrorCode.userNotFound.rawValue {
 //                  self.createUser(email: email, password: password)
+                    print("Utente non registrato, da fare messaggio in evidenza")
               } else{
                   print(error)
                   print(error?.localizedDescription)
