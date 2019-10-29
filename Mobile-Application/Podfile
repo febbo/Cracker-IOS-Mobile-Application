@@ -12,6 +12,7 @@ pod 'Firebase/Firestore'
 pod 'Firebase/Analytics'
 pod 'FacebookCore'
 pod 'FacebookLogin'
+pod 'FirebaseFirestoreSwift'
 
 
 target 'Mobile-Application' do

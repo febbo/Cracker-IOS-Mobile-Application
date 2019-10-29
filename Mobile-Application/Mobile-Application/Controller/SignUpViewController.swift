@@ -30,6 +30,17 @@ class SignUpViewController: UIViewController {
 
     //    MARK: Email/Password Delegate
     func createUser(email: String, password: String){
+        
+        guard let nickname = nicknameOu.text, let mail = emailOu.text, let pw = passwordOu.text, !nickname.isEmpty, !mail.isEmpty, !pw.isEmpty else {
+            let alert = UIAlertController(title: "Campo Vuoto", message: "Riempire tutti i campi prima di continuare!", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+            //style: .cancel
+
+            self.present(alert, animated: true)
+            return
+        }
+        
         Auth.auth().createUser(withEmail: email, password: password){ (result, error) in
             if error == nil{
                 //User Created
@@ -40,6 +51,7 @@ class SignUpViewController: UIViewController {
                 print(error?.localizedDescription)
             }
         }
+        
     }
     
     func SignInUser(email: String, password:String){
@@ -57,9 +69,21 @@ class SignUpViewController: UIViewController {
                 print(error?.localizedDescription)
             }
             
-            
+            self.createUserDatabase(userId: (user?.user.uid)!)
             //Handle Error sulla documentazione e mostrare all'utente i vari errori quando capitano
         }
+    }
+    
+    func createUserDatabase (userId: String) {
+        let newUserReference = Firestore.firestore().collection("Users").document(userId)    // <-- create a document, with the user id from Firebase Auth
+
+        newUserReference.setData([
+            "ID": userId,
+            "nickname": nicknameOu.text!,
+            "email": emailOu.text!,
+            "password": passwordOu.text!,
+            "timestamp": Timestamp()
+            ])
     }
     
     

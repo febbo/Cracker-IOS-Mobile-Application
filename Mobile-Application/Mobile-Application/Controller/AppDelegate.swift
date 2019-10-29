@@ -23,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Override point for customization after application launch.
         
         FirebaseApp.configure()
+
+        //Cloud FireStore
+//        let db = Firestore.firestore()
         
         //Google
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
