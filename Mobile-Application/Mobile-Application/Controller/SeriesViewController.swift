@@ -49,7 +49,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //        RICHIESTA API
         let singleIssueUrl = apiURL!
         let params : [String : String] = [ "apikey" : APP_ID, "ts": TS, "hash" : HASH]
-        getUpNextData(url: singleIssueUrl, parameters: params)
+        getSerieData(url: singleIssueUrl, parameters: params)
 		
 		followButton.titleLabel?.textAlignment = .center
 		readButton.titleLabel?.textAlignment = .center
@@ -81,16 +81,37 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 	
     //MARK: - Networking
 
-    func getUpNextData(url: String, parameters: [String: String]) {
+    func getSerieData(url: String, parameters: [String: String]) {
         
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
             response in
             if response.result.isSuccess {
                 
                 print("Success! Got the comic data")
-                let upNextJSON : JSON = JSON(response.result.value!)
+                let serieJSON : JSON = JSON(response.result.value!)
                 
-                self.updateComicData(json : upNextJSON)
+                self.updateSerieData(json : serieJSON)
+                
+                
+            }
+            else {
+                print("Error \(String(describing: response.result.error))")
+//                self.cityLabel.text = "Connection Issues"
+            }
+        }
+        
+    }
+    
+    func getComicsOfSerieData(url: String, parameters: [String: String]) {
+        
+        Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
+            response in
+            if response.result.isSuccess {
+                
+                print("Success! Got the comic data")
+                let comicsJSON : JSON = JSON(response.result.value!)
+                
+                self.updateComicsOfSerieData(json : comicsJSON)
                 
                 
             }
@@ -105,7 +126,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //MARK: - JSON Parsing
 	
-    func updateComicData(json : JSON) {
+    func updateSerieData(json : JSON) {
         
 //        ID
         let id = json["data"]["results"][0]["id"].stringValue
@@ -156,16 +177,23 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
 //        SECTIONS OF ISSUES
 
-//        QUESTO SE RIUSCIAMO A TORNARE TUTTI I COMICS PER UNA SERIE
-//        var availables = json["data"]["results"][0]["comics"]["available"].intValue - 1
+        //https://gateway.marvel.com:443/v1/public/series/23461/comics?noVariants=true&orderBy=issueNumber&limit=100&apikey=7f0eb8f2cdf6f33136bc854d89281085
         
-        var availables = json["data"]["results"][0]["comics"]["returned"].intValue - 1
+        var comicsURL = "https://gateway.marvel.com:443/v1/public/series/\(id)/comics"
+        
+        let params : [String : String] = [ "apikey" : APP_ID, "ts": TS, "hash" : HASH, "noVariants" : "true", "orderBy" : "issueNumber", "limit" : "100"]
+        getComicsOfSerieData(url: comicsURL, parameters: params)
+        
+    }
+    
+    func updateComicsOfSerieData (json : JSON){
+        var availables = json["data"]["total"].intValue - 1
         
         issuesTable.beginUpdates()
         print(availables)
         if availables == 0 {
             var titles : [String] = []
-            let comicTitle = json["data"]["results"][0]["comics"]["items"][0]["name"].stringValue
+            let comicTitle = json["data"]["results"][0]["title"].stringValue
             titles.append(comicTitle)
         }else{
             var t = 0
@@ -173,8 +201,8 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
             while availables > 0 {
                 var titles : [String] = []
                 for _ in 0...9 {
-                    let comicTitle = json["data"]["results"][0]["comics"]["items"][t]["name"].stringValue
-                    if comicTitle != "" && !comicTitle.contains("Variant"){ //se in futuro volessimo mettere le celle con i comic modificare qui
+                    let comicTitle = json["data"]["results"][t]["title"].stringValue
+                    if comicTitle != "" && !comicTitle.contains("Variant"){ //se in futuro volessimo mettere le celle con i comic modificare qui e modificare anche l'url
                         titles.append(comicTitle)
                     }
                     t += 1
@@ -201,11 +229,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
         
-//        issues[index] = item
-        
-        
-        
-        
+        //        issues[index] = item
     }
 	
 	//MARK: - Table Control
