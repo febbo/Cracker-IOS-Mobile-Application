@@ -37,7 +37,6 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let cellID = "IssueCell"
     
     var issues = [
-        ExpandableSection(isExpanded: false, issues: []),
         ExpandableSection(isExpanded: false, issues: [])
     ]
     
@@ -156,30 +155,53 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
 //        SECTIONS OF ISSUES
-        var titles : [String] = []
-        let availables = json["data"]["results"][0]["comics"]["available"].intValue - 1
+
+//        QUESTO SE RIUSCIAMO A TORNARE TUTTI I COMICS PER UNA SERIE
+//        var availables = json["data"]["results"][0]["comics"]["available"].intValue - 1
         
+        var availables = json["data"]["results"][0]["comics"]["returned"].intValue - 1
+        
+        issuesTable.beginUpdates()
         print(availables)
         if availables == 0 {
+            var titles : [String] = []
             let comicTitle = json["data"]["results"][0]["comics"]["items"][0]["name"].stringValue
             titles.append(comicTitle)
         }else{
-            for i in 0...availables {
-                let comicTitle = json["data"]["results"][0]["comics"]["items"][i]["name"].stringValue
-    //            print(title!)
-                if comicTitle != ""{
-                    titles.append(comicTitle)
+            var t = 0
+            var first_elem = true
+            while availables > 0 {
+                var titles : [String] = []
+                for _ in 0...9 {
+                    let comicTitle = json["data"]["results"][0]["comics"]["items"][t]["name"].stringValue
+                    if comicTitle != "" && !comicTitle.contains("Variant"){ //se in futuro volessimo mettere le celle con i comic modificare qui
+                        titles.append(comicTitle)
+                    }
+                    t += 1
                 }
+                let item = ExpandableSection(isExpanded: false, issues: titles)
+                if first_elem == true {
+                    issues[0] = item
+                    first_elem = false
+                }else{
+                    issues.append(item)
+                    self.issuesTable.insertSections(IndexSet(integer: issues.count - 1), with: .automatic)
+                }
+//                issuesTable.performBatchUpdates({
+//                    self.issuesTable.insertSections(IndexSet(integer: issues.count), with: .automatic)
+//                }) { (update) in
+//                    print("Update SUccess")
+//                }
+                
+                availables -= 10
+                
             }
         }
+        issuesTable.endUpdates()
         
-        let item = ExpandableSection(isExpanded: false, issues: titles)
+        
         
 //        issues[index] = item
-        
-        issues[0] = item
-        
-        
         
         
         
