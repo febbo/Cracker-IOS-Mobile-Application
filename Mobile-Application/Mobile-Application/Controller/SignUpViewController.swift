@@ -82,6 +82,7 @@ class SignUpViewController: UIViewController {
             "nickname": nicknameOu.text!,
             "email": emailOu.text!,
             "password": passwordOu.text!,
+            "registrazione": "Email e Password",
             "timestamp": Timestamp()
             ])
     }

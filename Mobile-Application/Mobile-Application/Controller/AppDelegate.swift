@@ -66,6 +66,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             }else{
                 print(error?.localizedDescription)
             }
+            
+            let newUserReference = Firestore.firestore().collection("Users").document(((result?.user.uid)!))    // <-- create a document, with the user id from Firebase Auth
+
+            newUserReference.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                    print("Document data: \(dataDescription)")
+                    newUserReference.updateData([
+                                    "ID": result?.user.uid,
+                                    "nickname": result?.user.displayName,
+                                    "email": result?.user.email,
+                                    "registrazione" : "Google",
+                                    "timestamp": Timestamp()
+                    //                "image": result?.user.photoURL
+                                    ])
+                } else {
+                    print("Document does not exist")
+                    newUserReference.setData([
+                                    "ID": result?.user.uid,
+                                    "nickname": result?.user.displayName,
+                                    "email": result?.user.email,
+                                    "registrazione" : "Google",
+                                    "timestamp": Timestamp()
+                    //                "image": result?.user.photoURL
+                                    ])
+                }
+            }
+            
         }
 
         }

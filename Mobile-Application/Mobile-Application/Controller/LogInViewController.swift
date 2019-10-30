@@ -99,13 +99,41 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
         }else{
             let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
             Auth.auth().signIn(with: credential) { (authResult, error) in
-              if error == nil{
-                self.userDefault.set(true, forKey: "usersignedin")
-                self.userDefault.synchronize()
-                self.performSegue(withIdentifier: "Segue_To_Signin_Social", sender: self)
-              }else{
-                print(error?.localizedDescription)
-              }
+                if error == nil{
+                    self.userDefault.set(true, forKey: "usersignedin")
+                    self.userDefault.synchronize()
+                    self.performSegue(withIdentifier: "Segue_To_Signin_Social", sender: self)
+                }else{
+                    print(error?.localizedDescription)
+                }
+                
+                let newUserReference = Firestore.firestore().collection("Users").document((authResult?.user.uid)!)    // <-- create a document, with the user id from Firebase Auth
+
+                newUserReference.getDocument { (document, error) in
+                    if let document = document, document.exists {
+                        let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                        print("Document data: \(dataDescription)")
+                        newUserReference.updateData([
+                                        "ID": authResult?.user.uid,
+                                        "nickname": authResult?.user.displayName,
+                                        "email": authResult?.user.email,
+                                        "registrazione" : "Facebook",
+                                        "timestamp": Timestamp()
+                        //                "image": result?.user.photoURL
+                                        ])
+                    } else {
+                        print("Document does not exist")
+                        newUserReference.setData([
+                                        "ID": authResult?.user.uid,
+                                        "nickname": authResult?.user.displayName,
+                                        "email": authResult?.user.email,
+                                        "registrazione" : "Facebook",
+                                        "timestamp": Timestamp()
+                        //                "image": result?.user.photoURL
+                                        ])
+                    }
+                }
+                
             }
             
         }
