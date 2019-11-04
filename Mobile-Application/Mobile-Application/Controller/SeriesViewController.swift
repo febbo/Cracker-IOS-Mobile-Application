@@ -253,6 +253,9 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let issue = issues[indexPath.section].issues[indexPath.row]
         cell.textLabel?.text = issue
+		if #available(iOS 13.0, *) {
+			cell.backgroundColor = .systemBackground
+		}
 		
 		return cell
 	}
