@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VaH-yB-xYv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VaH-yB-xYv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -911,26 +911,27 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Wag-Nc-Cci" firstAttribute="top" secondItem="viw-f7-ndM" secondAttribute="top" id="3bR-ci-0O1"/>
-                                    <constraint firstItem="Wag-Nc-Cci" firstAttribute="leading" secondItem="J8z-Yl-sV9" secondAttribute="leading" id="4ej-nY-XyI"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wag-Nc-Cci" secondAttribute="trailing" id="D1j-eO-KXd"/>
                                     <constraint firstAttribute="bottom" secondItem="Wag-Nc-Cci" secondAttribute="bottom" id="GZc-Cd-haO"/>
                                     <constraint firstAttribute="bottom" secondItem="Wag-Nc-Cci" secondAttribute="bottom" id="RB6-FV-jbP"/>
-                                    <constraint firstItem="J8z-Yl-sV9" firstAttribute="trailing" secondItem="Wag-Nc-Cci" secondAttribute="trailing" id="UXF-C4-ntr"/>
-                                    <constraint firstItem="J8z-Yl-sV9" firstAttribute="bottom" secondItem="Wag-Nc-Cci" secondAttribute="bottom" id="kDV-qW-Ayj"/>
-                                    <constraint firstItem="Wag-Nc-Cci" firstAttribute="top" secondItem="J8z-Yl-sV9" secondAttribute="top" id="kKG-LB-Vpz"/>
+                                    <constraint firstItem="Wag-Nc-Cci" firstAttribute="width" secondItem="viw-f7-ndM" secondAttribute="width" id="SuB-G0-GJ4"/>
+                                    <constraint firstItem="Wag-Nc-Cci" firstAttribute="centerY" secondItem="viw-f7-ndM" secondAttribute="centerY" id="WYf-s2-N09"/>
+                                    <constraint firstItem="Wag-Nc-Cci" firstAttribute="bottom" secondItem="viw-f7-ndM" secondAttribute="bottom" id="eTK-Se-juS"/>
                                     <constraint firstAttribute="trailing" secondItem="Wag-Nc-Cci" secondAttribute="trailing" id="lKk-lF-mAC"/>
+                                    <constraint firstItem="Wag-Nc-Cci" firstAttribute="leading" secondItem="viw-f7-ndM" secondAttribute="leading" id="nka-V0-Br7"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wag-Nc-Cci" secondAttribute="bottom" id="qtZ-4j-FGe"/>
                                     <constraint firstAttribute="trailing" secondItem="Wag-Nc-Cci" secondAttribute="trailing" id="sRb-6x-Yx1"/>
+                                    <constraint firstItem="Wag-Nc-Cci" firstAttribute="top" secondItem="viw-f7-ndM" secondAttribute="top" id="x8J-Bt-waH"/>
                                     <constraint firstItem="Wag-Nc-Cci" firstAttribute="leading" secondItem="viw-f7-ndM" secondAttribute="leading" id="yhu-ak-DYO"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="Pik-t9-KRg"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="J8z-Yl-sV9"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
-                            <constraint firstItem="viw-f7-ndM" firstAttribute="top" secondItem="UzN-XV-rae" secondAttribute="top" id="69w-wo-GoF"/>
-                            <constraint firstItem="viw-f7-ndM" firstAttribute="trailing" secondItem="UzN-XV-rae" secondAttribute="trailing" id="LMc-d7-U2x"/>
-                            <constraint firstItem="viw-f7-ndM" firstAttribute="leading" secondItem="UzN-XV-rae" secondAttribute="leading" id="cIT-wu-rEE"/>
-                            <constraint firstItem="viw-f7-ndM" firstAttribute="bottom" secondItem="UzN-XV-rae" secondAttribute="bottom" id="ooe-Ye-ABU"/>
+                            <constraint firstItem="viw-f7-ndM" firstAttribute="top" secondItem="jkv-bw-bCl" secondAttribute="top" constant="88" id="69w-wo-GoF"/>
+                            <constraint firstItem="viw-f7-ndM" firstAttribute="trailing" secondItem="jkv-bw-bCl" secondAttribute="trailing" id="LMc-d7-U2x"/>
+                            <constraint firstItem="viw-f7-ndM" firstAttribute="leading" secondItem="jkv-bw-bCl" secondAttribute="leading" id="cIT-wu-rEE"/>
+                            <constraint firstItem="viw-f7-ndM" firstAttribute="bottom" secondItem="jkv-bw-bCl" secondAttribute="bottom" constant="-83" id="ooe-Ye-ABU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UzN-XV-rae"/>
                     </view>
@@ -1312,13 +1313,13 @@
         <image name="tab_search" width="30" height="30"/>
         <image name="welcome_bg" width="682.5" height="910.5"/>
         <namedColor name="Background">
-            <color red="0.93333333333333335" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.10980392156862745" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BlackAlways">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="DarkGreen">
-            <color red="0.36078431372549019" green="0.64313725490196083" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.29019607843137257" green="0.52156862745098043" blue="0.53725490196078429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="FacebookBlue">
             <color red="0.25882352941176473" green="0.40392156862745099" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1327,13 +1328,13 @@
             <color red="0.85882352941176465" green="0.26666666666666666" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="LightGreen">
-            <color red="0.792156862745098" green="0.88627450980392153" blue="0.89411764705882357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.49803921568627452" green="0.67450980392156867" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Red">
-            <color red="0.83921568627450982" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.75686274509803919" green="0.28627450980392155" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Yellow">
-            <color red="0.95686274509803926" green="0.83137254901960789" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.9137254901960784" green="0.7686274509803922" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
