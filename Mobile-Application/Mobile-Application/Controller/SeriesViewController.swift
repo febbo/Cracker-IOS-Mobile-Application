@@ -35,6 +35,8 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let TS = "1"
     
     let cellID = "IssuesInSeriesCell"
+	
+	var numberOfIssues = 0
     
     var issues = [
         ExpandableSection(isExpanded: false, issues: [])
@@ -188,6 +190,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func updateComicsOfSerieData (json : JSON){
         var availables = json["data"]["total"].intValue - 1
+		numberOfIssues = availables+1
         
         issuesTable.beginUpdates()
         print(availables)
@@ -268,7 +271,14 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		
 		let button = UIButton()
-		button.setTitle("Da sistemare", for: .normal)
+		var titleString = ""
+		if ((section+1)*10 < numberOfIssues) {
+			titleString = "Issues " + String((section+1)*10-9) + " - " + String((section+1)*10)
+		}
+		else {
+			titleString = "Issues " + String((section+1)*10-9) + " - " + String(numberOfIssues)
+		}
+		button.setTitle(titleString, for: .normal)
 		button.setTitleColor(.black, for: .normal)
 		button.backgroundColor = UIColor(named: "LightGreen")
 		button.layer.cornerRadius = 15
