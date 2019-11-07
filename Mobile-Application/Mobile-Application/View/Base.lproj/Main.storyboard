@@ -965,7 +965,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQj-Io-RSa" userLabel="ContainerView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="802"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uw2-Cg-wAY" userLabel="HeaderView">
                                                 <rect key="frame" x="20" y="20" width="374" height="170"/>
@@ -1147,16 +1147,50 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="EIY-mq-mtQ" userLabel="IssuesTable">
-                                                <rect key="frame" x="20" y="501.5" width="374" height="203.5"/>
+                                                <rect key="frame" x="20" y="501.5" width="374" height="280.5"/>
                                                 <color key="backgroundColor" name="Background"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IssueCell" id="iiF-nv-ud1">
-                                                        <rect key="frame" x="0.0" y="55.5" width="374" height="43.5"/>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IssuesInSeriesCell" id="iiF-nv-ud1" customClass="IssuesInSeriesTableViewCell" customModule="Mobile_Application" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="55.5" width="374" height="43"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iiF-nv-ud1" id="t9E-4W-yYe">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43"/>
                                                             <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nse-fB-Gdb">
+                                                                    <rect key="frame" x="20" y="11" width="314" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFj-Mg-6U7">
+                                                                    <rect key="frame" x="329" y="6.5" width="30" height="30"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="30" id="MFO-qz-h0T"/>
+                                                                        <constraint firstAttribute="height" constant="30" id="pdY-cE-QlV"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                    <color key="tintColor" name="DarkGreen"/>
+                                                                    <state key="normal" image="circle" catalog="system">
+                                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="medium"/>
+                                                                    </state>
+                                                                    <state key="selected" image="checkmark.circle.fill" catalog="system"/>
+                                                                </button>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="nse-fB-Gdb" firstAttribute="bottom" secondItem="t9E-4W-yYe" secondAttribute="bottomMargin" id="5rQ-hn-uPd"/>
+                                                                <constraint firstAttribute="trailingMargin" secondItem="nse-fB-Gdb" secondAttribute="trailing" constant="20" id="KFd-Tw-wbz"/>
+                                                                <constraint firstItem="oFj-Mg-6U7" firstAttribute="centerY" secondItem="t9E-4W-yYe" secondAttribute="centerY" id="Xbl-iZ-bxP"/>
+                                                                <constraint firstAttribute="trailing" secondItem="oFj-Mg-6U7" secondAttribute="trailing" constant="15" id="hTB-xO-IkH"/>
+                                                                <constraint firstItem="nse-fB-Gdb" firstAttribute="top" secondItem="t9E-4W-yYe" secondAttribute="topMargin" id="qg3-hI-WLm"/>
+                                                                <constraint firstItem="nse-fB-Gdb" firstAttribute="centerY" secondItem="t9E-4W-yYe" secondAttribute="centerY" id="tY5-EO-PvA"/>
+                                                                <constraint firstItem="nse-fB-Gdb" firstAttribute="leading" secondItem="t9E-4W-yYe" secondAttribute="leadingMargin" id="ucW-s7-afq"/>
+                                                            </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="label" destination="nse-fB-Gdb" id="g8X-Iu-azg"/>
+                                                            <outlet property="readButton" destination="oFj-Mg-6U7" id="Oti-th-R7a"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                                 <sections/>
@@ -1296,6 +1330,8 @@
     </scenes>
     <resources>
         <image name="Logo" width="260" height="200"/>
+        <image name="checkmark.circle.fill" catalog="system" width="64" height="62"/>
+        <image name="circle" catalog="system" width="64" height="62"/>
         <image name="right" width="11" height="19"/>
         <image name="tab_cal" width="30" height="30"/>
         <image name="tab_profile" width="30" height="30"/>

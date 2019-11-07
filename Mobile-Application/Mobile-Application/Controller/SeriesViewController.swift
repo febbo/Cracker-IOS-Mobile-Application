@@ -34,7 +34,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let HASH = "1bdc741bcbdaf3d87a0f0d6e6180f877"
     let TS = "1"
     
-    let cellID = "IssueCell"
+    let cellID = "IssuesInSeriesCell"
     
     var issues = [
         ExpandableSection(isExpanded: false, issues: [])
@@ -249,15 +249,15 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 	
 	//LEO
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "IssueCell", for: indexPath)
+		let cell = tableView.dequeueReusableCell(withIdentifier: "IssuesInSeriesCell", for: indexPath) as? IssuesInSeriesTableViewCell
         
-        let issue = issues[indexPath.section].issues[indexPath.row]
-        cell.textLabel?.text = issue
+		let issue = issues[indexPath.section].issues[indexPath.row]
+		cell?.label.text = issue
+		cell?.readButton.addTarget(self, action: #selector(switchReadStatus), for: .touchUpInside)
 		if #available(iOS 13.0, *) {
-			cell.backgroundColor = .systemBackground
+			cell?.backgroundColor = .systemBackground
 		}
-		
-		return cell
+		return cell!
 	}
 	
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -338,5 +338,17 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 			issuesTable.insertRows(at: indexPaths, with: .fade)
 		}
 	}
+	
+	@objc func switchReadStatus(button: UIButton) {
+		button.isSelected = !button.isSelected
+	}
 
+}
+
+
+class IssuesInSeriesTableViewCell : UITableViewCell {
+	
+	@IBOutlet weak var label: UILabel!
+	@IBOutlet weak var readButton: UIButton!	
+	
 }
