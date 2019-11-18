@@ -6,6 +6,7 @@
 //  Copyright © 2019 Leonardo Febbo. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import Alamofire
 import SwiftyJSON
@@ -44,6 +45,8 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var issues : [ExpandableSection] = []
     
     let sectionsTitle : Any = []
+    
+    var issuesOfSerie : [Int] = []
     
 	
 	override func viewDidLoad() {
@@ -208,6 +211,8 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     let comicTitle = json["data"]["results"][t]["title"].stringValue
                     if comicTitle != "" && !comicTitle.contains("Variant"){ //se in futuro volessimo mettere le celle con i comic modificare qui e modificare anche l'url
                         titles.append(comicTitle)
+                        let id = json["data"]["results"][t]["id"].intValue
+                        issuesOfSerie.append(id)
                     }
                     t += 1
                 }
@@ -293,6 +298,27 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		
 		return button
 	}
+    
+        //per andare nella pagina del singolo issue
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "returnToIssue", sender: self)
+    }
+    
+//    DINAMICIZZA LA PAGINA SINGOLA IN BASE ALLA CELLA CHE SCEGLI
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? IssueViewController{
+
+//            index = 
+//            destination.comicID = UpNextComics[(upNextTableView.indexPathForSelectedRow?.section)!][(upNextTableView.indexPathForSelectedRow?.row)!]
+
+//        print(UpNextComics[(upNextTableView.indexPathForSelectedRow?.section)!][(upNextTableView.indexPathForSelectedRow?.row)!])
+//            print((upNextTableView.indexPathForSelectedRow?.row)!)
+//            print((upNextTableView.indexPathForSelectedRow?.item)!)
+//            print((upNextTableView.indexPathForSelectedRow?.section)!)
+//            print((upNextTableView.indexPathForSelectedRow?.description)!)
+
+        }
+    }
 	
 	//MARK: - Actions
 	
