@@ -102,7 +102,7 @@ class UpNextTableViewController : UITableViewController {
     
     func getApiData() {
         for i in 0...weeks.count-1 {
-            let params : [String : String] = [ "apikey" : APP_ID, "dateDescriptor" : weeks[i], "ts": TS, "hash" : HASH]
+            let params : [String : String] = [ "apikey" : APP_ID, "ts": TS, "hash" : HASH, "format": "comic", "noVariants" : "true", "dateDescriptor" : weeks[i], "orderBy" : "title", "limit" : "50" ]
             getUpNextData(url: URL, parameters: params, index: i)
         }
         
@@ -152,7 +152,7 @@ class UpNextTableViewController : UITableViewController {
         
         var titles : [String] = []
         var comics : [Int] = []
-        let limit = json["data"]["limit"].intValue - 1
+        let limit = json["data"]["total"].intValue - 1
         
         
         for i in 0...limit {
