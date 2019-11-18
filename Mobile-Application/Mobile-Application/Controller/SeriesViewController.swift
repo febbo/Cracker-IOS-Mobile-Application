@@ -38,9 +38,10 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 	
 	var numberOfIssues = 0
     
-    var issues = [
-        ExpandableSection(isExpanded: false, issues: [])
-    ]
+//    var issues = [
+//        ExpandableSection(isExpanded: false, issues: [])
+//    ]
+    var issues : [ExpandableSection] = []
     
     let sectionsTitle : Any = []
     
@@ -211,13 +212,13 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     t += 1
                 }
                 let item = ExpandableSection(isExpanded: false, issues: titles)
-                if first_elem == true {
-                    issues[0] = item
-                    first_elem = false
-                }else{
-                    issues.append(item)
-                    self.issuesTable.insertSections(IndexSet(integer: issues.count - 1), with: .automatic)
-                }
+//                if first_elem == true {
+//                    issues[0] = item
+//                    first_elem = false
+//                }else{
+                issues.append(item)
+                self.issuesTable.insertSections(IndexSet(integer: issues.count - 1), with: .automatic)
+//                }
 //                issuesTable.performBatchUpdates({
 //                    self.issuesTable.insertSections(IndexSet(integer: issues.count), with: .automatic)
 //                }) { (update) in
