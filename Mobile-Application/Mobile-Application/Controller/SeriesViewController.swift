@@ -308,8 +308,8 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? IssueViewController{
 
-//            index = 
-//            destination.comicID = UpNextComics[(upNextTableView.indexPathForSelectedRow?.section)!][(upNextTableView.indexPathForSelectedRow?.row)!]
+            let index = (issuesTable.indexPathForSelectedRow?.section)! * 10 + (issuesTable.indexPathForSelectedRow?.row)!
+            destination.comicID = issuesOfSerie[index]
 
 //        print(UpNextComics[(upNextTableView.indexPathForSelectedRow?.section)!][(upNextTableView.indexPathForSelectedRow?.row)!])
 //            print((upNextTableView.indexPathForSelectedRow?.row)!)
