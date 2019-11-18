@@ -99,7 +99,7 @@ class IssueViewController: UIViewController {
         dateFormatterPrint.dateFormat = "dd-MM-yyyy"
 
         if let date = dateFormatterGet.date(from: "\(dateString)") {
-            dateComic.text = dateFormatterPrint.string(from: date)
+            dateComic.text = "Release date: " + dateFormatterPrint.string(from: date)
         } else {
            print("There was an error decoding the string")
             dateComic.text = "error"
