@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Firebase
 
 class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -29,7 +30,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 	var openImage = UIImage(named: "down")
 	var closeImage = UIImage(named: "up")
     
-    var serieID : Int?
+    var serieID : String = ""
     var apiURL : String?
     let APP_ID = "7f0eb8f2cdf6f33136bc854d89281085"
     let HASH = "1bdc741bcbdaf3d87a0f0d6e6180f877"
@@ -48,6 +49,8 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var issuesOfSerie : [Int] = []
     
+    var imageSerieURL : URL?
+    
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -59,25 +62,33 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		
 		followButton.titleLabel?.textAlignment = .center
 		readButton.titleLabel?.textAlignment = .center
+        
+        let User = Firestore.firestore().collection("Users").document("\((Auth.auth().currentUser?.uid)!)")
+        
+        User.collection("Series").getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    print("Collection got")
+                    print("\(self.serieID)")
+                    let docRef = User.collection("Series").document("\(self.serieID)")
+
+                    docRef.getDocument { (document, error) in
+                        if let document = document, document.exists {
+//                            let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+//                            print("Document data: \(dataDescription)")
+                            print("Document exists")
+                            self.follows = true
+                            self.updateBtn()
+                        } else {
+                            print("Document does not exist")
+                        }
+                    }
+                }
+        }
 		
-		if (follows) {
-			followButton.setTitle("UNFOLLOW THIS SERIES", for: .normal)
-		}
-		else {
-			followButton.setTitle("FOLLOW THIS SERIES", for: .normal)
-			readButton.isEnabled = false
-			readButton.alpha = 0.5
-		}
-		
-		if (allRead) {
-			readButton.backgroundColor = UIColor(named: "DarkGreen")
-			readButton.setTitle("MARK ALL AS UNREAD", for: .normal)
-		}
-		else {
-			readButton.backgroundColor = UIColor(named: "Red")
-			readButton.setTitle("MARK ALL AS READ", for: .normal)
-		}
-		
+
+        
 		followButton.addTarget(self, action: #selector(followThisSeries), for: .touchUpInside)
 		readButton.addTarget(self, action: #selector(markAllAsRead), for: .touchUpInside)
 		
@@ -137,6 +148,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //        ID
         let id = json["data"]["results"][0]["id"].stringValue
         print(id)
+        serieID = id
         
 //        TITLE
         var titleS = json["data"]["results"][0]["title"].stringValue
@@ -159,6 +171,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let imageExtension = json["data"]["results"][0]["thumbnail"]["extension"].stringValue
         
         let imageURL = URL(string: imagePath + "." + imageExtension)
+        imageSerieURL = imageURL
         imageSerie.load(url: imageURL!)
         
         print(imageURL!)
@@ -323,19 +336,62 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 	//MARK: - Actions
 	
 	//TODO: completare con dati profilo
-	
+    func updateBtn() {
+        if (follows) {
+            followButton.setTitle("UNFOLLOW THIS SERIES", for: .normal)
+        }
+        else {
+            followButton.setTitle("FOLLOW THIS SERIES", for: .normal)
+            readButton.isEnabled = false
+            readButton.alpha = 0.5
+        }
+        
+        if (allRead) {
+            readButton.backgroundColor = UIColor(named: "DarkGreen")
+            readButton.setTitle("MARK ALL AS UNREAD", for: .normal)
+        }
+        else {
+            readButton.backgroundColor = UIColor(named: "Red")
+            readButton.setTitle("MARK ALL AS READ", for: .normal)
+        }
+    }
+    
+    
 	@objc func followThisSeries(button: UIButton) {
 		follows = !follows
+        let User = Firestore.firestore().collection("Users").document(Auth.auth().currentUser!.uid)
 		
 		if (follows) {
 			followButton.setTitle("UNFOLLOW THIS SERIES", for: .normal)
 			readButton.isEnabled = true
 			readButton.alpha = 1
+        
+            User.collection("Series").document("\(serieID)").setData([
+                "id": serieID,
+                "name": titleSerie.text,
+                "image": imageSerieURL?.absoluteString
+            ]) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+                }
+            }
+//            follows = True
+
 		}
 		else {
 			followButton.setTitle("FOLLOW THIS SERIES", for: .normal)
 			readButton.isEnabled = false
 			readButton.alpha = 0.5
+            
+            User.collection("Series").document("\(serieID)").delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    print("Document successfully removed!")
+                }
+            }
 		}
 	}
 	
