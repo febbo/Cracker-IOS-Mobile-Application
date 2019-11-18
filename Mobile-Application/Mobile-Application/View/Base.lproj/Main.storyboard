@@ -381,7 +381,7 @@
                                     <action selector="signInBtnPressed:" destination="VaH-yB-xYv" eventType="touchUpInside" id="ZGN-Ms-ByL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HuI-4E-HW8" userLabel="FB Button" customClass="FBSDKLoginButton">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HuI-4E-HW8" userLabel="FB Button" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="67" y="663" width="280" height="50"/>
                                 <color key="backgroundColor" name="BlackAlways"/>
                                 <constraints>
