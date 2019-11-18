@@ -185,7 +185,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         //https://gateway.marvel.com:443/v1/public/series/23461/comics?noVariants=true&orderBy=issueNumber&limit=100&apikey=7f0eb8f2cdf6f33136bc854d89281085
         
-        var comicsURL = "https://gateway.marvel.com:443/v1/public/series/\(id)/comics"
+        let comicsURL = "https://gateway.marvel.com:443/v1/public/series/\(id)/comics"
         
         let params : [String : String] = [ "apikey" : APP_ID, "ts": TS, "hash" : HASH, "noVariants" : "true", "orderBy" : "issueNumber", "limit" : "100"]
         getComicsOfSerieData(url: comicsURL, parameters: params)
