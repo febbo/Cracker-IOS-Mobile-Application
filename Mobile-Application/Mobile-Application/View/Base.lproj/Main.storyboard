@@ -1013,6 +1013,7 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="CfP-JB-Z5a"/>
                     <connections>
+                        <outlet property="creatorsText" destination="gH3-Sd-59P" id="N6s-AY-3m9"/>
                         <outlet property="dateComic" destination="q4T-bE-stF" id="woO-uk-dZs"/>
                         <outlet property="descriptionComic" destination="NZJ-zQ-eXB" id="jxJ-9q-V1x"/>
                         <outlet property="imageComic" destination="5JR-bc-aQV" id="z2F-Gf-C8d"/>
