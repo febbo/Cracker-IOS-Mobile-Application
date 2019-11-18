@@ -683,68 +683,32 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Title Title Title Title Title Title Title" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="hkZ-5s-HpR" userLabel="TitleLabel">
-                                                        <rect key="frame" x="177" y="11.5" width="177" height="86"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Title Title Title Title Title Title Title" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="hkZ-5s-HpR" userLabel="TitleLabel">
+                                                        <rect key="frame" x="177" y="67.5" width="177" height="86"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of release: xx-xx-xxxx" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4T-bE-stF" userLabel="DateLabel">
-                                                        <rect key="frame" x="177" y="102.5" width="177" height="36"/>
+                                                        <rect key="frame" x="177" y="158.5" width="177" height="36"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creators" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5PW-1z-i9g" userLabel="CreatorsTitleLabel">
-                                                        <rect key="frame" x="177" y="148.5" width="177" height="22"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role: name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoD-x7-poF" userLabel="CreatorsLabel1">
-                                                        <rect key="frame" x="177" y="175.5" width="177" height="19.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role: name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8k-a3-oQg" userLabel="CreatorsLabel2">
-                                                        <rect key="frame" x="177" y="195" width="177" height="19.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role: name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aow-G6-ARw" userLabel="CreatorsLabel3">
-                                                        <rect key="frame" x="177" y="214.5" width="177" height="19.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="Aow-G6-ARw" firstAttribute="leading" secondItem="5JR-bc-aQV" secondAttribute="trailing" constant="15" id="04Z-rX-zXb"/>
-                                                    <constraint firstItem="Aow-G6-ARw" firstAttribute="top" secondItem="S8k-a3-oQg" secondAttribute="bottom" id="0wW-kp-jDN"/>
                                                     <constraint firstAttribute="width" secondItem="Ejq-9t-Ziy" secondAttribute="height" multiplier="374:251" id="1wV-Cp-xUF"/>
-                                                    <constraint firstAttribute="trailing" secondItem="S8k-a3-oQg" secondAttribute="trailing" constant="20" id="B5P-fW-zrW"/>
                                                     <constraint firstAttribute="trailing" secondItem="q4T-bE-stF" secondAttribute="trailing" constant="20" id="Bni-HC-HGA"/>
-                                                    <constraint firstItem="5PW-1z-i9g" firstAttribute="top" secondItem="q4T-bE-stF" secondAttribute="bottom" constant="10" id="Dn5-wV-jY9"/>
-                                                    <constraint firstItem="q4T-bE-stF" firstAttribute="centerY" secondItem="Ejq-9t-Ziy" secondAttribute="centerY" constant="-5" id="GOl-P7-fLs"/>
+                                                    <constraint firstItem="hkZ-5s-HpR" firstAttribute="centerY" secondItem="Ejq-9t-Ziy" secondAttribute="centerY" constant="-15" id="E4g-GM-OYg"/>
                                                     <constraint firstItem="5JR-bc-aQV" firstAttribute="top" secondItem="Ejq-9t-Ziy" secondAttribute="top" id="L43-ds-anH"/>
-                                                    <constraint firstItem="5PW-1z-i9g" firstAttribute="leading" secondItem="5JR-bc-aQV" secondAttribute="trailing" constant="15" id="LEH-v1-oW5"/>
-                                                    <constraint firstAttribute="trailing" secondItem="xoD-x7-poF" secondAttribute="trailing" constant="20" id="LdM-hN-fMV"/>
                                                     <constraint firstItem="q4T-bE-stF" firstAttribute="leading" secondItem="5JR-bc-aQV" secondAttribute="trailing" constant="15" id="M3R-TC-xE5"/>
-                                                    <constraint firstItem="xoD-x7-poF" firstAttribute="leading" secondItem="5JR-bc-aQV" secondAttribute="trailing" constant="15" id="O00-rh-7kK"/>
                                                     <constraint firstAttribute="bottom" secondItem="5JR-bc-aQV" secondAttribute="bottom" id="PhD-JA-TbZ"/>
                                                     <constraint firstItem="hkZ-5s-HpR" firstAttribute="leading" secondItem="5JR-bc-aQV" secondAttribute="trailing" constant="15" id="R3S-wW-UIa"/>
-                                                    <constraint firstItem="xoD-x7-poF" firstAttribute="top" secondItem="5PW-1z-i9g" secondAttribute="bottom" constant="5" id="Vc8-Dr-YxZ"/>
                                                     <constraint firstItem="q4T-bE-stF" firstAttribute="top" secondItem="hkZ-5s-HpR" secondAttribute="bottom" constant="5" id="X7i-6F-jDV"/>
-                                                    <constraint firstItem="S8k-a3-oQg" firstAttribute="top" secondItem="xoD-x7-poF" secondAttribute="bottom" id="Zhw-6H-88b"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Aow-G6-ARw" secondAttribute="trailing" constant="20" id="aDg-Pn-dwI"/>
                                                     <constraint firstItem="5JR-bc-aQV" firstAttribute="leading" secondItem="Ejq-9t-Ziy" secondAttribute="leading" id="bvx-ai-WoJ"/>
-                                                    <constraint firstAttribute="trailing" secondItem="5PW-1z-i9g" secondAttribute="trailing" constant="20" id="eiz-Cr-vlU"/>
                                                     <constraint firstAttribute="width" secondItem="Ejq-9t-Ziy" secondAttribute="height" multiplier="374:251" id="epF-EA-pkE"/>
                                                     <constraint firstAttribute="trailing" secondItem="hkZ-5s-HpR" secondAttribute="trailing" constant="20" id="qTW-Co-uAp"/>
-                                                    <constraint firstItem="S8k-a3-oQg" firstAttribute="leading" secondItem="5JR-bc-aQV" secondAttribute="trailing" constant="15" id="rco-AE-qFP"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -757,7 +721,6 @@
                                                 <color key="backgroundColor" name="Red"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="JRW-oi-Qbo"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="RYX-tZ-r99"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                 <state key="normal" title="MARK AS READ">
@@ -769,8 +732,76 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XET-J1-5si" userLabel="SolicitView">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zap-Ik-Yc7" userLabel="CreatorsView">
                                                 <rect key="frame" x="20" y="361" width="374" height="90"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="We6-gr-MW4" userLabel="GreenViewNoCornerRadius">
+                                                        <rect key="frame" x="0.0" y="25" width="374" height="25"/>
+                                                        <color key="backgroundColor" name="LightGreen"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="Kth-hJ-Hus"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqe-Qi-Jso" userLabel="GreenView">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creators" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLQ-DR-Fzm" userLabel="SolicitTitle">
+                                                                <rect key="frame" x="15" y="13" width="74.5" height="24"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <color key="textColor" name="BlackAlways"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="LightGreen"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="073-lg-vm8"/>
+                                                            <constraint firstItem="YLQ-DR-Fzm" firstAttribute="centerY" secondItem="qqe-Qi-Jso" secondAttribute="centerY" id="0ty-x2-0ZX"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="8Lu-uk-bIQ"/>
+                                                            <constraint firstItem="YLQ-DR-Fzm" firstAttribute="leading" secondItem="qqe-Qi-Jso" secondAttribute="leading" constant="15" id="J15-fU-tKA"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YLQ-DR-Fzm" secondAttribute="trailing" constant="20" symbolic="YES" id="t7n-Mh-0fc"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="We6-gr-MW4" secondAttribute="trailing" id="4wy-BR-fWY"/>
+                                                    <constraint firstAttribute="height" constant="90" id="EMk-9W-m39"/>
+                                                    <constraint firstItem="qqe-Qi-Jso" firstAttribute="trailing" secondItem="TwW-zR-1O2" secondAttribute="trailing" id="FaQ-Sa-Lx1"/>
+                                                    <constraint firstItem="qqe-Qi-Jso" firstAttribute="leading" secondItem="TwW-zR-1O2" secondAttribute="leading" id="GDh-i4-wsg"/>
+                                                    <constraint firstItem="We6-gr-MW4" firstAttribute="top" secondItem="zap-Ik-Yc7" secondAttribute="top" constant="25" id="jGi-PV-7Ob"/>
+                                                    <constraint firstItem="We6-gr-MW4" firstAttribute="leading" secondItem="zap-Ik-Yc7" secondAttribute="leading" id="pdH-kM-Rpx"/>
+                                                    <constraint firstItem="qqe-Qi-Jso" firstAttribute="top" secondItem="TwW-zR-1O2" secondAttribute="top" id="rRi-b5-RDz"/>
+                                                </constraints>
+                                                <viewLayoutGuide key="safeArea" id="TwW-zR-1O2"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gH3-Sd-59P" userLabel="CreatorsText">
+                                                <rect key="frame" x="20" y="411" width="374" height="70"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="rect" keyPath="textContainerInset">
+                                                        <rect key="value" x="10" y="10" width="10" height="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XET-J1-5si" userLabel="SolicitView">
+                                                <rect key="frame" x="20" y="501" width="374" height="90"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3o-RF-St5" userLabel="GreenViewNoCornerRadius">
                                                         <rect key="frame" x="0.0" y="25" width="374" height="25"/>
@@ -810,7 +841,6 @@
                                                     <constraint firstAttribute="trailing" secondItem="Hsh-eg-xhj" secondAttribute="trailing" id="D6l-pe-yUZ"/>
                                                     <constraint firstItem="Hsh-eg-xhj" firstAttribute="top" secondItem="XET-J1-5si" secondAttribute="top" id="HKY-dU-b1O"/>
                                                     <constraint firstItem="Hsh-eg-xhj" firstAttribute="leading" secondItem="XET-J1-5si" secondAttribute="leading" id="P73-uL-zzl"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="VvD-ll-Zf3"/>
                                                     <constraint firstAttribute="trailing" secondItem="M3o-RF-St5" secondAttribute="trailing" id="blH-za-F0t"/>
                                                     <constraint firstItem="M3o-RF-St5" firstAttribute="top" secondItem="XET-J1-5si" secondAttribute="top" constant="25" id="fV6-Ns-rmP"/>
                                                 </constraints>
@@ -820,8 +850,24 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZJ-zQ-eXB" userLabel="SolicitText">
+                                                <rect key="frame" x="20" y="551" width="374" height="70"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="rect" keyPath="textContainerInset">
+                                                        <rect key="value" x="10" y="10" width="10" height="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJh-Gx-b1Z" userLabel="SeriesView">
-                                                <rect key="frame" x="20" y="572.5" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="641" width="374" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See the entire series" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9Y-Fh-zls" userLabel="SeriesText">
                                                         <rect key="frame" x="15" y="14" width="166" height="22"/>
@@ -872,22 +918,6 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZJ-zQ-eXB" userLabel="SolicitText">
-                                                <rect key="frame" x="20" y="411" width="374" height="141.5"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </string>
-                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="15"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="rect" keyPath="textContainerInset">
-                                                        <rect key="value" x="10" y="10" width="10" height="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" name="Background"/>
                                         <constraints>
@@ -896,15 +926,21 @@
                                             <constraint firstAttribute="trailing" secondItem="Ejq-9t-Ziy" secondAttribute="trailing" constant="20" id="6Xr-Av-dcx"/>
                                             <constraint firstItem="Ejq-9t-Ziy" firstAttribute="leading" secondItem="Wag-Nc-Cci" secondAttribute="leading" constant="20" id="6rF-5P-Yd6"/>
                                             <constraint firstAttribute="trailing" secondItem="XET-J1-5si" secondAttribute="trailing" constant="20" id="BDx-EO-owY"/>
+                                            <constraint firstItem="XET-J1-5si" firstAttribute="top" secondItem="gH3-Sd-59P" secondAttribute="bottom" constant="20" id="BLv-f8-u4A"/>
+                                            <constraint firstAttribute="trailing" secondItem="gH3-Sd-59P" secondAttribute="trailing" constant="20" id="HQc-oh-LB2"/>
                                             <constraint firstItem="Ejq-9t-Ziy" firstAttribute="top" secondItem="Wag-Nc-Cci" secondAttribute="top" constant="20" id="IfH-eo-qLb"/>
+                                            <constraint firstItem="gH3-Sd-59P" firstAttribute="leading" secondItem="Wag-Nc-Cci" secondAttribute="leading" constant="20" id="NDr-mB-K2u"/>
+                                            <constraint firstAttribute="trailing" secondItem="zap-Ik-Yc7" secondAttribute="trailing" constant="20" id="O0a-hi-w0T"/>
+                                            <constraint firstItem="NZJ-zQ-eXB" firstAttribute="top" secondItem="gH3-Sd-59P" secondAttribute="bottom" constant="70" id="OFq-em-Pbx"/>
                                             <constraint firstItem="Abe-eJ-bmN" firstAttribute="top" secondItem="Ejq-9t-Ziy" secondAttribute="bottom" constant="20" id="Pem-jH-KIy"/>
+                                            <constraint firstItem="gH3-Sd-59P" firstAttribute="top" secondItem="Abe-eJ-bmN" secondAttribute="bottom" constant="70" id="RCd-5e-rwm"/>
                                             <constraint firstItem="Abe-eJ-bmN" firstAttribute="leading" secondItem="Wag-Nc-Cci" secondAttribute="leading" constant="20" id="S9p-Tj-XgG"/>
                                             <constraint firstAttribute="trailing" secondItem="Abe-eJ-bmN" secondAttribute="trailing" constant="20" id="SDs-AC-Keb"/>
                                             <constraint firstAttribute="trailing" secondItem="NZJ-zQ-eXB" secondAttribute="trailing" constant="20" id="YhE-TY-Sk3"/>
                                             <constraint firstItem="XET-J1-5si" firstAttribute="leading" secondItem="Wag-Nc-Cci" secondAttribute="leading" constant="20" id="ZAh-Vl-lH7"/>
-                                            <constraint firstItem="XET-J1-5si" firstAttribute="top" secondItem="Abe-eJ-bmN" secondAttribute="bottom" constant="20" id="i6J-Cp-kyB"/>
+                                            <constraint firstItem="zap-Ik-Yc7" firstAttribute="leading" secondItem="Wag-Nc-Cci" secondAttribute="leading" constant="20" id="d0B-A2-LTN"/>
                                             <constraint firstAttribute="trailing" secondItem="kJh-Gx-b1Z" secondAttribute="trailing" constant="20" id="oek-8V-aEh"/>
-                                            <constraint firstItem="NZJ-zQ-eXB" firstAttribute="top" secondItem="Abe-eJ-bmN" secondAttribute="bottom" constant="70" id="ul3-Tk-Ib1"/>
+                                            <constraint firstItem="zap-Ik-Yc7" firstAttribute="top" secondItem="Abe-eJ-bmN" secondAttribute="bottom" constant="20" id="tgt-8u-8IK"/>
                                             <constraint firstItem="kJh-Gx-b1Z" firstAttribute="top" secondItem="NZJ-zQ-eXB" secondAttribute="bottom" constant="20" id="xgx-LV-Vfd"/>
                                         </constraints>
                                     </view>
@@ -937,9 +973,6 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="CfP-JB-Z5a"/>
                     <connections>
-                        <outlet property="creatorsComic1" destination="xoD-x7-poF" id="Uws-9Q-8Co"/>
-                        <outlet property="creatorsComic2" destination="S8k-a3-oQg" id="t8L-Xb-MeG"/>
-                        <outlet property="creatorsComic3" destination="Aow-G6-ARw" id="B1f-pD-UDc"/>
                         <outlet property="dateComic" destination="q4T-bE-stF" id="woO-uk-dZs"/>
                         <outlet property="descriptionComic" destination="NZJ-zQ-eXB" id="jxJ-9q-V1x"/>
                         <outlet property="imageComic" destination="5JR-bc-aQV" id="z2F-Gf-C8d"/>
