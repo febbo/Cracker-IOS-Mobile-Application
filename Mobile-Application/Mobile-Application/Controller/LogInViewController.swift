@@ -106,7 +106,7 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
                 if error == nil{
                     self.userDefault.set(true, forKey: "usersignedin")
                     self.userDefault.synchronize()
-                    self.performSegue(withIdentifier: "Segue_To_Signin_Social", sender: self)
+                    self.performSegue(withIdentifier: "Segue_To_SignIn_Social", sender: self)
                 }else{
                     print(error?.localizedDescription)
                 }
