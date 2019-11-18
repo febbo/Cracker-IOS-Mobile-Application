@@ -17,7 +17,8 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
 //    Outlets
     @IBOutlet weak var imageOU: UIImageView!
     @IBOutlet weak var nicknameOu: UILabel!
-
+	@IBOutlet weak var seriesButton: UIButton!
+	
 	@IBOutlet weak var seriesCollection: UICollectionView!
     
 //    Constants
@@ -39,6 +40,8 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
 		
 		seriesCollection.delegate = self
 		seriesCollection.dataSource = self
+		
+		seriesButton.addTarget(self, action: #selector(showUserSeries), for: UIControl.Event.touchUpInside)
         
         guard let name = Auth.auth().currentUser?.displayName  else {return}
         nicknameOu.text = name
@@ -74,6 +77,10 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
             print ("Error signing out: %@", signOutError)
         }
     }
+	
+	@objc func showUserSeries() {
+		self.performSegue(withIdentifier: "ShowUserSeries", sender: self)
+	}
     
     
 
