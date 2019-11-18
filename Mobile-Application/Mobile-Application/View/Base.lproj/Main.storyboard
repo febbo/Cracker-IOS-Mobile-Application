@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VaH-yB-xYv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VaH-yB-xYv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -381,16 +381,16 @@
                                     <action selector="signInBtnPressed:" destination="VaH-yB-xYv" eventType="touchUpInside" id="ZGN-Ms-ByL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HuI-4E-HW8" customClass="FBSDKLoginButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HuI-4E-HW8" userLabel="FB Button" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="67" y="663" width="280" height="50"/>
-                                <color key="backgroundColor" name="FacebookBlue"/>
+                                <color key="backgroundColor" name="BlackAlways"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="tUs-1E-wpP"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="tUs-1E-wpP"/>
                                     <constraint firstAttribute="height" constant="50" id="xTo-aA-6CN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Login with Facebook"/>
+                                <state key="normal" title="FB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="15"/>
@@ -465,9 +465,26 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93R-yd-5aa" userLabel="Facebook Sign In Btn Custom">
+                                <rect key="frame" x="67" y="663" width="280" height="50"/>
+                                <color key="backgroundColor" name="FacebookBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="BH0-Dp-kx9"/>
+                                    <constraint firstAttribute="height" constant="50" id="NJX-db-jre"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Login with Facebook"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
+                            <constraint firstItem="93R-yd-5aa" firstAttribute="top" secondItem="5fs-lr-pGC" secondAttribute="bottom" constant="30" id="1KR-8R-xsE"/>
                             <constraint firstItem="aIC-I9-TDe" firstAttribute="top" secondItem="vhx-ir-Fbu" secondAttribute="bottom" constant="40" id="4Wh-Lm-PQo"/>
                             <constraint firstItem="5fs-lr-pGC" firstAttribute="centerX" secondItem="TKv-wF-23i" secondAttribute="centerX" id="5JM-wQ-wTk"/>
                             <constraint firstItem="g2M-9J-UkG" firstAttribute="top" secondItem="aIC-I9-TDe" secondAttribute="bottom" id="KSQ-p8-Bqp"/>
@@ -477,6 +494,7 @@
                             <constraint firstItem="8NJ-zw-J2R" firstAttribute="centerX" secondItem="TKv-wF-23i" secondAttribute="centerX" id="QOv-cK-vnb"/>
                             <constraint firstItem="5fs-lr-pGC" firstAttribute="top" secondItem="nyJ-ET-2KM" secondAttribute="bottom" constant="30" id="RTA-jR-g4L"/>
                             <constraint firstItem="nyJ-ET-2KM" firstAttribute="top" secondItem="8NJ-zw-J2R" secondAttribute="bottom" constant="30" id="UjP-Op-rPq"/>
+                            <constraint firstItem="93R-yd-5aa" firstAttribute="centerX" secondItem="TKv-wF-23i" secondAttribute="centerX" id="W6L-8Q-69M"/>
                             <constraint firstItem="8NJ-zw-J2R" firstAttribute="centerY" secondItem="TKv-wF-23i" secondAttribute="centerY" id="b8g-9v-I8F"/>
                             <constraint firstItem="8NJ-zw-J2R" firstAttribute="top" secondItem="g2M-9J-UkG" secondAttribute="bottom" constant="50" id="bYo-Lq-iMB"/>
                             <constraint firstItem="nyJ-ET-2KM" firstAttribute="centerX" secondItem="TKv-wF-23i" secondAttribute="centerX" id="lAf-CW-f2N"/>
@@ -492,6 +510,7 @@
                     <navigationItem key="navigationItem" id="HJZ-DQ-BAC"/>
                     <connections>
                         <outlet property="facebookSignInBtn" destination="HuI-4E-HW8" id="g3t-NM-nl4"/>
+                        <outlet property="facebookSignInBtnCustom" destination="93R-yd-5aa" id="zoI-67-puc"/>
                         <outlet property="googleSignInBtn" destination="5fs-lr-pGC" id="mEM-Xi-p3G"/>
                         <segue destination="Gn2-R4-xVY" kind="presentation" identifier="Segue_To_SignIn_Social" modalPresentationStyle="fullScreen" id="yAU-zO-qdD"/>
                         <segue destination="eLx-HN-sn8" kind="presentation" identifier="SignIn_With_Email" id="R6u-hv-zYZ"/>
@@ -1305,6 +1324,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="DarkGreen"/>
+                        <color key="selectedImageTintColor" name="DarkGreen"/>
                     </tabBar>
                     <connections>
                         <segue destination="0cr-pE-EbS" kind="relationship" relationship="viewControllers" id="AzA-bE-wu0"/>
@@ -1363,8 +1384,8 @@
     </scenes>
     <resources>
         <image name="Logo" width="260" height="200"/>
-        <image name="checkmark.circle.fill" catalog="system" width="64" height="60"/>
-        <image name="circle" catalog="system" width="64" height="60"/>
+        <image name="checkmark.circle.fill" catalog="system" width="64" height="62"/>
+        <image name="circle" catalog="system" width="64" height="62"/>
         <image name="right" width="11" height="19"/>
         <image name="tab_cal" width="30" height="30"/>
         <image name="tab_profile" width="30" height="30"/>
@@ -1372,13 +1393,13 @@
         <image name="tab_search" width="30" height="30"/>
         <image name="welcome_bg" width="682.5" height="910.5"/>
         <namedColor name="Background">
-            <color red="0.93333333333333335" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.10980392156862745" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BlackAlways">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="DarkGreen">
-            <color red="0.36078431372549019" green="0.64313725490196083" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.29019607843137257" green="0.52156862745098043" blue="0.53725490196078429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="FacebookBlue">
             <color red="0.25882352941176473" green="0.40392156862745099" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1387,16 +1408,16 @@
             <color red="0.85882352941176465" green="0.26666666666666666" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="LightGreen">
-            <color red="0.792156862745098" green="0.88627450980392153" blue="0.89411764705882357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.49803921568627452" green="0.67450980392156867" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Red">
-            <color red="0.83921568627450982" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.75686274509803919" green="0.28627450980392155" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Yellow">
-            <color red="0.95686274509803926" green="0.83137254901960789" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.9137254901960784" green="0.7686274509803922" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ilt-0R-QWw"/>
+        <segue reference="yAU-zO-qdD"/>
     </inferredMetricsTieBreakers>
 </document>

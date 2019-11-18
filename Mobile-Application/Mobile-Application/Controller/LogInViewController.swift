@@ -16,7 +16,8 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
     
 //  MARK:  Outlets
     @IBOutlet weak var facebookSignInBtn: FBLoginButton!
-    @IBOutlet weak var googleSignInBtn: UIButton!
+	@IBOutlet weak var facebookSignInBtnCustom: UIButton!
+	@IBOutlet weak var googleSignInBtn: UIButton!
     
     
 //    Variables
@@ -45,7 +46,10 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
         
 		// button customization
 		googleSignInBtn.addTarget(self, action: #selector(btnSignInPressed), for: UIControl.Event.touchUpInside)
+		
 		facebookSignInBtn.frame = CGRect(x: 0, y: 0, width: 280, height: 50)
+		
+		facebookSignInBtnCustom.addTarget(self, action: #selector(customFacebook), for: UIControl.Event.touchUpInside)
     
     }
     
@@ -165,5 +169,9 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
 	@objc func btnSignInPressed() {
         GIDSignIn.sharedInstance().signIn()
     }
+	
+	@objc func customFacebook() {
+		facebookSignInBtn.sendActions(for: UIControl.Event.touchUpInside)
+	}
     
 }
