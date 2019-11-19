@@ -8,49 +8,55 @@
 
 import UIKit
 
-private let reuseIdentifier = "UserSeriesCell"
-
 class UserSeriesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+	
+	var cellSize: CGSize?
+    var imageSize: CGSize?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+		
+		let collectionViewSize = collectionView.frame.size.width - 60
+		if (traitCollection.horizontalSizeClass == .regular) {
+			cellSize = CGSize(width: collectionViewSize/3, height: collectionViewSize/3)
+            imageSize = CGSize(width: collectionViewSize/3 - 15, height: collectionViewSize/3 - 15)
+		}
+		else {
+			cellSize = CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
+            imageSize = CGSize(width: collectionViewSize/2 - 15, height: collectionViewSize/2 - 15)
+		}
     }
 
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return 7
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-		cell.backgroundColor = .red
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserSeriesCell", for: indexPath) as! UserSeriesCollectionViewCell
+        let img = UIImage(named: "series")!.resized(to: imageSize!)
+		cell.seriesImage.image = img
     
         return cell
     }
 
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let collectionViewSize = collectionView.frame.size.width - 60
-		
-		if (traitCollection.horizontalSizeClass == .regular) {
-			return CGSize(width: collectionViewSize/3, height: collectionViewSize/3)
-		}
-        return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
+        
+		return cellSize!
     }
 	
+}
+
+extension UIImage {
+    func resized(to size: CGSize) -> UIImage {
+        return UIGraphicsImageRenderer(size: size).image { _ in
+            draw(in: CGRect(origin: .zero, size: size))
+        }
+    }
 }
