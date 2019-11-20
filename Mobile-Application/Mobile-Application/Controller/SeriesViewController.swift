@@ -51,6 +51,8 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var imageSerieURL : URL?
     
+    typealias FinishedDownload = () -> ()
+    
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -63,29 +65,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		followButton.titleLabel?.textAlignment = .center
 		readButton.titleLabel?.textAlignment = .center
         
-        let User = Firestore.firestore().collection("Users").document("\((Auth.auth().currentUser?.uid)!)")
-        
-        User.collection("Series").getDocuments() { (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    print("Collection got")
-                    print("\(self.serieID)")
-                    let docRef = User.collection("Series").document("\(self.serieID)")
 
-                    docRef.getDocument { (document, error) in
-                        if let document = document, document.exists {
-//                            let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-//                            print("Document data: \(dataDescription)")
-                            print("Document exists")
-                            self.follows = true
-                            self.updateBtn()
-                        } else {
-                            print("Document does not exist")
-                        }
-                    }
-                }
-        }
 		
 
         
@@ -95,6 +75,8 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		issuesTable.delegate = self
 		issuesTable.dataSource = self
 	}
+    
+    
 	
     //MARK: - Networking
 
@@ -149,6 +131,30 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let id = json["data"]["results"][0]["id"].stringValue
         print(id)
         serieID = id
+        
+        let User = Firestore.firestore().collection("Users").document("\((Auth.auth().currentUser?.uid)!)")
+        
+        User.collection("Series").getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    print("Collection got")
+                    print("\(self.serieID)")
+                    let docRef = User.collection("Series").document("\(self.serieID)")
+
+                    docRef.getDocument { (document, error) in
+                        if let document = document, document.exists {
+//                            let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+//                            print("Document data: \(dataDescription)")
+                            print("Document exists")
+                            self.follows = true
+                            self.updateBtn()
+                        } else {
+                            print("Document does not exist")
+                        }
+                    }
+                }
+        }
         
 //        TITLE
         var titleS = json["data"]["results"][0]["title"].stringValue

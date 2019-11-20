@@ -32,7 +32,8 @@ class IssueViewController: UIViewController {
     let HASH = "1bdc741bcbdaf3d87a0f0d6e6180f877"
     let TS = "1"
     
-    var serieURL: String = ""
+    var serieURL: String?
+    
 	
 	
 	override func viewDidLoad() {
@@ -136,7 +137,8 @@ class IssueViewController: UIViewController {
 //        print(imageURL!)
         
         serieURL = json["data"]["results"][0]["series"]["resourceURI"].stringValue
-        
+        print("serie url presa")
+        print(serieURL)
     }
     
 	//MARK: - Actions
@@ -161,7 +163,7 @@ class IssueViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? SeriesViewController{
-
+            
             destination.apiURL = serieURL
 
         }
