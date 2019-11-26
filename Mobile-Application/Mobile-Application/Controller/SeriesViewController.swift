@@ -14,6 +14,7 @@ import Firebase
 
 class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    //MARK: - OUTLETS
     @IBOutlet weak var titleSerie: UILabel!
     @IBOutlet weak var yearsSerie: UILabel!
 	@IBOutlet weak var rating: UILabel!
@@ -24,6 +25,9 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 	@IBOutlet weak var readButton: UIButton!
 	@IBOutlet weak var issuesTable: UITableView!
 	
+    //MARK: - Constants & Variables
+    let User = Firestore.firestore().collection("Users").document("\((Auth.auth().currentUser?.uid)!)")
+    
 	var follows = false
 	var allRead = false
 	
@@ -53,7 +57,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     typealias FinishedDownload = () -> ()
     
-	
+	//MARK: - ViewDidLoad
 	override func viewDidLoad() {
 		super.viewDidLoad()
         
@@ -65,9 +69,6 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		followButton.titleLabel?.textAlignment = .center
 		readButton.titleLabel?.textAlignment = .center
         
-
-		
-
         
 		followButton.addTarget(self, action: #selector(followThisSeries), for: .touchUpInside)
 		readButton.addTarget(self, action: #selector(markAllAsRead), for: .touchUpInside)
@@ -132,7 +133,6 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print(id)
         serieID = id
         
-        let User = Firestore.firestore().collection("Users").document("\((Auth.auth().currentUser?.uid)!)")
         
         User.collection("Series").getDocuments() { (querySnapshot, err) in
                 if let err = err {
@@ -140,13 +140,16 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 } else {
                     print("Collection got")
                     print("\(self.serieID)")
-                    let docRef = User.collection("Series").document("\(self.serieID)")
+                    let docRef = self.User.collection("Series").document("\(self.serieID)")
 
                     docRef.getDocument { (document, error) in
                         if let document = document, document.exists {
 //                            let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
 //                            print("Document data: \(dataDescription)")
                             print("Document exists")
+                            //print(document.data()!)
+                            //let data = document.data()
+                            //print(data!["name"]!)
                             self.follows = true
                             self.updateBtn()
                         } else {
@@ -185,7 +188,6 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //        DESCRIPTION
         
         let description = json["data"]["results"][0]["description"].stringValue
-//        descriptionComic.text = "\((comic?.description)!)"
         if description == "" {
             descriptionText.text = "descrizione non disponibile"
         } else {
@@ -214,7 +216,23 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func updateComicsOfSerieData (json : JSON){
         var availables = json["data"]["total"].intValue - 1
 		numberOfIssues = availables+1
+        var toRead : Int = 0
         
+        //Controllare se gli issues sono tutti letti
+        User.collection("Series").document("\(self.serieID)").getDocument { (document, error) in
+            if let document = document, document.exists {
+                let data = document.data()
+                toRead = data!["issueToRead"] as! Int
+                if toRead > self.numberOfIssues{
+                    self.allRead = true
+                    self.updateBtn()
+                }
+            } else {
+                print("Document does not exist")
+            }
+        }
+        
+        //Creare le table degli issues
         issuesTable.beginUpdates()
         print(availables)
         if availables == 0 {
@@ -236,18 +254,9 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     t += 1
                 }
                 let item = ExpandableSection(isExpanded: false, issues: titles)
-//                if first_elem == true {
-//                    issues[0] = item
-//                    first_elem = false
-//                }else{
                 issues.append(item)
                 self.issuesTable.insertSections(IndexSet(integer: issues.count - 1), with: .automatic)
-//                }
-//                issuesTable.performBatchUpdates({
-//                    self.issuesTable.insertSections(IndexSet(integer: issues.count), with: .automatic)
-//                }) { (update) in
-//                    print("Update SUccess")
-//                }
+
                 
                 availables -= 10
                 
@@ -255,9 +264,6 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         issuesTable.endUpdates()
         
-        
-        
-        //        issues[index] = item
     }
 	
 	//MARK: - Table Control
@@ -375,7 +381,8 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
             User.collection("Series").document("\(serieID)").setData([
                 "id": serieID,
                 "name": titleSerie.text,
-                "image": imageSerieURL?.absoluteString
+                "image": imageSerieURL?.absoluteString,
+                "issueToRead" : 0
             ]) { err in
                 if let err = err {
                     print("Error writing document: \(err)")
@@ -405,6 +412,15 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		allRead = !allRead
 		
 		if (allRead) {
+            User.collection("Series").document("\(serieID)").updateData([
+                "issueToRead" : numberOfIssues + 1
+            ]) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+                }
+            }
 			readButton.backgroundColor = UIColor(named: "DarkGreen")
 			readButton.setTitle("MARK ALL AS UNREAD", for: .normal)
 		}
