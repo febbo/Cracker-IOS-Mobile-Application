@@ -40,6 +40,8 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let HASH = "1bdc741bcbdaf3d87a0f0d6e6180f877"
     let TS = "1"
     
+    var toRead : Int = 0
+    
     let cellID = "IssuesInSeriesCell"
 	
 	var numberOfIssues = 0
@@ -216,14 +218,14 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func updateComicsOfSerieData (json : JSON){
         var availables = json["data"]["total"].intValue - 1
 		numberOfIssues = availables+1
-        var toRead : Int = 0
+        
         
         //Controllare se gli issues sono tutti letti
         User.collection("Series").document("\(self.serieID)").getDocument { (document, error) in
             if let document = document, document.exists {
                 let data = document.data()
-                toRead = data!["issueToRead"] as! Int
-                if toRead > self.numberOfIssues{
+                self.toRead = data!["issueToRead"] as! Int
+                if self.toRead > self.numberOfIssues{
                     self.allRead = true
                     self.updateBtn()
                 }
@@ -231,6 +233,8 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 print("Document does not exist")
             }
         }
+
+        
         
         //Creare le table degli issues
         issuesTable.beginUpdates()
@@ -264,6 +268,53 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         issuesTable.endUpdates()
         
+        //Controllare quali issues letti
+        User.collection("Series").document("\(self.serieID)").getDocument { (document, error) in
+            if let document = document, document.exists {
+                let data = document.data()
+                var read = data!["issueToRead"] as! Int
+                read = read - 1
+                print("number of issues read : \(read)")
+                let n_sections = read / 10
+                print("number of sections: \(n_sections)")
+                let n_issues_last_section = read % 10
+                print("number of last issues: \(n_issues_last_section)")
+                if n_sections != 0{
+                    for i in 0...n_sections-1{
+                        for j in 0...9{
+                            let cell = self.tableView(self.issuesTable, cellForRowAt: [i, j]) as! IssuesInSeriesTableViewCell
+                            self.switchReadStatus(button: cell.readButton)
+                        }
+                    }
+                    for j in 0...n_issues_last_section-1{
+                        let cell = self.tableView(self.issuesTable, cellForRowAt: [n_sections+1, j]) as! IssuesInSeriesTableViewCell
+                        self.switchReadStatus(button: cell.readButton)
+                    }
+                } else {
+                    for j in 0...n_issues_last_section-1{
+                        let cell = self.tableView(self.issuesTable, cellForRowAt: [0, j]) as! IssuesInSeriesTableViewCell
+//                        print(cell.label.text!)
+//                        print(cell.readButton.isSelected)
+//                        cell.readButton.isSelected = true
+//                        self.switchReadStatus(button: cell.readButton)
+//                        print(cell.readButton.isSelected)
+                        
+                    }
+                }
+            } else {
+                print("Document does not exist")
+            }
+        }
+        
+        
+//        print(issuesTable.cellForRow(at: [0, 0])!)
+//        let cell = tableView(issuesTable, cellForRowAt: [0, 0]) as! IssuesInSeriesTableViewCell
+//        print(cell.readButton!)
+//        print(cell.label!.text)
+//        print(cell.readButton.isSelected)
+//        print(numberOfSections(in: issuesTable))
+//        print(tableView(issuesTable, numberOfRowsInSection: 0))
+        
     }
 	
 	//MARK: - Table Control
@@ -291,6 +342,11 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		if #available(iOS 13.0, *) {
 			cell?.backgroundColor = .systemBackground
 		}
+        let indexCell = (indexPath.section)*10 + indexPath.row
+        if self.toRead > indexCell{
+            cell?.readButton.isSelected = true
+        }
+//        print((indexPath.section)*10 + indexPath.row)
 		return cell!
 	}
 	
@@ -445,19 +501,23 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		issues[section].isExpanded = !isExpanded
 		
 		button.setImage(isExpanded ? openImage : closeImage, for: .normal)
+        
 		
 		if isExpanded {
 			issuesTable.deleteRows(at: indexPaths, with: .fade)
 		}
 		else {
 			issuesTable.insertRows(at: indexPaths, with: .fade)
+            
 		}
+        
+        print(issuesTable.indexPathsForVisibleRows)
 	}
 	
 	@objc func switchReadStatus(button: UIButton) {
 		button.isSelected = !button.isSelected
 	}
-
+    
 }
 
 
