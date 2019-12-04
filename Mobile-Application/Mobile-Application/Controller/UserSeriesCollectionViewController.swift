@@ -23,7 +23,7 @@ class UserSeriesCollectionViewController: UICollectionViewController, UICollecti
 		}
 		else {
 			cellSize = CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
-            imageSize = CGSize(width: collectionViewSize/2 - 15, height: collectionViewSize/2 - 15)
+            imageSize = CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
 		}
     }
 
