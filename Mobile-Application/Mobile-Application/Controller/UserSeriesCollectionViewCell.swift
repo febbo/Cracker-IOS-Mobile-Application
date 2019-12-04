@@ -10,6 +10,6 @@ import UIKit
 
 class UserSeriesCollectionViewCell: UICollectionViewCell {
 	
-	@IBOutlet weak var seriesImage: UIImageView!
-	
+    @IBOutlet weak var seriesImage: UIButton!
+    
 }

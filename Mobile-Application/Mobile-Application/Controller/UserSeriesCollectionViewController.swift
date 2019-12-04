@@ -41,7 +41,8 @@ class UserSeriesCollectionViewController: UICollectionViewController, UICollecti
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserSeriesCell", for: indexPath) as! UserSeriesCollectionViewCell
         let img = UIImage(named: "series")!.resized(to: imageSize!)
-		cell.seriesImage.image = img
+        cell.seriesImage.setBackgroundImage(img, for: UIControl.State.normal)
+        cell.seriesImage.addTarget(self, action: #selector(showSeries), for: UIControl.Event.touchUpInside)
     
         return cell
     }
@@ -49,6 +50,10 @@ class UserSeriesCollectionViewController: UICollectionViewController, UICollecti
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
 		return cellSize!
+    }
+    
+    @objc func showSeries(button: UIButton) {
+        self.performSegue(withIdentifier: "ShowSeriesFromProfile", sender: self)
     }
 	
 }
