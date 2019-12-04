@@ -675,22 +675,6 @@
             </objects>
             <point key="canvasLocation" x="-1241" y="998"/>
         </scene>
-        <!--To Read-->
-        <scene sceneID="Nvh-9l-Vdl">
-            <objects>
-                <viewController title="To Read" id="BQc-pH-ffp" customClass="ViewController" customModule="Mobile_Application" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Qxb-UR-EnJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="BUz-RB-MHx"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="To Read" image="tab_read" id="jrD-Yz-tmD"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="37h-E5-Jba" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="826.08695652173924" y="675.66964285714278"/>
-        </scene>
         <!--Up Next-->
         <scene sceneID="KCi-PO-QiI">
             <objects>
@@ -1408,7 +1392,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="0cr-pE-EbS" kind="relationship" relationship="viewControllers" id="AzA-bE-wu0"/>
-                        <segue destination="BQc-pH-ffp" kind="relationship" relationship="viewControllers" id="uHo-bM-gVR"/>
+                        <segue destination="4iv-fY-A3F" kind="relationship" relationship="viewControllers" id="gaW-3F-pdz"/>
                         <segue destination="sUA-Nh-psM" kind="relationship" relationship="viewControllers" id="mnj-eC-SOV"/>
                         <segue destination="BFG-OX-P6N" kind="relationship" relationship="viewControllers" id="OJm-jC-0aP"/>
                     </connections>
@@ -1460,6 +1444,99 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lJV-95-cvR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-84.057971014492765" y="2114.7321428571427"/>
+        </scene>
+        <!--To Read Controller-->
+        <scene sceneID="DjZ-7i-4ex">
+            <objects>
+                <collectionViewController id="EOo-qD-Qn3" userLabel="To Read Controller" customClass="ToReadCollectionViewController" customModule="Mobile_Application" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="hfc-V6-qfQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="rnK-SM-SI0">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="20"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ToReadCell" id="2OR-Eu-ddN" customClass="ToReadCollectionViewCell" customModule="Mobile_Application" customModuleProvider="target">
+                                <rect key="frame" x="20" y="0.0" width="126" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Giu-kS-2sw">
+                                    <rect key="frame" x="0.0" y="0.0" width="126" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q28-Tm-mHW" userLabel="Issue Image">
+                                            <rect key="frame" x="0.0" y="20" width="126" height="30"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCJ-mB-DZt">
+                                            <rect key="frame" x="0.0" y="10" width="126" height="40"/>
+                                            <color key="backgroundColor" name="Red"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="mp1-MV-rcp"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <color key="tintColor" name="BlackAlways"/>
+                                            <state key="normal" title="MARK AS READ"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="RCJ-mB-DZt" firstAttribute="leading" secondItem="Giu-kS-2sw" secondAttribute="leading" id="1CO-gO-cZa"/>
+                                        <constraint firstItem="q28-Tm-mHW" firstAttribute="leading" secondItem="Giu-kS-2sw" secondAttribute="leading" id="Ugv-ag-AmW"/>
+                                        <constraint firstAttribute="bottom" secondItem="q28-Tm-mHW" secondAttribute="bottom" id="dJ5-Qt-6ZU"/>
+                                        <constraint firstItem="q28-Tm-mHW" firstAttribute="top" secondItem="Giu-kS-2sw" secondAttribute="top" constant="20" id="ekr-wI-Cfn"/>
+                                        <constraint firstAttribute="trailing" secondItem="q28-Tm-mHW" secondAttribute="trailing" id="jts-Pc-Iqb"/>
+                                        <constraint firstAttribute="bottom" secondItem="RCJ-mB-DZt" secondAttribute="bottom" id="qzE-vH-yKc"/>
+                                        <constraint firstAttribute="trailing" secondItem="RCJ-mB-DZt" secondAttribute="trailing" id="zmg-i7-dFY"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="15"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="issueImage" destination="q28-Tm-mHW" id="4m7-cM-Udg"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="EOo-qD-Qn3" id="OjW-dB-N8w"/>
+                            <outlet property="delegate" destination="EOo-qD-Qn3" id="6lP-gi-I9T"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="To Read" id="U6S-4w-pcO"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VVj-Py-oQ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1736" y="675"/>
+        </scene>
+        <!--To Read-->
+        <scene sceneID="IMy-xK-tvC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4iv-fY-A3F" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="To Read" image="tab_read" id="cYh-tG-Td1"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Ct5-n5-M7Z">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="DarkGreen"/>
+                        <color key="barTintColor" name="DarkGreen"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EOo-qD-Qn3" kind="relationship" relationship="rootViewController" id="zFi-sI-PkB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mOE-Rq-mAE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="826" y="675"/>
         </scene>
     </scenes>
     <resources>
