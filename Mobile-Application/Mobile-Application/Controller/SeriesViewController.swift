@@ -84,6 +84,8 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		issuesTable.dataSource = self
 	}
     
+
+    
     
 	
     //MARK: - Networking
@@ -165,6 +167,14 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     }
                 }
         }
+        
+        let rate = json["data"]["results"][0]["rating"].stringValue
+        if rate != ""{
+            rating.text = rate
+        }else{
+            rating.text = "Rating non disponibile"
+        }
+        
         
 //        TITLE
         var titleS = json["data"]["results"][0]["title"].stringValue
@@ -518,6 +528,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
             }
             button.isSelected = !button.isSelected
+//            issuesTable.reloadData()
         } else{
             print("This is the number of issue of this button selected: \(button.tag)")
             User.collection("Series").document("\(serieID)").setData([
@@ -533,6 +544,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
             }
             button.isSelected = !button.isSelected
+//            issuesTable.reloadData()
         }
 
 	}

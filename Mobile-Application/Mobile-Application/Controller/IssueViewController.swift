@@ -68,6 +68,29 @@ class IssueViewController: UIViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationItem.largeTitleDisplayMode = .never
+                
+        //        RICHIESTA API
+        let singleIssueUrl = apiURL + "\(comicID ?? 0)"
+        let params : [String : String] = [ "apikey" : APP_ID, "ts": TS, "hash" : HASH]
+        getUpNextData(url: singleIssueUrl, parameters: params)
+        
+        if (isRead) {
+            readButton.backgroundColor = UIColor(named: "DarkGreen")
+            readButton.setTitle("MARK AS UNREAD", for: .normal)
+        }
+        else {
+            readButton.backgroundColor = UIColor(named: "Red")
+            readButton.setTitle("MARK AS READ", for: .normal)
+        }
+        
+        readButton.addTarget(self, action: #selector(readIssueButton), for: .touchUpInside)
+        seriesButton.addTarget(self, action: #selector(goToSeriesButton), for: .touchUpInside)
+
+
+    }
+    
     //MARK: - Networking
     
     func getUpNextData(url: String, parameters: [String: String]) {
@@ -114,18 +137,23 @@ class IssueViewController: UIViewController {
             dateComic.text = "error"
         }
         
-        let numberCreators = json["data"]["results"][0]["creators"]["returned"].intValue - 1
+        let numberCreators = json["data"]["results"][0]["creators"]["returned"].intValue
         
         var text : String = ""
-        for i in 0...numberCreators {
-            let name = json["data"]["results"][0]["creators"]["items"][i]["name"].stringValue
-            let role = json["data"]["results"][0]["creators"]["items"][i]["role"].stringValue
-            if i == numberCreators {
-                text += " \(name) : \(role) "
-            }else {
-                text += " \(name) : \(role) \n"
+        if numberCreators != 0{
+            for i in 0...(numberCreators - 1) {
+                let name = json["data"]["results"][0]["creators"]["items"][i]["name"].stringValue
+                let role = json["data"]["results"][0]["creators"]["items"][i]["role"].stringValue
+                if i == (numberCreators-1) {
+                    text += " \(name) : \(role) "
+                }else {
+                    text += " \(name) : \(role) \n"
+                }
             }
+        }else{
+            text = "Nessun creatore trovato"
         }
+        
         creatorsText.text = text
         
         
@@ -145,8 +173,8 @@ class IssueViewController: UIViewController {
 //        print(imageURL!)
         
         serieURL = json["data"]["results"][0]["series"]["resourceURI"].stringValue
-        print("serie url presa")
-        print(serieURL)
+//        print("serie url presa")
+//        print(serieURL)
         
         nameOfSerie = json["data"]["results"][0]["series"]["name"].stringValue
         
