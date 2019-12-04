@@ -39,7 +39,6 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
             navigationItem.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         }
         navigationController?.navigationBar.prefersLargeTitles = true
-        
     }
     
     // MARK: UICollectionViewDataSource
@@ -56,7 +55,9 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ToReadCell", for: indexPath) as! ToReadCollectionViewCell
         let img = UIImage(named: "issue")!.resized(to: imageSize!)
-        cell.issueImage.image = img
+        cell.issueImage.setBackgroundImage(img, for: UIControl.State.normal)
+        cell.issueImage.addTarget(self, action: #selector(showIssue), for: UIControl.Event.touchUpInside)
+        cell.readButton.addTarget(self, action: #selector(markAsRead), for: UIControl.Event.touchUpInside)
     
         return cell
     }
@@ -65,12 +66,23 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
         
         return cellSize!
     }
+    
+    //TODO
+    @objc func markAsRead(button: UIButton) {
+        // se è l'ultimo issue disponibile della serie, far scomparire la cella;
+        // altrimenti, caricare l'issue successivo nella serie
+    }
+    
+    @objc func showIssue(button: UIButton) {
+        self.performSegue(withIdentifier: "ShowIssueFromToRead", sender: self)
+    }
 
 }
 
 
 class ToReadCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var issueImage: UIImageView!
+    @IBOutlet weak var issueImage: UIButton!
+    @IBOutlet weak var readButton: UIButton!
     
 }
