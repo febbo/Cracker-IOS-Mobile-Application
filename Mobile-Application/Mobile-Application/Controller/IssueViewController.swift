@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Firebase
 
 class IssueViewController: UIViewController {
 
@@ -17,6 +18,12 @@ class IssueViewController: UIViewController {
 	@IBOutlet weak var descriptionComic: UITextView!
     @IBOutlet weak var imageComic: UIImageView!
     @IBOutlet weak var creatorsText: UITextView!
+    
+    let User = Firestore.firestore().collection("Users").document("\((Auth.auth().currentUser?.uid)!)")
+    var parsedIdSerie : String = ""
+    var nameOfSerie : String = ""
+    var issueNumber : Int = 0
+
     
     
     var comicID : Int?
@@ -91,6 +98,7 @@ class IssueViewController: UIViewController {
 //        let status = json["status"]
 //        print(status)
         titleComic.text = json["data"]["results"][0]["title"].stringValue
+
         
         let dateString = json["data"]["results"][0]["dates"][0]["date"].stringValue
         let dateFormatterGet = DateFormatter()
@@ -139,21 +147,70 @@ class IssueViewController: UIViewController {
         serieURL = json["data"]["results"][0]["series"]["resourceURI"].stringValue
         print("serie url presa")
         print(serieURL)
+        
+        nameOfSerie = json["data"]["results"][0]["series"]["name"].stringValue
+        
+        self.issueNumber = json["data"]["results"][0]["issueNumber"].intValue
+        self.parsedIdSerie = serieURL!.replacingOccurrences(of: "http://gateway.marvel.com/v1/public/series/", with: "")
+        User.collection("Series").document("\(parsedIdSerie)").getDocument { (document, error) in
+            if let document = document, document.exists {
+                let data = document.data()
+                let toRead = data!["issueToRead"] as! Int
+                if toRead > self.issueNumber{
+                    self.isRead = true
+                    self.updateBtn()
+                }
+            } else {
+                print("Document does not exist")
+            }
+        }
     }
     
 	//MARK: - Actions
 	
 	//TODO: completare con dati profilo
+    
+    func updateBtn(){
+        if isRead == true{
+            readButton.backgroundColor = UIColor(named: "DarkGreen")
+            readButton.setTitle("MARK AS UNREAD", for: .normal)
+        } else {
+            readButton.backgroundColor = UIColor(named: "Red")
+            readButton.setTitle("MARK AS READ", for: .normal)
+        }
+    }
 	
 	@objc func readIssueButton(button: UIButton) {
 		isRead = !isRead
 		if (isRead) {
 			readButton.backgroundColor = UIColor(named: "DarkGreen")
 			readButton.setTitle("MARK AS UNREAD", for: .normal)
+            User.collection("Series").document("\(parsedIdSerie)").setData([
+                "id": parsedIdSerie,
+                "name": nameOfSerie,
+                "issueToRead" : issueNumber
+            ]) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+                }
+            }
 		}
 		else {
 			readButton.backgroundColor = UIColor(named: "Red")
 			readButton.setTitle("MARK AS READ", for: .normal)
+            User.collection("Series").document("\(parsedIdSerie)").setData([
+                "id": parsedIdSerie,
+                "name": nameOfSerie,
+                "issueToRead" : issueNumber - 1
+            ]) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+                }
+            }
 		}
 	}
 

@@ -503,20 +503,38 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 	}
 	
 	@objc func switchReadStatus(button: UIButton) {
-		button.isSelected = !button.isSelected
-        print("This is the number of issue of this button selected: \(button.tag)")
-        User.collection("Series").document("\(serieID)").setData([
-            "id": serieID,
-            "name": titleSerie.text,
-            "image": imageSerieURL?.absoluteString,
-            "issueToRead" : button.tag + 1
-        ]) { err in
-            if let err = err {
-                print("Error writing document: \(err)")
-            } else {
-                print("Document successfully written!")
+        if button.isSelected == false{
+            print("This is the number of issue of this button selected: \(button.tag)")
+            User.collection("Series").document("\(serieID)").setData([
+                "id": serieID,
+                "name": titleSerie.text,
+                "image": imageSerieURL?.absoluteString,
+                "issueToRead" : button.tag + 1
+            ]) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+                }
             }
+            button.isSelected = !button.isSelected
+        } else{
+            print("This is the number of issue of this button selected: \(button.tag)")
+            User.collection("Series").document("\(serieID)").setData([
+                "id": serieID,
+                "name": titleSerie.text,
+                "image": imageSerieURL?.absoluteString,
+                "issueToRead" : button.tag
+            ]) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+                }
+            }
+            button.isSelected = !button.isSelected
         }
+
 	}
     
 }
