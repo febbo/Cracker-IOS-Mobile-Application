@@ -420,6 +420,9 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Your series" largeTitleDisplayMode="never" id="6tV-9g-ZtD"/>
+                    <connections>
+                        <segue destination="gWk-4X-qkZ" kind="show" identifier="ShowSeriesFromProfile" id="Fji-4T-J9e"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8q3-XH-KSc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1624,6 +1627,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="yAU-zO-qdD"/>
+        <segue reference="Fji-4T-J9e"/>
         <segue reference="uKY-Og-bgl"/>
     </inferredMetricsTieBreakers>
 </document>
