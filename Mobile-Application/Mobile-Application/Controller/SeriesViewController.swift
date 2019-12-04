@@ -308,10 +308,11 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		let issue = issues[indexPath.section].issues[indexPath.row]
 		cell?.label.text = issue
 		cell?.readButton.addTarget(self, action: #selector(switchReadStatus), for: .touchUpInside)
+        cell?.readButton.tag = indexPath.section*10 + (indexPath.row + 1)
 		if #available(iOS 13.0, *) {
 			cell?.backgroundColor = .systemBackground
 		}
-        let indexCell = (indexPath.section)*10 + indexPath.row
+        let indexCell = (indexPath.section)*10 + (indexPath.row + 1)
         if self.toRead > indexCell{
             cell?.readButton.isSelected = true
         }
@@ -503,6 +504,19 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 	
 	@objc func switchReadStatus(button: UIButton) {
 		button.isSelected = !button.isSelected
+        print("This is the number of issue of this button selected: \(button.tag)")
+        User.collection("Series").document("\(serieID)").setData([
+            "id": serieID,
+            "name": titleSerie.text,
+            "image": imageSerieURL?.absoluteString,
+            "issueToRead" : button.tag + 1
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
 	}
     
 }
