@@ -74,6 +74,11 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
 		followButton.addTarget(self, action: #selector(followThisSeries), for: .touchUpInside)
 		readButton.addTarget(self, action: #selector(markAllAsRead), for: .touchUpInside)
+        
+        readButton.backgroundColor = UIColor(named: "DarkGreen")
+        readButton.setTitle("MARK ALL AS UNREAD", for: .normal)
+        readButton.isEnabled = false
+        readButton.alpha = 0.5
 		
 		issuesTable.delegate = self
 		issuesTable.dataSource = self
@@ -268,43 +273,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         issuesTable.endUpdates()
         
-        //Controllare quali issues letti
-        User.collection("Series").document("\(self.serieID)").getDocument { (document, error) in
-            if let document = document, document.exists {
-                let data = document.data()
-                var read = data!["issueToRead"] as! Int
-                read = read - 1
-                print("number of issues read : \(read)")
-                let n_sections = read / 10
-                print("number of sections: \(n_sections)")
-                let n_issues_last_section = read % 10
-                print("number of last issues: \(n_issues_last_section)")
-                if n_sections != 0{
-                    for i in 0...n_sections-1{
-                        for j in 0...9{
-                            let cell = self.tableView(self.issuesTable, cellForRowAt: [i, j]) as! IssuesInSeriesTableViewCell
-                            self.switchReadStatus(button: cell.readButton)
-                        }
-                    }
-                    for j in 0...n_issues_last_section-1{
-                        let cell = self.tableView(self.issuesTable, cellForRowAt: [n_sections+1, j]) as! IssuesInSeriesTableViewCell
-                        self.switchReadStatus(button: cell.readButton)
-                    }
-                } else {
-                    for j in 0...n_issues_last_section-1{
-                        let cell = self.tableView(self.issuesTable, cellForRowAt: [0, j]) as! IssuesInSeriesTableViewCell
-//                        print(cell.label.text!)
-//                        print(cell.readButton.isSelected)
-//                        cell.readButton.isSelected = true
-//                        self.switchReadStatus(button: cell.readButton)
-//                        print(cell.readButton.isSelected)
-                        
-                    }
-                }
-            } else {
-                print("Document does not exist")
-            }
-        }
+
         
         
 //        print(issuesTable.cellForRow(at: [0, 0])!)
@@ -410,17 +379,21 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         else {
             followButton.setTitle("FOLLOW THIS SERIES", for: .normal)
-            readButton.isEnabled = false
-            readButton.alpha = 0.5
+//            readButton.isEnabled = false
+//            readButton.alpha = 0.5
         }
         
         if (allRead) {
             readButton.backgroundColor = UIColor(named: "DarkGreen")
             readButton.setTitle("MARK ALL AS UNREAD", for: .normal)
+            readButton.isEnabled = true
+            readButton.alpha = 1
         }
         else {
             readButton.backgroundColor = UIColor(named: "Red")
             readButton.setTitle("MARK ALL AS READ", for: .normal)
+            readButton.isEnabled = true
+            readButton.alpha = 1
         }
     }
     
@@ -431,6 +404,8 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		
 		if (follows) {
 			followButton.setTitle("UNFOLLOW THIS SERIES", for: .normal)
+            readButton.backgroundColor = UIColor(named: "Red")
+            readButton.setTitle("MARK ALL AS READ", for: .normal)
 			readButton.isEnabled = true
 			readButton.alpha = 1
         
@@ -448,9 +423,12 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
 //            follows = True
 
+
 		}
 		else {
 			followButton.setTitle("FOLLOW THIS SERIES", for: .normal)
+            readButton.backgroundColor = UIColor(named: "DarkGreen")
+            readButton.setTitle("MARK ALL AS UNREAD", for: .normal)
 			readButton.isEnabled = false
 			readButton.alpha = 0.5
             
@@ -481,6 +459,15 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 			readButton.setTitle("MARK ALL AS UNREAD", for: .normal)
 		}
 		else {
+            User.collection("Series").document("\(serieID)").updateData([
+                "issueToRead" : 0
+            ]) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+                }
+            }
 			readButton.backgroundColor = UIColor(named: "Red")
 			readButton.setTitle("MARK ALL AS READ", for: .normal)
 		}

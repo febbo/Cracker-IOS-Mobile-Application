@@ -56,3 +56,43 @@ import Foundation
 //
 //
 //                comics.append(comic)
+
+
+
+//        //Controllare quali issues letti
+//        User.collection("Series").document("\(self.serieID)").getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                let data = document.data()
+//                var read = data!["issueToRead"] as! Int
+//                read = read - 1
+//                print("number of issues read : \(read)")
+//                let n_sections = read / 10
+//                print("number of sections: \(n_sections)")
+//                let n_issues_last_section = read % 10
+//                print("number of last issues: \(n_issues_last_section)")
+//                if n_sections != 0{
+//                    for i in 0...n_sections-1{
+//                        for j in 0...9{
+//                            let cell = self.tableView(self.issuesTable, cellForRowAt: [i, j]) as! IssuesInSeriesTableViewCell
+//                            self.switchReadStatus(button: cell.readButton)
+//                        }
+//                    }
+//                    for j in 0...n_issues_last_section-1{
+//                        let cell = self.tableView(self.issuesTable, cellForRowAt: [n_sections+1, j]) as! IssuesInSeriesTableViewCell
+//                        self.switchReadStatus(button: cell.readButton)
+//                    }
+//                } else {
+//                    for j in 0...n_issues_last_section-1{
+//                        let cell = self.tableView(self.issuesTable, cellForRowAt: [0, j]) as! IssuesInSeriesTableViewCell
+////                        print(cell.label.text!)
+////                        print(cell.readButton.isSelected)
+////                        cell.readButton.isSelected = true
+////                        self.switchReadStatus(button: cell.readButton)
+////                        print(cell.readButton.isSelected)
+//
+//                    }
+//                }
+//            } else {
+//                print("Document does not exist")
+//            }
+//        }
