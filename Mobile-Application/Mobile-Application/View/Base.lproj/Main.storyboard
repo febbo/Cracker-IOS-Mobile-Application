@@ -10,21 +10,39 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search-->
+        <!--Search Controller-->
         <scene sceneID="N5E-BM-bRd">
             <objects>
-                <viewController title="Search" id="sUA-Nh-psM" sceneMemberID="viewController">
+                <viewController title="Search" id="sUA-Nh-psM" userLabel="Search Controller" customClass="SearchViewController" customModule="Mobile_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="25r-mJ-YWk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search a series" translatesAutoresizingMaskIntoConstraints="NO" id="ggf-Lz-kyR">
+                                <rect key="frame" x="0.0" y="140" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ggf-Lz-kyR" firstAttribute="leading" secondItem="mla-3z-6tq" secondAttribute="leading" id="L68-vW-jpr"/>
+                            <constraint firstItem="ggf-Lz-kyR" firstAttribute="top" secondItem="mla-3z-6tq" secondAttribute="top" id="bVy-aN-5g0"/>
+                            <constraint firstItem="ggf-Lz-kyR" firstAttribute="trailing" secondItem="mla-3z-6tq" secondAttribute="trailing" id="mmg-BU-GB9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mla-3z-6tq"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="tab_search" id="ErV-mU-63f"/>
+                    <navigationItem key="navigationItem" title="Search" id="KhV-f6-v8r"/>
+                    <connections>
+                        <outlet property="searchBar" destination="ggf-Lz-kyR" id="yFv-aW-fle"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uOw-M3-5ZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-84" y="1401"/>
+            <point key="canvasLocation" x="1734.7826086956522" y="1399.5535714285713"/>
         </scene>
         <!--Profile-->
         <scene sceneID="DKS-OI-Iuc">
@@ -402,6 +420,9 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Your series" largeTitleDisplayMode="never" id="6tV-9g-ZtD"/>
+                    <connections>
+                        <segue destination="gWk-4X-qkZ" kind="show" identifier="ShowSeriesFromProfile" id="Fji-4T-J9e"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8q3-XH-KSc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1393,7 +1414,7 @@
                     <connections>
                         <segue destination="0cr-pE-EbS" kind="relationship" relationship="viewControllers" id="AzA-bE-wu0"/>
                         <segue destination="4iv-fY-A3F" kind="relationship" relationship="viewControllers" id="gaW-3F-pdz"/>
-                        <segue destination="sUA-Nh-psM" kind="relationship" relationship="viewControllers" id="mnj-eC-SOV"/>
+                        <segue destination="Ces-SN-9IT" kind="relationship" relationship="viewControllers" id="mnj-eC-SOV"/>
                         <segue destination="BFG-OX-P6N" kind="relationship" relationship="viewControllers" id="OJm-jC-0aP"/>
                     </connections>
                 </tabBarController>
@@ -1547,6 +1568,27 @@
             </objects>
             <point key="canvasLocation" x="826" y="675"/>
         </scene>
+        <!--Search-->
+        <scene sceneID="mOj-Kh-JQr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ces-SN-9IT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="tab_search" id="ErV-mU-63f"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="3I3-S1-l1c">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="DarkGreen"/>
+                        <color key="barTintColor" name="DarkGreen"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sUA-Nh-psM" kind="relationship" relationship="rootViewController" id="d0h-Fn-KH4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2QX-rZ-MmE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="824.63768115942037" y="1399.5535714285713"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Logo" width="260" height="200"/>
@@ -1585,6 +1627,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="yAU-zO-qdD"/>
+        <segue reference="Fji-4T-J9e"/>
         <segue reference="uKY-Og-bgl"/>
     </inferredMetricsTieBreakers>
 </document>
