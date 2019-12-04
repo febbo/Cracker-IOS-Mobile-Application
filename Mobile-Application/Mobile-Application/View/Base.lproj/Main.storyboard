@@ -719,14 +719,14 @@
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="daz-C7-fa1" userLabel="Single Issue" customClass="IssueViewController" customModule="Mobile_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jkv-bw-bCl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="viw-f7-ndM">
-                                <rect key="frame" x="0.0" y="88" width="414" height="671"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wag-Nc-Cci" userLabel="ContainerView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ejq-9t-Ziy" userLabel="HeaderView">
                                                 <rect key="frame" x="20" y="20" width="374" height="251"/>
@@ -1072,14 +1072,14 @@
             <objects>
                 <viewController title="Series" automaticallyAdjustsScrollViewInsets="NO" id="gWk-4X-qkZ" customClass="SeriesViewController" customModule="Mobile_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xk5-ic-Dcv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cN5-be-CM5">
-                                <rect key="frame" x="0.0" y="88" width="414" height="671"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQj-Io-RSa" userLabel="ContainerView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uw2-Cg-wAY" userLabel="HeaderView">
                                                 <rect key="frame" x="20" y="20" width="374" height="170"/>
@@ -1261,7 +1261,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="EIY-mq-mtQ" userLabel="IssuesTable">
-                                                <rect key="frame" x="20" y="501.5" width="374" height="149.5"/>
+                                                <rect key="frame" x="20" y="501.5" width="374" height="203.5"/>
                                                 <color key="backgroundColor" name="Background"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IssuesInSeriesCell" id="iiF-nv-ud1" customClass="IssuesInSeriesTableViewCell" customModule="Mobile_Application" customModuleProvider="target">
@@ -1461,24 +1461,29 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ToReadCell" id="2OR-Eu-ddN" customClass="ToReadCollectionViewCell" customModule="Mobile_Application" customModuleProvider="target">
-                                <rect key="frame" x="20" y="0.0" width="126" height="50"/>
+                                <rect key="frame" x="20" y="0.0" width="126" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Giu-kS-2sw">
-                                    <rect key="frame" x="0.0" y="0.0" width="126" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="126" height="215"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q28-Tm-mHW" userLabel="Issue Image">
-                                            <rect key="frame" x="0.0" y="20" width="126" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZG-gB-hq2" userLabel="Issue Image Button">
+                                            <rect key="frame" x="0.0" y="20" width="126" height="195"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="oZG-gB-hq2" secondAttribute="height" multiplier="162:251" id="Iq4-pl-N9R"/>
+                                            </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                     <integer key="value" value="15"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
-                                        </imageView>
+                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCJ-mB-DZt">
-                                            <rect key="frame" x="0.0" y="10" width="126" height="40"/>
+                                            <rect key="frame" x="0.0" y="175" width="126" height="40"/>
                                             <color key="backgroundColor" name="Red"/>
                                             <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="5aS-Ti-4AU"/>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="7UJ-E1-afo"/>
                                                 <constraint firstAttribute="height" constant="40" id="mp1-MV-rcp"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
@@ -1487,13 +1492,13 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="RCJ-mB-DZt" firstAttribute="leading" secondItem="Giu-kS-2sw" secondAttribute="leading" id="1CO-gO-cZa"/>
-                                        <constraint firstItem="q28-Tm-mHW" firstAttribute="leading" secondItem="Giu-kS-2sw" secondAttribute="leading" id="Ugv-ag-AmW"/>
-                                        <constraint firstAttribute="bottom" secondItem="q28-Tm-mHW" secondAttribute="bottom" id="dJ5-Qt-6ZU"/>
-                                        <constraint firstItem="q28-Tm-mHW" firstAttribute="top" secondItem="Giu-kS-2sw" secondAttribute="top" constant="20" id="ekr-wI-Cfn"/>
-                                        <constraint firstAttribute="trailing" secondItem="q28-Tm-mHW" secondAttribute="trailing" id="jts-Pc-Iqb"/>
-                                        <constraint firstAttribute="bottom" secondItem="RCJ-mB-DZt" secondAttribute="bottom" id="qzE-vH-yKc"/>
-                                        <constraint firstAttribute="trailing" secondItem="RCJ-mB-DZt" secondAttribute="trailing" id="zmg-i7-dFY"/>
+                                        <constraint firstAttribute="bottom" secondItem="RCJ-mB-DZt" secondAttribute="bottom" id="0Wn-B9-HFe"/>
+                                        <constraint firstItem="RCJ-mB-DZt" firstAttribute="leading" secondItem="Giu-kS-2sw" secondAttribute="leading" id="j9o-Q3-UIj"/>
+                                        <constraint firstAttribute="trailing" secondItem="RCJ-mB-DZt" secondAttribute="trailing" id="uTh-aW-9Kd"/>
+                                        <constraint firstItem="oZG-gB-hq2" firstAttribute="top" secondItem="Giu-kS-2sw" secondAttribute="top" constant="20" id="udU-Z3-Fiw"/>
+                                        <constraint firstAttribute="bottom" secondItem="oZG-gB-hq2" secondAttribute="bottom" id="vHS-CK-Ix7"/>
+                                        <constraint firstAttribute="trailing" secondItem="oZG-gB-hq2" secondAttribute="trailing" id="wHS-eI-ike"/>
+                                        <constraint firstItem="oZG-gB-hq2" firstAttribute="leading" secondItem="Giu-kS-2sw" secondAttribute="leading" id="xrN-QJ-8bR"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1502,7 +1507,8 @@
                                     </userDefinedRuntimeAttributes>
                                 </collectionViewCellContentView>
                                 <connections>
-                                    <outlet property="issueImage" destination="q28-Tm-mHW" id="4m7-cM-Udg"/>
+                                    <outlet property="issueImage" destination="oZG-gB-hq2" id="wfp-pp-3V3"/>
+                                    <outlet property="readButton" destination="RCJ-mB-DZt" id="ItH-XO-CXz"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -1512,6 +1518,9 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="To Read" id="U6S-4w-pcO"/>
+                    <connections>
+                        <segue destination="daz-C7-fa1" kind="show" identifier="ShowIssueFromToRead" id="uKY-Og-bgl"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VVj-Py-oQ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1576,6 +1585,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="yAU-zO-qdD"/>
-        <segue reference="w7F-fT-IBB"/>
+        <segue reference="uKY-Og-bgl"/>
     </inferredMetricsTieBreakers>
 </document>
