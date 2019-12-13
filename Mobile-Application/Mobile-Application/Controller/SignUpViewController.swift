@@ -42,13 +42,39 @@ class SignUpViewController: UIViewController {
         }
         
         Auth.auth().createUser(withEmail: email, password: password){ (result, error) in
-            if error == nil{
-                //User Created
-                print("User Created")
-                // Sing In user
-                self.SignInUser(email: email, password: password)
-            } else{
-                print(error?.localizedDescription)
+            if let x = error {
+                let err = x as NSError
+                switch err.code {
+                case AuthErrorCode.wrongPassword.rawValue:
+                    print("wrong password")
+                case AuthErrorCode.invalidEmail.rawValue:
+                    print("invalid email")
+                case AuthErrorCode.accountExistsWithDifferentCredential.rawValue:
+                    print("accountExistsWithDifferentCredential")
+                    let alert = UIAlertController(title: "Wrong Credentials", message: "The Account exists with different credentials", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                case AuthErrorCode.emailAlreadyInUse.rawValue: //<- Your Error
+                    print("email is alreay in use")
+                    let alert = UIAlertController(title: "Email Already Used", message: "Use another email", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                case AuthErrorCode.weakPassword.rawValue:
+                    print("weak password")
+                    let alert = UIAlertController(title: "Weak Password", message: "The password must be 6 characters long or more", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    
+                default:
+                    print("unknown error: \(err.localizedDescription)")
+                    
+                }
+               //return
+            } else {
+               //User Created
+               print("User Created")
+               // Sing In user
+               self.SignInUser(email: email, password: password)
             }
         }
         

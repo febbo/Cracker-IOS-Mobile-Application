@@ -61,6 +61,7 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
     
     
 //    MARK: Email/Password Delegate
+//    QUESTO NON SERVE PIù
     func createUser(email: String, password: String){
         Auth.auth().createUser(withEmail: email, password: password){ (result, error) in
             if error == nil{
@@ -73,7 +74,8 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
             }
         }
     }
-    
+   
+//    QUESTO NON SERVE PIù
     func SignInUser(email: String, password:String){
         Auth.auth().signIn(withEmail: email, password: password){ (user,error) in
             if error == nil{
@@ -83,10 +85,16 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
                 self.userDefault.synchronize()
                 self.performSegue(withIdentifier: "Segue_To_Signin", sender: self)
             } else if error?._code == AuthErrorCode.userNotFound.rawValue {
-                self.createUser(email: email, password: password)
+                let alert = UIAlertController(title: "The Account not exists", message: "You are not registered", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                self.present(alert, animated: true)
             } else{
                 print(error)
                 print(error?.localizedDescription)
+                let error_description = error!.localizedDescription
+                let alert = UIAlertController(title: "Wrong Credentials", message: "\(error_description)", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                self.present(alert, animated: true)
             }
             
             
@@ -110,6 +118,8 @@ class LogInViewController: UIViewController, LoginButtonDelegate{
                 }else{
                     print(error?.localizedDescription)
                 }
+                
+
                 
                 let newUserReference = Firestore.firestore().collection("Users").document((authResult?.user.uid)!)    // <-- create a document, with the user id from Firebase Auth
 

@@ -49,26 +49,28 @@ class EmailSignInViewController: UIViewController {
       
       func SignInUser(email: String, password:String){
           Auth.auth().signIn(withEmail: email, password: password){ (user,error) in
-              if error == nil{
+            if error == nil{
                   //Signed In
-                  print("User Signed In")
-                  self.userDefault.set(true, forKey: "usersignedin")
-                  self.userDefault.synchronize()
-                  self.performSegue(withIdentifier: "Segue_To_SignIn", sender: self)
-              } else if error?._code == AuthErrorCode.userNotFound.rawValue {
-//                  self.createUser(email: email, password: password)
+                print("User Signed In")
+                self.userDefault.set(true, forKey: "usersignedin")
+                self.userDefault.synchronize()
+                self.performSegue(withIdentifier: "Segue_To_SignIn", sender: self)
+                
+            } else if error?._code == AuthErrorCode.userNotFound.rawValue {
                 print("Utente non registrato")
                 let alert = UIAlertController(title: "Utente Non registrato", message: "Registrati prima di continuare!", preferredStyle: .alert)
 
                 alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
-                //style: .cancel
 
                 self.present(alert, animated: true)
-                
-              } else{
-                  print(error)
-                  print(error?.localizedDescription)
-              }
+            } else if error?._code == AuthErrorCode.wrongPassword.rawValue {
+                let alert = UIAlertController(title: "Wrong Password", message: "The password is wrong", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            } else{
+                print(error)
+                print(error?.localizedDescription)
+            }
               
               
               //Handle Error sulla documentazione e mostrare all'utente i vari errori quando capitano
