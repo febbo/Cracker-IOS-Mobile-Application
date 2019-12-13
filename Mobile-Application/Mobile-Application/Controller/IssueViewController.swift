@@ -23,6 +23,7 @@ class IssueViewController: UIViewController {
     var parsedIdSerie : String = ""
     var nameOfSerie : String = ""
     var issueNumber : Int = 0
+    var imageSerie : String = ""
 
     
     
@@ -52,6 +53,7 @@ class IssueViewController: UIViewController {
         let singleIssueUrl = apiURL + "\(comicID ?? 0)"
         let params : [String : String] = [ "apikey" : APP_ID, "ts": TS, "hash" : HASH]
         getUpNextData(url: singleIssueUrl, parameters: params)
+
         
 		if (isRead) {
 			readButton.backgroundColor = UIColor(named: "DarkGreen")
@@ -114,7 +116,35 @@ class IssueViewController: UIViewController {
         
     }
     
+    func getSerieData(url: String, parameters: [String: String]) {
+        
+        Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
+            response in
+            if response.result.isSuccess {
+                
+                print("Success! Got the comic data")
+                let upNextJSON : JSON = JSON(response.result.value!)
+                
+                self.updateSerieData(json : upNextJSON)
+                
+                
+            }
+            else {
+                print("Error \(String(describing: response.result.error))")
+//                self.cityLabel.text = "Connection Issues"
+            }
+        }
+        
+    }
+    
     //MARK: - JSON Parsing
+    
+    func updateSerieData(json : JSON) {
+        //      IMAGE
+        let imagePath = json["data"]["results"][0]["thumbnail"]["path"].stringValue
+        let imageExtension = json["data"]["results"][0]["thumbnail"]["extension"].stringValue
+        imageSerie = imagePath + "." + imageExtension
+    }
     
     func updateComicData(json : JSON) {
 //        print(json)
@@ -210,11 +240,14 @@ class IssueViewController: UIViewController {
 	
 	@objc func readIssueButton(button: UIButton) {
 		isRead = !isRead
+        let params : [String : String] = [ "apikey" : APP_ID, "ts": TS, "hash" : HASH]
+        getSerieData(url: serieURL!, parameters: params)
 		if (isRead) {
 			readButton.backgroundColor = UIColor(named: "DarkGreen")
 			readButton.setTitle("MARK AS UNREAD", for: .normal)
             User.collection("Series").document("\(parsedIdSerie)").setData([
                 "id": parsedIdSerie,
+                "image": imageSerie,
                 "name": nameOfSerie,
                 "issueToRead" : issueNumber
             ]) { err in
@@ -230,6 +263,7 @@ class IssueViewController: UIViewController {
 			readButton.setTitle("MARK AS READ", for: .normal)
             User.collection("Series").document("\(parsedIdSerie)").setData([
                 "id": parsedIdSerie,
+                "image": imageSerie,
                 "name": nameOfSerie,
                 "issueToRead" : issueNumber - 1
             ]) { err in

@@ -725,10 +725,12 @@
 				INFOPLIST_FILE = "Mobile-Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				NEW_SETTING = "";
+				NEW_SETTING1 = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "FebboFerreri.Mobile-Application";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -747,10 +749,12 @@
 				INFOPLIST_FILE = "Mobile-Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				NEW_SETTING = "";
+				NEW_SETTING1 = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "FebboFerreri.Mobile-Application";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

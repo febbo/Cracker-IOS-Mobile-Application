@@ -58,6 +58,7 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SeriesCell", for: indexPath) as! SeriesCollectionViewCell
+        
         cell.seriesImage.image = UIImage(named: "series")
         
         return cell
