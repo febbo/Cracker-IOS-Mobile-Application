@@ -1078,8 +1078,10 @@
                         <outlet property="creatorsText" destination="gH3-Sd-59P" id="N6s-AY-3m9"/>
                         <outlet property="dateComic" destination="q4T-bE-stF" id="woO-uk-dZs"/>
                         <outlet property="descriptionComic" destination="NZJ-zQ-eXB" id="jxJ-9q-V1x"/>
+                        <outlet property="headerView" destination="Ejq-9t-Ziy" id="TfA-i5-cII"/>
                         <outlet property="imageComic" destination="5JR-bc-aQV" id="z2F-Gf-C8d"/>
                         <outlet property="readButton" destination="Abe-eJ-bmN" id="uYG-uP-q4E"/>
+                        <outlet property="scrollView" destination="viw-f7-ndM" id="ark-yT-f31"/>
                         <outlet property="seriesButton" destination="V8C-Dp-Ay4" id="ZtW-Ce-27H"/>
                         <outlet property="titleComic" destination="hkZ-5s-HpR" id="TJu-VX-vMS"/>
                         <segue destination="gWk-4X-qkZ" kind="show" identifier="goToSeries" id="gGZ-iQ-hFh"/>
@@ -1629,7 +1631,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ilt-0R-QWw"/>
-        <segue reference="Fji-4T-J9e"/>
+        <segue reference="gGZ-iQ-hFh"/>
         <segue reference="uKY-Og-bgl"/>
     </inferredMetricsTieBreakers>
 </document>

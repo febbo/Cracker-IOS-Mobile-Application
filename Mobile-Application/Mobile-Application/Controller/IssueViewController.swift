@@ -42,12 +42,22 @@ class IssueViewController: UIViewController {
     
     var serieURL: String?
     
-	
-	
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    var scrollHeight: CGFloat = 0
+    var scrollWidth: CGFloat = 0
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
 		
 		navigationItem.largeTitleDisplayMode = .never
+        
+        scrollWidth = scrollView.contentSize.width
+        scrollHeight = 20*6 + 50*4
+        scrollHeight += headerView.frame.height
+        scrollHeight += creatorsText.frame.height
+        scrollHeight += descriptionComic.frame.height
+        scrollView.contentSize = CGSize(width: scrollWidth, height: scrollHeight)
         
 //        RICHIESTA API
         let singleIssueUrl = apiURL + "\(comicID ?? 0)"
@@ -91,6 +101,14 @@ class IssueViewController: UIViewController {
         seriesButton.addTarget(self, action: #selector(goToSeriesButton), for: .touchUpInside)
 
 
+    }
+    
+    override func viewDidLayoutSubviews() {
+        scrollHeight = 20*6 + 50*4
+        scrollHeight += headerView.frame.height
+        scrollHeight += creatorsText.frame.height
+        scrollHeight += descriptionComic.frame.height
+        scrollView.contentSize = CGSize(width: scrollWidth, height: scrollHeight)
     }
     
     //MARK: - Networking
@@ -175,9 +193,9 @@ class IssueViewController: UIViewController {
                 let name = json["data"]["results"][0]["creators"]["items"][i]["name"].stringValue
                 let role = json["data"]["results"][0]["creators"]["items"][i]["role"].stringValue
                 if i == (numberCreators-1) {
-                    text += " \(name) : \(role) "
+                    text += " \(name): \(role) "
                 }else {
-                    text += " \(name) : \(role) \n"
+                    text += " \(name): \(role) \n"
                 }
             }
         }else{
