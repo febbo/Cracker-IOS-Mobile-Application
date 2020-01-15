@@ -217,6 +217,9 @@ class IssueViewController: UIViewController {
                 if toRead > self.issueNumber{
                     self.isRead = true
                     self.updateBtn()
+                } else {
+                    self.isRead = false
+                    self.updateBtn()
                 }
             } else {
                 print("Document does not exist")
