@@ -538,6 +538,10 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.toRead = button.tag + 1
             button.isSelected = !button.isSelected
             self.issuesTable.reloadData()
+            if self.toRead > self.numberOfIssues{
+                self.allRead = true
+                self.updateBtn()
+            }
         } else{
             print("This is the number of issue of this button selected: \(button.tag)")
             User.collection("Series").document("\(serieID)").setData([
@@ -555,6 +559,8 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.toRead = button.tag
             button.isSelected = !button.isSelected
             self.issuesTable.reloadData()
+            self.allRead = false
+            self.updateBtn()
         }
 
 	}
