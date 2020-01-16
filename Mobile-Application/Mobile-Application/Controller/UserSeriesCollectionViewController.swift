@@ -22,6 +22,8 @@ class UserSeriesCollectionViewController: UICollectionViewController, UICollecti
     var seriesIMGs : [String] = []
     
     var reload = false
+    
+    var selectedCellIndex : Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,7 @@ class UserSeriesCollectionViewController: UICollectionViewController, UICollecti
 			cellSize = CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
             imageSize = CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
 		}
+        collectionView.allowsSelection = true
     }
     
     
@@ -48,7 +51,7 @@ class UserSeriesCollectionViewController: UICollectionViewController, UICollecti
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
+                    //print("\(document.documentID) => \(document.data())")
                     let data = document.data()
                     let id = data["id"] as! String
                     let image = data["image"] as! String
@@ -79,8 +82,7 @@ class UserSeriesCollectionViewController: UICollectionViewController, UICollecti
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserSeriesCell", for: indexPath) as! UserSeriesCollectionViewCell
         cell.tag = indexPath.row
-        print(indexPath)
-        print(indexPath.row)
+
         var img = UIImage(named: "series")!.resized(to: imageSize!)
         if self.reload == true{
             let url = URL(string: seriesIMGs[indexPath.row])
@@ -89,9 +91,11 @@ class UserSeriesCollectionViewController: UICollectionViewController, UICollecti
         }
         cell.seriesImage.setBackgroundImage(img, for: UIControl.State.normal)
         cell.seriesImage.addTarget(self, action: #selector(showSeries), for: UIControl.Event.touchUpInside)
+        cell.seriesImage.tag = indexPath.row //QUESTO é IL TAG DEL BOTTONE
     
         return cell
     }
+    
 
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -99,7 +103,25 @@ class UserSeriesCollectionViewController: UICollectionViewController, UICollecti
     }
     
     @objc func showSeries(button: UIButton) {
+        //print("sono entrato")
+        selectedCellIndex = button.tag
+        //print(selectedCellIndex)
         self.performSegue(withIdentifier: "ShowSeriesFromProfile", sender: self)
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? SeriesViewController{
+            
+            //print("CHE STO A PREPARA'??")
+            //print(selectedCellIndex)
+            //print(seriesIDs[selectedCellIndex])
+            let id = seriesIDs[selectedCellIndex]
+            let url = "https://gateway.marvel.com/v1/public/series/\(id)"
+
+            destination.apiURL = url
+
+        }
     }
 	
 }
