@@ -41,7 +41,6 @@ class UserSeriesCollectionViewController: UICollectionViewController, UICollecti
 			cellSize = CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
             imageSize = CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
 		}
-        collectionView.allowsSelection = true
     }
     
     
