@@ -206,6 +206,9 @@ class IssueViewController: UIViewController {
 //        print("serie url presa")
 //        print(serieURL)
         
+        let params2 : [String : String] = [ "apikey" : APP_ID, "ts": TS, "hash" : HASH]
+        getSerieData(url: serieURL!, parameters: params2)
+        
         nameOfSerie = json["data"]["results"][0]["series"]["name"].stringValue
         
         self.issueNumber = json["data"]["results"][0]["issueNumber"].intValue
@@ -243,8 +246,7 @@ class IssueViewController: UIViewController {
 	
 	@objc func readIssueButton(button: UIButton) {
 		isRead = !isRead
-        let params : [String : String] = [ "apikey" : APP_ID, "ts": TS, "hash" : HASH]
-        getSerieData(url: serieURL!, parameters: params)
+
 		if (isRead) {
 			readButton.backgroundColor = UIColor(named: "DarkGreen")
 			readButton.setTitle("MARK AS UNREAD", for: .normal)
@@ -252,7 +254,7 @@ class IssueViewController: UIViewController {
                 "id": parsedIdSerie,
                 "image": imageSerie,
                 "name": nameOfSerie,
-                "issueToRead" : issueNumber
+                "issueToRead" : issueNumber + 1
             ]) { err in
                 if let err = err {
                     print("Error writing document: \(err)")

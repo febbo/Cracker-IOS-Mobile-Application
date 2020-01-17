@@ -542,6 +542,10 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.allRead = true
                 self.updateBtn()
             }
+            if self.follows == false{
+                self.follows = true
+                self.updateBtn()
+            }
         } else{
             print("This is the number of issue of this button selected: \(button.tag)")
             User.collection("Series").document("\(serieID)").setData([
