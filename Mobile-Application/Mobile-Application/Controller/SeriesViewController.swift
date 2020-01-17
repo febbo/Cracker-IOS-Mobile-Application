@@ -75,10 +75,10 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		followButton.addTarget(self, action: #selector(followThisSeries), for: .touchUpInside)
 		readButton.addTarget(self, action: #selector(markAllAsRead), for: .touchUpInside)
         
-        readButton.backgroundColor = UIColor(named: "DarkGreen")
-        readButton.setTitle("MARK ALL AS UNREAD", for: .normal)
-        readButton.isEnabled = false
-        readButton.alpha = 0.5
+        readButton.backgroundColor = UIColor(named: "Red")
+        readButton.setTitle("MARK ALL AS READ", for: .normal)
+        readButton.isEnabled = true
+        readButton.alpha = 1
 		
 		issuesTable.delegate = self
 		issuesTable.dataSource = self
@@ -252,7 +252,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
         //Creare le table degli issues
-        issuesTable.beginUpdates()
+        //issuesTable.beginUpdates()
         print(availables)
         if availables == 0 {
             var titles : [String] = []
@@ -281,7 +281,8 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
             }
         }
-        issuesTable.endUpdates()
+        //issuesTable.endUpdates()
+        self.issuesTable.reloadData()
         
 
         
@@ -325,6 +326,8 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let indexCell = (indexPath.section)*10 + (indexPath.row + 1)
         if self.toRead > indexCell{
             cell?.readButton.isSelected = true
+        } else {
+            cell?.readButton.isSelected = false
         }
 //        print((indexPath.section)*10 + indexPath.row)
 		return cell!
@@ -468,6 +471,8 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
 			readButton.backgroundColor = UIColor(named: "DarkGreen")
 			readButton.setTitle("MARK ALL AS UNREAD", for: .normal)
+            self.toRead = numberOfIssues + 1
+            self.issuesTable.reloadData()
 		}
 		else {
             User.collection("Series").document("\(serieID)").updateData([
@@ -481,6 +486,9 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
 			readButton.backgroundColor = UIColor(named: "Red")
 			readButton.setTitle("MARK ALL AS READ", for: .normal)
+            self.toRead = 0
+            self.issuesTable.reloadData()
+            
 		}
 	}
 
@@ -527,8 +535,17 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     print("Document successfully written!")
                 }
             }
+            self.toRead = button.tag + 1
             button.isSelected = !button.isSelected
-//            issuesTable.reloadData()
+            self.issuesTable.reloadData()
+            if self.toRead > self.numberOfIssues{
+                self.allRead = true
+                self.updateBtn()
+            }
+            if self.follows == false{
+                self.follows = true
+                self.updateBtn()
+            }
         } else{
             print("This is the number of issue of this button selected: \(button.tag)")
             User.collection("Series").document("\(serieID)").setData([
@@ -543,8 +560,11 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     print("Document successfully written!")
                 }
             }
+            self.toRead = button.tag
             button.isSelected = !button.isSelected
-//            issuesTable.reloadData()
+            self.issuesTable.reloadData()
+            self.allRead = false
+            self.updateBtn()
         }
 
 	}

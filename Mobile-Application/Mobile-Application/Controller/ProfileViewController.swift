@@ -11,6 +11,8 @@ import Firebase
 import GoogleSignIn
 import FacebookLogin
 import FBSDKLoginKit
+import Alamofire
+import SwiftyJSON
 
 class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -23,9 +25,18 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
     
 //    Constants
     let userDefault = UserDefaults.standard
+    
+    let User = Firestore.firestore().collection("Users").document("\((Auth.auth().currentUser?.uid)!)")
+    
+//    Variables
+    var seriesIDs : [String] = []
+    var seriesIMGs : [String] = []
+    
+    var reload = false
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
+        getSeries()
 		
 		if #available(iOS 13.0, *) {
 			let appearance = UINavigationBarAppearance()
@@ -51,15 +62,47 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
 
     }
     
+    func getSeries(){
+        User.collection("Series").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    //print("\(document.documentID) => \(document.data())")
+                    let data = document.data()
+                    let id = data["id"] as! String
+                    let image = data["image"] as! String
+                    self.seriesIDs.append(id)
+                    self.seriesIMGs.append(image)
+                    
+                }
+                print(self.seriesIDs)
+                print(self.seriesIMGs)
+                self.reload = true
+                self.seriesCollection.reloadData()
+            }
+        }
+
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        if seriesIDs.count > 5{
+            return 5
+        } else {
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SeriesCell", for: indexPath) as! SeriesCollectionViewCell
         
         cell.seriesImage.image = UIImage(named: "series")
+        if self.reload == true{
+            let url = URL(string: seriesIMGs[indexPath.row])
+            let imageData = try! Data(contentsOf: url!)
+            cell.seriesImage.image = UIImage(data: imageData)
+        }
         
         return cell
     }
