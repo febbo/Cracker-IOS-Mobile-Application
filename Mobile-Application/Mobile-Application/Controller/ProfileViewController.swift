@@ -97,7 +97,7 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SeriesCell", for: indexPath) as! SeriesCollectionViewCell
         
-        cell.seriesImage.image = UIImage(named: "series")
+        cell.button.addTarget(self, action: #selector(showSingleSeries), for: .touchUpInside)
         if self.reload == true{
             let url = URL(string: seriesIMGs[indexPath.row])
             let imageData = try! Data(contentsOf: url!)
@@ -126,6 +126,8 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
 		self.performSegue(withIdentifier: "ShowUserSeries", sender: self)
 	}
     
-    
+    @objc func showSingleSeries() {
+        print("cliccato")
+    }
 
 }

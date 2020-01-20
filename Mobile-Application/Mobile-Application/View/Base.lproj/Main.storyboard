@@ -257,16 +257,24 @@
                                                                                 </userDefinedRuntimeAttribute>
                                                                             </userDefinedRuntimeAttributes>
                                                                         </imageView>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92s-be-Ota">
+                                                                            <rect key="frame" x="15" y="15" width="175" height="160"/>
+                                                                        </button>
                                                                     </subviews>
                                                                     <constraints>
                                                                         <constraint firstAttribute="bottom" secondItem="t6y-2X-p7c" secondAttribute="bottom" constant="15" id="2I1-hH-Sct"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="92s-be-Ota" secondAttribute="bottom" constant="15" id="3Og-Fg-udv"/>
+                                                                        <constraint firstItem="92s-be-Ota" firstAttribute="top" secondItem="jCX-JJ-P6N" secondAttribute="top" constant="15" id="KfJ-oJ-r6Q"/>
                                                                         <constraint firstAttribute="trailing" secondItem="t6y-2X-p7c" secondAttribute="trailing" id="NqP-2x-ScX"/>
                                                                         <constraint firstItem="t6y-2X-p7c" firstAttribute="top" secondItem="jCX-JJ-P6N" secondAttribute="top" constant="15" id="OeE-fJ-G42"/>
+                                                                        <constraint firstItem="92s-be-Ota" firstAttribute="leading" secondItem="jCX-JJ-P6N" secondAttribute="leading" constant="15" id="R03-Bz-MHi"/>
                                                                         <constraint firstItem="t6y-2X-p7c" firstAttribute="leading" secondItem="jCX-JJ-P6N" secondAttribute="leading" constant="15" id="ory-hH-Ao2"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="92s-be-Ota" secondAttribute="trailing" id="pWI-VQ-EuV"/>
                                                                     </constraints>
                                                                 </collectionViewCellContentView>
                                                                 <size key="customSize" width="190" height="190"/>
                                                                 <connections>
+                                                                    <outlet property="button" destination="92s-be-Ota" id="Vhy-gb-ZG1"/>
                                                                     <outlet property="seriesImage" destination="t6y-2X-p7c" id="s32-VQ-w2J"/>
                                                                 </connections>
                                                             </collectionViewCell>
