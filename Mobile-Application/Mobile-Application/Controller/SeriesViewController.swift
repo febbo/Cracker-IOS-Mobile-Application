@@ -59,9 +59,24 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     typealias FinishedDownload = () -> ()
     
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    var scrollHeight: CGFloat = 0
+    var scrollWidth: CGFloat = 0
+    
 	//MARK: - ViewDidLoad
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        
+        scrollWidth = scrollView.contentSize.width
+        scrollHeight = 20*5 + 60
+        scrollHeight += headerView.frame.height
+        scrollHeight += descriptionText.frame.height
+        scrollHeight += CGFloat(issuesTable.numberOfSections * 55)
+        scrollHeight += CGFloat((issuesTable.numberOfSections - 1) * 20)
+        scrollView.contentSize = CGSize(width: scrollWidth, height: scrollHeight)
+        print("contentview = \(scrollView.contentSize.height)")
+        print("frame = \(scrollView.frame.height)")
         
         //        RICHIESTA API
         let singleIssueUrl = apiURL!
@@ -85,6 +100,16 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 	}
     
 
+    override func viewDidLayoutSubviews() {
+        scrollHeight = 20*5 + 60
+        scrollHeight += headerView.frame.height
+        scrollHeight += descriptionText.frame.height
+        scrollHeight += CGFloat(issuesTable.numberOfSections * 55)
+        scrollHeight += CGFloat((issuesTable.numberOfSections - 1) * 20)
+        scrollView.contentSize = CGSize(width: scrollWidth, height: scrollHeight)
+        print("contentview = \(scrollView.contentSize.height)")
+        print("frame = \(scrollView.frame.height)")
+    }
     
     
 	
@@ -283,6 +308,15 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         //issuesTable.endUpdates()
         self.issuesTable.reloadData()
+        
+        scrollHeight = 20*5 + 60
+        scrollHeight += headerView.frame.height
+        scrollHeight += descriptionText.frame.height
+        scrollHeight += CGFloat(issuesTable.numberOfSections * 55)
+        scrollHeight += CGFloat((issuesTable.numberOfSections - 1) * 20)
+        scrollView.contentSize = CGSize(width: scrollWidth, height: scrollHeight)
+        print("contentview = \(scrollView.contentSize.height)")
+        print("frame = \(scrollView.frame.height)")
         
 
         
@@ -510,12 +544,19 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
 		
 		if isExpanded {
+            scrollHeight -= CGFloat(issuesTable.numberOfRows(inSection: section) * 45)
+            print("scrollheight da var = \(scrollHeight)")
 			issuesTable.deleteRows(at: indexPaths, with: .fade)
 		}
 		else {
 			issuesTable.insertRows(at: indexPaths, with: .fade)
-            
+            scrollHeight += CGFloat(issuesTable.numberOfRows(inSection: section) * 45)
+            print("scrollheight da var = \(scrollHeight)")
 		}
+        
+        scrollView.contentSize = CGSize(width: scrollWidth, height: scrollHeight)
+        print("contentview = \(scrollView.contentSize.height)")
+        print("frame = \(scrollView.frame.height)")
         
         print(issuesTable.indexPathsForVisibleRows)
 	}
