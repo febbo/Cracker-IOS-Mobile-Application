@@ -355,7 +355,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="bUA-Gl-Eby"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="T5Q-PP-zyn" firstAttribute="trailing" secondItem="JEl-lk-kTF" secondAttribute="trailing" id="1t6-Km-bvH"/>
                             <constraint firstItem="T5Q-PP-zyn" firstAttribute="bottom" secondItem="JEl-lk-kTF" secondAttribute="bottom" id="Fty-Ep-0Eb"/>
@@ -1429,7 +1429,7 @@
         <scene sceneID="97k-x7-BnI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0cr-pE-EbS" userLabel="Up Next Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Up Next" image="tab_cal" id="VVy-s1-CFD"/>
+                    <tabBarItem key="tabBarItem" title="Up Next" image="calendar" catalog="system" id="VVy-s1-CFD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="R4R-LC-9m3">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -1451,7 +1451,7 @@
         <scene sceneID="MwQ-pt-org">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BFG-OX-P6N" userLabel="Profile Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="tab_profile" id="RAc-Za-YkG"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="RAc-Za-YkG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="eeC-iK-RA5">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -1555,7 +1555,7 @@
         <scene sceneID="IMy-xK-tvC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4iv-fY-A3F" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="To Read" image="tab_read" id="cYh-tG-Td1"/>
+                    <tabBarItem key="tabBarItem" title="To Read" image="book" catalog="system" id="cYh-tG-Td1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Ct5-n5-M7Z">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -1576,7 +1576,7 @@
         <scene sceneID="mOj-Kh-JQr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ces-SN-9IT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="tab_search" id="ErV-mU-63f"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="ErV-mU-63f"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="3I3-S1-l1c">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -1596,13 +1596,13 @@
     </scenes>
     <resources>
         <image name="Logo" width="260" height="200"/>
+        <image name="book" catalog="system" width="64" height="50"/>
+        <image name="calendar" catalog="system" width="64" height="52"/>
         <image name="checkmark.circle.fill" catalog="system" width="64" height="60"/>
         <image name="circle" catalog="system" width="64" height="60"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="person" catalog="system" width="64" height="58"/>
         <image name="right" width="11" height="19"/>
-        <image name="tab_cal" width="30" height="30"/>
-        <image name="tab_profile" width="30" height="30"/>
-        <image name="tab_read" width="30" height="30"/>
-        <image name="tab_search" width="30" height="30"/>
         <image name="welcome_bg" width="682.5" height="910.5"/>
         <namedColor name="Background">
             <color red="0.93333333333333335" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
