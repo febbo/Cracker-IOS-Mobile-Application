@@ -35,7 +35,9 @@ class UpNextTableViewController : UITableViewController {
 	// come identifichiamo la settimana nell'header della sezione
 	// IMPORTANTE: ovviamente la dimensione di questo array deve essere uguale al numero di righe di issues
 	let weeks = ["thisWeek", "nextWeek", "thisMonth"]
-	let weeksTitle = ["This week", "Next week", "This month"]
+	let weeksTitle = [NSLocalizedString("This week", comment: ""),
+                      NSLocalizedString("Next week", comment: ""),
+                      NSLocalizedString("This month", comment: "")]
     
     var UpNextComics : [[Int]] = [[0],[1],[2]]
     

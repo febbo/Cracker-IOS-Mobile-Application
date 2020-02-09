@@ -67,11 +67,11 @@ class IssueViewController: UIViewController {
         
 		if (isRead) {
 			readButton.backgroundColor = UIColor(named: "DarkGreen")
-			readButton.setTitle("MARK AS UNREAD", for: .normal)
+			readButton.setTitle(NSLocalizedString("MARK AS UNREAD", comment: ""), for: .normal)
 		}
 		else {
 			readButton.backgroundColor = UIColor(named: "Red")
-			readButton.setTitle("MARK AS READ", for: .normal)
+			readButton.setTitle(NSLocalizedString("MARK AS READ", comment: ""), for: .normal)
 		}
 		
 		readButton.addTarget(self, action: #selector(readIssueButton), for: .touchUpInside)
@@ -90,11 +90,11 @@ class IssueViewController: UIViewController {
         
         if (isRead) {
             readButton.backgroundColor = UIColor(named: "DarkGreen")
-            readButton.setTitle("MARK AS UNREAD", for: .normal)
+            readButton.setTitle(NSLocalizedString("MARK AS UNREAD", comment: ""), for: .normal)
         }
         else {
             readButton.backgroundColor = UIColor(named: "Red")
-            readButton.setTitle("MARK AS READ", for: .normal)
+            readButton.setTitle(NSLocalizedString("MARK AS READ", comment: ""), for: .normal)
         }
         
         readButton.addTarget(self, action: #selector(readIssueButton), for: .touchUpInside)
@@ -179,7 +179,7 @@ class IssueViewController: UIViewController {
         dateFormatterPrint.dateFormat = "dd-MM-yyyy"
 
         if let date = dateFormatterGet.date(from: "\(dateString)") {
-            dateComic.text = "Release date: " + dateFormatterPrint.string(from: date)
+            dateComic.text = NSLocalizedString("Release date", comment: "") + dateFormatterPrint.string(from: date)
         } else {
            print("There was an error decoding the string")
             dateComic.text = "error"
@@ -199,7 +199,7 @@ class IssueViewController: UIViewController {
                 }
             }
         }else{
-            text = "Nessun creatore trovato"
+            text = NSLocalizedString("No creator found", comment: "")
         }
         
         creatorsText.text = text
@@ -208,7 +208,7 @@ class IssueViewController: UIViewController {
         let description = json["data"]["results"][0]["description"].stringValue
 //        descriptionComic.text = "\((comic?.description)!)"
         if description == "" {
-            descriptionComic.text = "descrizione non disponibile"
+            descriptionComic.text = NSLocalizedString("Solicit not available", comment: "")
         } else {
             descriptionComic.text = "\(description)"
         }
@@ -255,10 +255,10 @@ class IssueViewController: UIViewController {
     func updateBtn(){
         if isRead == true{
             readButton.backgroundColor = UIColor(named: "DarkGreen")
-            readButton.setTitle("MARK AS UNREAD", for: .normal)
+            readButton.setTitle(NSLocalizedString("MARK AS UNREAD", comment: ""), for: .normal)
         } else {
             readButton.backgroundColor = UIColor(named: "Red")
-            readButton.setTitle("MARK AS READ", for: .normal)
+            readButton.setTitle(NSLocalizedString("MARK AS READ", comment: ""), for: .normal)
         }
     }
 	
@@ -267,7 +267,7 @@ class IssueViewController: UIViewController {
 
 		if (isRead) {
 			readButton.backgroundColor = UIColor(named: "DarkGreen")
-			readButton.setTitle("MARK AS UNREAD", for: .normal)
+			readButton.setTitle(NSLocalizedString("MARK AS UNREAD", comment: ""), for: .normal)
             User.collection("Series").document("\(parsedIdSerie)").setData([
                 "id": parsedIdSerie,
                 "image": imageSerie,
@@ -283,7 +283,7 @@ class IssueViewController: UIViewController {
 		}
 		else {
 			readButton.backgroundColor = UIColor(named: "Red")
-			readButton.setTitle("MARK AS READ", for: .normal)
+			readButton.setTitle(NSLocalizedString("MARK AS READ", comment: ""), for: .normal)
             User.collection("Series").document("\(parsedIdSerie)").setData([
                 "id": parsedIdSerie,
                 "image": imageSerie,

@@ -1,15 +1,171 @@
 
-/* Class = "UITabBarItem"; title = "Item"; ObjectID = "ErV-mU-63f"; */
+/* Class = "UIButton"; normalTitle = "Sign Up with Email"; ObjectID = "2bc-rs-isH"; */
+"2bc-rs-isH.normalTitle" = "Registrazione con e-mail";
+
+/* Class = "UILabel"; text = "Login with Google"; ObjectID = "36d-vY-vsK"; */
+"36d-vY-vsK.text" = "Login con Google";
+
+/* Class = "UIButton"; normalTitle = "See all  "; ObjectID = "5cF-DX-vR4"; */
+"5cF-DX-vR4.normalTitle" = "Tutte   ";
+
+/* Class = "UINavigationItem"; title = "Your series"; ObjectID = "6tV-9g-ZtD"; */
+"6tV-9g-ZtD.title" = "Le tue serie";
+
+/* Class = "UIButton"; normalTitle = "MARK ALL AS READ"; ObjectID = "842-ym-pnH"; */
+"842-ym-pnH.normalTitle" = "SEGNA TUTTI COME LETTI";
+
+/* Class = "UIButton"; normalTitle = "Sign up with e-mail"; ObjectID = "8NJ-zw-J2R"; */
+"8NJ-zw-J2R.normalTitle" = "Registrazione con e-mail";
+
+/* Class = "UIButton"; normalTitle = "Login with Facebook"; ObjectID = "93R-yd-5aa"; */
+"93R-yd-5aa.normalTitle" = "Login con Facebook";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "9li-OA-ybE"; */
+"9li-OA-ybE.placeholder" = "Email";
+
+/* Class = "UIButton"; normalTitle = "MARK AS READ"; ObjectID = "Abe-eJ-bmN"; */
+"Abe-eJ-bmN.normalTitle" = "SEGNA COME LETTO";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "BbC-9m-ORo"; */
+"BbC-9m-ORo.placeholder" = "E-mail";
+
+/* Class = "UITabBarItem"; title = "Search"; ObjectID = "ErV-mU-63f"; */
 "ErV-mU-63f.title" = "Cerca";
 
-/* Class = "UITabBarItem"; title = "Item"; ObjectID = "RAc-Za-YkG"; */
+/* Class = "UILabel"; text = "Rating"; ObjectID = "GwV-0C-PYY"; */
+"GwV-0C-PYY.text" = "Rating";
+
+/* Class = "UIButton"; normalTitle = "FB"; ObjectID = "HuI-4E-HW8"; */
+"HuI-4E-HW8.normalTitle" = "FB";
+
+/* Class = "UILabel"; text = "Your series"; ObjectID = "HzX-yC-qsl"; */
+"HzX-yC-qsl.text" = "Le tue serie";
+
+/* Class = "UILabel"; text = "Stats"; ObjectID = "I1T-1q-6cN"; */
+"I1T-1q-6cN.text" = "Statistiche";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "ISW-v9-k03"; */
+"ISW-v9-k03.text" = "Descrizione";
+
+/* Class = "UIButton"; normalTitle = "Sign In"; ObjectID = "Iq8-6m-Ieb"; */
+"Iq8-6m-Ieb.normalTitle" = "Sign in";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "IyE-Oi-T7i"; */
+"IyE-Oi-T7i.text" = "Titolo";
+
+/* Class = "UINavigationItem"; title = "Search"; ObjectID = "KhV-f6-v8r"; */
+"KhV-f6-v8r.title" = "Cerca";
+
+/* Class = "UILabel"; text = "Solicit"; ObjectID = "Mn7-8w-3qt"; */
+"Mn7-8w-3qt.text" = "Trama";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "NLd-zT-bcK"; */
+"NLd-zT-bcK.title" = "Indietro";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "; ObjectID = "NZJ-zQ-eXB"; */
+"NZJ-zQ-eXB.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ";
+
+/* Class = "UILabel"; text = "Issues read:"; ObjectID = "Nen-bI-YhT"; */
+"Nen-bI-YhT.text" = "Numeri letti:";
+
+/* Class = "UILabel"; text = "Value of your collection:"; ObjectID = "OQF-Q1-NMs"; */
+"OQF-Q1-NMs.text" = "Valore della tua collezione:";
+
+/* Class = "UILabel"; text = "Series added:"; ObjectID = "PsF-Jq-GAM"; */
+"PsF-Jq-GAM.text" = "Series aggiunte:";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "Qv3-We-IWf"; */
+"Qv3-We-IWf.placeholder" = "Password";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "RAc-Za-YkG"; */
 "RAc-Za-YkG.title" = "Profilo";
 
-/* Class = "UITabBarItem"; title = "Item 1"; ObjectID = "bpd-Ku-txO"; */
+/* Class = "UIButton"; normalTitle = "MARK AS READ"; ObjectID = "RCJ-mB-DZt"; */
+"RCJ-mB-DZt.normalTitle" = "SEGNA COME LETTO";
+
+/* Class = "UILabel"; text = "rating"; ObjectID = "Sjv-do-4oU"; */
+"Sjv-do-4oU.text" = "rating";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "TEV-WV-k8Z"; */
+"TEV-WV-k8Z.normalTitle" = "Logout";
+
+/* Class = "UINavigationItem"; title = "To Read"; ObjectID = "U6S-4w-pcO"; */
+"U6S-4w-pcO.title" = "Da leggere";
+
+/* Class = "UITabBarItem"; title = "Up Next"; ObjectID = "VVy-s1-CFD"; */
 "VVy-s1-CFD.title" = "Prossimamente";
 
-/* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "jrD-Yz-tmD"; */
-"jrD-Yz-tmD.title" = "Lista";
+/* Class = "UILabel"; text = "Creators"; ObjectID = "YLQ-DR-Fzm"; */
+"YLQ-DR-Fzm.text" = "Creatori";
 
-/* Header schermata */
-"noZ-Bp-70I.title" = "Prossimamente"
+/* Class = "UILabel"; text = "Welcome to"; ObjectID = "aIC-I9-TDe"; */
+"aIC-I9-TDe.text" = "Benveuto su";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "; ObjectID = "b0E-SK-1uX"; */
+"b0E-SK-1uX.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ";
+
+/* Class = "UIButton"; normalTitle = "FOLLOW THIS SERIES"; ObjectID = "cIV-WF-rKf"; */
+"cIV-WF-rKf.normalTitle" = "SEGUI QUESTA SERIE";
+
+/* Class = "UITabBarItem"; title = "To Read"; ObjectID = "cYh-tG-Td1"; */
+"cYh-tG-Td1.title" = "Da leggere";
+
+/* Class = "UILabel"; text = "Name Surname"; ObjectID = "eon-3b-XmT"; */
+"eon-3b-XmT.text" = "Nome Cognome";
+
+/* Class = "UILabel"; text = "CRACKER"; ObjectID = "g2M-9J-UkG"; */
+"g2M-9J-UkG.text" = "CRACKER";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."; ObjectID = "gH3-Sd-59P"; */
+"gH3-Sd-59P.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+
+/* Class = "UIViewController"; title = "Series"; ObjectID = "gWk-4X-qkZ"; */
+"gWk-4X-qkZ.title" = "Serie";
+
+/* Class = "UISearchBar"; placeholder = "Search a series"; ObjectID = "ggf-Lz-kyR"; */
+"ggf-Lz-kyR.placeholder" = "Cerca una serie";
+
+/* Class = "UISearchBar"; ggf-Lz-kyR.scopeButtonTitles[0] = "Title"; ObjectID = "ggf-Lz-kyR"; */
+"ggf-Lz-kyR.scopeButtonTitles[0]" = "Titolo";
+
+/* Class = "UISearchBar"; ggf-Lz-kyR.scopeButtonTitles[1] = "Title"; ObjectID = "ggf-Lz-kyR"; */
+"ggf-Lz-kyR.scopeButtonTitles[1]" = "Titolo";
+
+/* Class = "UILabel"; text = "Title Title Title Title Title Title Title Title"; ObjectID = "hkZ-5s-HpR"; */
+"hkZ-5s-HpR.text" = "Titolo Titolo Titolo Titolo Titolo Titolo Titolo Titolo";
+
+/* Class = "UINavigationItem"; title = "Up Next"; ObjectID = "noZ-Bp-70I"; */
+"noZ-Bp-70I.title" = "Prossimamente";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nse-fB-Gdb"; */
+"nse-fB-Gdb.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Login with e-mail"; ObjectID = "nyJ-ET-2KM"; */
+"nyJ-ET-2KM.normalTitle" = "Login con e-mail";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "oTJ-3t-1ec"; */
+"oTJ-3t-1ec.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "Year - year"; ObjectID = "okZ-8b-x8j"; */
+"okZ-8b-x8j.text" = "Anno - anno";
+
+/* Class = "UILabel"; text = "See the entire series"; ObjectID = "p9Y-Fh-zls"; */
+"p9Y-Fh-zls.text" = "Vedi tutta la serie";
+
+/* Class = "UILabel"; text = "Date of release: xx-xx-xxxx"; ObjectID = "q4T-bE-stF"; */
+"q4T-bE-stF.text" = "Data di pubblicazione: xx-xx-xxxx";
+
+/* Class = "UIViewController"; title = "Search"; ObjectID = "sUA-Nh-psM"; */
+"sUA-Nh-psM.title" = "Cerca";
+
+/* Class = "UITableViewController"; title = "Up Next"; ObjectID = "tFj-fI-6k4"; */
+"tFj-fI-6k4.title" = "Prossimamente";
+
+/* Class = "UITextField"; placeholder = "Nickname"; ObjectID = "vVs-KQ-ku1"; */
+"vVs-KQ-ku1.placeholder" = "Nickname";
+
+/* Class = "UIViewController"; title = "Profile"; ObjectID = "xzN-Ct-MKk"; */
+"xzN-Ct-MKk.title" = "Profilo";
+
+/* Class = "UINavigationItem"; title = "Profile"; ObjectID = "zjK-Gu-bbg"; */
+"zjK-Gu-bbg.title" = "Profilo";

@@ -91,7 +91,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		readButton.addTarget(self, action: #selector(markAllAsRead), for: .touchUpInside)
         
         readButton.backgroundColor = UIColor(named: "Red")
-        readButton.setTitle("MARK ALL AS READ", for: .normal)
+        readButton.setTitle(NSLocalizedString("MARK ALL AS READ", comment: ""), for: .normal)
         readButton.isEnabled = true
         readButton.alpha = 1
 		
@@ -197,7 +197,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if rate != ""{
             rating.text = rate
         }else{
-            rating.text = "Rating non disponibile"
+            rating.text = NSLocalizedString("Rating not available", comment: "")
         }
         
         
@@ -212,7 +212,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let end = json["data"]["results"][0]["endYear"].stringValue
         
         if end == "2099"{
-            yearsSerie.text = start + " - Present"
+            yearsSerie.text = start + " - " + NSLocalizedString("present", comment: "")
         } else {
             yearsSerie.text = start + " - " + end
         }
@@ -231,7 +231,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let description = json["data"]["results"][0]["description"].stringValue
         if description == "" {
-            descriptionText.text = "descrizione non disponibile"
+            descriptionText.text = NSLocalizedString("Description not available", comment: "")
         } else {
             descriptionText.text = "\(description)"
         }
@@ -239,7 +239,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //        RATING
         let ratingSerie = json["data"]["results"][0]["rating"].stringValue
         if ratingSerie == "" {
-            rating.text = "non disponibile"
+            rating.text = NSLocalizedString("Rating not available", comment: "")
         } else {
             rating.text = "\(ratingSerie)"
         }
@@ -377,10 +377,10 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		let button = UIButton()
 		var titleString = ""
 		if ((section+1)*10 < numberOfIssues) {
-			titleString = "Issues " + String((section+1)*10-9) + " - " + String((section+1)*10)
+			titleString = NSLocalizedString("Issues", comment: "") + " " + String((section+1)*10-9) + " - " + String((section+1)*10)
 		}
 		else {
-			titleString = "Issues " + String((section+1)*10-9) + " - " + String(numberOfIssues)
+			titleString = NSLocalizedString("Issues", comment: "") + " " + String((section+1)*10-9) + " - " + String(numberOfIssues)
 		}
 		button.setTitle(titleString, for: .normal)
 		button.setTitleColor(.black, for: .normal)
@@ -423,23 +423,23 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 	//TODO: completare con dati profilo
     func updateBtn() {
         if (follows) {
-            followButton.setTitle("UNFOLLOW THIS SERIES", for: .normal)
+            followButton.setTitle(NSLocalizedString("UNFOLLOW THIS SERIES", comment: ""), for: .normal)
         }
         else {
-            followButton.setTitle("FOLLOW THIS SERIES", for: .normal)
+            followButton.setTitle(NSLocalizedString("FOLLOW THIS SERIES", comment: ""), for: .normal)
 //            readButton.isEnabled = false
 //            readButton.alpha = 0.5
         }
         
         if (allRead) {
             readButton.backgroundColor = UIColor(named: "DarkGreen")
-            readButton.setTitle("MARK ALL AS UNREAD", for: .normal)
+            readButton.setTitle(NSLocalizedString("MARK ALL AS UNREAD", comment: ""), for: .normal)
             readButton.isEnabled = true
             readButton.alpha = 1
         }
         else {
             readButton.backgroundColor = UIColor(named: "Red")
-            readButton.setTitle("MARK ALL AS READ", for: .normal)
+            readButton.setTitle(NSLocalizedString("MARK ALL AS READ", comment: ""), for: .normal)
             readButton.isEnabled = true
             readButton.alpha = 1
         }
@@ -451,9 +451,9 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let User = Firestore.firestore().collection("Users").document(Auth.auth().currentUser!.uid)
 		
 		if (follows) {
-			followButton.setTitle("UNFOLLOW THIS SERIES", for: .normal)
+			followButton.setTitle(NSLocalizedString("UNFOLLOW THIS SERIES", comment: ""), for: .normal)
             readButton.backgroundColor = UIColor(named: "Red")
-            readButton.setTitle("MARK ALL AS READ", for: .normal)
+            readButton.setTitle(NSLocalizedString("MARK ALL AS READ", comment: ""), for: .normal)
 			readButton.isEnabled = true
 			readButton.alpha = 1
         
@@ -474,9 +474,9 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
 		}
 		else {
-			followButton.setTitle("FOLLOW THIS SERIES", for: .normal)
+			followButton.setTitle(NSLocalizedString("FOLLOW THIS SERIES", comment: ""), for: .normal)
             readButton.backgroundColor = UIColor(named: "DarkGreen")
-            readButton.setTitle("MARK ALL AS UNREAD", for: .normal)
+            readButton.setTitle(NSLocalizedString("MARK ALL AS UNREAD", comment: ""), for: .normal)
 			readButton.isEnabled = false
 			readButton.alpha = 0.5
             
@@ -504,7 +504,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
             }
 			readButton.backgroundColor = UIColor(named: "DarkGreen")
-			readButton.setTitle("MARK ALL AS UNREAD", for: .normal)
+			readButton.setTitle(NSLocalizedString("MARK ALL AS UNREAD", comment: ""), for: .normal)
             self.toRead = numberOfIssues + 1
             self.issuesTable.reloadData()
 		}
@@ -519,7 +519,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
             }
 			readButton.backgroundColor = UIColor(named: "Red")
-			readButton.setTitle("MARK ALL AS READ", for: .normal)
+			readButton.setTitle(NSLocalizedString("MARK ALL AS READ", comment: ""), for: .normal)
             self.toRead = 0
             self.issuesTable.reloadData()
             
@@ -545,13 +545,11 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		
 		if isExpanded {
             scrollHeight -= CGFloat(issuesTable.numberOfRows(inSection: section) * 45)
-            print("scrollheight da var = \(scrollHeight)")
 			issuesTable.deleteRows(at: indexPaths, with: .fade)
 		}
 		else {
 			issuesTable.insertRows(at: indexPaths, with: .fade)
             scrollHeight += CGFloat(issuesTable.numberOfRows(inSection: section) * 45)
-            print("scrollheight da var = \(scrollHeight)")
 		}
         
         scrollView.contentSize = CGSize(width: scrollWidth, height: scrollHeight)

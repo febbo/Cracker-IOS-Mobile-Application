@@ -58,14 +58,14 @@ class EmailSignInViewController: UIViewController {
                 
             } else if error?._code == AuthErrorCode.userNotFound.rawValue {
                 print("Utente non registrato")
-                let alert = UIAlertController(title: "Utente Non registrato", message: "Registrati prima di continuare!", preferredStyle: .alert)
+                let alert = UIAlertController(title: NSLocalizedString("User not registered", comment: ""), message: NSLocalizedString("Register to continue!", comment: ""), preferredStyle: .alert)
 
-                alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: ""), style: .default, handler: nil))
 
                 self.present(alert, animated: true)
             } else if error?._code == AuthErrorCode.wrongPassword.rawValue {
-                let alert = UIAlertController(title: "Wrong Password", message: "The password is wrong", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                let alert = UIAlertController(title: NSLocalizedString("Wrong password", comment: ""), message: NSLocalizedString("The password is wrong", comment: ""), preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: ""), style: .default, handler: nil))
                 self.present(alert, animated: true)
             } else{
                 print(error)

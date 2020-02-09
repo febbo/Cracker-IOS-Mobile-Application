@@ -32,9 +32,9 @@ class SignUpViewController: UIViewController {
     func createUser(email: String, password: String){
         
         guard let nickname = nicknameOu.text, let mail = emailOu.text, let pw = passwordOu.text, !nickname.isEmpty, !mail.isEmpty, !pw.isEmpty else {
-            let alert = UIAlertController(title: "Campo Vuoto", message: "Riempire tutti i campi prima di continuare!", preferredStyle: .alert)
+            let alert = UIAlertController(title: NSLocalizedString("Empty field", comment: ""), message: NSLocalizedString("Fill all fields to continue!", comment: ""), preferredStyle: .alert)
 
-            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: ""), style: .default, handler: nil))
             //style: .cancel
 
             self.present(alert, animated: true)
@@ -51,18 +51,18 @@ class SignUpViewController: UIViewController {
                     print("invalid email")
                 case AuthErrorCode.accountExistsWithDifferentCredential.rawValue:
                     print("accountExistsWithDifferentCredential")
-                    let alert = UIAlertController(title: "Wrong Credentials", message: "The Account exists with different credentials", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                    let alert = UIAlertController(title: NSLocalizedString("Wrong credentials", comment: ""), message: NSLocalizedString("The account exists with different credentials", comment: ""), preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: ""), style: .default, handler: nil))
                     self.present(alert, animated: true)
                 case AuthErrorCode.emailAlreadyInUse.rawValue: //<- Your Error
                     print("email is alreay in use")
-                    let alert = UIAlertController(title: "Email Already Used", message: "Use another email", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                    let alert = UIAlertController(title: NSLocalizedString("E-mail already used", comment: ""), message: NSLocalizedString("Use another e-mail", comment: ""), preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: ""), style: .default, handler: nil))
                     self.present(alert, animated: true)
                 case AuthErrorCode.weakPassword.rawValue:
                     print("weak password")
-                    let alert = UIAlertController(title: "Weak Password", message: "The password must be 6 characters long or more", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                    let alert = UIAlertController(title: NSLocalizedString("Weak password", comment: ""), message: NSLocalizedString("The password must be 6 characters long or more", comment: ""), preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: ""), style: .default, handler: nil))
                     self.present(alert, animated: true)
                     
                 default:
