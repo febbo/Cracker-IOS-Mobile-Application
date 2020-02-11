@@ -1,16 +1,53 @@
 \subsection{Purpose}
+The purpose of this document is to describe the design phases of the realization of the "Cracker" mobile application, with particular attention to the architecture and the user experience. \newline
+The main aim of "Cracker" is to help users who read Marvel comics by letting them mark the issues they have read and keeping them up to date with the newest releases by Marvel. \newline
+This project is the result of the implementation of the knowledge acquired during the course ”Design and Implementation of Mobile Applications” provided by the Milan Polytechnic.
 
 
 \subsection{Definitions, acronyms, abbreviations}
 
 
 \subsection{Scope}
+Cracker has been developed for users who regularly read Marvel comics and want to keep track of the series they are reading and the new issues that are released every week by the American publishing house. Similar apps already exist for other types of media, such as tv shows and movies, but none of them have comics as their focus. Keeping the possible needs of the users in mind, six main screens have been found of interest for our application:
+\begin{itemize}
+\item {\textbf{Issue}}: screen displaying information about a selected issue
+\item {\textbf{Series}}: screen displaying information about a selected series
+\item {\textbf{Up Next}}: list of issues to be published in the current week, in the next week and in the current month
+\item {\textbf{To Read}}: list of the next issues to read for each of the series the user follows
+\item {\textbf{Search}}: search for a series given its name
+\item {\textbf{Profile}}: personal information about the user
+\end{itemize}
 
 
 \subsection{Functional requirements}
+Cracker provides a simple, intuitive and user-friendly interface that allows the users to:
+\begin{enumerate}
+\item register with a personal e-mail or login with Facebook and Google
+\item see information about an issue
+\item see information about a series
+\item mark series they are reading as {\slshape{following}}
+\item select which issues of a series they have read
+\item see the next issue not yet read for all the series they are following
+\item see statistics on the series they are following
+\item see, on a weekly basis, the latest issues of all the series Marvel is publishing
+\item search for a specific series, given its name
+\end{enumerate}
 
 
 \subsection{Non-functional requirements}
+The application must be able to:
+\begin{itemize}
+\item run on both iPhone and iPad
+\item adapt its written content to the language selected in the device settings (available languages: English, Italian)
+\item adapt to different screen sizes
+\end{itemize}
 
 
 \subsection{Assumptions, dependencies, constraints}
+{\textbf{\large{Assumptions}}}
+\begin{itemize}
+\item {\textbf{Internet connection}}: the device used by the user disposes of an Internet connection and a sufficient bandwidth to use the application
+\item {\textbf{API availability}}: the API provided by third part's services are always available
+\end{itemize}
+
+
