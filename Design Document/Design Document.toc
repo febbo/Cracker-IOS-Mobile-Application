@@ -14,6 +14,6 @@
 \contentsline {section}{\numberline {3}External Services and Libraries}{6}{section.3}% 
 \contentsline {section}{\numberline {4}User Interface Design}{7}{section.4}% 
 \contentsline {subsection}{\numberline {4.1}Mockups}{7}{subsection.4.1}% 
-\contentsline {subsection}{\numberline {4.2}BCE diagram}{7}{subsection.4.2}% 
-\contentsline {section}{\numberline {5}Tests}{8}{section.5}% 
-\contentsline {section}{\numberline {6}Used Tools}{9}{section.6}% 
+\contentsline {subsection}{\numberline {4.2}BCE diagram}{11}{subsection.4.2}% 
+\contentsline {section}{\numberline {5}Tests}{12}{section.5}% 
+\contentsline {section}{\numberline {6}Used Tools}{13}{section.6}% 
