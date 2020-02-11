@@ -21,6 +21,8 @@ class UserSeriesCollectionViewController: UICollectionViewController, UICollecti
     var seriesIDs : [String] = []
     var seriesIMGs : [String] = []
     
+    var dataImage : [Data] = []
+    
     var reload = false
     
     var selectedCellIndex : Int = 0
@@ -29,6 +31,7 @@ class UserSeriesCollectionViewController: UICollectionViewController, UICollecti
         super.viewDidLoad()
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
+        self.collectionView.prefetchDataSource = self
         getSeries()
 
 		
@@ -57,6 +60,9 @@ class UserSeriesCollectionViewController: UICollectionViewController, UICollecti
                     self.seriesIDs.append(id)
                     self.seriesIMGs.append(image)
                     
+                    let url = URL(string: image)
+                    self.dataImage.append( try! Data(contentsOf: url!))
+                    
                 }
                 print(self.seriesIDs)
                 print(self.seriesIMGs)
@@ -84,9 +90,9 @@ class UserSeriesCollectionViewController: UICollectionViewController, UICollecti
 
         var img = UIImage(named: "series")!.resized(to: imageSize!)
         if self.reload == true{
-            let url = URL(string: seriesIMGs[indexPath.row])
-            let imageData = try! Data(contentsOf: url!)
-            img = UIImage(data: imageData)!.resized(to: imageSize!)
+//            let url = URL(string: seriesIMGs[indexPath.row])
+//            let imageData = try! Data(contentsOf: url!)
+            img = UIImage(data: dataImage[indexPath.row])!.resized(to: imageSize!)
         }
         cell.seriesImage.setBackgroundImage(img, for: UIControl.State.normal)
         cell.seriesImage.addTarget(self, action: #selector(showSeries), for: UIControl.Event.touchUpInside)
@@ -124,6 +130,22 @@ class UserSeriesCollectionViewController: UICollectionViewController, UICollecti
     }
 	
 }
+//
+//extension UserSeriesCollectionViewController: UICollectionViewDataSourcePrefetching {
+//    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+//        
+//        print("prefetching")
+//        for indexPath in indexPaths{
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserSeriesCell", for: indexPath) as! UserSeriesCollectionViewCell
+//            let url = URL(string: seriesIMGs[indexPath.row])
+//            let imageData = try! Data(contentsOf: url!)
+//            let img = UIImage(data: imageData)!.resized(to: imageSize!)
+//            cell.seriesImage.setBackgroundImage(img, for: UIControl.State.normal)
+//        }
+//    }
+//    
+//    
+//}
 
 public extension UIImage {
     func resized(to size: CGSize) -> UIImage {
