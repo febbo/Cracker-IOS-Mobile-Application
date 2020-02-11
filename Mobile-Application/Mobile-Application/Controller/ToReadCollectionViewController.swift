@@ -31,6 +31,7 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
     var issuesIDs : [String] = []
     
 
+    var selectedCellIndex : Int = 0
     
     var reload = false
     
@@ -62,6 +63,10 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
             navigationItem.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         }
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
     }
     
     
@@ -163,6 +168,8 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ToReadCell", for: indexPath) as! ToReadCollectionViewCell
         var img = UIImage(named: "issue")!.resized(to: imageSize!)
         
+        cell.tag = indexPath.row
+        
         if self.reload == true{
 //            let url = URL(string: seriesIMGs[indexPath.row])
 //            let imageData = try! Data(contentsOf: url!)
@@ -171,6 +178,7 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
         
         cell.issueImage.setBackgroundImage(img, for: UIControl.State.normal)
         cell.issueImage.addTarget(self, action: #selector(showIssue), for: UIControl.Event.touchUpInside)
+        cell.issueImage.tag = indexPath.row
         cell.readButton.addTarget(self, action: #selector(markAsRead), for: UIControl.Event.touchUpInside)
     
         return cell
@@ -188,7 +196,18 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
     }
     
     @objc func showIssue(button: UIButton) {
+        selectedCellIndex = button.tag
         self.performSegue(withIdentifier: "ShowIssueFromToRead", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? IssueViewController{
+            
+            let id = issuesIDs[selectedCellIndex]
+            
+            destination.comicID = Int(id)
+
+        }
     }
 
 }
