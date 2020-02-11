@@ -7,16 +7,39 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import Firebase
 
 class ToReadCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+//    Alamofire API
+
+    let APP_ID = "7f0eb8f2cdf6f33136bc854d89281085"
+    let HASH = "1bdc741bcbdaf3d87a0f0d6e6180f877"
+    let TS = "1"
+    
+//    Firebase User
+    let User = Firestore.firestore().collection("Users").document("\((Auth.auth().currentUser?.uid)!)")
+    
     var cellSize: CGSize?
     var imageSize: CGSize?
+    
+    var seriesIDs : [String] = []
+    var issuesIMGs : [Data] = []
+    var issuesToRead : [Int] = []
+    var issuesIDs : [String] = []
+    
+
+    
+    var reload = false
     
     let aspectRatio: CGFloat = 251/162
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getDataFromFirebase()
         
         let collectionViewSize = collectionView.frame.size.width - 60
         if (traitCollection.horizontalSizeClass == .regular) {
@@ -41,6 +64,90 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
+    
+    func firebase(completion: @escaping () -> Void){
+        User.collection("Series").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    //print("\(document.documentID) => \(document.data())")
+                    let data = document.data()
+                    let id = data["id"] as! String
+                    let toRead = data["issueToRead"] as! Int
+                    self.seriesIDs.append(id)
+                    self.issuesToRead.append(toRead)
+
+                    
+//                    let url = URL(string: image)
+//                    self.dataImage.append( try! Data(contentsOf: url!))
+                }
+
+                completion()
+//                print(self.seriesIDs)
+//                print(self.seriesIMGs)
+//                self.reload = true
+//                self.collectionView.reloadData()
+            }
+        }
+    }
+    
+    func getDataFromFirebase(){
+        
+        firebase(completion: {
+            let group = DispatchGroup()
+            for i in 0...self.seriesIDs.count-1 {
+    //                self.getImageFromAPI(serie: self.seriesIDs[i], issue: self.issuesToRead[i])
+                group.enter()
+                let url = "https://gateway.marvel.com/v1/public/series/\(self.seriesIDs[i])/comics"
+                let params : [String : String] = [ "apikey" : self.APP_ID, "ts": self.TS, "hash" : self.HASH, "noVariants" : "true", "limit" : "1" , "issueNumber": "\(self.issuesToRead[i])"]
+                        
+                Alamofire.request(url, method: .get, parameters: params).responseJSON {
+                    response in
+                    if response.result.isSuccess {
+                        
+                        let json : JSON = JSON(response.result.value!)
+                        
+                        if json["data"]["count"] == 1 {
+                            print("Success! Got the comic data")
+                            let id = json["data"]["results"][0]["id"].stringValue
+                            self.issuesIDs.append(id)
+                            
+                            let imagePath = json["data"]["results"][0]["thumbnail"]["path"].stringValue
+                            let imageExtension = json["data"]["results"][0]["thumbnail"]["extension"].stringValue
+                            
+                            let imageURL = URL(string: imagePath + "." + imageExtension)
+                            self.issuesIMGs.append(try! Data(contentsOf: imageURL!))
+                        }
+                        else if json["data"]["count"] == 0{
+                            print("All issues read of serie \(self.seriesIDs[i])")
+                        }
+                        else{
+                            print("Something Wrong")
+                        }
+                        group.leave()
+        //                self.collectionView.reloadData()
+                        
+                    }
+                    else {
+                        print("Error \(String(describing: response.result.error))")
+        //                self.cityLabel.text = "Connection Issues"
+                    }
+
+                }
+            }
+            group.notify(queue: DispatchQueue.main) {
+                self.reload = true
+                self.collectionView.reloadData()
+            }
+
+        })
+
+        
+
+    }
+    
+    
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -49,12 +156,19 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return issuesIMGs.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ToReadCell", for: indexPath) as! ToReadCollectionViewCell
-        let img = UIImage(named: "issue")!.resized(to: imageSize!)
+        var img = UIImage(named: "issue")!.resized(to: imageSize!)
+        
+        if self.reload == true{
+//            let url = URL(string: seriesIMGs[indexPath.row])
+//            let imageData = try! Data(contentsOf: url!)
+            img = UIImage(data: issuesIMGs[indexPath.row])!.resized(to: imageSize!)
+        }
+        
         cell.issueImage.setBackgroundImage(img, for: UIControl.State.normal)
         cell.issueImage.addTarget(self, action: #selector(showIssue), for: UIControl.Event.touchUpInside)
         cell.readButton.addTarget(self, action: #selector(markAsRead), for: UIControl.Event.touchUpInside)
