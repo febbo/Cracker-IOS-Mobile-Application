@@ -31,7 +31,7 @@ class UserSeriesCollectionViewController: UICollectionViewController, UICollecti
         super.viewDidLoad()
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-        self.collectionView.prefetchDataSource = self
+
         getSeries()
 
 		
@@ -130,22 +130,7 @@ class UserSeriesCollectionViewController: UICollectionViewController, UICollecti
     }
 	
 }
-//
-//extension UserSeriesCollectionViewController: UICollectionViewDataSourcePrefetching {
-//    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-//        
-//        print("prefetching")
-//        for indexPath in indexPaths{
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserSeriesCell", for: indexPath) as! UserSeriesCollectionViewCell
-//            let url = URL(string: seriesIMGs[indexPath.row])
-//            let imageData = try! Data(contentsOf: url!)
-//            let img = UIImage(data: imageData)!.resized(to: imageSize!)
-//            cell.seriesImage.setBackgroundImage(img, for: UIControl.State.normal)
-//        }
-//    }
-//    
-//    
-//}
+
 
 public extension UIImage {
     func resized(to size: CGSize) -> UIImage {
