@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.11)  12 FEB 2020 10:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.11)  12 FEB 2020 11:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1053,8 +1053,8 @@ File: img/ui_interaction.png Graphic file (type png)
 Package pdftex.def Info: img/ui_interaction.png  used on input line 88.
 (pdftex.def)             Requested size: 400.23808pt x 437.45554pt.
 
-Overfull \hbox (1.89949pt too wide) in paragraph at lines 88--89
- [][] 
+Overfull \hbox (18.89949pt too wide) in paragraph at lines 88--89
+[][] 
  []
 
 ) [12
@@ -1095,7 +1095,7 @@ exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019
 /texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dis
 t/fonts/type1/urw/times/utmr8a.pfb>
-Output written on "Design Document.pdf" (14 pages, 10645032 bytes).
+Output written on "Design Document.pdf" (14 pages, 10645430 bytes).
 PDF statistics:
  225 PDF objects out of 1000 (max. 8388607)
  179 compressed objects within 2 object streams
