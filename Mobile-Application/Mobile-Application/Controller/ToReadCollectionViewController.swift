@@ -26,8 +26,11 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
     var imageSize: CGSize?
     
     var seriesIDs : [String] = []
-    var issuesIMGs : [Data] = []
     var issuesToRead : [Int] = []
+    
+    var serieNotCompletedIDs : [String] = []
+    var issuesToReadReal : [Int] = []
+    var issuesIMGs : [Data] = []
     var issuesIDs : [String] = []
     
 
@@ -102,7 +105,7 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
         firebase(completion: {
             let group = DispatchGroup()
             for i in 0...self.seriesIDs.count-1 {
-    //                self.getImageFromAPI(serie: self.seriesIDs[i], issue: self.issuesToRead[i])
+                
                 group.enter()
                 let url = "https://gateway.marvel.com/v1/public/series/\(self.seriesIDs[i])/comics"
                 let params : [String : String] = [ "apikey" : self.APP_ID, "ts": self.TS, "hash" : self.HASH, "noVariants" : "true", "limit" : "1" , "issueNumber": "\(self.issuesToRead[i])"]
@@ -114,6 +117,11 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
                         let json : JSON = JSON(response.result.value!)
                         
                         if json["data"]["count"] == 1 {
+                            
+                            self.issuesToReadReal.append(self.issuesToRead[i])
+                            self.serieNotCompletedIDs.append(self.seriesIDs[i])
+                            
+                            
                             print("Success! Got the comic data")
                             let id = json["data"]["results"][0]["id"].stringValue
                             self.issuesIDs.append(id)
@@ -180,6 +188,7 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
         cell.issueImage.addTarget(self, action: #selector(showIssue), for: UIControl.Event.touchUpInside)
         cell.issueImage.tag = indexPath.row
         cell.readButton.addTarget(self, action: #selector(markAsRead), for: UIControl.Event.touchUpInside)
+        cell.readButton.tag = indexPath.row
     
         return cell
     }
@@ -193,6 +202,75 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
     @objc func markAsRead(button: UIButton) {
         // se è l'ultimo issue disponibile della serie, far scomparire la cella;
         // altrimenti, caricare l'issue successivo nella serie
+//        let issueSelected = issuesIDs[button.tag]
+        
+        issuesToReadReal[button.tag] = issuesToReadReal[button.tag] + 1
+        
+        let url = "https://gateway.marvel.com/v1/public/series/\(serieNotCompletedIDs[button.tag])/comics"
+        let params : [String : String] = [ "apikey" : self.APP_ID, "ts": self.TS, "hash" : self.HASH, "noVariants" : "true", "limit" : "1" , "issueNumber": "\(issuesToReadReal[button.tag])"]
+        
+        var finished : Bool = false
+        let group = DispatchGroup()
+        group.enter()
+        Alamofire.request(url, method: .get, parameters: params).responseJSON {
+            response in
+            if response.result.isSuccess {
+                
+                let json : JSON = JSON(response.result.value!)
+                
+                if json["data"]["count"] == 1 {
+                    
+                    
+                    print("Success! Got the comic data")
+                    
+                    let imagePath = json["data"]["results"][0]["thumbnail"]["path"].stringValue
+                    let imageExtension = json["data"]["results"][0]["thumbnail"]["extension"].stringValue
+                    
+                    let imageURL = URL(string: imagePath + "." + imageExtension)
+                    self.issuesIMGs[button.tag] = try! Data(contentsOf: imageURL!)
+                }
+                else if json["data"]["count"] == 0{
+                    print("All issues read of serie \(self.serieNotCompletedIDs[button.tag])")
+                    finished = true
+                    self.serieNotCompletedIDs.remove(at: button.tag)
+                    self.issuesToReadReal.remove(at: button.tag)
+                    self.issuesIMGs.remove(at: button.tag)
+                    self.issuesIDs.remove(at: button.tag)
+
+                }
+                else{
+                    print("Something Wrong")
+                }
+                group.leave()
+            }
+            else {
+                print("Error \(String(describing: response.result.error))")
+                group.leave()
+            }
+
+        }
+
+        
+        group.notify(queue: DispatchQueue.main) {
+            
+            if finished == false{
+                let alert = UIAlertController(title: NSLocalizedString("Issue Read", comment: ""), message: NSLocalizedString("Congratulation! Let's Go!", comment: ""), preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Great!", comment: ""), style: .default, handler: nil))
+                self.present(alert, animated: true)
+            } else {
+                let alert = UIAlertController(title: NSLocalizedString("Serie Finished", comment: ""), message: NSLocalizedString(" You have read all issues of this serie! \n Contratulations!", comment: ""), preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Great!", comment: ""), style: .default, handler: nil))
+                self.present(alert, animated: true)
+            }
+
+            
+            
+            
+            self.reload = true
+            self.collectionView.reloadData()
+        }
+        
+        
     }
     
     @objc func showIssue(button: UIButton) {
