@@ -32,6 +32,8 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
     var seriesIDs : [String] = []
     var seriesIMGs : [String] = []
     
+    var dataImage : [Data] = []
+    
     var reload = false
 	
 	override func viewDidLoad() {
@@ -75,9 +77,10 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
                     self.seriesIDs.append(id)
                     self.seriesIMGs.append(image)
                     
+                    let url = URL(string: image)
+                    self.dataImage.append( try! Data(contentsOf: url!))
+                    
                 }
-                print(self.seriesIDs)
-                print(self.seriesIMGs)
                 self.reload = true
                 self.seriesCollection.reloadData()
             }
@@ -99,9 +102,7 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
         
         cell.button.addTarget(self, action: #selector(showSingleSeries), for: .touchUpInside)
         if self.reload == true{
-            let url = URL(string: seriesIMGs[indexPath.row])
-            let imageData = try! Data(contentsOf: url!)
-            cell.seriesImage.image = UIImage(data: imageData)
+            cell.seriesImage.image = UIImage(data: dataImage[indexPath.row])
         }
         
         return cell
