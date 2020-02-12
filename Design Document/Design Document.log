@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.11)  11 FEB 2020 19:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.11)  12 FEB 2020 10:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -798,6 +798,18 @@ LaTeX Warning: Label `fig:2' multiply defined.
 
 LaTeX Warning: Label `sub@fig:2' multiply defined.
 
+
+LaTeX Warning: Label `fig:1' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:1' multiply defined.
+
+
+LaTeX Warning: Label `fig:2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:2' multiply defined.
+
 )
 \openout1 = `"Design Document.aux"'.
 
@@ -979,65 +991,76 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-<img/mockups/up_next.png, id=147, 376.40625pt x 815.045pt>
+<img/mockups/login.png, id=147, 752.8125pt x 1630.09pt>
+File: img/mockups/login.png Graphic file (type png)
+<use img/mockups/login.png>
+Package pdftex.def Info: img/mockups/login.png  used on input line 8.
+(pdftex.def)             Requested size: 159.333pt x 345.0153pt.
+<img/mockups/up_next.png, id=148, 752.8125pt x 1630.09pt>
 File: img/mockups/up_next.png Graphic file (type png)
 <use img/mockups/up_next.png>
-Package pdftex.def Info: img/mockups/up_next.png  used on input line 8.
-(pdftex.def)             Requested size: 159.333pt x 345.01529pt.
-<img/mockups/to_read.png, id=148, 376.40625pt x 815.045pt>
-File: img/mockups/to_read.png Graphic file (type png)
-<use img/mockups/to_read.png>
-Package pdftex.def Info: img/mockups/to_read.png  used on input line 14.
-(pdftex.def)             Requested size: 159.333pt x 345.01529pt.
+Package pdftex.def Info: img/mockups/up_next.png  used on input line 14.
+(pdftex.def)             Requested size: 159.333pt x 345.0153pt.
 [7
 
- <./img/mockups/up_next.png> <./img/mockups/to_read.png>]
-<img/mockups/profile.png, id=157, 376.40625pt x 815.045pt>
-File: img/mockups/profile.png Graphic file (type png)
-<use img/mockups/profile.png>
-Package pdftex.def Info: img/mockups/profile.png  used on input line 24.
-(pdftex.def)             Requested size: 159.333pt x 345.01529pt.
-<img/mockups/your_series.png, id=158, 376.40625pt x 815.045pt>
-File: img/mockups/your_series.png Graphic file (type png)
-<use img/mockups/your_series.png>
-Package pdftex.def Info: img/mockups/your_series.png  used on input line 30.
-(pdftex.def)             Requested size: 159.333pt x 345.01529pt.
- [8 <./img/mockups/profile.png> <./img/mockups/your_series.png>]
-<img/mockups/search.png, id=166, 376.40625pt x 815.045pt>
+ <./img/mockups/login.png> <./img/mockups/up_next.png>]
+<img/mockups/to_read.png, id=157, 752.8125pt x 1630.09pt>
+File: img/mockups/to_read.png Graphic file (type png)
+<use img/mockups/to_read.png>
+Package pdftex.def Info: img/mockups/to_read.png  used on input line 24.
+(pdftex.def)             Requested size: 159.333pt x 345.0153pt.
+<img/mockups/search.png, id=158, 752.8125pt x 1630.09pt>
 File: img/mockups/search.png Graphic file (type png)
 <use img/mockups/search.png>
-Package pdftex.def Info: img/mockups/search.png  used on input line 40.
-(pdftex.def)             Requested size: 159.333pt x 345.01529pt.
-<img/mockups/issue.png, id=167, 376.40625pt x 815.045pt>
+Package pdftex.def Info: img/mockups/search.png  used on input line 30.
+(pdftex.def)             Requested size: 159.333pt x 345.0153pt.
+ [8 <./img/mockups/to_read.png> <./img/mockups/search.png>]
+<img/mockups/profile.png, id=166, 752.8125pt x 1630.09pt>
+File: img/mockups/profile.png Graphic file (type png)
+<use img/mockups/profile.png>
+Package pdftex.def Info: img/mockups/profile.png  used on input line 40.
+(pdftex.def)             Requested size: 159.333pt x 345.0153pt.
+<img/mockups/your_series.png, id=167, 752.8125pt x 1630.09pt>
+File: img/mockups/your_series.png Graphic file (type png)
+<use img/mockups/your_series.png>
+Package pdftex.def Info: img/mockups/your_series.png  used on input line 46.
+(pdftex.def)             Requested size: 159.333pt x 345.0153pt.
+ [9 <./img/mockups/profile.png> <./img/mockups/your_series.png>]
+<img/mockups/issue.png, id=175, 752.8125pt x 1630.09pt>
 File: img/mockups/issue.png Graphic file (type png)
 <use img/mockups/issue.png>
-Package pdftex.def Info: img/mockups/issue.png  used on input line 46.
-(pdftex.def)             Requested size: 159.333pt x 345.01529pt.
- [9 <./img/mockups/search.png> <./img/mockups/issue.png>]
-<img/mockups/series.png, id=175, 376.40625pt x 815.045pt>
+Package pdftex.def Info: img/mockups/issue.png  used on input line 56.
+(pdftex.def)             Requested size: 159.333pt x 345.0153pt.
+<img/mockups/series.png, id=176, 752.8125pt x 1630.09pt>
 File: img/mockups/series.png Graphic file (type png)
 <use img/mockups/series.png>
-Package pdftex.def Info: img/mockups/series.png  used on input line 56.
-(pdftex.def)             Requested size: 159.333pt x 345.01529pt.
-<img/mockups/dark_mode.png, id=176, 376.40625pt x 815.045pt>
+Package pdftex.def Info: img/mockups/series.png  used on input line 62.
+(pdftex.def)             Requested size: 159.333pt x 345.0153pt.
+ [10 <./img/mockups/issue.png> <./img/mockups/series.png>]
+File: img/mockups/series.png Graphic file (type png)
+<use img/mockups/series.png>
+Package pdftex.def Info: img/mockups/series.png  used on input line 72.
+(pdftex.def)             Requested size: 159.333pt x 345.0153pt.
+<img/mockups/dark_mode.png, id=184, 752.8125pt x 1630.09pt>
 File: img/mockups/dark_mode.png Graphic file (type png)
 <use img/mockups/dark_mode.png>
-Package pdftex.def Info: img/mockups/dark_mode.png  used on input line 62.
-(pdftex.def)             Requested size: 159.333pt x 345.01529pt.
- [10 <./img/mockups/series.png> <./img/mockups/dark_mode.png>]) [11
+Package pdftex.def Info: img/mockups/dark_mode.png  used on input line 78.
+(pdftex.def)             Requested size: 159.333pt x 345.0153pt.
+ [11 <./img/mockups/dark_mode.png>]) [12
 
 
 
 
-] (./sections/tests.tex) [12
 
-] (./sections/tools.tex) [13
+] (./sections/tests.tex) [13
+
+]
+(./sections/tools.tex) [14
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 93.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 93.
-
-(./Design Document.aux)
+ (./Design Document.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 93.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 93.
 Package rerunfilecheck Info: File `"Design Document".out' has not changed.
@@ -1049,10 +1072,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 93.
  ) 
 Here is how much of TeX's memory you used:
- 20108 strings out of 492616
- 376005 string characters out of 6129481
+ 20115 strings out of 492616
+ 376140 string characters out of 6129481
  446921 words of memory out of 5000000
- 23557 multiletter control sequences out of 15000+600000
+ 23561 multiletter control sequences out of 15000+600000
  42950 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,11n,65p,501b,458s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1061,10 +1084,10 @@ exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019
 /texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dis
 t/fonts/type1/urw/times/utmr8a.pfb>
-Output written on "Design Document.pdf" (13 pages, 1273862 bytes).
+Output written on "Design Document.pdf" (14 pages, 5169342 bytes).
 PDF statistics:
- 226 PDF objects out of 1000 (max. 8388607)
- 185 compressed objects within 2 object streams
- 47 named destinations out of 1000 (max. 500000)
- 215 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 234 PDF objects out of 1000 (max. 8388607)
+ 190 compressed objects within 2 object streams
+ 49 named destinations out of 1000 (max. 500000)
+ 220 words of extra memory for PDF output out of 10000 (max. 10000000)
 
