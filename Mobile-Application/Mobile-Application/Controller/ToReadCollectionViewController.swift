@@ -206,6 +206,16 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
         
         issuesToReadReal[button.tag] = issuesToReadReal[button.tag] + 1
         
+        User.collection("Series").document("\(serieNotCompletedIDs[button.tag])").updateData([
+            "issueToRead" : issuesToReadReal[button.tag]
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
+        
         let url = "https://gateway.marvel.com/v1/public/series/\(serieNotCompletedIDs[button.tag])/comics"
         let params : [String : String] = [ "apikey" : self.APP_ID, "ts": self.TS, "hash" : self.HASH, "noVariants" : "true", "limit" : "1" , "issueNumber": "\(issuesToReadReal[button.tag])"]
         
