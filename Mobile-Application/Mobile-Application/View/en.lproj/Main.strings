@@ -53,8 +53,8 @@
 /* Class = "UILabel"; text = "Title"; ObjectID = "IyE-Oi-T7i"; */
 "IyE-Oi-T7i.text" = "Title";
 
-/* Class = "UINavigationItem"; title = "Search"; ObjectID = "KhV-f6-v8r"; */
-"KhV-f6-v8r.title" = "Search";
+/* Class = "UINavigationItem"; title = "Search"; ObjectID = "eYr-U3-3pB"; */
+"eYr-U3-3pB.title" = "Search";
 
 /* Class = "UILabel"; text = "Solicit"; ObjectID = "Mn7-8w-3qt"; */
 "Mn7-8w-3qt.text" = "Solicit";

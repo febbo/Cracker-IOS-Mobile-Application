@@ -28,7 +28,7 @@ class SearchTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-        setupTableViewBackgroundView()
+//        setupTableViewBackgroundView()
         setupSearchBar()
 
         if #available(iOS 13.0, *) {
@@ -42,6 +42,8 @@ class SearchTableViewController: UITableViewController {
             navigationItem.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         }
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.searchController = self.searchController
+        self.definesPresentationContext = true
         
         self.hideKeyboardWhenTappedAround()
         
@@ -58,19 +60,18 @@ class SearchTableViewController: UITableViewController {
         searchController.searchBar.delegate = self as! UISearchBarDelegate
         searchController.dimsBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = false
-        searchController.searchBar.placeholder = "Search a Serie"
+        searchController.searchBar.placeholder = NSLocalizedString("Search a series", comment: "")
         definesPresentationContext = true
-        tableView.tableHeaderView = searchController.searchBar
     }
     
-    private func setupTableViewBackgroundView() {
-        let backgroundViewLabel = UILabel(frame: .zero)
-        backgroundViewLabel.textColor = .darkGray
-        backgroundViewLabel.numberOfLines = 0
-        backgroundViewLabel.text = "Oops, /n No results to show! ..."
-        backgroundViewLabel.textAlignment = NSTextAlignment.center
-        tableView.backgroundView = backgroundViewLabel
-    }
+//    private func setupTableViewBackgroundView() {
+//        let backgroundViewLabel = UILabel(frame: .zero)
+//        backgroundViewLabel.textColor = .darkGray
+//        backgroundViewLabel.numberOfLines = 0
+//        backgroundViewLabel.text = NSLocalizedString("Oops,\nno results to show!", comment: "")
+//        backgroundViewLabel.textAlignment = NSTextAlignment.center
+//        tableView.backgroundView = backgroundViewLabel
+//    }
     
     
     // MARK: - Table view data source
