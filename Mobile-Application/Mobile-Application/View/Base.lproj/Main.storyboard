@@ -10,40 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search Controller-->
-        <scene sceneID="N5E-BM-bRd">
-            <objects>
-                <viewController title="Search" id="sUA-Nh-psM" userLabel="Search Controller" customClass="SearchViewController" customModule="Mobile_Application" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="25r-mJ-YWk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search a series" translatesAutoresizingMaskIntoConstraints="NO" id="ggf-Lz-kyR">
-                                <rect key="frame" x="0.0" y="140" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                            </searchBar>
-                        </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="ggf-Lz-kyR" firstAttribute="leading" secondItem="mla-3z-6tq" secondAttribute="leading" id="L68-vW-jpr"/>
-                            <constraint firstItem="ggf-Lz-kyR" firstAttribute="top" secondItem="mla-3z-6tq" secondAttribute="top" id="bVy-aN-5g0"/>
-                            <constraint firstItem="ggf-Lz-kyR" firstAttribute="trailing" secondItem="mla-3z-6tq" secondAttribute="trailing" id="mmg-BU-GB9"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="mla-3z-6tq"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Search" id="KhV-f6-v8r"/>
-                    <connections>
-                        <outlet property="searchBar" destination="ggf-Lz-kyR" id="yFv-aW-fle"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uOw-M3-5ZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1734.7826086956522" y="1399.5535714285713"/>
-        </scene>
         <!--Profile-->
         <scene sceneID="DKS-OI-Iuc">
             <objects>
@@ -1587,12 +1553,56 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="sUA-Nh-psM" kind="relationship" relationship="rootViewController" id="d0h-Fn-KH4"/>
+                        <segue destination="s1I-E5-XD7" kind="relationship" relationship="rootViewController" id="Q09-Jk-yRa"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2QX-rZ-MmE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="824.63768115942037" y="1399.5535714285713"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="uD9-Xq-J9B">
+            <objects>
+                <tableViewController id="s1I-E5-XD7" customClass="SearchTableViewController" customModule="Mobile_Application" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ukN-in-mcB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" id="B76-ym-k7w" customClass="SearchTableViewCell" customModule="Mobile_Application" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B76-ym-k7w" id="xLY-t2-dh2">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPT-jP-IBb">
+                                            <rect key="frame" x="20" y="11" width="0.0" height="0.0"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="NPT-jP-IBb" id="WRb-Ki-5ZY"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="s1I-E5-XD7" id="c0h-Bs-eJ8"/>
+                            <outlet property="delegate" destination="s1I-E5-XD7" id="l5D-mg-WkD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Search" id="eYr-U3-3pB"/>
+                    <connections>
+                        <segue destination="gWk-4X-qkZ" kind="show" identifier="SearchToSerie" id="QWg-cc-90Y"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9tz-m6-QiE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1709" y="1400"/>
         </scene>
     </scenes>
     <resources>
@@ -1632,7 +1642,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ilt-0R-QWw"/>
-        <segue reference="Syi-pv-OwE"/>
-        <segue reference="uKY-Og-bgl"/>
+        <segue reference="QWg-cc-90Y"/>
+        <segue reference="Ado-8h-iCd"/>
     </inferredMetricsTieBreakers>
 </document>
