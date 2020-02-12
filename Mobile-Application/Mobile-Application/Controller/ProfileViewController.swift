@@ -26,6 +26,8 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
 //    Constants
     let userDefault = UserDefaults.standard
     
+    var selectedCellIndex : Int = 0
+    
     let User = Firestore.firestore().collection("Users").document("\((Auth.auth().currentUser?.uid)!)")
     
 //    Variables
@@ -100,7 +102,9 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SeriesCell", for: indexPath) as! SeriesCollectionViewCell
         
+        
         cell.button.addTarget(self, action: #selector(showSingleSeries), for: .touchUpInside)
+        cell.button.tag = indexPath.row
         if self.reload == true{
             cell.seriesImage.image = UIImage(data: dataImage[indexPath.row])
         }
@@ -127,8 +131,23 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
 		self.performSegue(withIdentifier: "ShowUserSeries", sender: self)
 	}
     
-    @objc func showSingleSeries() {
-        print("cliccato")
+    @objc func showSingleSeries(button: UIButton) {
+        selectedCellIndex = button.tag
+        self.performSegue(withIdentifier: "fromPreviewToSerie", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? SeriesViewController{
+            
+            //print("CHE STO A PREPARA'??")
+            //print(selectedCellIndex)
+            //print(seriesIDs[selectedCellIndex])
+            let id = seriesIDs[selectedCellIndex]
+            let url = "https://gateway.marvel.com/v1/public/series/\(id)"
+
+            destination.apiURL = url
+
+        }
     }
 
 }

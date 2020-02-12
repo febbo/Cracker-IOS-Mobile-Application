@@ -372,6 +372,7 @@
                         <outlet property="seriesCollection" destination="rYr-Jc-8du" id="baa-fH-bTX"/>
                         <segue destination="FAs-jk-Al6" kind="unwind" identifier="unwindToLogIn" unwindAction="prepareForUnwindWithSegue:" id="W1W-Eo-UEd"/>
                         <segue destination="9tb-Aj-CRp" kind="show" identifier="ShowUserSeries" id="URt-MZ-JFT"/>
+                        <segue destination="gWk-4X-qkZ" kind="show" identifier="fromPreviewToSerie" id="Syi-pv-OwE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWg-4D-xyr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1631,7 +1632,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ilt-0R-QWw"/>
-        <segue reference="gGZ-iQ-hFh"/>
+        <segue reference="Syi-pv-OwE"/>
         <segue reference="uKY-Og-bgl"/>
     </inferredMetricsTieBreakers>
 </document>
