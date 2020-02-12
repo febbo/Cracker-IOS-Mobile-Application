@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.11)  12 FEB 2020 10:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.11)  12 FEB 2020 10:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -927,12 +927,12 @@ LaTeX Info: Redefining \nameref on input line 2.
 
 
 ABD: EveryShipout initializing macros
-<img/polimi.png, id=83, 748.7975pt x 566.115pt>
+<img/polimi.png, id=75, 748.7975pt x 566.115pt>
 File: img/polimi.png Graphic file (type png)
 <use img/polimi.png>
 Package pdftex.def Info: img/polimi.png  used on input line 15.
 (pdftex.def)             Requested size: 149.75684pt x 113.221pt.
-<img/logo.png, id=85, 260.8947pt x 200.6697pt>
+<img/logo.png, id=77, 260.8947pt x 200.6697pt>
 File: img/logo.png Graphic file (type png)
 <use img/logo.png>
 Package pdftex.def Info: img/logo.png  used on input line 21.
@@ -987,72 +987,83 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
 
 ]
 (./sections/ui.tex
-Underfull \hbox (badness 10000) in paragraph at lines 2--3
+Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
 
-<img/mockups/login.png, id=147, 752.8125pt x 1630.09pt>
+<img/mockups/login.png, id=136, 752.8125pt x 1630.09pt>
 File: img/mockups/login.png Graphic file (type png)
 <use img/mockups/login.png>
-Package pdftex.def Info: img/mockups/login.png  used on input line 8.
+Package pdftex.def Info: img/mockups/login.png  used on input line 7.
 (pdftex.def)             Requested size: 159.333pt x 345.0153pt.
-<img/mockups/up_next.png, id=148, 752.8125pt x 1630.09pt>
+<img/mockups/up_next.png, id=137, 752.8125pt x 1630.09pt>
 File: img/mockups/up_next.png Graphic file (type png)
 <use img/mockups/up_next.png>
-Package pdftex.def Info: img/mockups/up_next.png  used on input line 14.
+Package pdftex.def Info: img/mockups/up_next.png  used on input line 13.
 (pdftex.def)             Requested size: 159.333pt x 345.0153pt.
 [7
 
  <./img/mockups/login.png> <./img/mockups/up_next.png>]
-<img/mockups/to_read.png, id=157, 752.8125pt x 1630.09pt>
+<img/mockups/to_read.png, id=147, 752.8125pt x 1630.09pt>
 File: img/mockups/to_read.png Graphic file (type png)
 <use img/mockups/to_read.png>
-Package pdftex.def Info: img/mockups/to_read.png  used on input line 24.
+Package pdftex.def Info: img/mockups/to_read.png  used on input line 23.
 (pdftex.def)             Requested size: 159.333pt x 345.0153pt.
-<img/mockups/search.png, id=158, 752.8125pt x 1630.09pt>
+<img/mockups/search.png, id=148, 752.8125pt x 1630.09pt>
 File: img/mockups/search.png Graphic file (type png)
 <use img/mockups/search.png>
-Package pdftex.def Info: img/mockups/search.png  used on input line 30.
+Package pdftex.def Info: img/mockups/search.png  used on input line 29.
 (pdftex.def)             Requested size: 159.333pt x 345.0153pt.
  [8 <./img/mockups/to_read.png> <./img/mockups/search.png>]
-<img/mockups/profile.png, id=166, 752.8125pt x 1630.09pt>
+<img/mockups/profile.png, id=156, 752.8125pt x 1630.09pt>
 File: img/mockups/profile.png Graphic file (type png)
 <use img/mockups/profile.png>
-Package pdftex.def Info: img/mockups/profile.png  used on input line 40.
+Package pdftex.def Info: img/mockups/profile.png  used on input line 39.
 (pdftex.def)             Requested size: 159.333pt x 345.0153pt.
-<img/mockups/your_series.png, id=167, 752.8125pt x 1630.09pt>
+<img/mockups/your_series.png, id=157, 752.8125pt x 1630.09pt>
 File: img/mockups/your_series.png Graphic file (type png)
 <use img/mockups/your_series.png>
-Package pdftex.def Info: img/mockups/your_series.png  used on input line 46.
+Package pdftex.def Info: img/mockups/your_series.png  used on input line 45.
 (pdftex.def)             Requested size: 159.333pt x 345.0153pt.
  [9 <./img/mockups/profile.png> <./img/mockups/your_series.png>]
-<img/mockups/issue.png, id=175, 752.8125pt x 1630.09pt>
+<img/mockups/issue.png, id=165, 752.8125pt x 1630.09pt>
 File: img/mockups/issue.png Graphic file (type png)
 <use img/mockups/issue.png>
-Package pdftex.def Info: img/mockups/issue.png  used on input line 56.
+Package pdftex.def Info: img/mockups/issue.png  used on input line 55.
 (pdftex.def)             Requested size: 159.333pt x 345.0153pt.
-<img/mockups/series.png, id=176, 752.8125pt x 1630.09pt>
+<img/mockups/series.png, id=166, 752.8125pt x 1630.09pt>
 File: img/mockups/series.png Graphic file (type png)
 <use img/mockups/series.png>
-Package pdftex.def Info: img/mockups/series.png  used on input line 62.
+Package pdftex.def Info: img/mockups/series.png  used on input line 61.
 (pdftex.def)             Requested size: 159.333pt x 345.0153pt.
  [10 <./img/mockups/issue.png> <./img/mockups/series.png>]
 File: img/mockups/series.png Graphic file (type png)
 <use img/mockups/series.png>
-Package pdftex.def Info: img/mockups/series.png  used on input line 72.
+Package pdftex.def Info: img/mockups/series.png  used on input line 71.
 (pdftex.def)             Requested size: 159.333pt x 345.0153pt.
-<img/mockups/dark_mode.png, id=184, 752.8125pt x 1630.09pt>
+<img/mockups/dark_mode.png, id=174, 752.8125pt x 1630.09pt>
 File: img/mockups/dark_mode.png Graphic file (type png)
 <use img/mockups/dark_mode.png>
-Package pdftex.def Info: img/mockups/dark_mode.png  used on input line 78.
+Package pdftex.def Info: img/mockups/dark_mode.png  used on input line 77.
 (pdftex.def)             Requested size: 159.333pt x 345.0153pt.
- [11 <./img/mockups/dark_mode.png>]) [12
+ [11 <./img/mockups/dark_mode.png>]
+<img/ui_interaction.png, id=181, 6670.9225pt x 7291.24pt>
+File: img/ui_interaction.png Graphic file (type png)
+<use img/ui_interaction.png>
+Package pdftex.def Info: img/ui_interaction.png  used on input line 88.
+(pdftex.def)             Requested size: 400.23808pt x 437.45554pt.
+
+Overfull \hbox (1.89949pt too wide) in paragraph at lines 88--89
+ [][] 
+ []
+
+) [12
 
 
 
 
 
-] (./sections/tests.tex) [13
+ <./img/ui_interaction.png>] (./sections/tests.tex) [13
 
 ]
 (./sections/tools.tex) [14
@@ -1064,7 +1075,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 93.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 93.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 93.
 Package rerunfilecheck Info: File `"Design Document".out' has not changed.
-(rerunfilecheck)             Checksum: 3F94EE9979D9747CB6541B5601340BE3;1179.
+(rerunfilecheck)             Checksum: 6939CB481381B220F10615E7C66A63D4;1061.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1072,22 +1083,22 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 93.
  ) 
 Here is how much of TeX's memory you used:
- 20115 strings out of 492616
- 376140 string characters out of 6129481
+ 20116 strings out of 492616
+ 376205 string characters out of 6129481
  446921 words of memory out of 5000000
- 23561 multiletter control sequences out of 15000+600000
+ 23563 multiletter control sequences out of 15000+600000
  42950 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 59i,11n,65p,501b,458s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,11n,65p,501b,459s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019
 /texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dis
 t/fonts/type1/urw/times/utmr8a.pfb>
-Output written on "Design Document.pdf" (14 pages, 5169342 bytes).
+Output written on "Design Document.pdf" (14 pages, 10645032 bytes).
 PDF statistics:
- 234 PDF objects out of 1000 (max. 8388607)
- 190 compressed objects within 2 object streams
- 49 named destinations out of 1000 (max. 500000)
- 220 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 225 PDF objects out of 1000 (max. 8388607)
+ 179 compressed objects within 2 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 209 words of extra memory for PDF output out of 10000 (max. 10000000)
 
