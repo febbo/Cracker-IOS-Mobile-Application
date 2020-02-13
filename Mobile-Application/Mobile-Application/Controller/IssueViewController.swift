@@ -25,7 +25,7 @@ class IssueViewController: UIViewController {
     var issueNumber : Int = 0
     var imageSerie : String = ""
 
-    
+    let group = DispatchGroup()
     
     var comicID : Int?
     
@@ -115,6 +115,11 @@ class IssueViewController: UIViewController {
     
     func getUpNextData(url: String, parameters: [String: String]) {
         
+        let overlay = BlurLoader(frame: view.frame)
+        view.addSubview(overlay)
+        
+        
+        group.enter()
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
             response in
             if response.result.isSuccess {
@@ -123,7 +128,7 @@ class IssueViewController: UIViewController {
                 let upNextJSON : JSON = JSON(response.result.value!)
                 
                 self.updateComicData(json : upNextJSON)
-                
+                self.group.leave()
                 
             }
             else {
@@ -131,11 +136,16 @@ class IssueViewController: UIViewController {
 //                self.cityLabel.text = "Connection Issues"
             }
         }
+        group.notify(queue: DispatchQueue.main) {
+            
+            overlay.removeFromSuperview()
+            
+        }
         
     }
     
     func getSerieData(url: String, parameters: [String: String]) {
-        
+        group.enter()
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
             response in
             if response.result.isSuccess {
@@ -144,7 +154,7 @@ class IssueViewController: UIViewController {
                 let upNextJSON : JSON = JSON(response.result.value!)
                 
                 self.updateSerieData(json : upNextJSON)
-                
+                self.group.leave()
                 
             }
             else {
@@ -168,6 +178,7 @@ class IssueViewController: UIViewController {
 //        print(json)
 //        let status = json["status"]
 //        print(status)
+        group.enter()
         titleComic.text = json["data"]["results"][0]["title"].stringValue
 
         
@@ -217,7 +228,8 @@ class IssueViewController: UIViewController {
         let imageExtension = json["data"]["results"][0]["images"][0]["extension"].stringValue
         
         let imageURL = URL(string: imagePath + "." + imageExtension)
-        imageComic.load(url: imageURL!)
+        imageComic.image = try! UIImage(data: Data(contentsOf: imageURL!))
+//        imageComic.load(url: imageURL!)
 //        print(imageURL!)
         
         serieURL = json["data"]["results"][0]["series"]["resourceURI"].stringValue
@@ -246,6 +258,7 @@ class IssueViewController: UIViewController {
                 print("Document does not exist")
             }
         }
+        group.leave()
     }
     
 	//MARK: - Actions

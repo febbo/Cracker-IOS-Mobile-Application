@@ -40,6 +40,8 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let HASH = "1bdc741bcbdaf3d87a0f0d6e6180f877"
     let TS = "1"
     
+    let group = DispatchGroup()
+    
     var toRead : Int = 0
     
     let cellID = "IssuesInSeriesCell"
@@ -116,7 +118,10 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //MARK: - Networking
 
     func getSerieData(url: String, parameters: [String: String]) {
+        let overlay = BlurLoader(frame: view.frame)
+        view.addSubview(overlay)
         
+        group.enter()
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
             response in
             if response.result.isSuccess {
@@ -125,7 +130,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let serieJSON : JSON = JSON(response.result.value!)
                 
                 self.updateSerieData(json : serieJSON)
-                
+                self.group.leave()
                 
             }
             else {
@@ -133,11 +138,16 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //                self.cityLabel.text = "Connection Issues"
             }
         }
+        group.notify(queue: DispatchQueue.main) {
+            
+            overlay.removeFromSuperview()
+            
+        }
         
     }
     
     func getComicsOfSerieData(url: String, parameters: [String: String]) {
-        
+        group.enter()
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
             response in
             if response.result.isSuccess {
@@ -146,7 +156,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let comicsJSON : JSON = JSON(response.result.value!)
                 
                 self.updateComicsOfSerieData(json : comicsJSON)
-                
+                self.group.leave()
                 
             }
             else {
@@ -161,7 +171,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //MARK: - JSON Parsing
 	
     func updateSerieData(json : JSON) {
-        
+        group.enter()
 //        ID
         let id = json["data"]["results"][0]["id"].stringValue
         print(id)
@@ -223,7 +233,8 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let imageURL = URL(string: imagePath + "." + imageExtension)
         imageSerieURL = imageURL
-        imageSerie.load(url: imageURL!)
+        imageSerie.image = try! UIImage(data: Data(contentsOf: imageURL!))
+//        imageSerie.load(url: imageURL!)
         
         print(imageURL!)
         
@@ -252,10 +263,11 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let params : [String : String] = [ "apikey" : APP_ID, "ts": TS, "hash" : HASH, "noVariants" : "true", "orderBy" : "issueNumber", "limit" : "100"]
         getComicsOfSerieData(url: comicsURL, parameters: params)
-        
+        group.leave()
     }
     
     func updateComicsOfSerieData (json : JSON){
+        group.enter()
         var availables = json["data"]["total"].intValue - 1
 		numberOfIssues = availables+1
         
@@ -308,7 +320,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         //issuesTable.endUpdates()
         self.issuesTable.reloadData()
-        
+        group.leave()
         scrollHeight = 20*5 + 60
         scrollHeight += headerView.frame.height
         scrollHeight += descriptionText.frame.height
