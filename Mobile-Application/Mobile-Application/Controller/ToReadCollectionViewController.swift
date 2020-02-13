@@ -43,7 +43,7 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getDataFromFirebase()
+//        getDataFromFirebase()
         
         let collectionViewSize = collectionView.frame.size.width - 60
         if (traitCollection.horizontalSizeClass == .regular) {
@@ -69,7 +69,9 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        super.viewWillAppear(true)
+
+        getDataFromFirebase()
     }
     
     
@@ -78,18 +80,23 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
+                var tempID : [String] = []
+                var tempToRead : [Int] = []
                 for document in querySnapshot!.documents {
                     //print("\(document.documentID) => \(document.data())")
                     let data = document.data()
                     let id = data["id"] as! String
                     let toRead = data["issueToRead"] as! Int
-                    self.seriesIDs.append(id)
-                    self.issuesToRead.append(toRead)
+                    
+                    tempID.append(id)
+                    tempToRead.append(toRead)
 
                     
 //                    let url = URL(string: image)
 //                    self.dataImage.append( try! Data(contentsOf: url!))
                 }
+                self.seriesIDs = tempID
+                self.issuesToRead = tempToRead
 
                 completion()
 //                print(self.seriesIDs)
@@ -101,13 +108,22 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
     }
     
     func getDataFromFirebase(){
-        let activityIndicator = UIActivityIndicatorView(style: .gray) // Create the activity indicator
-        view.addSubview(activityIndicator) // add it as a  subview
-        activityIndicator.center = CGPoint(x: view.frame.size.width*0.5, y: view.frame.size.height*0.5) // put in the middle
-        activityIndicator.startAnimating()
+//        let activityIndicator = UIActivityIndicatorView(style: .gray) // Create the activity indicator
+//        view.addSubview(activityIndicator) // add it as a  subview
+//        activityIndicator.center = CGPoint(x: view.frame.size.width*0.5, y: view.frame.size.height*0.5) // put in the middle
+//        activityIndicator.color = UIColor(named: "LoadingIndicator")
+//        activityIndicator.transform = CGAffineTransform.init(scaleX: 1.5, y: 1.5)
+//        activityIndicator.startAnimating()
+        
+        let overlay = BlurLoader(frame: view.frame)
+        view.addSubview(overlay)
         
         firebase(completion: {
             let group = DispatchGroup()
+            var tempToReadReal = [Int](repeating: -1, count: 50)
+            var tempNotCompleted = [String](repeating: "", count: 50)
+            var tempID = [String](repeating: "", count: 50)
+            var tempIMG = [Data](repeating: Data(), count: 50)
             for i in 0...self.seriesIDs.count-1 {
                 
                 group.enter()
@@ -122,19 +138,27 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
                         
                         if json["data"]["count"] == 1 {
                             
-                            self.issuesToReadReal.append(self.issuesToRead[i])
-                            self.serieNotCompletedIDs.append(self.seriesIDs[i])
+//                            tempToReadReal.append(self.issuesToRead[i])
+                            tempToReadReal.insert(self.issuesToRead[i], at: i)
+//                            tempNotCompleted.append(self.seriesIDs[i])
+                            tempNotCompleted.insert(self.seriesIDs[i], at: i)
+//                            self.issuesToReadReal.append(self.issuesToRead[i])
+//                            self.serieNotCompletedIDs.append(self.seriesIDs[i])
                             
                             
                             print("Success! Got the comic data")
                             let id = json["data"]["results"][0]["id"].stringValue
-                            self.issuesIDs.append(id)
+//                            tempID.append(id)
+                            tempID.insert(id, at: i)
+//                            self.issuesIDs.append(id)
                             
                             let imagePath = json["data"]["results"][0]["thumbnail"]["path"].stringValue
                             let imageExtension = json["data"]["results"][0]["thumbnail"]["extension"].stringValue
                             
                             let imageURL = URL(string: imagePath + "." + imageExtension)
-                            self.issuesIMGs.append(try! Data(contentsOf: imageURL!))
+//                            tempIMG.append(try! Data(contentsOf: imageURL!))
+                            tempIMG.insert(try! Data(contentsOf: imageURL!), at: i)
+//                            self.issuesIMGs.append(try! Data(contentsOf: imageURL!))
                         }
                         else if json["data"]["count"] == 0{
                             print("All issues read of serie \(self.seriesIDs[i])")
@@ -154,9 +178,20 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
                 }
             }
             group.notify(queue: DispatchQueue.main) {
+                tempToReadReal = tempToReadReal.filter({ $0 != -1})
+                tempNotCompleted = tempNotCompleted.filter({ $0 != ""})
+                tempID = tempID.filter({ $0 != ""})
+                tempIMG = tempIMG.filter({ $0 != Data()})
                 
-                activityIndicator.stopAnimating() // On response stop animating
-                activityIndicator.removeFromSuperview() // remove the view
+                self.issuesToReadReal = tempToReadReal
+                self.serieNotCompletedIDs = tempNotCompleted
+                self.issuesIDs = tempID
+                self.issuesIMGs = tempIMG
+                
+//                activityIndicator.stopAnimating() // On response stop animating
+//                activityIndicator.removeFromSuperview() // remove the view
+
+                overlay.removeFromSuperview()
                 
                 self.reload = true
                 self.collectionView.reloadData()
@@ -247,6 +282,9 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
                     
                     let imageURL = URL(string: imagePath + "." + imageExtension)
                     self.issuesIMGs[button.tag] = try! Data(contentsOf: imageURL!)
+                    
+                    let id = json["data"]["results"][0]["id"].stringValue
+                    self.issuesIDs[button.tag] = id
                 }
                 else if json["data"]["count"] == 0{
                     print("All issues read of serie \(self.serieNotCompletedIDs[button.tag])")

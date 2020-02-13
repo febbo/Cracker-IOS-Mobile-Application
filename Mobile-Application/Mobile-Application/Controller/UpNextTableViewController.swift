@@ -82,10 +82,15 @@ class UpNextTableViewController : UITableViewController {
     
     func getApiData() {
         
-        let activityIndicator = UIActivityIndicatorView(style: .gray) // Create the activity indicator
-        view.addSubview(activityIndicator) // add it as a  subview
-        activityIndicator.center = CGPoint(x: view.frame.size.width*0.5, y: view.frame.size.height*0.5) // put in the middle
-        activityIndicator.startAnimating()
+//        let activityIndicator = UIActivityIndicatorView(style: .gray) // Create the activity indicator
+//        activityIndicator.center = CGPoint(x: view.frame.size.width*0.5, y: view.frame.size.height*0.5) // put in the middle
+//        activityIndicator.color = UIColor(named: "LoadingIndicator")
+//        activityIndicator.style = UIActivityIndicatorView.Style.gray
+//        view.addSubview(activityIndicator) // add it as a  subview
+//        activityIndicator.startAnimating()
+        
+        let overlay = BlurLoader(frame: view.frame)
+        view.addSubview(overlay)
         
         let group = DispatchGroup()
         
@@ -112,9 +117,11 @@ class UpNextTableViewController : UITableViewController {
             }
         }
         group.notify(queue: DispatchQueue.main) {
-            activityIndicator.stopAnimating() // On response stop animating
-            activityIndicator.removeFromSuperview() // remove the view
-            // ... process data
+//            activityIndicator.stopAnimating() // On response stop animating
+//            activityIndicator.removeFromSuperview() // remove the view
+//            // ... process data
+            overlay.removeFromSuperview()
+            
         }
 
         
