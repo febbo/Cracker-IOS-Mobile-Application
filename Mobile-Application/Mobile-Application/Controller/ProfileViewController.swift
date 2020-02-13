@@ -75,6 +75,7 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
         let activityIndicator = UIActivityIndicatorView(style: .gray) // Create the activity indicator
         view.addSubview(activityIndicator) // add it as a  subview
         activityIndicator.center = CGPoint(x: view.frame.size.width*0.5, y: view.frame.size.height*0.68) // put in the middle
+        activityIndicator.color = UIColor(named: "LoadingIndicator")
         activityIndicator.startAnimating()
         
         User.collection("Series").getDocuments() { (querySnapshot, err) in
