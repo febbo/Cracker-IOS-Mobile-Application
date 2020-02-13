@@ -67,6 +67,11 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
     }
     
     func getSeries(){
+        let activityIndicator = UIActivityIndicatorView(style: .gray) // Create the activity indicator
+        view.addSubview(activityIndicator) // add it as a  subview
+        activityIndicator.center = CGPoint(x: view.frame.size.width*0.5, y: view.frame.size.height*0.68) // put in the middle
+        activityIndicator.startAnimating()
+        
         User.collection("Series").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -83,6 +88,8 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
                     self.dataImage.append( try! Data(contentsOf: url!))
                     
                 }
+                activityIndicator.stopAnimating() // On response stop animating
+                activityIndicator.removeFromSuperview() // remove the view
                 self.reload = true
                 self.seriesCollection.reloadData()
             }

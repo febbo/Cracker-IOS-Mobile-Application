@@ -101,6 +101,10 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
     }
     
     func getDataFromFirebase(){
+        let activityIndicator = UIActivityIndicatorView(style: .gray) // Create the activity indicator
+        view.addSubview(activityIndicator) // add it as a  subview
+        activityIndicator.center = CGPoint(x: view.frame.size.width*0.5, y: view.frame.size.height*0.5) // put in the middle
+        activityIndicator.startAnimating()
         
         firebase(completion: {
             let group = DispatchGroup()
@@ -150,8 +154,13 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
                 }
             }
             group.notify(queue: DispatchQueue.main) {
+                
+                activityIndicator.stopAnimating() // On response stop animating
+                activityIndicator.removeFromSuperview() // remove the view
+                
                 self.reload = true
                 self.collectionView.reloadData()
+                
             }
 
         })

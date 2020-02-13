@@ -49,7 +49,7 @@ class UpNextTableViewController : UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-        showLoadingScreen()
+        getApiData()
         
 		if #available(iOS 13.0, *) {
 			let appearance = UINavigationBarAppearance()
@@ -70,29 +70,7 @@ class UpNextTableViewController : UITableViewController {
         
         
 	}
-    
-    func showLoadingScreen() {
-//        let alert = UIAlertController(title: nil, message: "Loading data", preferredStyle: .alert)
-//
-//        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-//        loadingIndicator.hidesWhenStopped = true
-//        if traitCollection.userInterfaceStyle == .light {
-//            loadingIndicator.style = UIActivityIndicatorView.Style.gray
-//        } else {
-//            loadingIndicator.style = UIActivityIndicatorView.Style.white
-//        }
-//        loadingIndicator.startAnimating();
-//
-//        alert.view.addSubview(loadingIndicator)
-//        present(alert, animated: true, completion: nil)
-//
-//        print("start")
-        getApiData()
-//        print("end")
-//
-//        dismiss(animated: true, completion: nil)
-//        print("end2")
-    }
+
     
     
     
@@ -103,35 +81,45 @@ class UpNextTableViewController : UITableViewController {
     
     
     func getApiData() {
+        
+        let activityIndicator = UIActivityIndicatorView(style: .gray) // Create the activity indicator
+        view.addSubview(activityIndicator) // add it as a  subview
+        activityIndicator.center = CGPoint(x: view.frame.size.width*0.5, y: view.frame.size.height*0.5) // put in the middle
+        activityIndicator.startAnimating()
+        
+        let group = DispatchGroup()
+        
         for i in 0...weeks.count-1 {
+            group.enter()
+            
             let params : [String : String] = [ "apikey" : APP_ID, "ts": TS, "hash" : HASH, "format": "comic", "noVariants" : "true", "dateDescriptor" : weeks[i], "orderBy" : "title", "limit" : "50" ]
-            getUpNextData(url: URL, parameters: params, index: i)
+            
+            Alamofire.request(URL, method: .get, parameters: params).responseJSON {
+                response in
+                if response.result.isSuccess {
+                    
+                    print("Success! Got the comic data")
+                    let upNextJSON : JSON = JSON(response.result.value!)
+                    
+                    self.updateComicData(json : upNextJSON, index : i)
+                    group.leave()
+                    
+                }
+                else {
+                    print("Error \(String(describing: response.result.error))")
+    //                self.cityLabel.text = "Connection Issues"
+                }
+            }
         }
+        group.notify(queue: DispatchQueue.main) {
+            activityIndicator.stopAnimating() // On response stop animating
+            activityIndicator.removeFromSuperview() // remove the view
+            // ... process data
+        }
+
         
     }
     
-    
-    func getUpNextData(url: String, parameters: [String: String], index: Int) {
-		
-        Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
-            response in
-            if response.result.isSuccess {
-                
-                print("Success! Got the comic data")
-                let upNextJSON : JSON = JSON(response.result.value!)
-                
-                self.updateComicData(json : upNextJSON, index : index)
-                
-                
-            }
-            else {
-                print("Error \(String(describing: response.result.error))")
-//                self.cityLabel.text = "Connection Issues"
-            }
-        }
-        
-        
-    }
     
     
     
