@@ -22,6 +22,8 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
 	@IBOutlet weak var seriesButton: UIButton!
 	
 	@IBOutlet weak var seriesCollection: UICollectionView!
+    @IBOutlet weak var issuesRead: UILabel!
+    @IBOutlet weak var seriesAdded: UILabel!
     
 //    Constants
     let userDefault = UserDefaults.standard
@@ -33,6 +35,7 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
 //    Variables
     var seriesIDs : [String] = []
     var seriesIMGs : [String] = []
+    var totalIssues : Int = 0
     
     var dataImage : [Data] = []
     
@@ -81,8 +84,11 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
                     let data = document.data()
                     let id = data["id"] as! String
                     let image = data["image"] as! String
+                    let issueRead = (data["issueToRead"] as! Int) - 1
                     self.seriesIDs.append(id)
                     self.seriesIMGs.append(image)
+                    self.totalIssues += issueRead
+                    
                     
                     let url = URL(string: image)
                     self.dataImage.append( try! Data(contentsOf: url!))
@@ -90,6 +96,9 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
                 }
                 activityIndicator.stopAnimating() // On response stop animating
                 activityIndicator.removeFromSuperview() // remove the view
+                print(self.totalIssues)
+                self.issuesRead.text = "\(self.totalIssues)"
+                self.seriesAdded.text = "\(self.seriesIDs.count)"
                 self.reload = true
                 self.seriesCollection.reloadData()
             }
