@@ -4,7 +4,25 @@ The main aim of "Cracker" is to help users who read Marvel comics by letting the
 This project is the result of the implementation of the knowledge acquired during the course ”Design and Implementation of Mobile Applications” provided by the Milan Polytechnic.
 
 
-\subsection{Definitions, acronyms, abbreviations}
+\subsection{Definitions and acronyms}
+\subsubsection{Definitions}
+\begin{itemize}
+\item {\textbf{Framework}}: reusable set of libraries or classes for a software system
+\item {\textbf{Issue}}: a single, periodical, magazine-like publication
+\item {\textbf{REST}}: a way of providing interoperability between computer systems on the Internet
+\item {\textbf{Series}}: a title collecting a variable amount of issues
+\item {\textbf{User}}: a person who has performed the login operation successfully
+\end{itemize}
+
+\subsubsection{Acronymns}
+\begin{itemize}
+\item {\textbf{API}}: Application Programming Interface
+\item {\textbf{IDE}}: Integrated Development Environment
+\item {\textbf{HTTPS}}: HyperText Transfer Protocol Secure
+\item {\textbf{JSON}}: JavaScript Object Notation
+\item {\textbf{MVC}}: Model - View - Controller
+\item {\textbf{URL}}: Uniform Resource Locator
+\end{itemize}
 
 
 \subsection{Scope}
@@ -19,6 +37,10 @@ Cracker has been developed for users who regularly read Marvel comics and want t
 \end{itemize}
 
 
+\subsection{Framework}
+The development of Cracker was achieved through the use of native iOS SDKs, in particular by using the Swift programming language. This choice allowed greater control of system resources and access to system services, otherwise not possible if using cross-platform frameworks such as PhoneGap or React Native. The purpose is to implement different functionalities and integration with other sites.
+
+
 \subsection{Functional requirements}
 Cracker provides a simple, intuitive and user-friendly interface that allows the users to:
 \begin{enumerate}
@@ -28,6 +50,7 @@ Cracker provides a simple, intuitive and user-friendly interface that allows the
 \item mark series they are reading as {\slshape{following}}
 \item select which issues of a series they have read
 \item see the next issue not yet read for all the series they are following
+\item see the series they are following
 \item see statistics on the series they are following
 \item see, on a weekly basis, the latest issues of all the series Marvel is publishing
 \item search for a specific series, given its name
@@ -40,14 +63,24 @@ The application must be able to:
 \item run on both iPhone and iPad
 \item adapt its written content to the language selected in the device settings (available languages: English, Italian)
 \item adapt to different screen sizes
+\item keep preferences and status at every start
 \end{itemize}
 
 
 \subsection{Assumptions, dependencies, constraints}
-{\textbf{\large{Assumptions}}}
+\subsubsection{Assumptions and dependencies}
 \begin{itemize}
 \item {\textbf{Internet connection}}: the device used by the user disposes of an Internet connection and a sufficient bandwidth to use the application
 \item {\textbf{API availability}}: the API provided by third part's services are always available
+\item{\textbf{No privileged users}}: there are no privileged users or administrators with particular functions
+\item{\textbf{No user connections}}: every user is independent from the others
 \end{itemize}
+
+\subsubsection{Constraints}
+\begin{itemize}
+\item{\textbf{Hardware limitations}}: our application runs on every mobile device like smartphones and tablets; therefore, as the app consumes a low amount of RAM, the only hardware constraint for the users is to have a mid-range device
+\item{\textbf{Parallel operations}}: the application must be able to handle multiple parallel requests with high reactivity
+\end{itemize}
+
 
 

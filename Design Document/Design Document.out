@@ -1,17 +1,24 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [2][-]{subsection.1.1}{Purpose}{section.1}% 2
-\BOOKMARK [2][-]{subsection.1.2}{Definitions, acronyms, abbreviations}{section.1}% 3
-\BOOKMARK [2][-]{subsection.1.3}{Scope}{section.1}% 4
-\BOOKMARK [2][-]{subsection.1.4}{Functional requirements}{section.1}% 5
-\BOOKMARK [2][-]{subsection.1.5}{Non-functional requirements}{section.1}% 6
-\BOOKMARK [2][-]{subsection.1.6}{Assumptions, dependencies, constraints}{section.1}% 7
-\BOOKMARK [1][-]{section.2}{Architecture}{}% 8
-\BOOKMARK [2][-]{subsection.2.1}{Overview}{section.2}% 9
-\BOOKMARK [2][-]{subsection.2.2}{High level components}{section.2}% 10
-\BOOKMARK [2][-]{subsection.2.3}{Component view}{section.2}% 11
-\BOOKMARK [2][-]{subsection.2.4}{Deploying view}{section.2}% 12
-\BOOKMARK [2][-]{subsection.2.5}{Component interfaces}{section.2}% 13
-\BOOKMARK [1][-]{section.3}{External Services and Libraries}{}% 14
-\BOOKMARK [1][-]{section.4}{User Interface Design}{}% 15
-\BOOKMARK [1][-]{section.5}{Tests}{}% 16
-\BOOKMARK [1][-]{section.6}{Used Tools}{}% 17
+\BOOKMARK [2][-]{subsection.1.2}{Definitions and acronyms}{section.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.2.1}{Definitions}{subsection.1.2}% 4
+\BOOKMARK [3][-]{subsubsection.1.2.2}{Acronymns}{subsection.1.2}% 5
+\BOOKMARK [2][-]{subsection.1.3}{Scope}{section.1}% 6
+\BOOKMARK [2][-]{subsection.1.4}{Framework}{section.1}% 7
+\BOOKMARK [2][-]{subsection.1.5}{Functional requirements}{section.1}% 8
+\BOOKMARK [2][-]{subsection.1.6}{Non-functional requirements}{section.1}% 9
+\BOOKMARK [2][-]{subsection.1.7}{Assumptions, dependencies, constraints}{section.1}% 10
+\BOOKMARK [3][-]{subsubsection.1.7.1}{Assumptions and dependencies}{subsection.1.7}% 11
+\BOOKMARK [3][-]{subsubsection.1.7.2}{Constraints}{subsection.1.7}% 12
+\BOOKMARK [1][-]{section.2}{Architecture}{}% 13
+\BOOKMARK [2][-]{subsection.2.1}{Overview}{section.2}% 14
+\BOOKMARK [2][-]{subsection.2.2}{High level components}{section.2}% 15
+\BOOKMARK [2][-]{subsection.2.3}{Component view}{section.2}% 16
+\BOOKMARK [2][-]{subsection.2.4}{Deploying view}{section.2}% 17
+\BOOKMARK [2][-]{subsection.2.5}{Component interfaces}{section.2}% 18
+\BOOKMARK [1][-]{section.3}{External Services and Libraries}{}% 19
+\BOOKMARK [1][-]{section.4}{Use Cases}{}% 20
+\BOOKMARK [1][-]{section.5}{Sequence Diagrams}{}% 21
+\BOOKMARK [1][-]{section.6}{User Interface Design}{}% 22
+\BOOKMARK [1][-]{section.7}{Testing}{}% 23
+\BOOKMARK [1][-]{section.8}{Used Tools}{}% 24
