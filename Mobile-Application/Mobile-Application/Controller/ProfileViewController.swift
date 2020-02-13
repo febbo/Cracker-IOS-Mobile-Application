@@ -25,6 +25,7 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
     @IBOutlet weak var issuesRead: UILabel!
     @IBOutlet weak var seriesAdded: UILabel!
     
+    
 //    Constants
     let userDefault = UserDefaults.standard
     
@@ -43,7 +44,6 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-        getSeries()
 		
 		if #available(iOS 13.0, *) {
 			let appearance = UINavigationBarAppearance()
@@ -66,6 +66,8 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
         
         guard let imageURL = Auth.auth().currentUser?.photoURL else {return}
         imageOU.load(url: imageURL)
+        
+        getSeries()
 
     }
     
@@ -97,8 +99,8 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
                 activityIndicator.stopAnimating() // On response stop animating
                 activityIndicator.removeFromSuperview() // remove the view
                 print(self.totalIssues)
-                self.issuesRead.text = "\(self.totalIssues)"
-                self.seriesAdded.text = "\(self.seriesIDs.count)"
+                self.issuesRead.text! += " \(self.totalIssues)"
+                self.seriesAdded.text! += " \(self.seriesIDs.count)"
                 self.reload = true
                 self.seriesCollection.reloadData()
             }

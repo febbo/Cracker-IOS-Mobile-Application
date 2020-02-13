@@ -96,34 +96,20 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Issues read:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nen-bI-YhT" userLabel="IssuesStats">
-                                                        <rect key="frame" x="20" y="65" width="92" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Issues read:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nen-bI-YhT" userLabel="IssuesStats">
+                                                        <rect key="frame" x="20" y="65" width="151" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Series added:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsF-Jq-GAM" userLabel="SeriesStats">
-                                                        <rect key="frame" x="20" y="90.5" width="105.5" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Series added:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsF-Jq-GAM" userLabel="SeriesStats">
+                                                        <rect key="frame" x="20" y="91" width="183" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value of your collection:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQF-Q1-NMs">
-                                                        <rect key="frame" x="20" y="116" width="183" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCg-cm-vWO">
-                                                        <rect key="frame" x="133" y="90" width="70" height="21"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3X-Zj-SVu">
-                                                        <rect key="frame" x="120" y="65" width="72" height="21"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <rect key="frame" x="20" y="117" width="183" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -347,9 +333,9 @@
                     <navigationItem key="navigationItem" title="Profile" largeTitleDisplayMode="always" id="zjK-Gu-bbg"/>
                     <connections>
                         <outlet property="imageOU" destination="g8s-k3-JWV" id="UwB-Xp-FSP"/>
-                        <outlet property="issuesRead" destination="x3X-Zj-SVu" id="jqs-jG-Ngr"/>
+                        <outlet property="issuesRead" destination="Nen-bI-YhT" id="MZk-LC-aUW"/>
                         <outlet property="nicknameOu" destination="eon-3b-XmT" id="HjY-Qw-e47"/>
-                        <outlet property="seriesAdded" destination="FCg-cm-vWO" id="LeI-kC-Ymf"/>
+                        <outlet property="seriesAdded" destination="PsF-Jq-GAM" id="bOm-GZ-fxB"/>
                         <outlet property="seriesButton" destination="5cF-DX-vR4" id="YrL-wZ-CQA"/>
                         <outlet property="seriesCollection" destination="rYr-Jc-8du" id="baa-fH-bTX"/>
                         <segue destination="FAs-jk-Al6" kind="unwind" identifier="unwindToLogIn" unwindAction="prepareForUnwindWithSegue:" id="W1W-Eo-UEd"/>
