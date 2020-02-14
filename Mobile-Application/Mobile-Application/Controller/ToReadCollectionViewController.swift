@@ -311,11 +311,11 @@ class ToReadCollectionViewController: UICollectionViewController, UICollectionVi
         group.notify(queue: DispatchQueue.main) {
             
             if finished == false{
-                let alert = UIAlertController(title: NSLocalizedString("Issue Read", comment: ""), message: NSLocalizedString("Congratulation! Let's Go!", comment: ""), preferredStyle: .alert)
+                let alert = UIAlertController(title: NSLocalizedString("Issue read", comment: ""), message: NSLocalizedString("Congratulations! Let's go!", comment: ""), preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("Great!", comment: ""), style: .default, handler: nil))
                 self.present(alert, animated: true)
             } else {
-                let alert = UIAlertController(title: NSLocalizedString("Serie Finished", comment: ""), message: NSLocalizedString(" You have read all issues of this serie! \n Contratulations!", comment: ""), preferredStyle: .alert)
+                let alert = UIAlertController(title: NSLocalizedString("You're up to date", comment: ""), message: NSLocalizedString("You have read all issues of this serie!\n Congratulations!", comment: ""), preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("Great!", comment: ""), style: .default, handler: nil))
                 self.present(alert, animated: true)
             }
