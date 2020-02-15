@@ -97,6 +97,14 @@ class SeriesViewController: UIViewController {
 //		issuesTable.dataSource = self
 	}
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationItem.largeTitleDisplayMode = .never
+        
+        let singleIssueUrl = apiURL!
+        let params : [String : String] = [ "apikey" : APP_ID, "ts": TS, "hash" : HASH]
+        getSerieData(url: singleIssueUrl, parameters: params)
+    }
 
     override func viewDidLayoutSubviews() {
         scrollWidth = scrollView.contentSize.width
