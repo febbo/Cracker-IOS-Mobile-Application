@@ -15,36 +15,36 @@
 \contentsline {subsection}{\numberline {2.2}High level components}{7}{subsection.2.2}% 
 \contentsline {subsection}{\numberline {2.3}Client}{8}{subsection.2.3}% 
 \contentsline {subsection}{\numberline {2.4}Database}{8}{subsection.2.4}% 
-\contentsline {section}{\numberline {3}External Services and Libraries}{11}{section.3}% 
-\contentsline {subsection}{\numberline {3.1}Facebook SDK}{11}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}Google SDK}{12}{subsection.3.2}% 
-\contentsline {subsection}{\numberline {3.3}Firebase SDK}{13}{subsection.3.3}% 
-\contentsline {subsection}{\numberline {3.4}Alamofire}{14}{subsection.3.4}% 
-\contentsline {subsection}{\numberline {3.5}Marvel Comics API}{15}{subsection.3.5}% 
-\contentsline {subsubsection}{\numberline {3.5.1}Service Endpoint}{15}{subsubsection.3.5.1}% 
-\contentsline {subsubsection}{\numberline {3.5.2}Resources}{15}{subsubsection.3.5.2}% 
-\contentsline {subsubsection}{\numberline {3.5.3}Authentication}{15}{subsubsection.3.5.3}% 
-\contentsline {section}{\numberline {4}Use Cases}{16}{section.4}% 
-\contentsline {subsection}{\numberline {4.1}Login}{16}{subsection.4.1}% 
-\contentsline {subsection}{\numberline {4.2}View Up Next}{18}{subsection.4.2}% 
-\contentsline {subsection}{\numberline {4.3}View To Read}{19}{subsection.4.3}% 
-\contentsline {subsection}{\numberline {4.4}View Issue}{20}{subsection.4.4}% 
-\contentsline {subsection}{\numberline {4.5}View Series}{21}{subsection.4.5}% 
-\contentsline {subsection}{\numberline {4.6}View Issues of Series}{22}{subsection.4.6}% 
-\contentsline {subsection}{\numberline {4.7}Mark Issue as Read}{23}{subsection.4.7}% 
-\contentsline {subsection}{\numberline {4.8}Follow a Series}{24}{subsection.4.8}% 
-\contentsline {subsection}{\numberline {4.9}Search a Series}{25}{subsection.4.9}% 
-\contentsline {section}{\numberline {5}Sequence Diagrams}{26}{section.5}% 
-\contentsline {subsection}{\numberline {5.1}Login}{26}{subsection.5.1}% 
-\contentsline {subsection}{\numberline {5.2}View Up Next}{27}{subsection.5.2}% 
-\contentsline {subsection}{\numberline {5.3}View To Read}{28}{subsection.5.3}% 
-\contentsline {subsection}{\numberline {5.4}View Issue}{29}{subsection.5.4}% 
-\contentsline {subsection}{\numberline {5.5}View Series}{30}{subsection.5.5}% 
-\contentsline {subsection}{\numberline {5.6}View Issues of Series}{31}{subsection.5.6}% 
-\contentsline {subsection}{\numberline {5.7}Mark Issue as Read}{32}{subsection.5.7}% 
-\contentsline {subsection}{\numberline {5.8}Follow a Series}{33}{subsection.5.8}% 
-\contentsline {subsection}{\numberline {5.9}Search a Series}{34}{subsection.5.9}% 
-\contentsline {section}{\numberline {6}User Interface Design}{35}{section.6}% 
-\contentsline {section}{\numberline {7}Software System Attributes}{41}{section.7}% 
-\contentsline {section}{\numberline {8}Testing}{42}{section.8}% 
-\contentsline {section}{\numberline {9}Used Tools}{43}{section.9}% 
+\contentsline {section}{\numberline {3}External Services and Libraries}{10}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Facebook SDK}{10}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Google SDK}{11}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}Firebase SDK}{12}{subsection.3.3}% 
+\contentsline {subsection}{\numberline {3.4}Alamofire}{13}{subsection.3.4}% 
+\contentsline {subsection}{\numberline {3.5}Marvel Comics API}{14}{subsection.3.5}% 
+\contentsline {subsubsection}{\numberline {3.5.1}Service Endpoint}{14}{subsubsection.3.5.1}% 
+\contentsline {subsubsection}{\numberline {3.5.2}Resources}{14}{subsubsection.3.5.2}% 
+\contentsline {subsubsection}{\numberline {3.5.3}Authentication}{14}{subsubsection.3.5.3}% 
+\contentsline {section}{\numberline {4}Use Cases}{15}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Login}{15}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}View Up Next}{17}{subsection.4.2}% 
+\contentsline {subsection}{\numberline {4.3}View To Read}{18}{subsection.4.3}% 
+\contentsline {subsection}{\numberline {4.4}View Issue}{19}{subsection.4.4}% 
+\contentsline {subsection}{\numberline {4.5}View Series}{20}{subsection.4.5}% 
+\contentsline {subsection}{\numberline {4.6}View Issues of Series}{21}{subsection.4.6}% 
+\contentsline {subsection}{\numberline {4.7}Mark Issue as Read}{22}{subsection.4.7}% 
+\contentsline {subsection}{\numberline {4.8}Follow a Series}{23}{subsection.4.8}% 
+\contentsline {subsection}{\numberline {4.9}Search a Series}{24}{subsection.4.9}% 
+\contentsline {section}{\numberline {5}Sequence Diagrams}{25}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}Login}{25}{subsection.5.1}% 
+\contentsline {subsection}{\numberline {5.2}View Up Next}{26}{subsection.5.2}% 
+\contentsline {subsection}{\numberline {5.3}View To Read}{27}{subsection.5.3}% 
+\contentsline {subsection}{\numberline {5.4}View Issue}{28}{subsection.5.4}% 
+\contentsline {subsection}{\numberline {5.5}View Series}{29}{subsection.5.5}% 
+\contentsline {subsection}{\numberline {5.6}View Issues of Series}{30}{subsection.5.6}% 
+\contentsline {subsection}{\numberline {5.7}Mark Issue as Read}{31}{subsection.5.7}% 
+\contentsline {subsection}{\numberline {5.8}Follow a Series}{32}{subsection.5.8}% 
+\contentsline {subsection}{\numberline {5.9}Search a Series}{33}{subsection.5.9}% 
+\contentsline {section}{\numberline {6}User Interface Design}{34}{section.6}% 
+\contentsline {section}{\numberline {7}Software System Attributes}{40}{section.7}% 
+\contentsline {section}{\numberline {8}Testing}{41}{section.8}% 
+\contentsline {section}{\numberline {9}Used Tools}{42}{section.9}% 
