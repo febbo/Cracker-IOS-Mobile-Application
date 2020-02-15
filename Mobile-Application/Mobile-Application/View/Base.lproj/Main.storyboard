@@ -64,7 +64,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IrS-mb-cnk" userLabel="StatsView">
-                                                <rect key="frame" x="20" y="160" width="374" height="150"/>
+                                                <rect key="frame" x="20" y="160" width="374" height="125"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TyK-ql-rcJ" userLabel="GreenViewNoCornerRadius">
                                                         <rect key="frame" x="0.0" y="25" width="374" height="25"/>
@@ -108,28 +108,19 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value of your collection:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQF-Q1-NMs">
-                                                        <rect key="frame" x="20" y="117" width="183" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="OQF-Q1-NMs" firstAttribute="leading" secondItem="IrS-mb-cnk" secondAttribute="leading" constant="20" id="0Im-zk-Fxq"/>
                                                     <constraint firstAttribute="trailing" secondItem="TyK-ql-rcJ" secondAttribute="trailing" id="4iA-5o-mx5"/>
                                                     <constraint firstItem="TyK-ql-rcJ" firstAttribute="top" secondItem="IrS-mb-cnk" secondAttribute="top" constant="25" id="7Qd-yg-gH6"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PsF-Jq-GAM" secondAttribute="trailing" constant="20" symbolic="YES" id="9Tz-fH-SYw"/>
-                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OQF-Q1-NMs" secondAttribute="trailing" constant="20" symbolic="YES" id="OXv-k9-9Fe"/>
                                                     <constraint firstAttribute="trailing" secondItem="VIA-e9-d76" secondAttribute="trailing" id="Q0q-gk-WNr"/>
-                                                    <constraint firstAttribute="height" constant="150" id="Rck-pB-vKA"/>
+                                                    <constraint firstAttribute="height" constant="125" id="Rck-pB-vKA"/>
                                                     <constraint firstItem="TyK-ql-rcJ" firstAttribute="leading" secondItem="IrS-mb-cnk" secondAttribute="leading" id="XPh-sx-gt5"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Nen-bI-YhT" secondAttribute="trailing" constant="20" symbolic="YES" id="Y7p-T6-5n5"/>
                                                     <constraint firstItem="VIA-e9-d76" firstAttribute="leading" secondItem="IrS-mb-cnk" secondAttribute="leading" id="YyF-U7-8YK"/>
                                                     <constraint firstItem="PsF-Jq-GAM" firstAttribute="top" secondItem="Nen-bI-YhT" secondAttribute="bottom" constant="5" id="e2b-dI-4wj"/>
                                                     <constraint firstItem="VIA-e9-d76" firstAttribute="top" secondItem="IrS-mb-cnk" secondAttribute="top" id="gjw-Fz-D54"/>
-                                                    <constraint firstItem="OQF-Q1-NMs" firstAttribute="top" secondItem="PsF-Jq-GAM" secondAttribute="bottom" constant="5" id="nXk-cz-F10"/>
                                                     <constraint firstItem="Nen-bI-YhT" firstAttribute="top" secondItem="TyK-ql-rcJ" secondAttribute="bottom" constant="15" id="thu-E1-tFP"/>
                                                     <constraint firstItem="PsF-Jq-GAM" firstAttribute="leading" secondItem="IrS-mb-cnk" secondAttribute="leading" constant="20" id="vCP-Gh-l7b"/>
                                                     <constraint firstItem="Nen-bI-YhT" firstAttribute="leading" secondItem="IrS-mb-cnk" secondAttribute="leading" constant="20" id="wlZ-bL-0Ee"/>
@@ -141,7 +132,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fsi-ma-wug" userLabel="SeriesView">
-                                                <rect key="frame" x="20" y="330" width="374" height="240"/>
+                                                <rect key="frame" x="20" y="305" width="374" height="240"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3m-ju-ELg" userLabel="GreenViewNoCornerRadius">
                                                         <rect key="frame" x="0.0" y="25" width="374" height="25"/>
@@ -273,7 +264,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEV-WV-k8Z">
-                                                <rect key="frame" x="132" y="590" width="150" height="50"/>
+                                                <rect key="frame" x="132" y="565" width="150" height="50"/>
                                                 <color key="backgroundColor" name="Red"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="OTd-iq-4k5"/>
@@ -1491,7 +1482,7 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="DarkGreen"/>
-                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="barTintColor" name="DarkGreen"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
