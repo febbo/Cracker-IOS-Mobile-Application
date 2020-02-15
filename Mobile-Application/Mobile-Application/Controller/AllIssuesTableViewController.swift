@@ -41,6 +41,9 @@ class AllIssuesTableViewController: UITableViewController {
         super.viewDidLoad()
 
         getIssuesOfSerie()
+        
+//        tableView.register(IssuesInSeriesTableViewCell.self, forCellReuseIdentifier: cellID)
+        tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
     }
     
     // MARK: - Firebase and API
@@ -137,7 +140,7 @@ class AllIssuesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "IssuesInSeriesCell", for: indexPath) as? IssuesInSeriesTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? IssuesInSeriesTableViewCell
             print(issues)
             let issue = issues[indexPath.section].issues[indexPath.row]
             cell?.label.text = issue
@@ -185,9 +188,9 @@ class AllIssuesTableViewController: UITableViewController {
         return button
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "returnToIssue", sender: self)
-    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        self.performSegue(withIdentifier: "returnToIssue", sender: self)
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? IssueViewController{

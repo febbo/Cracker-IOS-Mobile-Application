@@ -93,8 +93,6 @@ class SeriesViewController: UIViewController {
         readButton.isEnabled = true
         readButton.alpha = 1
         
-        seeIssuesButton.addTarget(self, action: #selector(seeAllIssues), for: .touchUpInside)
-		
 //		issuesTable.delegate = self
 //		issuesTable.dataSource = self
 	}
@@ -522,11 +520,6 @@ class SeriesViewController: UIViewController {
             
 		}
 	}
-    
-    @objc func seeAllIssues(button: UIButton) {
-        performSegue(withIdentifier: "SeeIssuesFromSeries", sender: self)
-        
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? AllIssuesTableViewController{
