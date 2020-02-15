@@ -15,7 +15,7 @@ class UpNextTableViewController : UITableViewController {
 	
     @IBOutlet weak var upNextTableView : UITableView!
     
-    
+    var updated : Bool = false
     
     let URL = "https://gateway.marvel.com/v1/public/comics"
     let APP_ID = "7f0eb8f2cdf6f33136bc854d89281085"
@@ -31,6 +31,8 @@ class UpNextTableViewController : UITableViewController {
 		ExpandableSection(isExpanded: false, issues: []),
 		ExpandableSection(isExpanded: false, issues: [])
 	]
+    
+//    var issues : [ExpandableSection] = []
 	
 	// come identifichiamo la settimana nell'header della sezione
 	// IMPORTANTE: ovviamente la dimensione di questo array deve essere uguale al numero di righe di issues
@@ -82,15 +84,16 @@ class UpNextTableViewController : UITableViewController {
     
     func getApiData() {
         
-//        let activityIndicator = UIActivityIndicatorView(style: .gray) // Create the activity indicator
-//        activityIndicator.center = CGPoint(x: view.frame.size.width*0.5, y: view.frame.size.height*0.5) // put in the middle
-//        activityIndicator.color = UIColor(named: "LoadingIndicator")
-//        activityIndicator.style = UIActivityIndicatorView.Style.gray
-//        view.addSubview(activityIndicator) // add it as a  subview
-//        activityIndicator.startAnimating()
+        let activityIndicator = UIActivityIndicatorView(style: .gray) // Create the activity indicator
+        activityIndicator.center = CGPoint(x: view.frame.size.width*0.5, y: view.frame.size.height*0.35) // put in the middle
+        activityIndicator.color = UIColor(named: "LoadingIndicator")
+        activityIndicator.transform = CGAffineTransform.init(scaleX: 1.5, y: 1.5)
+        activityIndicator.style = UIActivityIndicatorView.Style.gray
+        view.addSubview(activityIndicator) // add it as a  subview
+        activityIndicator.startAnimating()
         
-        let overlay = BlurLoader(frame: view.frame)
-        view.addSubview(overlay)
+//        let overlay = BlurLoader(frame: view.frame)
+//        view.addSubview(overlay)
         
         let group = DispatchGroup()
         
@@ -117,10 +120,13 @@ class UpNextTableViewController : UITableViewController {
             }
         }
         group.notify(queue: DispatchQueue.main) {
-//            activityIndicator.stopAnimating() // On response stop animating
-//            activityIndicator.removeFromSuperview() // remove the view
+            activityIndicator.stopAnimating() // On response stop animating
+            activityIndicator.removeFromSuperview() // remove the view
 //            // ... process data
-            overlay.removeFromSuperview()
+//            overlay.removeFromSuperview()
+//            self.tableView.insertSections(IndexSet(integer: self.issues.count - 1), with: .automatic)
+            self.updated = true
+            self.tableView.reloadData()
             
         }
 
@@ -184,7 +190,11 @@ class UpNextTableViewController : UITableViewController {
     
 	
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		return issues.count
+        if updated == false {
+            return 0
+        }else{
+            return issues.count
+        }
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -16,6 +16,8 @@ class AllIssuesTableViewController: UITableViewController {
 
     @IBOutlet var issuesTable: UITableView!
     
+    let group = DispatchGroup()
+    
     var serieID : String = ""
     var titleSerie : String = ""
     var imageSerieURL : String = ""
@@ -49,10 +51,20 @@ class AllIssuesTableViewController: UITableViewController {
     // MARK: - Firebase and API
     
     func getIssuesOfSerie() {
+        
+        let activityIndicator = UIActivityIndicatorView(style: .gray) // Create the activity indicator
+        activityIndicator.center = CGPoint(x: view.frame.size.width*0.5, y: view.frame.size.height*0.35) // put in the middle
+        activityIndicator.color = UIColor(named: "LoadingIndicator")
+        activityIndicator.transform = CGAffineTransform.init(scaleX: 1.5, y: 1.5)
+        activityIndicator.style = UIActivityIndicatorView.Style.gray
+        view.addSubview(activityIndicator) // add it as a  subview
+        activityIndicator.startAnimating()
+        
         let comicsURL = "https://gateway.marvel.com:443/v1/public/series/\(serieID)/comics"
         
         let params : [String : String] = [ "apikey" : APP_ID, "ts": TS, "hash" : HASH, "noVariants" : "true", "orderBy" : "issueNumber", "limit" : "100"]
         
+        group.enter()
         Alamofire.request(comicsURL, method: .get, parameters: params).responseJSON {
             response in
             if response.result.isSuccess {
@@ -61,12 +73,17 @@ class AllIssuesTableViewController: UITableViewController {
                 let comicsJSON : JSON = JSON(response.result.value!)
                 
                 self.updateComicsOfSerieData(json : comicsJSON)
-                
+                self.group.leave()
             }
             else {
                 print("Error \(String(describing: response.result.error))")
 //                self.cityLabel.text = "Connection Issues"
             }
+        }
+        group.notify(queue: DispatchQueue.main) {
+            activityIndicator.stopAnimating() // On response stop animating
+            activityIndicator.removeFromSuperview() // remove the view
+            
         }
     }
     
@@ -75,7 +92,7 @@ class AllIssuesTableViewController: UITableViewController {
         var availables = json["data"]["total"].intValue - 1
         numberOfIssues = availables+1
         
-        
+        group.enter()
         //Controllare se gli issues sono tutti letti
         User.collection("Series").document("\(self.serieID)").getDocument { (document, error) in
             if let document = document, document.exists {
@@ -84,8 +101,10 @@ class AllIssuesTableViewController: UITableViewController {
                 if self.toRead > self.numberOfIssues{
                     self.allRead = true
                 }
+                self.group.leave()
             } else {
                 print("Document does not exist")
+                self.group.leave()
             }
         }
 
