@@ -1,13 +1,15 @@
 Cracker application uses Marvel Developer API in order to provide the user all the services. The SwiftyJSON component from UIKit was used to parse the JSON data.
-\subsection{Facebook SDK}
 
+\vspace{8mm}
+
+\subsection{Facebook SDK}
 The Facebook SDK was used to manage the login through Facebook account. When a user wants to authenticate the application makes the call to the Facebook service through:
 \begin{lstlisting}
 func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
 	if let error = error {
 		print(error.localizedDescription)
 		return
-	}else{
+	} else {
 		let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
 		// then sign in through firebase with this credentials
 	} 
@@ -36,7 +38,7 @@ func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError err
 			print("\(error.localizedDescription)")
 		}
 		return
-	}else{
+	} else {
 		guard let authentication = user.authentication else { return }
 		let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
 		// then sign in through firebase with this credentials
@@ -59,7 +61,7 @@ Auth.auth().signIn(with: credential) { (authResult, error) in
 	if error == error{
 		print("Error Log In Firebase \(error)")
 		return
-	}else{
+	} else {
 		print("Logged In Firebase")
 	}
 }
@@ -96,7 +98,7 @@ Alamofire.request(url, method: .get, parameters: parameters).responseJSON { resp
 	if response.result.isSuccess {
 		print("Success! Got the data")
 		let json : JSON = JSON(response.result.value!)
-	}else {
+	} else {
 		print("Error \(String(describing: response.result.error))")
 	}
 }
