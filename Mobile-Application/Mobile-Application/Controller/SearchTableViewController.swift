@@ -60,7 +60,7 @@ class SearchTableViewController: UITableViewController {
         searchController.searchBar.delegate = self as! UISearchBarDelegate
         searchController.dimsBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = false
-        searchController.searchBar.placeholder = NSLocalizedString("Search for a serie", comment: "")
+        searchController.searchBar.placeholder = NSLocalizedString("Search for a series", comment: "")
         definesPresentationContext = true
     }
     
