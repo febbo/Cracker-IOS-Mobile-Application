@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.11)  15 FEB 2020 11:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.13)  15 FEB 2020 19:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -761,6 +761,34 @@ brarydecorations.pathmorphing.code.tex))
 \highlight@previous=\dimen256
 \highlight@current=\dimen257
 ) (./util/abbrev.tex))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count147
+\lst@gtempboxa=\box54
+\lst@token=\toks46
+\lst@length=\count148
+\lst@currlwidth=\dimen258
+\lst@column=\count149
+\lst@pos=\count150
+\lst@lostspace=\dimen259
+\lst@width=\dimen260
+\lst@newlines=\count151
+\lst@lineno=\count152
+\lst@maxwidth=\dimen261
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
+\c@lstnumber=\count153
+\lst@skipnumbers=\count154
+\lst@framebox=\box55
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2019/02/27 1.8b listings configuration
+))
+Package: listings 2019/02/27 1.8b (Carsten Heinz)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/02/27 1.8b listings language file
+)
 (./Design Document.aux
 
 LaTeX Warning: Label `fig:1' multiply defined.
@@ -813,27 +841,28 @@ LaTeX Warning: Label `sub@fig:2' multiply defined.
 )
 \openout1 = `"Design Document.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 3.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 27.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/caption/ltcaption.sty
@@ -878,17 +907,17 @@ Package caption Info: End \AtBeginDocument code.
 
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count147
-\scratchdimen=\dimen258
-\scratchbox=\box54
-\nofMPsegments=\count148
-\nofMParguments=\count149
-\everyMPshowfont=\toks46
-\MPscratchCnt=\count150
-\MPscratchDim=\dimen259
-\MPnumerator=\count151
-\makeMPintoPDFobject=\count152
-\everyMPtoPDFconversion=\toks47
+\scratchcounter=\count155
+\scratchdimen=\dimen262
+\scratchbox=\box56
+\nofMPsegments=\count156
+\nofMParguments=\count157
+\everyMPshowfont=\toks47
+\MPscratchCnt=\count158
+\MPscratchDim=\dimen263
+\MPnumerator=\count159
+\makeMPintoPDFobject=\count160
+\everyMPtoPDFconversion=\toks48
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -906,8 +935,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box55
-Package hyperref Info: Link coloring ON on input line 3.
+\AtBeginShipoutBox=\box57
+Package hyperref Info: Link coloring ON on input line 27.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -915,11 +944,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count153
+\c@section@level=\count161
 )
-LaTeX Info: Redefining \ref on input line 3.
-LaTeX Info: Redefining \pageref on input line 3.
-LaTeX Info: Redefining \nameref on input line 3.
+LaTeX Info: Redefining \ref on input line 27.
+LaTeX Info: Redefining \pageref on input line 27.
+LaTeX Info: Redefining \nameref on input line 27.
 
 (./Design Document.out) (./Design Document.out)
 \@outlinefile=\write4
@@ -927,22 +956,23 @@ LaTeX Info: Redefining \nameref on input line 3.
 
 
 ABD: EveryShipout initializing macros
-<img/polimi.png, id=175, 748.7975pt x 566.115pt>
+\c@lstlisting=\count162
+<img/polimi.png, id=208, 748.7975pt x 566.115pt>
 File: img/polimi.png Graphic file (type png)
 <use img/polimi.png>
-Package pdftex.def Info: img/polimi.png  used on input line 16.
+Package pdftex.def Info: img/polimi.png  used on input line 40.
 (pdftex.def)             Requested size: 149.75684pt x 113.221pt.
-<img/logo.png, id=177, 260.8947pt x 200.6697pt>
+<img/logo.png, id=210, 260.8947pt x 200.6697pt>
 File: img/logo.png Graphic file (type png)
 <use img/logo.png>
-Package pdftex.def Info: img/logo.png  used on input line 22.
+Package pdftex.def Info: img/logo.png  used on input line 46.
 (pdftex.def)             Requested size: 130.44702pt x 100.3346pt.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 25.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 49.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 25.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 49.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 28.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 52.
  [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/p
@@ -957,18 +987,18 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 1.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
-\tf@toc=\write5
-\openout5 = `"Design Document.toc"'.
-
-
+)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
 Make it at least 13.59999pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[2] (./sections/introduction.tex
+[2])
+\tf@toc=\write5
+\openout5 = `"Design Document.toc"'.
+
+ [3] (./sections/introduction.tex
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 10.
@@ -978,279 +1008,318 @@ File: omsptm.fd
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 10.
- [3
+ [4
 
-] [4])
-[5] (./sections/architecture.tex
-<img/components.png, id=259, 1427.3325pt x 815.045pt>
+] [5])
+[6] (./sections/architecture.tex
+<img/components.png, id=303, 1427.3325pt x 815.045pt>
 File: img/components.png Graphic file (type png)
 <use img/components.png>
 Package pdftex.def Info: img/components.png  used on input line 19.
 (pdftex.def)             Requested size: 398.3386pt x 227.45241pt.
- [6
+ [7
 
- <./img/components.png>]) [7
+ <./img/components.png>]
+<img/DB.png, id=312, 374.39874pt x 567.11874pt>
+File: img/DB.png Graphic file (type png)
+<use img/DB.png>
+Package pdftex.def Info: img/DB.png  used on input line 39.
+(pdftex.def)             Requested size: 398.3386pt x 603.41023pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[8
+
+] [9 <./img/DB.png>]
+<img/ER.png, id=323, 781.92125pt x 469.755pt>
+File: img/ER.png Graphic file (type png)
+<use img/ER.png>
+Package pdftex.def Info: img/ER.png  used on input line 50.
+(pdftex.def)             Requested size: 398.3386pt x 239.31384pt.
+) [10
+
+ <./img/ER.png>] (./sections/extservices.tex
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 5.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [11
+
+] [12
 
 ]
-(./sections/extservices.tex) [8
+Overfull \hbox (83.66006pt too wide) in paragraph at lines 70--71
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][]  
+ []
+
+[13
+
+] [14
+
+]) [15
 
 ] (./sections/usecases.tex
-<img/usecases/login.png, id=275, 1108.14pt x 724.7075pt>
+<img/usecases/login.png, id=431, 1108.14pt x 724.7075pt>
 File: img/usecases/login.png Graphic file (type png)
 <use img/usecases/login.png>
 Package pdftex.def Info: img/usecases/login.png  used on input line 8.
 (pdftex.def)             Requested size: 398.3386pt x 260.50746pt.
- [9
+ [16
 
- <./img/usecases/login.png>] [10
+ <./img/usecases/login.png>]
+[17
 
 ]
-<img/usecases/viewupnext.png, id=286, 1124.2pt x 463.7325pt>
+<img/usecases/viewupnext.png, id=442, 1124.2pt x 463.7325pt>
 File: img/usecases/viewupnext.png Graphic file (type png)
 <use img/usecases/viewupnext.png>
 Package pdftex.def Info: img/usecases/viewupnext.png  used on input line 45.
 (pdftex.def)             Requested size: 398.3386pt x 164.3113pt.
- [11
+ [18
 
  <./img/usecases/viewupnext.png>]
-<img/usecases/viewtoread.png, id=293, 1124.2pt x 624.3325pt>
+<img/usecases/viewtoread.png, id=449, 1124.2pt x 624.3325pt>
 File: img/usecases/viewtoread.png Graphic file (type png)
 <use img/usecases/viewtoread.png>
 Package pdftex.def Info: img/usecases/viewtoread.png  used on input line 78.
 (pdftex.def)             Requested size: 398.3386pt x 221.21565pt.
- [12
+ [19
 
  <./img/usecases/viewtoread.png>]
-<img/usecases/viewissue.png, id=301, 1124.2pt x 463.7325pt>
+<img/usecases/viewissue.png, id=457, 1124.2pt x 463.7325pt>
 File: img/usecases/viewissue.png Graphic file (type png)
 <use img/usecases/viewissue.png>
 Package pdftex.def Info: img/usecases/viewissue.png  used on input line 111.
 (pdftex.def)             Requested size: 398.3386pt x 164.3113pt.
- [13
+
+[20
 
  <./img/usecases/viewissue.png>]
-<img/usecases/viewseries.png, id=309, 1124.2pt x 463.7325pt>
+<img/usecases/viewseries.png, id=464, 1124.2pt x 463.7325pt>
 File: img/usecases/viewseries.png Graphic file (type png)
 <use img/usecases/viewseries.png>
 Package pdftex.def Info: img/usecases/viewseries.png  used on input line 144.
 (pdftex.def)             Requested size: 398.3386pt x 164.3113pt.
- [14
+ [21
 
  <./img/usecases/viewseries.png>]
-<img/usecases/viewissuesofseries.png, id=316, 1124.2pt x 463.7325pt>
+<img/usecases/viewissuesofseries.png, id=471, 1124.2pt x 463.7325pt>
 File: img/usecases/viewissuesofseries.png Graphic file (type png)
 <use img/usecases/viewissuesofseries.png>
 Package pdftex.def Info: img/usecases/viewissuesofseries.png  used on input lin
 e 177.
 (pdftex.def)             Requested size: 398.3386pt x 164.3113pt.
- [15
+
+[22
 
  <./img/usecases/viewissuesofseries.png>]
-<img/usecases/readissue.png, id=323, 1124.2pt x 664.4825pt>
+<img/usecases/readissue.png, id=478, 1124.2pt x 664.4825pt>
 File: img/usecases/readissue.png Graphic file (type png)
 <use img/usecases/readissue.png>
 Package pdftex.def Info: img/usecases/readissue.png  used on input line 211.
 (pdftex.def)             Requested size: 398.3386pt x 235.44174pt.
- [16
+ [23
 
  <./img/usecases/readissue.png>]
-<img/usecases/followseries.png, id=330, 1124.2pt x 865.2325pt>
+<img/usecases/followseries.png, id=485, 1124.2pt x 865.2325pt>
 File: img/usecases/followseries.png Graphic file (type png)
 <use img/usecases/followseries.png>
 Package pdftex.def Info: img/usecases/followseries.png  used on input line 244.
 
 (pdftex.def)             Requested size: 398.3386pt x 306.57217pt.
- [17
+ [24
 
  <./img/usecases/followseries.png>]
-<img/usecases/search.png, id=337, 1124.2pt x 624.3325pt>
+<img/usecases/search.png, id=492, 1124.2pt x 624.3325pt>
 File: img/usecases/search.png Graphic file (type png)
 <use img/usecases/search.png>
 Package pdftex.def Info: img/usecases/search.png  used on input line 278.
 (pdftex.def)             Requested size: 398.3386pt x 221.21565pt.
-) [18
+) [25
 
  <./img/usecases/search.png>]
 (./sections/sequence.tex
-<img/seqdiagrams/loginfacebook.png, id=344, 1377.145pt x 847.165pt>
+<img/seqdiagrams/loginfacebook.png, id=500, 1377.145pt x 847.165pt>
 File: img/seqdiagrams/loginfacebook.png Graphic file (type png)
 <use img/seqdiagrams/loginfacebook.png>
 Package pdftex.def Info: img/seqdiagrams/loginfacebook.png  used on input line 
 14.
 (pdftex.def)             Requested size: 275.42412pt x 169.43pt.
-<img/seqdiagrams/logingoogle.png, id=345, 1377.145pt x 847.165pt>
+<img/seqdiagrams/logingoogle.png, id=501, 1377.145pt x 847.165pt>
 File: img/seqdiagrams/logingoogle.png Graphic file (type png)
 <use img/seqdiagrams/logingoogle.png>
 Package pdftex.def Info: img/seqdiagrams/logingoogle.png  used on input line 19
 .
 (pdftex.def)             Requested size: 275.42412pt x 169.43pt.
- [19
+ [26
 
  <./img/seqdiagrams/loginfacebook.png> <./img/seqdiagrams/logingoogle.png>]
-<img/seqdiagrams/viewupnext.png, id=355, 1387.1825pt x 955.57pt>
+<img/seqdiagrams/viewupnext.png, id=510, 1387.1825pt x 955.57pt>
 File: img/seqdiagrams/viewupnext.png Graphic file (type png)
 <use img/seqdiagrams/viewupnext.png>
 Package pdftex.def Info: img/seqdiagrams/viewupnext.png  used on input line 33.
 
 (pdftex.def)             Requested size: 398.3386pt x 274.39618pt.
- [20
+ [27
 
  <./img/seqdiagrams/viewupnext.png>]
-<img/seqdiagrams/viewtoread.png, id=362, 1698.345pt x 847.165pt>
+<img/seqdiagrams/viewtoread.png, id=517, 1698.345pt x 847.165pt>
 File: img/seqdiagrams/viewtoread.png Graphic file (type png)
 <use img/seqdiagrams/viewtoread.png>
 Package pdftex.def Info: img/seqdiagrams/viewtoread.png  used on input line 49.
 
 (pdftex.def)             Requested size: 398.3386pt x 198.696pt.
- [21
+ [28
 
  <./img/seqdiagrams/viewtoread.png>]
-<img/seqdiagrams/viewissue.png, id=369, 1387.1825pt x 746.79pt>
+<img/seqdiagrams/viewissue.png, id=524, 1387.1825pt x 746.79pt>
 File: img/seqdiagrams/viewissue.png Graphic file (type png)
 <use img/seqdiagrams/viewissue.png>
 Package pdftex.def Info: img/seqdiagrams/viewissue.png  used on input line 63.
 (pdftex.def)             Requested size: 398.3386pt x 214.44406pt.
- [22
+ [29
 
  <./img/seqdiagrams/viewissue.png>]
-<img/seqdiagrams/viewseries.png, id=376, 1387.1825pt x 682.55pt>
+<img/seqdiagrams/viewseries.png, id=531, 1387.1825pt x 682.55pt>
 File: img/seqdiagrams/viewseries.png Graphic file (type png)
 <use img/seqdiagrams/viewseries.png>
 Package pdftex.def Info: img/seqdiagrams/viewseries.png  used on input line 77.
 
 (pdftex.def)             Requested size: 398.3386pt x 195.99727pt.
- [23
+ [30
 
  <./img/seqdiagrams/viewseries.png>]
-<img/seqdiagrams/viewissuesofseries.png, id=383, 1387.1825pt x 682.55pt>
+<img/seqdiagrams/viewissuesofseries.png, id=538, 1387.1825pt x 682.55pt>
 File: img/seqdiagrams/viewissuesofseries.png Graphic file (type png)
 <use img/seqdiagrams/viewissuesofseries.png>
 Package pdftex.def Info: img/seqdiagrams/viewissuesofseries.png  used on input 
 line 91.
 (pdftex.def)             Requested size: 398.3386pt x 195.99727pt.
- [24
+ [31
 
  <./img/seqdiagrams/viewissuesofseries.png>]
-<img/seqdiagrams/readissue.png, id=390, 1057.9525pt x 847.165pt>
+<img/seqdiagrams/readissue.png, id=546, 1057.9525pt x 847.165pt>
 File: img/seqdiagrams/readissue.png Graphic file (type png)
 <use img/seqdiagrams/readissue.png>
 Package pdftex.def Info: img/seqdiagrams/readissue.png  used on input line 105.
 
 (pdftex.def)             Requested size: 398.3386pt x 318.96584pt.
 
-[25
+[32
 
  <./img/seqdiagrams/readissue.png>]
-<img/seqdiagrams/followseries.png, id=398, 1055.945pt x 847.165pt>
+<img/seqdiagrams/followseries.png, id=554, 1055.945pt x 847.165pt>
 File: img/seqdiagrams/followseries.png Graphic file (type png)
 <use img/seqdiagrams/followseries.png>
 Package pdftex.def Info: img/seqdiagrams/followseries.png  used on input line 1
 19.
 (pdftex.def)             Requested size: 398.3386pt x 319.57338pt.
- [26
+ [33
 
  <./img/seqdiagrams/followseries.png>]
-<img/seqdiagrams/searchseries.png, id=405, 1387.1825pt x 746.79pt>
+<img/seqdiagrams/searchseries.png, id=561, 1387.1825pt x 746.79pt>
 File: img/seqdiagrams/searchseries.png Graphic file (type png)
 <use img/seqdiagrams/searchseries.png>
 Package pdftex.def Info: img/seqdiagrams/searchseries.png  used on input line 1
 33.
 (pdftex.def)             Requested size: 398.3386pt x 214.44406pt.
-) [27
+) [34
 
  <./img/seqdiagrams/searchseries.png>] (./sections/ui.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
 
-<img/mockups/login.png, id=412, 752.8125pt x 1630.09pt>
+<img/mockups/login.png, id=568, 752.8125pt x 1630.09pt>
 File: img/mockups/login.png Graphic file (type png)
 <use img/mockups/login.png>
 Package pdftex.def Info: img/mockups/login.png  used on input line 7.
 (pdftex.def)             Requested size: 159.333pt x 345.0153pt.
-<img/mockups/up_next.png, id=413, 752.8125pt x 1630.09pt>
+<img/mockups/up_next.png, id=569, 752.8125pt x 1630.09pt>
 File: img/mockups/up_next.png Graphic file (type png)
 <use img/mockups/up_next.png>
 Package pdftex.def Info: img/mockups/up_next.png  used on input line 13.
 (pdftex.def)             Requested size: 159.333pt x 345.0153pt.
-[28
+[35
 
  <./img/mockups/login.png> <./img/mockups/up_next.png>]
-<img/mockups/to_read.png, id=421, 752.8125pt x 1630.09pt>
+<img/mockups/to_read.png, id=577, 752.8125pt x 1630.09pt>
 File: img/mockups/to_read.png Graphic file (type png)
 <use img/mockups/to_read.png>
 Package pdftex.def Info: img/mockups/to_read.png  used on input line 23.
 (pdftex.def)             Requested size: 159.333pt x 345.0153pt.
-<img/mockups/search.png, id=422, 752.8125pt x 1630.09pt>
+<img/mockups/search.png, id=578, 752.8125pt x 1630.09pt>
 File: img/mockups/search.png Graphic file (type png)
 <use img/mockups/search.png>
 Package pdftex.def Info: img/mockups/search.png  used on input line 29.
 (pdftex.def)             Requested size: 159.333pt x 345.0153pt.
- [29 <./img/mockups/to_read.png> <./img/mockups/search.png>]
-<img/mockups/profile.png, id=430, 752.8125pt x 1630.09pt>
+ [36 <./img/mockups/to_read.png> <./img/mockups/search.png>]
+<img/mockups/profile.png, id=586, 752.8125pt x 1630.09pt>
 File: img/mockups/profile.png Graphic file (type png)
 <use img/mockups/profile.png>
 Package pdftex.def Info: img/mockups/profile.png  used on input line 39.
 (pdftex.def)             Requested size: 159.333pt x 345.0153pt.
-<img/mockups/your_series.png, id=431, 752.8125pt x 1630.09pt>
+<img/mockups/your_series.png, id=587, 752.8125pt x 1630.09pt>
 File: img/mockups/your_series.png Graphic file (type png)
 <use img/mockups/your_series.png>
 Package pdftex.def Info: img/mockups/your_series.png  used on input line 45.
 (pdftex.def)             Requested size: 159.333pt x 345.0153pt.
- [30 <./img/mockups/profile.png> <./img/mockups/your_series.png>]
-<img/mockups/issue.png, id=439, 752.8125pt x 1630.09pt>
+ [37 <./img/mockups/profile.png> <./img/mockups/your_series.png>]
+<img/mockups/issue.png, id=596, 752.8125pt x 1630.09pt>
 File: img/mockups/issue.png Graphic file (type png)
 <use img/mockups/issue.png>
 Package pdftex.def Info: img/mockups/issue.png  used on input line 55.
 (pdftex.def)             Requested size: 159.333pt x 345.0153pt.
-<img/mockups/series.png, id=440, 752.8125pt x 1630.09pt>
+<img/mockups/series.png, id=597, 752.8125pt x 1630.09pt>
 File: img/mockups/series.png Graphic file (type png)
 <use img/mockups/series.png>
 Package pdftex.def Info: img/mockups/series.png  used on input line 61.
 (pdftex.def)             Requested size: 159.333pt x 345.0153pt.
- [31 <./img/mockups/issue.png> <./img/mockups/series.png>]
+ [38 <./img/mockups/issue.png> <./img/mockups/series.png>]
 File: img/mockups/series.png Graphic file (type png)
 <use img/mockups/series.png>
 Package pdftex.def Info: img/mockups/series.png  used on input line 71.
 (pdftex.def)             Requested size: 159.333pt x 345.0153pt.
-<img/mockups/dark_mode.png, id=449, 752.8125pt x 1630.09pt>
+<img/mockups/dark_mode.png, id=605, 752.8125pt x 1630.09pt>
 File: img/mockups/dark_mode.png Graphic file (type png)
 <use img/mockups/dark_mode.png>
 Package pdftex.def Info: img/mockups/dark_mode.png  used on input line 77.
 (pdftex.def)             Requested size: 159.333pt x 345.0153pt.
- [32 <./img/mockups/dark_mode.png>]
-<img/ui_interaction.png, id=456, 7985.835pt x 7291.24pt>
+ [39 <./img/mockups/dark_mode.png>]
+<img/ui_interaction.png, id=612, 7985.835pt x 7291.24pt>
 File: img/ui_interaction.png Graphic file (type png)
 <use img/ui_interaction.png>
 Package pdftex.def Info: img/ui_interaction.png  used on input line 90.
 (pdftex.def)             Requested size: 398.3386pt x 363.58206pt.
-) [33
+) [40
 
 
 
 
 
  <./img/ui_interaction.png>]
-(./sections/attributes.tex) [34
+(./sections/attributes.tex) [41
 
-] (./sections/tests.tex) [35
-
-]
-(./sections/tools.tex) [36
+] (./sections/tests.tex) [42
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 112.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
+(./sections/tools.tex) [43
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 136.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 136.
  (./Design Document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 112.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 112.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 136.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 136.
 Package rerunfilecheck Info: File `"Design Document".out' has not changed.
-(rerunfilecheck)             Checksum: 6B0F11BF954E2E1C0B62C57A412620E4;2623.
+(rerunfilecheck)             Checksum: 2CCA3330A50ECB1999B3ACF9A09628D0;3152.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 112.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 136.
  )
 (\end occurred inside a group at level 10)
 
@@ -1263,25 +1332,27 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 112.
 ### simple group (level 4) entered at line 81 ({)
 ### simple group (level 3) entered at line 48 ({)
 ### simple group (level 2) entered at line 13 ({)
-### simple group (level 1) entered at line 75 ({)
+### simple group (level 1) entered at line 99 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 20316 strings out of 492616
- 380631 string characters out of 6129481
- 449921 words of memory out of 5000000
- 23672 multiletter control sequences out of 15000+600000
- 42950 words of font info for 58 fonts, out of 8000000 for 9000
+ 22186 strings out of 492616
+ 405403 string characters out of 6129481
+ 677286 words of memory out of 5000000
+ 25424 multiletter control sequences out of 15000+600000
+ 43269 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 59i,11n,65p,501b,864s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc
-}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-</usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/loca
-l/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/
-2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on "Design Document.pdf" (36 pages, 11258568 bytes).
+ 59i,11n,65p,756b,1168s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
+c}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2019/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2019
+/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf-dis
+t/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
+pe1/urw/times/utmr8a.pfb>
+Output written on "Design Document.pdf" (43 pages, 11361816 bytes).
 PDF statistics:
- 520 PDF objects out of 1000 (max. 8388607)
- 409 compressed objects within 5 object streams
- 116 named destinations out of 1000 (max. 500000)
- 509 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 700 PDF objects out of 1000 (max. 8388607)
+ 576 compressed objects within 6 object streams
+ 211 named destinations out of 1000 (max. 500000)
+ 583 words of extra memory for PDF output out of 10000 (max. 10000000)
 

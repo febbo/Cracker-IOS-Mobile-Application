@@ -32,3 +32,23 @@ The client uses the traditional MVC pattern:
 \end{itemize}
 
 \subsection{Database}
+Since the application receives all the necessary data from external services through the API, the only data that need to be saved are the informations about the user, the series that fol- lows and the comics read. Moreover, since there is no interaction between the different users, this data are saved on the Cloud Firestore on Firebase Platform to guarantee ACID properties. The database interacts only with the application layer. The security restriction will be implemented to guarantee the user privacy from unauthorized users. The communi- cation between the database and application tier has to be encrypted. The access to the data has to be guaranteed only to the authorized user for that data.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{img/DB}
+\caption{Database Cloud FIrestore}
+\end{figure}
+
+\clearpage
+
+The E / R model of the data collected through the API together with the user data saved on the firebase is as follows:
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{img/ER}
+\caption{E/R Diagram}
+\end{figure}
+
+

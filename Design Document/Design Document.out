@@ -16,27 +16,35 @@
 \BOOKMARK [2][-]{subsection.2.3}{Client}{section.2}% 16
 \BOOKMARK [2][-]{subsection.2.4}{Database}{section.2}% 17
 \BOOKMARK [1][-]{section.3}{External Services and Libraries}{}% 18
-\BOOKMARK [1][-]{section.4}{Use Cases}{}% 19
-\BOOKMARK [2][-]{subsection.4.1}{Login}{section.4}% 20
-\BOOKMARK [2][-]{subsection.4.2}{View Up Next}{section.4}% 21
-\BOOKMARK [2][-]{subsection.4.3}{View To Read}{section.4}% 22
-\BOOKMARK [2][-]{subsection.4.4}{View Issue}{section.4}% 23
-\BOOKMARK [2][-]{subsection.4.5}{View Series}{section.4}% 24
-\BOOKMARK [2][-]{subsection.4.6}{View Issues of Series}{section.4}% 25
-\BOOKMARK [2][-]{subsection.4.7}{Mark Issue as Read}{section.4}% 26
-\BOOKMARK [2][-]{subsection.4.8}{Follow a Series}{section.4}% 27
-\BOOKMARK [2][-]{subsection.4.9}{Search a Series}{section.4}% 28
-\BOOKMARK [1][-]{section.5}{Sequence Diagrams}{}% 29
-\BOOKMARK [2][-]{subsection.5.1}{Login}{section.5}% 30
-\BOOKMARK [2][-]{subsection.5.2}{View Up Next}{section.5}% 31
-\BOOKMARK [2][-]{subsection.5.3}{View To Read}{section.5}% 32
-\BOOKMARK [2][-]{subsection.5.4}{View Issue}{section.5}% 33
-\BOOKMARK [2][-]{subsection.5.5}{View Series}{section.5}% 34
-\BOOKMARK [2][-]{subsection.5.6}{View Issues of Series}{section.5}% 35
-\BOOKMARK [2][-]{subsection.5.7}{Mark Issue as Read}{section.5}% 36
-\BOOKMARK [2][-]{subsection.5.8}{Follow a Series}{section.5}% 37
-\BOOKMARK [2][-]{subsection.5.9}{Search a Series}{section.5}% 38
-\BOOKMARK [1][-]{section.6}{User Interface Design}{}% 39
-\BOOKMARK [1][-]{section.7}{Software System Attributes}{}% 40
-\BOOKMARK [1][-]{section.8}{Testing}{}% 41
-\BOOKMARK [1][-]{section.9}{Used Tools}{}% 42
+\BOOKMARK [2][-]{subsection.3.1}{Facebook SDK}{section.3}% 19
+\BOOKMARK [2][-]{subsection.3.2}{Google SDK}{section.3}% 20
+\BOOKMARK [2][-]{subsection.3.3}{Firebase SDK}{section.3}% 21
+\BOOKMARK [2][-]{subsection.3.4}{Alamofire}{section.3}% 22
+\BOOKMARK [2][-]{subsection.3.5}{Marvel Comics API}{section.3}% 23
+\BOOKMARK [3][-]{subsubsection.3.5.1}{Service Endpoint}{subsection.3.5}% 24
+\BOOKMARK [3][-]{subsubsection.3.5.2}{Resources}{subsection.3.5}% 25
+\BOOKMARK [3][-]{subsubsection.3.5.3}{Authentication}{subsection.3.5}% 26
+\BOOKMARK [1][-]{section.4}{Use Cases}{}% 27
+\BOOKMARK [2][-]{subsection.4.1}{Login}{section.4}% 28
+\BOOKMARK [2][-]{subsection.4.2}{View Up Next}{section.4}% 29
+\BOOKMARK [2][-]{subsection.4.3}{View To Read}{section.4}% 30
+\BOOKMARK [2][-]{subsection.4.4}{View Issue}{section.4}% 31
+\BOOKMARK [2][-]{subsection.4.5}{View Series}{section.4}% 32
+\BOOKMARK [2][-]{subsection.4.6}{View Issues of Series}{section.4}% 33
+\BOOKMARK [2][-]{subsection.4.7}{Mark Issue as Read}{section.4}% 34
+\BOOKMARK [2][-]{subsection.4.8}{Follow a Series}{section.4}% 35
+\BOOKMARK [2][-]{subsection.4.9}{Search a Series}{section.4}% 36
+\BOOKMARK [1][-]{section.5}{Sequence Diagrams}{}% 37
+\BOOKMARK [2][-]{subsection.5.1}{Login}{section.5}% 38
+\BOOKMARK [2][-]{subsection.5.2}{View Up Next}{section.5}% 39
+\BOOKMARK [2][-]{subsection.5.3}{View To Read}{section.5}% 40
+\BOOKMARK [2][-]{subsection.5.4}{View Issue}{section.5}% 41
+\BOOKMARK [2][-]{subsection.5.5}{View Series}{section.5}% 42
+\BOOKMARK [2][-]{subsection.5.6}{View Issues of Series}{section.5}% 43
+\BOOKMARK [2][-]{subsection.5.7}{Mark Issue as Read}{section.5}% 44
+\BOOKMARK [2][-]{subsection.5.8}{Follow a Series}{section.5}% 45
+\BOOKMARK [2][-]{subsection.5.9}{Search a Series}{section.5}% 46
+\BOOKMARK [1][-]{section.6}{User Interface Design}{}% 47
+\BOOKMARK [1][-]{section.7}{Software System Attributes}{}% 48
+\BOOKMARK [1][-]{section.8}{Testing}{}% 49
+\BOOKMARK [1][-]{section.9}{Used Tools}{}% 50

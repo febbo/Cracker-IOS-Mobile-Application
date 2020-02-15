@@ -1,42 +1,50 @@
-\contentsline {section}{\numberline {1}Introduction}{3}{section.1}% 
-\contentsline {subsection}{\numberline {1.1}Purpose}{3}{subsection.1.1}% 
-\contentsline {subsection}{\numberline {1.2}Definitions and acronyms}{3}{subsection.1.2}% 
-\contentsline {subsubsection}{\numberline {1.2.1}Definitions}{3}{subsubsection.1.2.1}% 
-\contentsline {subsubsection}{\numberline {1.2.2}Acronymns}{3}{subsubsection.1.2.2}% 
-\contentsline {subsection}{\numberline {1.3}Scope}{3}{subsection.1.3}% 
-\contentsline {subsection}{\numberline {1.4}Framework}{4}{subsection.1.4}% 
-\contentsline {subsection}{\numberline {1.5}Functional requirements}{4}{subsection.1.5}% 
-\contentsline {subsection}{\numberline {1.6}Non-functional requirements}{4}{subsection.1.6}% 
-\contentsline {subsection}{\numberline {1.7}Assumptions, dependencies, constraints}{4}{subsection.1.7}% 
-\contentsline {subsubsection}{\numberline {1.7.1}Assumptions and dependencies}{4}{subsubsection.1.7.1}% 
-\contentsline {subsubsection}{\numberline {1.7.2}Constraints}{5}{subsubsection.1.7.2}% 
-\contentsline {section}{\numberline {2}Architecture}{6}{section.2}% 
-\contentsline {subsection}{\numberline {2.1}Overview}{6}{subsection.2.1}% 
-\contentsline {subsection}{\numberline {2.2}High level components}{6}{subsection.2.2}% 
-\contentsline {subsection}{\numberline {2.3}Client}{7}{subsection.2.3}% 
-\contentsline {subsection}{\numberline {2.4}Database}{7}{subsection.2.4}% 
-\contentsline {section}{\numberline {3}External Services and Libraries}{8}{section.3}% 
-\contentsline {section}{\numberline {4}Use Cases}{9}{section.4}% 
-\contentsline {subsection}{\numberline {4.1}Login}{9}{subsection.4.1}% 
-\contentsline {subsection}{\numberline {4.2}View Up Next}{11}{subsection.4.2}% 
-\contentsline {subsection}{\numberline {4.3}View To Read}{12}{subsection.4.3}% 
-\contentsline {subsection}{\numberline {4.4}View Issue}{13}{subsection.4.4}% 
-\contentsline {subsection}{\numberline {4.5}View Series}{14}{subsection.4.5}% 
-\contentsline {subsection}{\numberline {4.6}View Issues of Series}{15}{subsection.4.6}% 
-\contentsline {subsection}{\numberline {4.7}Mark Issue as Read}{16}{subsection.4.7}% 
-\contentsline {subsection}{\numberline {4.8}Follow a Series}{17}{subsection.4.8}% 
-\contentsline {subsection}{\numberline {4.9}Search a Series}{18}{subsection.4.9}% 
-\contentsline {section}{\numberline {5}Sequence Diagrams}{19}{section.5}% 
-\contentsline {subsection}{\numberline {5.1}Login}{19}{subsection.5.1}% 
-\contentsline {subsection}{\numberline {5.2}View Up Next}{20}{subsection.5.2}% 
-\contentsline {subsection}{\numberline {5.3}View To Read}{21}{subsection.5.3}% 
-\contentsline {subsection}{\numberline {5.4}View Issue}{22}{subsection.5.4}% 
-\contentsline {subsection}{\numberline {5.5}View Series}{23}{subsection.5.5}% 
-\contentsline {subsection}{\numberline {5.6}View Issues of Series}{24}{subsection.5.6}% 
-\contentsline {subsection}{\numberline {5.7}Mark Issue as Read}{25}{subsection.5.7}% 
-\contentsline {subsection}{\numberline {5.8}Follow a Series}{26}{subsection.5.8}% 
-\contentsline {subsection}{\numberline {5.9}Search a Series}{27}{subsection.5.9}% 
-\contentsline {section}{\numberline {6}User Interface Design}{28}{section.6}% 
-\contentsline {section}{\numberline {7}Software System Attributes}{34}{section.7}% 
-\contentsline {section}{\numberline {8}Testing}{35}{section.8}% 
-\contentsline {section}{\numberline {9}Used Tools}{36}{section.9}% 
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}Purpose}{4}{subsection.1.1}% 
+\contentsline {subsection}{\numberline {1.2}Definitions and acronyms}{4}{subsection.1.2}% 
+\contentsline {subsubsection}{\numberline {1.2.1}Definitions}{4}{subsubsection.1.2.1}% 
+\contentsline {subsubsection}{\numberline {1.2.2}Acronymns}{4}{subsubsection.1.2.2}% 
+\contentsline {subsection}{\numberline {1.3}Scope}{4}{subsection.1.3}% 
+\contentsline {subsection}{\numberline {1.4}Framework}{5}{subsection.1.4}% 
+\contentsline {subsection}{\numberline {1.5}Functional requirements}{5}{subsection.1.5}% 
+\contentsline {subsection}{\numberline {1.6}Non-functional requirements}{5}{subsection.1.6}% 
+\contentsline {subsection}{\numberline {1.7}Assumptions, dependencies, constraints}{5}{subsection.1.7}% 
+\contentsline {subsubsection}{\numberline {1.7.1}Assumptions and dependencies}{5}{subsubsection.1.7.1}% 
+\contentsline {subsubsection}{\numberline {1.7.2}Constraints}{6}{subsubsection.1.7.2}% 
+\contentsline {section}{\numberline {2}Architecture}{7}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Overview}{7}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}High level components}{7}{subsection.2.2}% 
+\contentsline {subsection}{\numberline {2.3}Client}{8}{subsection.2.3}% 
+\contentsline {subsection}{\numberline {2.4}Database}{8}{subsection.2.4}% 
+\contentsline {section}{\numberline {3}External Services and Libraries}{11}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Facebook SDK}{11}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Google SDK}{12}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}Firebase SDK}{13}{subsection.3.3}% 
+\contentsline {subsection}{\numberline {3.4}Alamofire}{14}{subsection.3.4}% 
+\contentsline {subsection}{\numberline {3.5}Marvel Comics API}{15}{subsection.3.5}% 
+\contentsline {subsubsection}{\numberline {3.5.1}Service Endpoint}{15}{subsubsection.3.5.1}% 
+\contentsline {subsubsection}{\numberline {3.5.2}Resources}{15}{subsubsection.3.5.2}% 
+\contentsline {subsubsection}{\numberline {3.5.3}Authentication}{15}{subsubsection.3.5.3}% 
+\contentsline {section}{\numberline {4}Use Cases}{16}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Login}{16}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}View Up Next}{18}{subsection.4.2}% 
+\contentsline {subsection}{\numberline {4.3}View To Read}{19}{subsection.4.3}% 
+\contentsline {subsection}{\numberline {4.4}View Issue}{20}{subsection.4.4}% 
+\contentsline {subsection}{\numberline {4.5}View Series}{21}{subsection.4.5}% 
+\contentsline {subsection}{\numberline {4.6}View Issues of Series}{22}{subsection.4.6}% 
+\contentsline {subsection}{\numberline {4.7}Mark Issue as Read}{23}{subsection.4.7}% 
+\contentsline {subsection}{\numberline {4.8}Follow a Series}{24}{subsection.4.8}% 
+\contentsline {subsection}{\numberline {4.9}Search a Series}{25}{subsection.4.9}% 
+\contentsline {section}{\numberline {5}Sequence Diagrams}{26}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}Login}{26}{subsection.5.1}% 
+\contentsline {subsection}{\numberline {5.2}View Up Next}{27}{subsection.5.2}% 
+\contentsline {subsection}{\numberline {5.3}View To Read}{28}{subsection.5.3}% 
+\contentsline {subsection}{\numberline {5.4}View Issue}{29}{subsection.5.4}% 
+\contentsline {subsection}{\numberline {5.5}View Series}{30}{subsection.5.5}% 
+\contentsline {subsection}{\numberline {5.6}View Issues of Series}{31}{subsection.5.6}% 
+\contentsline {subsection}{\numberline {5.7}Mark Issue as Read}{32}{subsection.5.7}% 
+\contentsline {subsection}{\numberline {5.8}Follow a Series}{33}{subsection.5.8}% 
+\contentsline {subsection}{\numberline {5.9}Search a Series}{34}{subsection.5.9}% 
+\contentsline {section}{\numberline {6}User Interface Design}{35}{section.6}% 
+\contentsline {section}{\numberline {7}Software System Attributes}{41}{section.7}% 
+\contentsline {section}{\numberline {8}Testing}{42}{section.8}% 
+\contentsline {section}{\numberline {9}Used Tools}{43}{section.9}% 
