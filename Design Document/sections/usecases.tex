@@ -121,7 +121,7 @@ This section describes how actors can interact with Cracker in order to use all 
  \hline
  {\centering{\textbf{Entry Condition}}} & The user logged in correctly \\
  \hline
- {\centering{\textbf{Goal}}} & 9 \\
+ {\centering{\textbf{Goal}}} & 2 \\
  \hline
  {\centering{\textbf{Event flow}}} & \begin{itemize}[leftmargin=*]
  	\item The user opens the application and navigates through some screens
@@ -154,7 +154,7 @@ This section describes how actors can interact with Cracker in order to use all 
  \hline
  {\centering{\textbf{Entry Condition}}} & The user logged in correctly \\
  \hline
- {\centering{\textbf{Goal}}} & 9 \\
+ {\centering{\textbf{Goal}}} & 3 \\
  \hline
  {\centering{\textbf{Event flow}}} & \begin{itemize}[leftmargin=*]
  	\item The user opens the application and navigates through some screens
@@ -165,6 +165,40 @@ This section describes how actors can interact with Cracker in order to use all 
  {\centering{\textbf{Exit condition}}} & The user reads the information about the series \\
  \hline
  {\centering{\textbf{Exceptions}}} & The user is not connected to the network so he cannot send a request to get the information about the series \\
+ \hline
+\end{tabular}
+\end{center}}
+
+\clearpage
+
+\subsection{View Issues of Series}
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{img/usecases/viewissuesofseries}
+\end{figure}
+
+{\renewcommand{\arraystretch}{2}
+{\begin{center}
+\begin{tabular}{ | m{4cm} | m{9cm} | } 
+ \hline
+ {\centering{\textbf{Name}}} & View Issues of Series \\
+ \hline
+ {\centering{\textbf{Actor}}} & Logged User \\
+ \hline
+ {\centering{\textbf{Entry Condition}}} & The user logged in correctly \\
+ \hline
+ {\centering{\textbf{Goal}}} & 3 \\
+ \hline
+ {\centering{\textbf{Event flow}}} & \begin{itemize}[leftmargin=*]
+ 	\item The user opens the application and navigates through some screens
+	\item The user reaches a screen displaying the information about a series
+	\item The user presses on the "See all issues" button 
+	\item The app shows all the issues belonging to that series grouped in sections of 10
+	\end{itemize} \\	
+ \hline
+ {\centering{\textbf{Exit condition}}} & The user sees all the issues belonging to a series \\
+ \hline
+ {\centering{\textbf{Exceptions}}} & The user is not connected to the network so he cannot send a request to get the issues belonging to a series \\
  \hline
 \end{tabular}
 \end{center}}
@@ -187,7 +221,7 @@ This section describes how actors can interact with Cracker in order to use all 
  \hline
  {\centering{\textbf{Entry Condition}}} & The user logged in correctly \\
  \hline
- {\centering{\textbf{Goal}}} & 9 \\
+ {\centering{\textbf{Goal}}} & 5 \\
  \hline
  {\centering{\textbf{Event flow}}} & \begin{itemize}[leftmargin=*]
  	\item The user opens the application and navigates through some screens, reaching one with information about an issue
@@ -220,7 +254,7 @@ This section describes how actors can interact with Cracker in order to use all 
  \hline
  {\centering{\textbf{Entry Condition}}} & The user logged in correctly \\
  \hline
- {\centering{\textbf{Goal}}} & 9 \\
+ {\centering{\textbf{Goal}}} & 4 \\
  \hline
  {\centering{\textbf{Event flow}}} & \begin{itemize}[leftmargin=*]
  	\item The user opens the application and navigates through some screens, reaching one with information about a series
@@ -254,7 +288,7 @@ This section describes how actors can interact with Cracker in order to use all 
  \hline
  {\centering{\textbf{Entry Condition}}} & The user logged in correctly \\
  \hline
- {\centering{\textbf{Goal}}} & 9 \\
+ {\centering{\textbf{Goal}}} & 10 \\
  \hline
  {\centering{\textbf{Event flow}}} & \begin{itemize}[leftmargin=*]
  	\item The user opens the application
