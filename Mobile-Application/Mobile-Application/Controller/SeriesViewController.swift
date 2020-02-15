@@ -12,7 +12,7 @@ import Alamofire
 import SwiftyJSON
 import Firebase
 
-class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SeriesViewController: UIViewController {
     
     //MARK: - OUTLETS
     @IBOutlet weak var titleSerie: UILabel!
@@ -23,7 +23,6 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 	
 	@IBOutlet weak var followButton: UIButton!
 	@IBOutlet weak var readButton: UIButton!
-	@IBOutlet weak var issuesTable: UITableView!
     @IBOutlet weak var seeIssuesButton: UIButton!
     
     //MARK: - Constants & Variables
@@ -45,18 +44,18 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var toRead : Int = 0
     
-//    let cellID = "IssuesInSeriesCell"
+    let cellID = "IssuesInSeriesCell"
 	
-//	var numberOfIssues = 0
+	var numberOfIssues = 0
     
-//    var issues = [
-//        ExpandableSection(isExpanded: false, issues: [])
-//    ]
-//    var issues : [ExpandableSection] = []
-//
-//    let sectionsTitle : Any = []
-//
-//    var issuesOfSerie : [Int] = []
+    var issues = [
+        ExpandableSection(isExpanded: false, issues: [])
+    ]
+
+
+    let sectionsTitle : Any = []
+
+    var issuesOfSerie : [Int] = []
     
     var imageSerieURL : URL?
     
@@ -307,7 +306,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
                 let item = ExpandableSection(isExpanded: false, issues: titles)
                 issues.append(item)
-                self.issuesTable.insertSections(IndexSet(integer: issues.count - 1), with: .automatic)
+
 
                 
                 availables -= 10
@@ -315,7 +314,6 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
         //issuesTable.endUpdates()
-        self.issuesTable.reloadData()
         group.leave()
         
 
@@ -505,7 +503,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 			readButton.backgroundColor = UIColor(named: "DarkGreen")
 			readButton.setTitle(NSLocalizedString("MARK ALL AS UNREAD", comment: ""), for: .normal)
             self.toRead = numberOfIssues + 1
-            self.issuesTable.reloadData()
+
 		}
 		else {
             User.collection("Series").document("\(serieID)").updateData([
@@ -520,15 +518,24 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 			readButton.backgroundColor = UIColor(named: "Red")
 			readButton.setTitle(NSLocalizedString("MARK ALL AS READ", comment: ""), for: .normal)
             self.toRead = 0
-            self.issuesTable.reloadData()
+
             
 		}
 	}
     
     @objc func seeAllIssues(button: UIButton) {
         performSegue(withIdentifier: "SeeIssuesFromSeries", sender: self)
+        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? AllIssuesTableViewController{
 
+            destination.serieID = self.serieID
+            destination.titleSerie = titleSerie.text!
+            destination.imageSerieURL = imageSerieURL!.absoluteString
+        }
+    }
 	//LEO
 //	
 //	@objc func handleExpandClose(button: UIButton) {
@@ -608,9 +615,4 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 }
 
 
-class IssuesInSeriesTableViewCell : UITableViewCell {
-	
-	@IBOutlet weak var label: UILabel!
-	@IBOutlet weak var readButton: UIButton!	
-	
-}
+
