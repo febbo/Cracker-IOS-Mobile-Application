@@ -169,3 +169,6 @@
 
 /* Class = "UINavigationItem"; title = "Profile"; ObjectID = "zjK-Gu-bbg"; */
 "zjK-Gu-bbg.title" = "Profilo";
+
+/* Class = "UILabel"; title = "See all the issues of this series"; ObjectID = "fBn-6v-CeW"; */
+"fBn-6v-CeW.title" = "Vedi tutti i numeri di questa serie";

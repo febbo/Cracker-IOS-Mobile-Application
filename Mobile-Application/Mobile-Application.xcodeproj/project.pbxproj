@@ -34,6 +34,7 @@
 		C40915BE22FC74D000FE0A1A /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C40915BC22FC74D000FE0A1A /* HeaderView.xib */; };
 		C413CE8D2382FA1E00D2AFA4 /* UserSeriesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C413CE8C2382FA1E00D2AFA4 /* UserSeriesCollectionViewController.swift */; };
 		C413CE8F2382FFBB00D2AFA4 /* UserSeriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C413CE8E2382FFBB00D2AFA4 /* UserSeriesCollectionViewCell.swift */; };
+		C41728E023F7E6AD00CB2A5D /* AllIssuesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41728DF23F7E6AD00CB2A5D /* AllIssuesTableViewController.swift */; };
 		C41EBAE52345F2B6006D3F46 /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41EBAE42345F2B6006D3F46 /* SeriesViewController.swift */; };
 		C42A6E8123F06E46003A2D4F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C42A6E8323F06E46003A2D4F /* Localizable.strings */; };
 		C46ECA8A2397D43D00AF7FA0 /* ToReadCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46ECA892397D43D00AF7FA0 /* ToReadCollectionViewController.swift */; };
@@ -103,6 +104,7 @@
 		C40915BC22FC74D000FE0A1A /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		C413CE8C2382FA1E00D2AFA4 /* UserSeriesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSeriesCollectionViewController.swift; sourceTree = "<group>"; };
 		C413CE8E2382FFBB00D2AFA4 /* UserSeriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSeriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		C41728DF23F7E6AD00CB2A5D /* AllIssuesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllIssuesTableViewController.swift; sourceTree = "<group>"; };
 		C41EBAE42345F2B6006D3F46 /* SeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewController.swift; sourceTree = "<group>"; };
 		C42A6E7D23F066DF003A2D4F /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C42A6E7E23F066E0003A2D4F /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				46A2D02F23F438E2007EBB74 /* SearchTableViewCell.swift */,
 				46A2D03123F43C64007EBB74 /* APIRequestFetcher.swift */,
 				46D347FA23F55AC500FCB42B /* BlurLoader.swift */,
+				C41728DF23F7E6AD00CB2A5D /* AllIssuesTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				C4FAA84A228EBD810024B5E7 /* UpNextTableViewController.swift in Sources */,
 				4649833F2350D99900ED5842 /* LogInViewController.swift in Sources */,
 				C48E83CF2350CD550017BAA6 /* ProfileViewController.swift in Sources */,
+				C41728E023F7E6AD00CB2A5D /* AllIssuesTableViewController.swift in Sources */,
 				C40915B822FC6B1900FE0A1A /* ExpandableCellItem.swift in Sources */,
 				C413CE8F2382FFBB00D2AFA4 /* UserSeriesCollectionViewCell.swift in Sources */,
 				C40915B622FC4D5C00FE0A1A /* IssueView.swift in Sources */,
