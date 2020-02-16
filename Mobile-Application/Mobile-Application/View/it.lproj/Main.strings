@@ -72,7 +72,7 @@
 "OQF-Q1-NMs.text" = "Valore della tua collezione:";
 
 /* Class = "UILabel"; text = "Series added:"; ObjectID = "PsF-Jq-GAM"; */
-"PsF-Jq-GAM.text" = "Series aggiunte:";
+"PsF-Jq-GAM.text" = "Serie aggiunte:";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "Qv3-We-IWf"; */
 "Qv3-We-IWf.placeholder" = "Password";
