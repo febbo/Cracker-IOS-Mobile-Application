@@ -95,21 +95,41 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
                 print("Error getting documents: \(err)")
             } else {
                 let documents = querySnapshot!.documents
-                for i in 0...5 {
-                    //print("\(document.documentID) => \(document.data())")
-                    let data = documents[i].data()
-                    let id = data["id"] as! String
-                    let image = data["image"] as! String
-                    let issueRead = (data["issueToRead"] as! Int) - 1
-                    self.seriesIDs.append(id)
-                    self.seriesIMGs.append(image)
-                    self.totalIssues += issueRead
-                    
-                    
-                    let url = URL(string: image)
-                    self.dataImage.append( try! Data(contentsOf: url!))
-                    
+                var limit = documents.count
+                if limit > 6{
+                    for i in 0...5 {
+                        //print("\(document.documentID) => \(document.data())")
+                        let data = documents[i].data()
+                        let id = data["id"] as! String
+                        let image = data["image"] as! String
+                        let issueRead = (data["issueToRead"] as! Int) - 1
+                        self.seriesIDs.append(id)
+                        self.seriesIMGs.append(image)
+                        self.totalIssues += issueRead
+                        
+                        
+                        let url = URL(string: image)
+                        self.dataImage.append( try! Data(contentsOf: url!))
+                        
+                    }
+                }else{
+                    for document in querySnapshot!.documents {
+                        //print("\(document.documentID) => \(document.data())")
+                        let data = document.data()
+                        let id = data["id"] as! String
+                        let image = data["image"] as! String
+                        let issueRead = (data["issueToRead"] as! Int) - 1
+                        self.seriesIDs.append(id)
+                        self.seriesIMGs.append(image)
+                        self.totalIssues += issueRead
+                        
+                        
+                        let url = URL(string: image)
+                        self.dataImage.append( try! Data(contentsOf: url!))
+                        
+                    }
                 }
+                
                 overlay.removeFromSuperview()
                 print(self.totalIssues)
                 self.issuesRead.text! += " \(self.totalIssues)"
@@ -125,7 +145,7 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if seriesIDs.count > 5{
             return 5
-        } else {
+        } else{
             return seriesIDs.count
         }
     }
