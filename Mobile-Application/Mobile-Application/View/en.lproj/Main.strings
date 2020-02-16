@@ -1,6 +1,6 @@
 
 /* Class = "UIButton"; normalTitle = "Sign Up with Email"; ObjectID = "2bc-rs-isH"; */
-"2bc-rs-isH.normalTitle" = "Sign Up with Email";
+"2bc-rs-isH.normalTitle" = "Sign up with e-mail";
 
 /* Class = "UILabel"; text = "Login with Google"; ObjectID = "36d-vY-vsK"; */
 "36d-vY-vsK.text" = "Login with Google";
@@ -21,13 +21,13 @@
 "93R-yd-5aa.normalTitle" = "Login with Facebook";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "9li-OA-ybE"; */
-"9li-OA-ybE.placeholder" = "Email";
+"9li-OA-ybE.placeholder" = "E-mail";
 
 /* Class = "UIButton"; normalTitle = "MARK AS READ"; ObjectID = "Abe-eJ-bmN"; */
 "Abe-eJ-bmN.normalTitle" = "MARK AS READ";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "BbC-9m-ORo"; */
-"BbC-9m-ORo.placeholder" = "Email";
+"BbC-9m-ORo.placeholder" = "E-mail";
 
 /* Class = "UITabBarItem"; title = "Search"; ObjectID = "ErV-mU-63f"; */
 "ErV-mU-63f.title" = "Search";

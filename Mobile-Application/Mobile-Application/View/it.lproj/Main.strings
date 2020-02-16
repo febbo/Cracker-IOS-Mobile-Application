@@ -15,13 +15,13 @@
 "842-ym-pnH.normalTitle" = "SEGNA TUTTI COME LETTI";
 
 /* Class = "UIButton"; normalTitle = "Sign up with e-mail"; ObjectID = "8NJ-zw-J2R"; */
-"8NJ-zw-J2R.normalTitle" = "Registrazione con e-mail";
+"8NJ-zw-J2R.normalTitle" = "Registrati";
 
 /* Class = "UIButton"; normalTitle = "Login with Facebook"; ObjectID = "93R-yd-5aa"; */
 "93R-yd-5aa.normalTitle" = "Login con Facebook";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "9li-OA-ybE"; */
-"9li-OA-ybE.placeholder" = "Email";
+"9li-OA-ybE.placeholder" = "E-mail";
 
 /* Class = "UIButton"; normalTitle = "MARK AS READ"; ObjectID = "Abe-eJ-bmN"; */
 "Abe-eJ-bmN.normalTitle" = "SEGNA COME LETTO";
@@ -48,7 +48,7 @@
 "ISW-v9-k03.text" = "Descrizione";
 
 /* Class = "UIButton"; normalTitle = "Sign In"; ObjectID = "Iq8-6m-Ieb"; */
-"Iq8-6m-Ieb.normalTitle" = "Sign in";
+"Iq8-6m-Ieb.normalTitle" = "Login";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "IyE-Oi-T7i"; */
 "IyE-Oi-T7i.text" = "Titolo";
