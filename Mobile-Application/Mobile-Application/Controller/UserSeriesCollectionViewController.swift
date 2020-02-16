@@ -32,7 +32,7 @@ class UserSeriesCollectionViewController: UICollectionViewController, UICollecti
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
 
-        getSeries()
+//        getSeries()
 
 		
 		let collectionViewSize = collectionView.frame.size.width - 60
@@ -44,6 +44,18 @@ class UserSeriesCollectionViewController: UICollectionViewController, UICollecti
 			cellSize = CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
             imageSize = CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
 		}
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        seriesIMGs = []
+        seriesIDs = []
+        dataImage = []
+        self.collectionView.reloadData()
+        
+        
+        
+        getSeries()
     }
     
     

@@ -82,8 +82,39 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
         }
         
         
+//        getSeries()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        seriesIDs = []
+        seriesIMGs = []
+        totalIssues = 0
+        
+        self.issuesRead.text = "Issues read:"
+        self.seriesAdded.text = "Series added:"
         getSeries()
-
+        updateStats()
+    }
+    
+    func updateStats(){
+        User.collection("Series").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                var issues : Int = 0
+                var series : Int = 0
+                for document in querySnapshot!.documents {
+                    //print("\(document.documentID) => \(document.data())")
+                    let data = document.data()
+                    let issueRead = (data["issueToRead"] as! Int) - 1
+                    series += 1
+                    issues += issueRead
+                }
+                self.issuesRead.text! += " \(issues)"
+                self.seriesAdded.text! += " \(series)"
+            }
+        }
     }
     
     func getSeries(){
@@ -102,10 +133,8 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
                         let data = documents[i].data()
                         let id = data["id"] as! String
                         let image = data["image"] as! String
-                        let issueRead = (data["issueToRead"] as! Int) - 1
                         self.seriesIDs.append(id)
                         self.seriesIMGs.append(image)
-                        self.totalIssues += issueRead
                         
                         
                         let url = URL(string: image)
@@ -118,10 +147,8 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
                         let data = document.data()
                         let id = data["id"] as! String
                         let image = data["image"] as! String
-                        let issueRead = (data["issueToRead"] as! Int) - 1
                         self.seriesIDs.append(id)
                         self.seriesIMGs.append(image)
-                        self.totalIssues += issueRead
                         
                         
                         let url = URL(string: image)
@@ -131,9 +158,6 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
                 }
                 
                 overlay.removeFromSuperview()
-                print(self.totalIssues)
-                self.issuesRead.text! += " \(self.totalIssues)"
-                self.seriesAdded.text! += " \(self.seriesIDs.count)"
                 self.reload = true
                 self.seriesCollection.reloadData()
             }
