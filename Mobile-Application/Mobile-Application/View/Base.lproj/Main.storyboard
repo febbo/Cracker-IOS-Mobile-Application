@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VaH-yB-xYv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VaH-yB-xYv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -1248,8 +1248,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wHA-gL-OqW" userLabel="SeeIssuesView">
                                                 <rect key="frame" x="20" y="501.5" width="374" height="50"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See all the issues of this series" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBn-6v-CeW" userLabel="IssuesText">
-                                                        <rect key="frame" x="15" y="14" width="247.5" height="22"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See all issues of this series" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdY-dk-WCi">
+                                                        <rect key="frame" x="15" y="14" width="294" height="22"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1283,13 +1283,13 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="uUM-ST-NSW" secondAttribute="trailing" id="06q-C3-osI"/>
-                                                    <constraint firstItem="fBn-6v-CeW" firstAttribute="top" secondItem="wHA-gL-OqW" secondAttribute="top" constant="14" id="0EI-xl-vMq"/>
-                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fBn-6v-CeW" secondAttribute="trailing" constant="20" symbolic="YES" id="1ib-t6-qHh"/>
-                                                    <constraint firstAttribute="bottom" secondItem="fBn-6v-CeW" secondAttribute="bottom" constant="14" id="7Ji-fx-deF"/>
                                                     <constraint firstAttribute="bottom" secondItem="uUM-ST-NSW" secondAttribute="bottom" id="7h7-OX-W7g"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ZdY-dk-WCi" secondAttribute="bottom" constant="14" id="8mk-y8-kr6"/>
                                                     <constraint firstItem="uUM-ST-NSW" firstAttribute="top" secondItem="wHA-gL-OqW" secondAttribute="top" id="LJe-pe-4YO"/>
+                                                    <constraint firstItem="ZdY-dk-WCi" firstAttribute="leading" secondItem="wHA-gL-OqW" secondAttribute="leading" constant="15" id="MDO-dk-cEI"/>
                                                     <constraint firstAttribute="height" constant="50" id="Qe2-uk-CyX"/>
-                                                    <constraint firstItem="fBn-6v-CeW" firstAttribute="leading" secondItem="wHA-gL-OqW" secondAttribute="leading" constant="15" id="YIg-NN-GTK"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ZdY-dk-WCi" secondAttribute="trailing" constant="65" id="gaQ-Kn-INL"/>
+                                                    <constraint firstItem="ZdY-dk-WCi" firstAttribute="top" secondItem="wHA-gL-OqW" secondAttribute="top" constant="14" id="m6a-sL-1L6"/>
                                                     <constraint firstItem="qtC-3F-VgU" firstAttribute="top" secondItem="wHA-gL-OqW" secondAttribute="top" id="nMI-7p-bn9"/>
                                                     <constraint firstAttribute="bottom" secondItem="qtC-3F-VgU" secondAttribute="bottom" id="q8a-Fp-xzF"/>
                                                     <constraint firstAttribute="trailing" secondItem="qtC-3F-VgU" secondAttribute="trailing" constant="25" id="ugl-yh-iRd"/>
@@ -1371,20 +1371,20 @@
                         <color key="sectionIndexBackgroundColor" name="Background"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="IssuesInSeriesCell" id="Y9y-1g-Wsd" customClass="IssuesInSeriesTableViewCell" customModule="Mobile_Application" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y9y-1g-Wsd" id="DPX-Vv-v50">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sj-0T-iWI">
-                                            <rect key="frame" x="20" y="11" width="334" height="21.5"/>
+                                            <rect key="frame" x="20" y="11" width="334" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAm-Vc-TWe">
-                                            <rect key="frame" x="369" y="9" width="25" height="25.5"/>
+                                            <rect key="frame" x="369" y="9" width="25" height="25"/>
                                             <color key="tintColor" name="DarkGreen"/>
                                             <state key="normal" image="circle" catalog="system">
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="medium"/>
@@ -1700,7 +1700,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ilt-0R-QWw"/>
-        <segue reference="gGZ-iQ-hFh"/>
+        <segue reference="Syi-pv-OwE"/>
         <segue reference="Ado-8h-iCd"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
