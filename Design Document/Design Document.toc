@@ -49,5 +49,4 @@
 \contentsline {subsection}{\numberline {7.1}Reliability}{40}{subsection.7.1}% 
 \contentsline {subsection}{\numberline {7.2}Availability}{40}{subsection.7.2}% 
 \contentsline {subsection}{\numberline {7.3}Security}{40}{subsection.7.3}% 
-\contentsline {section}{\numberline {8}Testing}{41}{section.8}% 
-\contentsline {section}{\numberline {9}Used Tools}{42}{section.9}% 
+\contentsline {section}{\numberline {8}Used Tools}{41}{section.8}% 
