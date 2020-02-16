@@ -91,8 +91,7 @@ class SignUpViewController: UIViewController {
             } else if error?._code == AuthErrorCode.userNotFound.rawValue {
                 self.createUser(email: email, password: password)
             } else{
-                print(error)
-                print(error?.localizedDescription)
+                print(error!)
             }
             
             self.createUserDatabase(userId: (user?.user.uid)!)

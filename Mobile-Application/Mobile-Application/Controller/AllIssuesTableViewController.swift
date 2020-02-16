@@ -119,7 +119,6 @@ class AllIssuesTableViewController: UITableViewController {
             titles.append(comicTitle)
         }else{
             var t = 0
-            var first_elem = true
             while availables > 0 {
                 var titles : [String] = []
                 for _ in 0...9 {
@@ -242,8 +241,6 @@ class AllIssuesTableViewController: UITableViewController {
         else {
             issuesTable.insertRows(at: indexPaths, with: .fade)
         }
-        
-        print(issuesTable.indexPathsForVisibleRows)
     }
     
     @objc func switchReadStatus(button: UIButton) {

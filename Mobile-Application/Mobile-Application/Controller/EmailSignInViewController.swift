@@ -68,12 +68,9 @@ class EmailSignInViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: NSLocalizedString("Dismiss", comment: ""), style: .default, handler: nil))
                 self.present(alert, animated: true)
             } else{
-                print(error)
-                print(error?.localizedDescription)
+                print(error!)
             }
-              
-              
-              //Handle Error sulla documentazione e mostrare all'utente i vari errori quando capitano
+
           }
       }
     

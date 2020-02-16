@@ -298,7 +298,6 @@ class SeriesViewController: UIViewController {
             titles.append(comicTitle)
         }else{
             var t = 0
-            var first_elem = true
             while availables > 0 {
                 var titles : [String] = []
                 for _ in 0...9 {
@@ -462,7 +461,7 @@ class SeriesViewController: UIViewController {
         
             User.collection("Series").document("\(serieID)").setData([
                 "id": serieID,
-                "name": titleSerie.text,
+                "name": titleSerie.text!,
                 "image": imageSerieURL?.absoluteString,
                 "issueToRead" : 0
             ]) { err in

@@ -30,10 +30,10 @@ class APIRequestFetcher {
         let params : [String : String] = [ "apikey" : APP_ID, "ts": TS, "hash" : HASH, "contains": "comic", "orderBy" : "title", "limit" : "50", "titleStartsWith" : "\(searchText)"]
         
         Alamofire.request(urlToSearch, method: .get, parameters: params).responseJSON { response in
-            guard let data = response.data else {
-                completionHandler(nil, .failure)
-                return
-            }
+//            guard let data = response.data else {
+//                completionHandler(nil, .failure)
+//                return
+//            }
             
             
             if response.result.isSuccess {
@@ -47,7 +47,7 @@ class APIRequestFetcher {
             }
             else {
                 print("Error \(String(describing: response.result.error))")
-//                self.cityLabel.text = "Connection Issues"
+                completionHandler(nil, .failure)
             }
             
             
