@@ -61,11 +61,26 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
 		
 		seriesButton.addTarget(self, action: #selector(showUserSeries), for: UIControl.Event.touchUpInside)
         
-        guard let name = Auth.auth().currentUser?.displayName  else {return}
+        
+        var name = Auth.auth().currentUser?.displayName
+        if name == nil {
+            User.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let data = document.data()
+                    name = data!["nickname"] as? String
+                    self.nicknameOu.text = name
+                } else {
+                    print("nickname problem")
+                }
+            }
+        }
         nicknameOu.text = name
         
-        guard let imageURL = Auth.auth().currentUser?.photoURL else {return}
-        imageOU.load(url: imageURL)
+        if name != nil {
+            let imageURL = Auth.auth().currentUser?.photoURL
+            imageOU.load(url: imageURL!)
+        }
+        
         
         getSeries()
 
@@ -79,9 +94,10 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
-                for document in querySnapshot!.documents {
+                let documents = querySnapshot!.documents
+                for i in 0...5 {
                     //print("\(document.documentID) => \(document.data())")
-                    let data = document.data()
+                    let data = documents[i].data()
                     let id = data["id"] as! String
                     let image = data["image"] as! String
                     let issueRead = (data["issueToRead"] as! Int) - 1
@@ -110,7 +126,7 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
         if seriesIDs.count > 5{
             return 5
         } else {
-            return 0
+            return seriesIDs.count
         }
     }
     
