@@ -59,10 +59,6 @@ class IssueViewController: UIViewController {
         scrollHeight += descriptionComic.frame.height
         scrollView.contentSize = CGSize(width: scrollWidth, height: scrollHeight)
         
-//        RICHIESTA API
-        let singleIssueUrl = apiURL + "\(comicID ?? 0)"
-        let params : [String : String] = [ "apikey" : APP_ID, "ts": TS, "hash" : HASH]
-        getUpNextData(url: singleIssueUrl, parameters: params)
 
         
 		if (isRead) {
@@ -86,19 +82,8 @@ class IssueViewController: UIViewController {
         //        RICHIESTA API
         let singleIssueUrl = apiURL + "\(comicID ?? 0)"
         let params : [String : String] = [ "apikey" : APP_ID, "ts": TS, "hash" : HASH]
-        getUpNextData(url: singleIssueUrl, parameters: params)
+        getIssueData(url: singleIssueUrl, parameters: params)
         
-        if (isRead) {
-            readButton.backgroundColor = UIColor(named: "DarkGreen")
-            readButton.setTitle(NSLocalizedString("MARK AS UNREAD", comment: ""), for: .normal)
-        }
-        else {
-            readButton.backgroundColor = UIColor(named: "Red")
-            readButton.setTitle(NSLocalizedString("MARK AS READ", comment: ""), for: .normal)
-        }
-        
-        readButton.addTarget(self, action: #selector(readIssueButton), for: .touchUpInside)
-        seriesButton.addTarget(self, action: #selector(goToSeriesButton), for: .touchUpInside)
 
 
     }
@@ -113,7 +98,7 @@ class IssueViewController: UIViewController {
     
     //MARK: - Networking
     
-    func getUpNextData(url: String, parameters: [String: String]) {
+    func getIssueData(url: String, parameters: [String: String]) {
         
         let overlay = BlurLoader(frame: view.frame)
         view.addSubview(overlay)

@@ -76,10 +76,6 @@ class SeriesViewController: UIViewController {
         scrollHeight += descriptionText.frame.height
         scrollView.contentSize = CGSize(width: scrollWidth, height: scrollHeight)
         
-        //        RICHIESTA API
-        let singleIssueUrl = apiURL!
-        let params : [String : String] = [ "apikey" : APP_ID, "ts": TS, "hash" : HASH]
-        getSerieData(url: singleIssueUrl, parameters: params)
 		
 		followButton.titleLabel?.textAlignment = .center
 		readButton.titleLabel?.textAlignment = .center
