@@ -67,7 +67,7 @@ Once this information is obtained, the Controller will create a set of UILabels,
 
 \subsection{View Series}
 The ”View Series" procedure starts when the user presses a button representing a series in one of the screens where such buttons are displayed. The sequence diagram shows the normal procedure. \\
-After the user activates the "View Series" button, the application will send 1 request to the "MarvelAPI" service in order to retrieve information about the series. \\
+After the user activates the "View Series" button, the application will send a request to the "MarvelAPI" service in order to retrieve information about the series. \\
 Once all this information is obtained, the Controller will create a set of UILabels, UITextViews and a UIImage to display the relevant information of the series. 
 
 \vspace{5mm}
@@ -121,8 +121,8 @@ After receiving a notification of success, the Controller will update the GUI to
 
 \clearpage
 
-\subsection{Search a Series}
-The ”Search a Series” procedure starts when the user presses the ”Search" tab in the Tab Bar. The sequence diagram shows the normal procedure. \\
+\subsection{Search for a Series}
+The ”Search for a Series” procedure starts when the user presses the ”Search" tab in the Tab Bar. The sequence diagram shows the normal procedure. \\
 After the user activates the "Search" tab, the application will send a request to the ”MarvelAPI” service in order to retrieve the series whose name matches the string written by the user. \\
 Once this information is obtained, the Controller will create a UITableViewCell for each issue and insert them in a TableView. 
 

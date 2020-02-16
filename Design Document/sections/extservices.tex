@@ -1,9 +1,9 @@
-Cracker application uses Marvel Developer API in order to provide the user all the services. The SwiftyJSON component from UIKit was used to parse the JSON data.
+The "Cracker" application uses Marvel Developer API in order to provide the user all the services. The SwiftyJSON library was used to parse the JSON data.
 
 \vspace{8mm}
 
 \subsection{Facebook SDK}
-The Facebook SDK was used to manage the login through Facebook account. When a user wants to authenticate the application makes the call to the Facebook service through:
+The Facebook SDK was used to manage the login through Facebook account. When a user wants to authenticate, the application makes the call to the Facebook service through:
 \begin{lstlisting}
 func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
 	if let error = error {
@@ -16,7 +16,7 @@ func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginMana
 }
 \end{lstlisting}
 
-This method is used to send the user on Facebook for the authentication; once authenticated the user redirected to ”Cracker” which will store the token provided into Firebase.
+This method is used to send the user on Facebook for the authentication; once authenticated, the user redirected to ”Cracker” which will store the token provided into Firebase.
 The following pods were included to use Facebook:
 
 \begin{lstlisting}
@@ -28,7 +28,7 @@ pod 'FacebookLogin'
   
   
 \subsection{Google SDK}
-The Google SDK was used to manage the login through Google account. When a user wants to authenticate the application makes the call to the Google service through:
+The Google SDK was used to manage the login through Google account. When a user wants to authenticate, the application makes the call to the Google service through:
 \begin{lstlisting}
 func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
 	if let error = error {
@@ -45,7 +45,7 @@ func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError err
 	}
 }
 \end{lstlisting}
-This method is used to send the user on Google for the authentication; once authenti- cated the user redirected to ”Cracker” which will store the token provided into Firebase.
+This method is used to send the user on Google for the authentication; once authenticated, the user redirected to ”Cracker” which will store the token provided into Firebase.
 The following pods were included to use Google:
 \begin{lstlisting}
 pod 'GoogleSignIn'

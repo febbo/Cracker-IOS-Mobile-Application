@@ -1,4 +1,4 @@
-This section describes how actors can interact with Cracker in order to use all the features implemented in the app. The focus of this part is on the front-end and we show the operations that can be performed by the actors without taking care of the system architecture behind the app.
+This section describes how actors can interact with "Cracker" in order to use all the features implemented in the app. The focus of this part is on the front-end and we show the operations that can be performed by the actors without taking care of the system architecture behind the app.
 
 \vspace{6mm}
 
@@ -29,6 +29,13 @@ This section describes how actors can interact with Cracker in order to use all 
 	\item The app logs in through Facebook (or Google)
 	\item The app login into Firebase using Facebook (or Google) account 
 	\end{itemize} \\	
+	 & or \\
+	 & \begin{itemize}[leftmargin=*]
+ 	\item The user opens the application
+	\item The user presses ”Login with e-mail" located in the welcome screen
+	\item The user is asked to input his e-mail and password
+	\item The app login into Firebase using e-mail and password
+	\end{itemize} \\
  \hline
  {\centering{\textbf{Exit condition}}} & Actor becomes Logged User \\
  \hline
@@ -272,7 +279,7 @@ This section describes how actors can interact with Cracker in order to use all 
 
 \clearpage
 
-\subsection{Search a Series}
+\subsection{Search for a Series}
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{img/usecases/search}
@@ -282,7 +289,7 @@ This section describes how actors can interact with Cracker in order to use all 
 {\begin{center}
 \begin{tabular}{ | m{4cm} | m{9cm} | } 
  \hline
- {\centering{\textbf{Name}}} & Search a Series \\
+ {\centering{\textbf{Name}}} & Search for a Series \\
  \hline
  {\centering{\textbf{Actor}}} & Logged User \\
  \hline
@@ -300,7 +307,7 @@ This section describes how actors can interact with Cracker in order to use all 
  \hline
  {\centering{\textbf{Exit condition}}} & The user sees a list of series that match his input \\
  \hline
- {\centering{\textbf{Exceptions}}} & The user is not connected to the network so he cannot send a request to search for series \\
+ {\centering{\textbf{Exceptions}}} & The user is not connected to the network so he cannot send a request to search for a series \\
  \hline
 \end{tabular}
 \end{center}}
