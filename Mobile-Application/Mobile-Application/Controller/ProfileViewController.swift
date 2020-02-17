@@ -91,8 +91,8 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate, UICollec
         seriesIMGs = []
         totalIssues = 0
         
-        self.issuesRead.text = "Issues read:"
-        self.seriesAdded.text = "Series added:"
+        self.issuesRead.text = NSLocalizedString("Issues read: ", comment: "")
+        self.seriesAdded.text = NSLocalizedString("Series added: ", comment: "")
         getSeries()
         updateStats()
     }
