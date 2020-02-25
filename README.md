@@ -9,6 +9,15 @@ Cracker is a mobile application for Marvel readers that helps them keep track of
 - follow series
 - mark issues as read
 
+## Alert:
+
+In order not to make my credentials public I had to delete the following two files:
+
+- Mobile-Application/Pods/FirebaseCore/Firebase/Core/Public/FIROptions.h
+- Mobile-Application/Mobile-Application/GoogleService-Info.plist
+
+I recommend you watch the elevator pitch and the design document for the functioning of the application
+
 ## Built with:
 
 * [Swift](https://developer.apple.com/swift/)
@@ -18,5 +27,6 @@ Cracker is a mobile application for Marvel readers that helps them keep track of
 * [Google Sign-In](https://developers.google.com/identity/sign-in/ios)
 * [Alamofire](https://github.com/Alamofire/Alamofire)
 * [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
+
 ---
 ***Students Leonardo Febbo, Elisabetta Ferreri. Project for the course on 'Design and Implementation of Mobile Application' held at Politecnico di Milano by Prof. Luciano Baresi, A.Y. 2019/2020***
