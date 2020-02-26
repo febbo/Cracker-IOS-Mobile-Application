@@ -2,6 +2,10 @@
 
 Cracker is a mobile application for Marvel readers that helps them keep track of the latest releases and of the series they are following.
 
+* [Design Document](https://github.com/febbo/Cracker-IOS-Mobile-Application/blob/master/Design%20Document/Design%20Document.pdf)
+* [Presentation](https://github.com/febbo/Cracker-IOS-Mobile-Application/blob/master/Presentation%20(3).pdf)
+* [Elevator Pitch](https://github.com/febbo/Cracker-IOS-Mobile-Application/blob/master/Video%20(2).m4v)
+
 ## Main Requirements:
 
 - see all the latest issues published by Marvel 
